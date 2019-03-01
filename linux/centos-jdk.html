@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Centos7 安装jdk1.8 | 知音空间</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1、首先先查看当前系统是否安装java rpm -qa | grep java输完命令后看有没有版本数据 2、如果有使用rpm -e –nodeps 要卸载的版本 上传jdk到/usr/local目录下 下载地址 https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html  3、上传完后使">
+  <meta name="description" content="首先先查看当前系统是否安装java rpm -qa | grep java输完命令后看有没有版本数据   如果有使用rpm -e –nodeps 要卸载的版本上传jdk到/usr/local目录下下载地址https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html    上传完后使用解压命">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Centos7 安装jdk1.8">
 <meta property="og:url" content="http://yoursite.com/linux/centos-jdk.html">
 <meta property="og:site_name" content="知音空间">
-<meta property="og:description" content="1、首先先查看当前系统是否安装java rpm -qa | grep java输完命令后看有没有版本数据 2、如果有使用rpm -e –nodeps 要卸载的版本 上传jdk到/usr/local目录下 下载地址 https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html  3、上传完后使">
+<meta property="og:description" content="首先先查看当前系统是否安装java rpm -qa | grep java输完命令后看有没有版本数据   如果有使用rpm -e –nodeps 要卸载的版本上传jdk到/usr/local目录下下载地址https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html    上传完后使用解压命">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://img2018.cnblogs.com/blog/1581553/201901/1581553-20190124102530922-1531562134.png">
-<meta property="og:updated_time" content="2019-03-01T04:23:03.201Z">
+<meta property="og:updated_time" content="2019-03-01T07:37:42.242Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Centos7 安装jdk1.8">
-<meta name="twitter:description" content="1、首先先查看当前系统是否安装java rpm -qa | grep java输完命令后看有没有版本数据 2、如果有使用rpm -e –nodeps 要卸载的版本 上传jdk到/usr/local目录下 下载地址 https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html  3、上传完后使">
+<meta name="twitter:description" content="首先先查看当前系统是否安装java rpm -qa | grep java输完命令后看有没有版本数据   如果有使用rpm -e –nodeps 要卸载的版本上传jdk到/usr/local目录下下载地址https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html    上传完后使用解压命">
 <meta name="twitter:image" content="https://img2018.cnblogs.com/blog/1581553/201901/1581553-20190124102530922-1531562134.png">
   
     <link rel="alternative" href="/atom.xml" title="知音空间" type="application/atom+xml">
@@ -169,7 +169,7 @@
 
         
         <a href class="archive-article-date">
-  	<time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-01</time>
+  	<time datetime="2019-01-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-01</time>
 </a>
         <!-- 需要添加的位置 -->
         <!-- 开始添加字数统计-->
@@ -179,7 +179,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="color:teal">  字数统计: </span>
-        <span class="post-count">168字</span>
+        <span class="post-count">158字</span>
       </span>
     </span>
 
@@ -199,26 +199,32 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>1、首先先查看当前系统是否安装java</p>
+        <ul>
+<li>首先先查看当前系统是否安装java<blockquote>
 <p>rpm -qa | grep java<br>输完命令后看有没有版本数据</p>
-<p>2、如果有使用rpm -e –nodeps 要卸载的版本</p>
-<p>上传jdk到/usr/local目录下</p>
-<p>下载地址</p>
-<p><a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="noopener">https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html</a></p>
+</blockquote>
+</li>
+<li>如果有使用rpm -e –nodeps 要卸载的版本<br>上传jdk到/usr/local目录下<br>下载地址<br><a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="noopener">https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html</a></li>
+</ul>
 <p><img src="https://img2018.cnblogs.com/blog/1581553/201901/1581553-20190124102530922-1531562134.png" alt="Alt text"></p>
-<p>3、上传完后使用解压命令</p>
+<ul>
+<li>上传完后使用解压命令<blockquote>
 <p>tar -zxvf /usr/local/jdk版本</p>
-<p>4、进行jdk变量配置</p>
-<p>vi /etc/profile</p>
-<p>在最后加入</p>
-<p>JAVA_HOME=/usr/local/jdk1.8.0_201<br>CLASSPATH=.:$JAVA_HOME/lib/tools.jar<br>PATH=$JAVA_HOME/bin:$PATH<br>export JAVA_HOME CLASSPATH PATH</p>
-<p>5、接下来按下esc</p>
-<p>输入:wq 保存</p>
-<p>6、重新加载配置文件</p>
+</blockquote>
+</li>
+<li><p>进行jdk变量配置</p>
+<blockquote>
+<p>vi /etc/profile<br>在最后加入<br>JAVA_HOME=/usr/local/jdk1.8.0_201<br>CLASSPATH=.:$JAVA_HOME/lib/tools.jar<br>PATH=$JAVA_HOME/bin:$PATH<br>export JAVA_HOME CLASSPATH PATH</p>
+</blockquote>
+</li>
+<li><p>接下来按下esc<br>输入:wq 保存</p>
+</li>
+<li>重新加载配置文件<blockquote>
 <p>source /etc/profile</p>
-<p>7、检验jdk是否安装成功  </p>
-<p>输入javac  或者java -version</p>
-<p>有数据即可</p>
+</blockquote>
+</li>
+<li>检验jdk是否安装成功<br>输入javac  或者java -version<br>有数据即可</li>
+</ul>
 
       
 

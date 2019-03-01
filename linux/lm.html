@@ -6,15 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/1 | 知音空间</title>
+  <title>解决数据库5.7版本乱码问题 | 知音空间</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="知音空间">
-<meta property="og:url" content="http://yoursite.com/archives/2019/01/index.html">
+  <meta name="description" content="首先先查看自己的编码问题 mysql -r -p输入密码输入命令　　show variables like ‘%character%’;以上是我修改过的    如果没有改过  在、etc/my.conf添加值 vi /etc/my.conf在文件中添加如下[client]port = 3306socket = /var/lib/mysql/mysql.sockdefault-character-">
+<meta property="og:type" content="website">
+<meta property="og:title" content="解决数据库5.7版本乱码问题">
+<meta property="og:url" content="http://yoursite.com/linux/lm.html">
 <meta property="og:site_name" content="知音空间">
+<meta property="og:description" content="首先先查看自己的编码问题 mysql -r -p输入密码输入命令　　show variables like ‘%character%’;以上是我修改过的    如果没有改过  在、etc/my.conf添加值 vi /etc/my.conf在文件中添加如下[client]port = 3306socket = /var/lib/mysql/mysql.sockdefault-character-">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://img2018.cnblogs.com/blog/1581553/201901/1581553-20190126132620916-1164949934.png">
+<meta property="og:image" content="https://img2018.cnblogs.com/blog/1581553/201901/1581553-20190126133440937-532381162.png">
+<meta property="og:image" content="https://img2018.cnblogs.com/blog/1581553/201901/1581553-20190126133622522-1827437699.png">
+<meta property="og:updated_time" content="2019-03-01T07:45:48.081Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="知音空间">
+<meta name="twitter:title" content="解决数据库5.7版本乱码问题">
+<meta name="twitter:description" content="首先先查看自己的编码问题 mysql -r -p输入密码输入命令　　show variables like ‘%character%’;以上是我修改过的    如果没有改过  在、etc/my.conf添加值 vi /etc/my.conf在文件中添加如下[client]port = 3306socket = /var/lib/mysql/mysql.sockdefault-character-">
+<meta name="twitter:image" content="https://img2018.cnblogs.com/blog/1581553/201901/1581553-20190126132620916-1164949934.png">
   
     <link rel="alternative" href="/atom.xml" title="知音空间" type="application/atom+xml">
   
@@ -59,9 +67,9 @@
 			</div>
 			<ul>
 			
-				<li><a href="../../../index.html">主页</a></li>
+				<li><a href="../index.html">主页</a></li>
 	        
-				<li><a href="../../../tags/随笔/">随笔</a></li>
+				<li><a href="../tags/随笔/">随笔</a></li>
 	        
 			</ul>
 		</nav>
@@ -133,9 +141,9 @@
 				<ul style="width: 50%">
 				
 				
-					<li style="width: 50%"><a href="../../../index.html">主页</a></li>
+					<li style="width: 50%"><a href="../index.html">主页</a></li>
 		        
-					<li style="width: 50%"><a href="../../../tags/随笔/">随笔</a></li>
+					<li style="width: 50%"><a href="../tags/随笔/">随笔</a></li>
 		        
 				</ul>
 			</nav>
@@ -150,49 +158,203 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="page-" class="article article-type-page " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href=".." class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="../../../2019/01/01/hello-world/" class="archive-article-date">
-  	<time datetime="2018-12-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-01</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="../../../2019/01/01/hello-world/">Nice to Meet You!</a>
+    <h1 class="article-title" itemprop="name">
+      解决数据库5.7版本乱码问题
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
+        
+        <a href class="archive-article-date">
+  	<time datetime="2019-01-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-01</time>
+</a>
+        <!-- 需要添加的位置 -->
+        <!-- 开始添加字数统计-->
+        
+          <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text" style="color:teal">  字数统计: </span>
+        <span class="post-count">180字</span>
+      </span>
+    </span>
 
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text" style="color:teal">  阅读时长: </span>
+        <span class="post-count">1min</span>
+      </span>
+    </span>
+</div>
+          
+        <!-- 添加完成 -->
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>首先先查看自己的编码问题<blockquote>
+<p>mysql -r -p<br>输入密码<br>输入命令　　show variables like ‘%character%’;<br><img src="https://img2018.cnblogs.com/blog/1581553/201901/1581553-20190126132620916-1164949934.png" alt="Alt text"><br>以上是我修改过的</p>
+</blockquote>
+</li>
+</ul>
+<p>如果没有改过<br><img src="https://img2018.cnblogs.com/blog/1581553/201901/1581553-20190126133440937-532381162.png" alt="Alt text"></p>
+<ul>
+<li>在、etc/my.conf添加值<blockquote>
+<p>vi /etc/my.conf<br>在文件中添加如下<br><img src="https://img2018.cnblogs.com/blog/1581553/201901/1581553-20190126133622522-1827437699.png" alt="Alt text"><br>[client]<br>port = 3306<br>socket = /var/lib/mysql/mysql.sock<br>default-character-set = utf8<br>在[mysqld]下添加<br>character-set-server=utf8<br>即可别的就不要在加了<br>亲身体验<br>然后保存退出<br>重启MySQL<br>service mysqld restart<br>没有报错就可以了<br>如有报错检查/etc/my.conf文件中的值<br>然后登陆MySQL<br>mysql -r -p<br>输入密码<br>检查编码<br>show variables like ‘%character%’;<br>更新<br>如有添加表情的在配置文件中把utf8改为utf8mb4即可<br>总结：人生需多尝试，方能知道解决方法</p>
+</blockquote>
+</li>
+</ul>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/20190225231228.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <!--<img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/linux/lm.html" alt="微信分享二维码">-->
+      <img src="//api.qrserver.com/vi/create-qr-code/?size=150x150&date=http://yoursite.com/linux/lm.html" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-  
-    </div></section>
+
   
 
-    
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
+  
+
+  
+
+  
+
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "http://yoursite.com",
+  owner: 'fqmcnn',
+  repo: 'fqmcnn.github.io',
+  oauth: {
+    client_id: '868c3074475aaadca73e',
+    client_secret: 'fc611b29efba3abf8114f9b3e028be4c3f162752',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+  
 
 
           </div>
@@ -228,7 +390,7 @@
 		mathjax: false,
 		isHome: false,
 		isPost: false,
-		isArchive: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
