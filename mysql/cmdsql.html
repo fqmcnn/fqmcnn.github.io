@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tags | 知音空间</title>
+  <title>Cmd版小黑框珍藏版 | 知音空间</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="正在持续更新中，后期把自己总结的所有知识与大家分享">
+  <meta name="description" content="话不多说直接来，后续补充。查看数据库show databases;创建数据库create database 2018;使用数据库use 2018;查看数据库中的所有表show tables;删除数据库drop database 库名;create table student(id int(10) auto_increment primary key,name varchar(20) not nu">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Tags">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+<meta property="og:title" content="Cmd版小黑框珍藏版">
+<meta property="og:url" content="http://yoursite.com/mysql/cmdsql.html">
 <meta property="og:site_name" content="知音空间">
-<meta property="og:description" content="正在持续更新中，后期把自己总结的所有知识与大家分享">
+<meta property="og:description" content="话不多说直接来，后续补充。查看数据库show databases;创建数据库create database 2018;使用数据库use 2018;查看数据库中的所有表show tables;删除数据库drop database 库名;create table student(id int(10) auto_increment primary key,name varchar(20) not nu">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-13T01:41:51.687Z">
+<meta property="og:updated_time" content="2019-03-13T12:59:40.188Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tags">
-<meta name="twitter:description" content="正在持续更新中，后期把自己总结的所有知识与大家分享">
+<meta name="twitter:title" content="Cmd版小黑框珍藏版">
+<meta name="twitter:description" content="话不多说直接来，后续补充。查看数据库show databases;创建数据库create database 2018;使用数据库use 2018;查看数据库中的所有表show tables;删除数据库drop database 库名;create table student(id int(10) auto_increment primary key,name varchar(20) not nu">
   
     <link rel="alternative" href="/atom.xml" title="知音空间" type="application/atom+xml">
   
@@ -162,13 +162,13 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Tags
+      Cmd版小黑框珍藏版
     </h1>
   
 
         
         <a href class="archive-article-date">
-  	<time datetime="2019-01-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-01</time>
+  	<time datetime="2019-02-28T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-01</time>
 </a>
         <!-- 需要添加的位置 -->
         <!-- 开始添加字数统计-->
@@ -178,7 +178,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="color:teal">  字数统计: </span>
-        <span class="post-count">24字</span>
+        <span class="post-count">777字</span>
       </span>
     </span>
 
@@ -187,7 +187,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text" style="color:teal">  阅读时长: </span>
-        <span class="post-count">1min</span>
+        <span class="post-count">3min</span>
       </span>
     </span>
 </div>
@@ -198,9 +198,36 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ol>
-<li>正在持续更新中，后期把自己总结的所有知识与大家分享</li>
-</ol>
+        <blockquote>
+<p>话不多说直接来，后续补充。<br>查看数据库<br>show databases;<br>创建数据库<br>create database 2018;<br>使用数据库<br>use 2018;<br>查看数据库中的所有表<br>show tables;<br>删除数据库<br>drop database 库名;<br>create table student(<br>id int(10) auto_increment primary key,<br>name varchar(20) not null,<br>age int(5) default 16,<br>address char(50);<br>)</p>
+</blockquote>
+<blockquote>
+<p>查看表设计<br>desc student;<br>添加数据 不按照字段体添加 所有字段需要定义<br>insert into student values(1,’张三’，20，‘北京’);<br>不常用<br>按照字段添加<br>insert into student(name,age,address) values(‘李四’，22，’北京’);<br>insert into student(name) values(‘王五’)；<br>insert into student(name，age,address) values(‘赵六’,29,’上海’)，<br>(‘赵晓晓’,24,’深圳’),(‘张红’,21,’北京’),(‘赵晓刘’,23,’深圳’);</p>
+</blockquote>
+<blockquote>
+<p>删除<br>delete from student where id =3;<br>delete from student where age=24;<br>delete from student where age=26 and =’赵六’;<br>将表中的数据删除 表仍然在<br>delete from student;<br>删除表<br>drop table student;</p>
+</blockquote>
+<blockquote>
+<p>修改<br>update student set age =26,address=’上海’ where name=’王五’;<br>update student set age =26,address=’上海’;</p>
+</blockquote>
+<blockquote>
+<p>查询* 表中的所有内容<br>select * from student;<br>查询年龄在20-26之间的学生和年龄 between。。。and<br>select name,age from student where age between 20 and 26;<br>模糊查询 like %代表多个字符<br>select name from student where name like ‘李%’；<br># _代表的为一个字符<br>select name from student where name like ‘李_’;<br>select name from student where name like ‘%小%’;<br>select name,age,address from student where name like ‘%六’;</p>
+</blockquote>
+<blockquote>
+<p>#查询ID为偶数的学生信息<br>select * from student where id%2=0;<br>#查询年龄不等于23的学生姓名和年龄 两种写法 != ,&lt;&gt;<br>select name,age from student where age !=23;<br>select name,age from student where age &lt;&gt;23;</p>
+</blockquote>
+<blockquote>
+<p>#查询id 为3,6，7,10 in包含<br>select * from student where id in(10,6,7,3);<br>#查询年龄26 并且上海 and<br>select * from student where age = 26 and address=’上海’;<br>#查询年龄26 或者来自上海<br>select * from student where age = 26 or address=’上海’;<br>#分页 显示第一页代表的是索引 每页显示3条 每次显示的条数<br>select * from student limit 3,3;<br>select * from student limit 4,2;<br>#查询和李四年龄相同的学生姓名<br>select name from student where age = (select age from student where name=’李四’) and name !=’李四’;</p>
+</blockquote>
+<blockquote>
+<p>#将年龄从小到大排序<br>select * from student order by age;<br>#大到小排序 order by.. desc order by asc(小到大)<br>select * from student order by age desc;</p>
+</blockquote>
+<blockquote>
+<p>#聚合函数<br>count(),sum(),avg.max().min()<br>#统计表中总数量<br>select count(id) from student;<br>select count(*) from student;<br>select count(1) from student;</p>
+</blockquote>
+<blockquote>
+<p>#年龄的总和<br>select sum(age) from student;<br>#平均年龄<br>select avg(age) from student;<br>#获取最大值<br>select max(age) from student;<br>#获取最小值<br>select min(age) from student;<br>#统计每个年龄分布有多少人 group by 分组<br>select count(id),age from student group by age;<br>#group by 需要与聚合函数联合使用 having 必须与group by一起使用 为分组进行条件判断<br>select count(id),age from student group by age having age&gt;20;<br>将地址分组查询<br>select count(id),address from student group by address;<br>统计同一地方人数大于3<br>select count(id),address from student group by address having count(id) &gt;3;<br>select count(id) he,address from student group by address having he &gt;3;<br>select count(id) as he,address from student group by address having he&gt;3;<br>select count(id) as ‘总数’,address from student group by address having 总数&gt;3;</p>
+</blockquote>
 
       
 
@@ -285,8 +312,8 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <!--<img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/tags/" alt="微信分享二维码">-->
-      <img src="//api.qrserver.com/vi/create-qr-code/?size=150x150&date=http://yoursite.com/tags/" alt="微信分享二维码">
+      <!--<img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/mysql/cmdsql.html" alt="微信分享二维码">-->
+      <img src="//api.qrserver.com/vi/create-qr-code/?size=150x150&date=http://yoursite.com/mysql/cmdsql.html" alt="微信分享二维码">
     </div>
 </div>
 
