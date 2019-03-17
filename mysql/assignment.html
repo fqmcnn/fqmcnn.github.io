@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="知音空间">
 <meta property="og:description" content="有的时候我们经常需要把sql中的某个字段换成想要的值或者说当某个字段为空值赋值为0或true写一个简单的例子第一种写法ifnullselect name,ifnull(age,‘0’),adress from user第二种写法case when then else endselect name,case when age is null then 1 else age end,adress f">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-13T12:21:21.776Z">
+<meta property="og:updated_time" content="2019-03-17T02:43:18.537Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Sql某字段重新赋值">
 <meta name="twitter:description" content="有的时候我们经常需要把sql中的某个字段换成想要的值或者说当某个字段为空值赋值为0或true写一个简单的例子第一种写法ifnullselect name,ifnull(age,‘0’),adress from user第二种写法case when then else endselect name,case when age is null then 1 else age end,adress f">
@@ -60,7 +60,7 @@
 		<nav class="header-menu">
 			<!--添加音乐-->
 			<div style="position:absolute; bottom: 100px left:auto; width: 100%">
-					<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="52" src="//music.163.com/outchain/player?type=2&id=1345312401&auto=1&height=32"></iframe>
+					<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="52" src="//music.163.com/outchain/player?type=2&id=451126768&auto=1&height=32"></iframe>
 			</div>
 			<ul>
 			
@@ -178,7 +178,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="color:teal">  字数统计: </span>
-        <span class="post-count">82字</span>
+        <span class="post-count">170字</span>
       </span>
     </span>
 
@@ -199,7 +199,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>有的时候我们经常需要把sql中的某个字段换成想要的值<br>或者说当某个字段为空值赋值为0或true<br>写一个简单的例子<br>第一种写法<br>ifnull<br>select name,ifnull(age,‘0’),adress from user<br>第二种写法<br>case when then else end<br>select name,case when age is null then 1 else age end,adress from user</p>
+<p>有的时候我们经常需要把sql中的某个字段换成想要的值<br>或者说当某个字段为空值赋值为0或true<br>写一个简单的例子<br>第一种写法<br>ifnull<br>select name,ifnull(age,‘0’),adress from user<br>第二种写法<br>case when then else end<br>select name,case when age is null then 1 else age end,adress from user<br>第三种写法<br>select name,#{需要的字段及mapper传入的值},age from 表名<br>mybatis的判断<br>&lt;choose&gt;<br>  &lt;when test=””&gt;<br>      //…<br>  &lt;/when&gt;<br>  &lt;otherwise&gt;<br>      //…<br>  &lt;/otherwise&gt;<br>&lt;/choose&gt;<br>&lt;choose&gt;<br>     &lt;when test=”xxx!= null and xxx !=’’”&gt;<br>       and name in<br>       &lt;foreach collection=”names” item=”name” index=”index” open=”(“ close=”)” separator=”,”&gt;<br>         #{name}<br>       &lt;/foreach&gt;<br>     &lt;/when&gt;<br>     &lt;otherwise&gt;<br>       and name= ‘’<br>     &lt;/otherwise&gt;<br>   &lt;/choose&gt;</p>
 </blockquote>
 
       
@@ -460,11 +460,31 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">post</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">sql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
             
             <div class="clearfix"></div>
@@ -520,23 +540,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
+              <a href="https://music.163.com" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>网易云</a>
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
+              <a href="https://www.bilibili.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>哔哩哔哩</a>
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
+              <a href="http://www.runoob.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>菜鸟</a>
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
+              <a href="https://gitee.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>码云</a>
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
+              <a href="https://www.iconfont.cn/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>阿里矢量图库</a>
             </li>
           
         </ul>

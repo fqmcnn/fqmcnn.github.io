@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Mysql | 知音空间</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="sql语句给某个字段重新赋值 cmd珍藏版sql sql中datetime转long类型 mysql的正则查询">
-<meta name="keywords" content="mysql">
+  <meta name="description" content="sql语句给某个字段重新赋值 cmd珍藏版sql sql中datetime转long类型 mysql的正则查询 sql排序 sql语句去除数据库中的空格 分组时遇见集合处理">
+<meta name="keywords" content="mysql,sql">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mysql">
 <meta property="og:url" content="http://yoursite.com/2019/03/01/mysql/index.html">
 <meta property="og:site_name" content="知音空间">
-<meta property="og:description" content="sql语句给某个字段重新赋值 cmd珍藏版sql sql中datetime转long类型 mysql的正则查询">
+<meta property="og:description" content="sql语句给某个字段重新赋值 cmd珍藏版sql sql中datetime转long类型 mysql的正则查询 sql排序 sql语句去除数据库中的空格 分组时遇见集合处理">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-13T13:04:44.921Z">
+<meta property="og:updated_time" content="2019-03-17T02:37:33.574Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mysql">
-<meta name="twitter:description" content="sql语句给某个字段重新赋值 cmd珍藏版sql sql中datetime转long类型 mysql的正则查询">
+<meta name="twitter:description" content="sql语句给某个字段重新赋值 cmd珍藏版sql sql中datetime转long类型 mysql的正则查询 sql排序 sql语句去除数据库中的空格 分组时遇见集合处理">
   
     <link rel="alternative" href="/atom.xml" title="知音空间" type="application/atom+xml">
   
@@ -61,7 +61,7 @@
 		<nav class="header-menu">
 			<!--添加音乐-->
 			<div style="position:absolute; bottom: 100px left:auto; width: 100%">
-					<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="52" src="//music.163.com/outchain/player?type=2&id=1345312401&auto=1&height=32"></iframe>
+					<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="52" src="//music.163.com/outchain/player?type=2&id=451126768&auto=1&height=32"></iframe>
 			</div>
 			<ul>
 			
@@ -179,7 +179,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="color:teal">  字数统计: </span>
-        <span class="post-count">27字</span>
+        <span class="post-count">51字</span>
       </span>
     </span>
 
@@ -204,6 +204,9 @@
 <li><a href="/mysql/cmdsql.html">cmd珍藏版sql</a></li>
 <li><a href="/mysql/sqlLong.html">sql中datetime转long类型</a></li>
 <li><a href="/mysql/regular.html">mysql的正则查询</a></li>
+<li><a href="/mysql/sort.html">sql排序</a></li>
+<li><a href="/mysql/removespace.html">sql语句去除数据库中的空格</a></li>
+<li><a href="/mysql/group.html">分组时遇见集合处理</a></li>
 </ol>
 
       
@@ -245,6 +248,10 @@
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">mysql</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">sql</a>
         		</li>
       		
 		</ul>
@@ -494,11 +501,31 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">post</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">sql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
             
             <div class="clearfix"></div>
@@ -554,23 +581,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
+              <a href="https://music.163.com" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>网易云</a>
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
+              <a href="https://www.bilibili.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>哔哩哔哩</a>
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
+              <a href="http://www.runoob.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>菜鸟</a>
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
+              <a href="https://gitee.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>码云</a>
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
+              <a href="https://www.iconfont.cn/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>阿里矢量图库</a>
             </li>
           
         </ul>

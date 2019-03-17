@@ -6,21 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Linux Centos7 定时任务脚本 | 知音空间</title>
+  <title>分组时遇见集合处理 | 知音空间</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在开发中我们遇到过定时任务 同样我们也会想着内存的问题，接下来就是清除日志的脚本    #!/bin/sh指定脚本解释器，这里使用/bin/sh  做解释器cat /dev/null &amp;gt;messages这个命令是清空message文件   1、进入到/usr/local 目录下2、创建文本touch clear_tomcat_log.sh3、编辑文本vi /usr/local/clear_t">
+  <meta name="description" content="group by + group_concat() 1.group_concat(字段名)可以作为一个输出的字段来使用 2.表示分组之后，根据分组结果，使用group_concat()来放置每一组的某字段的值的集合 列出一些数据 select * from user GROUP BY sex 根据sex字段来分组，sex字段的值只有两个值（男、女），所以分为两组 当group by  单独使用时，">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Linux Centos7 定时任务脚本">
-<meta property="og:url" content="http://yoursite.com/linux/centos-timing.html">
+<meta property="og:title" content="分组时遇见集合处理">
+<meta property="og:url" content="http://yoursite.com/mysql/group.html">
 <meta property="og:site_name" content="知音空间">
-<meta property="og:description" content="在开发中我们遇到过定时任务 同样我们也会想着内存的问题，接下来就是清除日志的脚本    #!/bin/sh指定脚本解释器，这里使用/bin/sh  做解释器cat /dev/null &amp;gt;messages这个命令是清空message文件   1、进入到/usr/local 目录下2、创建文本touch clear_tomcat_log.sh3、编辑文本vi /usr/local/clear_t">
+<meta property="og:description" content="group by + group_concat() 1.group_concat(字段名)可以作为一个输出的字段来使用 2.表示分组之后，根据分组结果，使用group_concat()来放置每一组的某字段的值的集合 列出一些数据 select * from user GROUP BY sex 根据sex字段来分组，sex字段的值只有两个值（男、女），所以分为两组 当group by  单独使用时，">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/assets/img/20190313094734.png">
-<meta property="og:updated_time" content="2019-03-13T02:18:11.458Z">
+<meta property="og:image" content="https://img2018.cnblogs.com/blog/1581553/201901/1581553-20190114155912477-143583040.png">
+<meta property="og:image" content="https://img2018.cnblogs.com/blog/1581553/201901/1581553-20190114160236463-1024388484.png">
+<meta property="og:image" content="https://img2018.cnblogs.com/blog/1581553/201901/1581553-20190114160653287-1367485280.png">
+<meta property="og:image" content="https://img2018.cnblogs.com/blog/1581553/201901/1581553-20190114161154301-1962357135.png">
+<meta property="og:updated_time" content="2019-03-17T02:35:37.547Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux Centos7 定时任务脚本">
-<meta name="twitter:description" content="在开发中我们遇到过定时任务 同样我们也会想着内存的问题，接下来就是清除日志的脚本    #!/bin/sh指定脚本解释器，这里使用/bin/sh  做解释器cat /dev/null &amp;gt;messages这个命令是清空message文件   1、进入到/usr/local 目录下2、创建文本touch clear_tomcat_log.sh3、编辑文本vi /usr/local/clear_t">
-<meta name="twitter:image" content="http://yoursite.com/assets/img/20190313094734.png">
+<meta name="twitter:title" content="分组时遇见集合处理">
+<meta name="twitter:description" content="group by + group_concat() 1.group_concat(字段名)可以作为一个输出的字段来使用 2.表示分组之后，根据分组结果，使用group_concat()来放置每一组的某字段的值的集合 列出一些数据 select * from user GROUP BY sex 根据sex字段来分组，sex字段的值只有两个值（男、女），所以分为两组 当group by  单独使用时，">
+<meta name="twitter:image" content="https://img2018.cnblogs.com/blog/1581553/201901/1581553-20190114155912477-143583040.png">
   
     <link rel="alternative" href="/atom.xml" title="知音空间" type="application/atom+xml">
   
@@ -164,13 +167,13 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Linux Centos7 定时任务脚本
+      分组时遇见集合处理
     </h1>
   
 
         
         <a href class="archive-article-date">
-  	<time datetime="2019-03-13T01:42:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-13</time>
+  	<time datetime="2019-03-09T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-10</time>
 </a>
         <!-- 需要添加的位置 -->
         <!-- 开始添加字数统计-->
@@ -180,7 +183,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="color:teal">  字数统计: </span>
-        <span class="post-count">333字</span>
+        <span class="post-count">281字</span>
       </span>
     </span>
 
@@ -200,18 +203,24 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>在开发中我们遇到过定时任务</p>
-<p>同样我们也会想着内存的问题，接下来就是清除日志的脚本</p>
-<p><img src="/assets/img/20190313094734.png" alt="Alt text"> </p>
-<blockquote>
-<p>#!/bin/sh<br>指定脚本解释器，这里使用/bin/sh  做解释器<br>cat /dev/null &gt;messages<br>这个命令是清空message文件</p>
-</blockquote>
-<blockquote>
-<p>1、进入到/usr/local 目录下<br>2、创建文本<br>touch clear_tomcat_log.sh<br>3、编辑文本<br>vi /usr/local/clear_tomcat_log.sh<br>然后把上面的内容输入<br>4、保存推出文本<br>esc键退出编辑<br>wq保存<br>5、需要使用chmod指令权限换成755  下面附上linux指令<br>chmod 755 clear_tomcat_log.sh<br>6、我们进入到tomcat的logs目录下面，使用以下命令查看你当前的catalina.out 占的数据大小<br>cd /usr/local/tomcat/logs<br>du -sh *<br>7、执行刚写好的shell脚本<br>/usr/local/clear_tomcat_log.sh<br>8、再次查看catalina.out占用  发现已经清理掉了，说明shell脚本没有问题<br>9、脚本没有问题就可以写定时任务了<br>先通过以下命令设置定时任务<br>crontab -e<br>因为定时任务是需要每天执行一次，下面是每24小时执行一次<br>* * /23 * * * /usr/local/clear_tomcat_log.sh<br>10、然后保存退出，使用知名重启crontab 服务，让配置生效<br>service crontab restart(centos 6.5)<br>在根目录下操作命令<br>/bin/systemctl restart crond.service   (centos 7)</p>
-</blockquote>
-<blockquote>
-<p>定时格式 <a href="https://www.cnblogs.com/companionspace/p/10419745.html" target="_blank" rel="noopener">https://www.cnblogs.com/companionspace/p/10419745.html</a></p>
-</blockquote>
+        <p>group by + group_concat()</p>
+<p>1.group_concat(字段名)可以作为一个输出的字段来使用</p>
+<p>2.表示分组之后，根据分组结果，使用group_concat()来放置每一组的某字段的值的集合</p>
+<p>列出一些数据<br><img src="https://img2018.cnblogs.com/blog/1581553/201901/1581553-20190114155912477-143583040.png" alt="Alt text"></p>
+<p>select * from user GROUP BY sex<br><img src="https://img2018.cnblogs.com/blog/1581553/201901/1581553-20190114160236463-1024388484.png" alt="Alt text"></p>
+<p>根据sex字段来分组，sex字段的值只有两个值（男、女），所以分为两组</p>
+<p>当group by  单独使用时，只显示出每组的第一条记录</p>
+<p>所以group by 单独使用时的实际意义并不大</p>
+<p> select sex,GROUP_CONCAT(name) from user GROUP BY sex</p>
+<p><img src="https://img2018.cnblogs.com/blog/1581553/201901/1581553-20190114160653287-1367485280.png" alt="Alt text"></p>
+<p>group by + with rollup</p>
+<p>1.with rollup 的作用是：在最后新增一行，来记录当前列里所有记录的总和</p>
+<p>select sex,count(age) from user GROUP BY sex with rollup<br><img src="https://img2018.cnblogs.com/blog/1581553/201901/1581553-20190114161154301-1962357135.png" alt="Alt text"></p>
+<p>以上为一星期前所写</p>
+<p>今天想到一个取group_concat之中的一个第一个（即第一个逗号前的进行截取）</p>
+<p>只需要在你的group_concat() 语句前加substring_index(group_concat(),’,’,1)</p>
+<p>同样还可把“,”换成“;”   需要在group_concat()语句中加入group_concat(字段名 SEPARATOR ‘;’)   字段名后加入一个空格</p>
+<p>同样还可以排序group_concat(字段名 order by 字段 asc,字段 desc) </p>
 
       
 
@@ -296,8 +305,8 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <!--<img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/linux/centos-timing.html" alt="微信分享二维码">-->
-      <img src="//api.qrserver.com/vi/create-qr-code/?size=150x150&date=http://yoursite.com/linux/centos-timing.html" alt="微信分享二维码">
+      <!--<img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/mysql/group.html" alt="微信分享二维码">-->
+      <img src="//api.qrserver.com/vi/create-qr-code/?size=150x150&date=http://yoursite.com/mysql/group.html" alt="微信分享二维码">
     </div>
 </div>
 

@@ -6,21 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Linux Centos7 定时任务脚本 | 知音空间</title>
+  <title>学习目标 | 知音空间</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在开发中我们遇到过定时任务 同样我们也会想着内存的问题，接下来就是清除日志的脚本    #!/bin/sh指定脚本解释器，这里使用/bin/sh  做解释器cat /dev/null &amp;gt;messages这个命令是清空message文件   1、进入到/usr/local 目录下2、创建文本touch clear_tomcat_log.sh3、编辑文本vi /usr/local/clear_t">
+  <meta name="description" content="Java并发编程和网络编程   Java线程状态、线程池、线程通信 线程安全 锁 Netty高性能原理，线程模型、责任链模式、零拷贝   分布式开发框架——— dubbo,Rpc   分布式系统接口调用技术Rpc详解 深入分析Apache顶级项目Zookeeper原理 懂阿里Dubbo设计思想及源码套读 Dubbo扩展及分布式事务处理问题   分布式系统数据存储层   数据库中间件Mycat">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Linux Centos7 定时任务脚本">
-<meta property="og:url" content="http://yoursite.com/linux/centos-timing.html">
+<meta property="og:title" content="学习目标">
+<meta property="og:url" content="http://yoursite.com/study/aims.html">
 <meta property="og:site_name" content="知音空间">
-<meta property="og:description" content="在开发中我们遇到过定时任务 同样我们也会想着内存的问题，接下来就是清除日志的脚本    #!/bin/sh指定脚本解释器，这里使用/bin/sh  做解释器cat /dev/null &amp;gt;messages这个命令是清空message文件   1、进入到/usr/local 目录下2、创建文本touch clear_tomcat_log.sh3、编辑文本vi /usr/local/clear_t">
+<meta property="og:description" content="Java并发编程和网络编程   Java线程状态、线程池、线程通信 线程安全 锁 Netty高性能原理，线程模型、责任链模式、零拷贝   分布式开发框架——— dubbo,Rpc   分布式系统接口调用技术Rpc详解 深入分析Apache顶级项目Zookeeper原理 懂阿里Dubbo设计思想及源码套读 Dubbo扩展及分布式事务处理问题   分布式系统数据存储层   数据库中间件Mycat">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/assets/img/20190313094734.png">
-<meta property="og:updated_time" content="2019-03-13T02:18:11.458Z">
+<meta property="og:updated_time" content="2019-03-17T01:37:16.060Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux Centos7 定时任务脚本">
-<meta name="twitter:description" content="在开发中我们遇到过定时任务 同样我们也会想着内存的问题，接下来就是清除日志的脚本    #!/bin/sh指定脚本解释器，这里使用/bin/sh  做解释器cat /dev/null &amp;gt;messages这个命令是清空message文件   1、进入到/usr/local 目录下2、创建文本touch clear_tomcat_log.sh3、编辑文本vi /usr/local/clear_t">
-<meta name="twitter:image" content="http://yoursite.com/assets/img/20190313094734.png">
+<meta name="twitter:title" content="学习目标">
+<meta name="twitter:description" content="Java并发编程和网络编程   Java线程状态、线程池、线程通信 线程安全 锁 Netty高性能原理，线程模型、责任链模式、零拷贝   分布式开发框架——— dubbo,Rpc   分布式系统接口调用技术Rpc详解 深入分析Apache顶级项目Zookeeper原理 懂阿里Dubbo设计思想及源码套读 Dubbo扩展及分布式事务处理问题   分布式系统数据存储层   数据库中间件Mycat">
   
     <link rel="alternative" href="/atom.xml" title="知音空间" type="application/atom+xml">
   
@@ -164,13 +162,13 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Linux Centos7 定时任务脚本
+      学习目标
     </h1>
   
 
         
         <a href class="archive-article-date">
-  	<time datetime="2019-03-13T01:42:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-13</time>
+  	<time datetime="2019-03-14T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-15</time>
 </a>
         <!-- 需要添加的位置 -->
         <!-- 开始添加字数统计-->
@@ -180,7 +178,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="color:teal">  字数统计: </span>
-        <span class="post-count">333字</span>
+        <span class="post-count">187字</span>
       </span>
     </span>
 
@@ -200,18 +198,46 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>在开发中我们遇到过定时任务</p>
-<p>同样我们也会想着内存的问题，接下来就是清除日志的脚本</p>
-<p><img src="/assets/img/20190313094734.png" alt="Alt text"> </p>
-<blockquote>
-<p>#!/bin/sh<br>指定脚本解释器，这里使用/bin/sh  做解释器<br>cat /dev/null &gt;messages<br>这个命令是清空message文件</p>
-</blockquote>
-<blockquote>
-<p>1、进入到/usr/local 目录下<br>2、创建文本<br>touch clear_tomcat_log.sh<br>3、编辑文本<br>vi /usr/local/clear_tomcat_log.sh<br>然后把上面的内容输入<br>4、保存推出文本<br>esc键退出编辑<br>wq保存<br>5、需要使用chmod指令权限换成755  下面附上linux指令<br>chmod 755 clear_tomcat_log.sh<br>6、我们进入到tomcat的logs目录下面，使用以下命令查看你当前的catalina.out 占的数据大小<br>cd /usr/local/tomcat/logs<br>du -sh *<br>7、执行刚写好的shell脚本<br>/usr/local/clear_tomcat_log.sh<br>8、再次查看catalina.out占用  发现已经清理掉了，说明shell脚本没有问题<br>9、脚本没有问题就可以写定时任务了<br>先通过以下命令设置定时任务<br>crontab -e<br>因为定时任务是需要每天执行一次，下面是每24小时执行一次<br>* * /23 * * * /usr/local/clear_tomcat_log.sh<br>10、然后保存退出，使用知名重启crontab 服务，让配置生效<br>service crontab restart(centos 6.5)<br>在根目录下操作命令<br>/bin/systemctl restart crond.service   (centos 7)</p>
-</blockquote>
-<blockquote>
-<p>定时格式 <a href="https://www.cnblogs.com/companionspace/p/10419745.html" target="_blank" rel="noopener">https://www.cnblogs.com/companionspace/p/10419745.html</a></p>
-</blockquote>
+        <ul>
+<li>Java并发编程和网络编程</li>
+</ul>
+<ul>
+<li>Java线程状态、线程池、线程通信</li>
+<li>线程安全 锁</li>
+<li>Netty高性能原理，线程模型、责任链模式、零拷贝</li>
+</ul>
+<ul>
+<li>分布式开发框架——— dubbo,Rpc</li>
+</ul>
+<ul>
+<li>分布式系统接口调用技术Rpc详解</li>
+<li>深入分析Apache顶级项目Zookeeper原理</li>
+<li>懂阿里Dubbo设计思想及源码套读</li>
+<li>Dubbo扩展及分布式事务处理问题</li>
+</ul>
+<ul>
+<li>分布式系统数据存储层</li>
+</ul>
+<ul>
+<li>数据库中间件Mycat</li>
+</ul>
+<ul>
+<li>中间件专题</li>
+</ul>
+<ul>
+<li>rabbitmq、kafka、activemq</li>
+<li>Linux   keepalived</li>
+</ul>
+<ul>
+<li>解决业界难题</li>
+</ul>
+<ul>
+<li>分布式锁</li>
+<li>分布式会话，单点登录</li>
+<li>分布式事务解决方案TCC</li>
+<li>Mysql高可用、主从复制、分库分表</li>
+<li>缓存架构设计，解决雪崩、穿透问题</li>
+</ul>
 
       
 
@@ -296,8 +322,8 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <!--<img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/linux/centos-timing.html" alt="微信分享二维码">-->
-      <img src="//api.qrserver.com/vi/create-qr-code/?size=150x150&date=http://yoursite.com/linux/centos-timing.html" alt="微信分享二维码">
+      <!--<img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/study/aims.html" alt="微信分享二维码">-->
+      <img src="//api.qrserver.com/vi/create-qr-code/?size=150x150&date=http://yoursite.com/study/aims.html" alt="微信分享二维码">
     </div>
 </div>
 
