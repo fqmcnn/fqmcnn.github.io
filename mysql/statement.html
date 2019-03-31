@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/2 | 知音空间</title>
+  <title>6个有用的Mysql语句 | 知音空间</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="知音空间">
-<meta property="og:url" content="http://yoursite.com/archives/2019/02/index.html">
+  <meta name="description" content="计算年数  你想通过生日来计算这个人有几岁了。SELECT DATE_FORMAT(FROM_DAYS(TO_DAYS(now()) - TO_DAYS(@dateofbirth)), ‘%Y’) + 0;   两个时间的差  取得两个 datetime 值的差。假设 dt1 和 dt2 是 datetime 类型，其格式为 ‘yyyy-mm-dd hh:mm:ss’，那么它们之间所差的秒数为：">
+<meta property="og:type" content="website">
+<meta property="og:title" content="6个有用的Mysql语句">
+<meta property="og:url" content="http://yoursite.com/mysql/statement.html">
 <meta property="og:site_name" content="知音空间">
+<meta property="og:description" content="计算年数  你想通过生日来计算这个人有几岁了。SELECT DATE_FORMAT(FROM_DAYS(TO_DAYS(now()) - TO_DAYS(@dateofbirth)), ‘%Y’) + 0;   两个时间的差  取得两个 datetime 值的差。假设 dt1 和 dt2 是 datetime 类型，其格式为 ‘yyyy-mm-dd hh:mm:ss’，那么它们之间所差的秒数为：">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-03-29T14:03:16.138Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="知音空间">
+<meta name="twitter:title" content="6个有用的Mysql语句">
+<meta name="twitter:description" content="计算年数  你想通过生日来计算这个人有几岁了。SELECT DATE_FORMAT(FROM_DAYS(TO_DAYS(now()) - TO_DAYS(@dateofbirth)), ‘%Y’) + 0;   两个时间的差  取得两个 datetime 值的差。假设 dt1 和 dt2 是 datetime 类型，其格式为 ‘yyyy-mm-dd hh:mm:ss’，那么它们之间所差的秒数为：">
   
     <link rel="alternative" href="/atom.xml" title="知音空间" type="application/atom+xml">
   
@@ -60,9 +64,9 @@
 			</div>
 			<ul>
 			
-				<li><a href="../../../index.html">主页</a></li>
+				<li><a href="../index.html">主页</a></li>
 	        
-				<li><a href="../../../tags/index.html">随笔</a></li>
+				<li><a href="../tags/index.html">随笔</a></li>
 	        
 			</ul>
 		</nav>
@@ -134,9 +138,9 @@
 				<ul style="width: 50%">
 				
 				
-					<li style="width: 50%"><a href="../../../index.html">主页</a></li>
+					<li style="width: 50%"><a href="../index.html">主页</a></li>
 		        
-					<li style="width: 50%"><a href="../../../tags/index.html">随笔</a></li>
+					<li style="width: 50%"><a href="../tags/index.html">随笔</a></li>
 		        
 				</ul>
 			</nav>
@@ -151,60 +155,228 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="page-" class="article article-type-page " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href=".." class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="../../../2019/02/01/hello-world/" class="archive-article-date">
-  	<time datetime="2019-01-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-01</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="../../../2019/02/01/hello-world/">Nice to Meet You!</a>
+    <h1 class="article-title" itemprop="name">
+      6个有用的Mysql语句
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        <a href class="archive-article-date">
+  	<time datetime="2019-03-27T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-28</time>
+</a>
+        <!-- 需要添加的位置 -->
+        <!-- 开始添加字数统计-->
+        
+          <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text" style="color:teal">  字数统计: </span>
+        <span class="post-count">247字</span>
+      </span>
+    </span>
 
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text" style="color:teal">  阅读时长: </span>
+        <span class="post-count">1min</span>
+      </span>
+    </span>
+</div>
           
+        <!-- 添加完成 -->
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p>计算年数</p>
+<blockquote>
+<p>你想通过生日来计算这个人有几岁了。<br>SELECT DATE_FORMAT(FROM_DAYS(TO_DAYS(now()) - TO_DAYS(@dateofbirth)), ‘%Y’) + 0;</p>
+</blockquote>
+</li>
+<li><p>两个时间的差</p>
+<blockquote>
+<p>取得两个 datetime 值的差。假设 dt1 和 dt2 是 datetime 类型，其格式为 ‘yyyy-mm-dd hh:mm:ss’，那么它们之间所差的秒数为：<br>UNIX_TIMESTAMP( dt2 ) - UNIX_TIMESTAMP( dt1 )<br>除以60就是所差的分钟数，除以3600就是所差的小时数，再除以24就是所差的天数。</p>
+</blockquote>
+</li>
+<li><p>显示某一列出现过N次的值</p>
+<blockquote>
+<p>SELECT idFROM tblGROUP BY idHAVING COUNT(*) = N;</p>
+</blockquote>
+</li>
+<li><p>计算两个日子间的工作日</p>
+<blockquote>
+<p>所谓工作日就是除出周六周日和节假日。<br>SELECT COUNT(*)<br>FROM calendar<br>WHERE d BETWEEN Start AND Stop<br>AND DAYOFWEEK(d) NOT IN(1,7)<br>AND holiday=0;</p>
+</blockquote>
+</li>
+<li><p>查找表中的主键</p>
+<blockquote>
+<p>SELECT k.column_name<br>FROM information_schema.table_constraints t<br>JOIN information_schema.key_column_usage k<br>USING (constraint_name,table_schema,table_name)<br>WHERE t.constraint_type=’PRIMARY KEY’<br>AND t.table_schema=’db’<br>AND t.table_name=tbl’</p>
+</blockquote>
+</li>
+<li><p>查看你的数库有多大</p>
+<blockquote>
+<p>SELECT<br>table_schema AS ‘Db Name’,<br>Round( Sum( data_length + index_length ) / 1024 / 1024, 3 ) AS ‘Db Size (MB)’,<br>Round( Sum( data_free ) / 1024 / 1024, 3 ) AS ‘Free Space (MB)’<br>FROM information_schema.tables<br>GROUP BY table_schema ;</p>
+</blockquote>
+</li>
+</ol>
 
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/20190225231228.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <!--<img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/mysql/statement.html" alt="微信分享二维码">-->
+      <img src="//api.qrserver.com/vi/create-qr-code/?size=150x150&date=http://yoursite.com/mysql/statement.html" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-  
-    </div></section>
+
   
 
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MzE4NS8xOTczMQ==">
+    <script type="text/javascript">
+       (function(d, s) {
+           var j, e = d.getElementsByTagName(s)[0];
     
+           if (typeof LivereTower === 'function') { return; }
+    
+           j = d.createElement(s);
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+    
+           e.parentNode.insertBefore(j, e);
+       })(document, 'script');
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+    <!-- City版安装代码已完成 -->
+  
+
+  
+  
+  
+
+  
+
+  
+
+  
 
 
           </div>
@@ -240,7 +412,7 @@
 		mathjax: false,
 		isHome: false,
 		isPost: false,
-		isArchive: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
