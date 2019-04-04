@@ -6,21 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Centos-Redis | 知音空间</title>
+  <title>Linux  centos7——安装Nginx | 知音空间</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="安装gcc因为redis是c语言编写的，而gcc是编译c的 yum install gcc-c++   wget方式下载redis的压缩包，并进行解压，以及编译地址   wget http://download.redis.io/releases/redis-3.2.9.tar.gz解压tar -zxvf redis版本   进入/usr/local查看刚才解压的redis（注明：我下载到/us">
+  <meta name="description" content="Nginx安装 安装编译工具及库文件  yum -y install make zlib zlib-devel gcc-c++ libtool  openssl openssl-devel   安装PCRE  PCRE 作用是让Nginx 支持Rewrite功能。下载PCRE安装包输入以下命令  cd /usr/local/src/wget http://downloads.sourceforge">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Centos-Redis">
-<meta property="og:url" content="http://yoursite.com/linux/centos-redis.html">
+<meta property="og:title" content="Linux  centos7——安装Nginx">
+<meta property="og:url" content="http://yoursite.com/linux/centos-nginx.html">
 <meta property="og:site_name" content="知音空间">
-<meta property="og:description" content="安装gcc因为redis是c语言编写的，而gcc是编译c的 yum install gcc-c++   wget方式下载redis的压缩包，并进行解压，以及编译地址   wget http://download.redis.io/releases/redis-3.2.9.tar.gz解压tar -zxvf redis版本   进入/usr/local查看刚才解压的redis（注明：我下载到/us">
+<meta property="og:description" content="Nginx安装 安装编译工具及库文件  yum -y install make zlib zlib-devel gcc-c++ libtool  openssl openssl-devel   安装PCRE  PCRE 作用是让Nginx 支持Rewrite功能。下载PCRE安装包输入以下命令  cd /usr/local/src/wget http://downloads.sourceforge">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://img2018.cnblogs.com/blog/1581553/201901/1581553-20190125183228315-820347342.png">
-<meta property="og:updated_time" content="2019-03-01T07:31:29.422Z">
+<meta property="og:updated_time" content="2019-04-04T05:25:27.337Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Centos-Redis">
-<meta name="twitter:description" content="安装gcc因为redis是c语言编写的，而gcc是编译c的 yum install gcc-c++   wget方式下载redis的压缩包，并进行解压，以及编译地址   wget http://download.redis.io/releases/redis-3.2.9.tar.gz解压tar -zxvf redis版本   进入/usr/local查看刚才解压的redis（注明：我下载到/us">
-<meta name="twitter:image" content="https://img2018.cnblogs.com/blog/1581553/201901/1581553-20190125183228315-820347342.png">
+<meta name="twitter:title" content="Linux  centos7——安装Nginx">
+<meta name="twitter:description" content="Nginx安装 安装编译工具及库文件  yum -y install make zlib zlib-devel gcc-c++ libtool  openssl openssl-devel   安装PCRE  PCRE 作用是让Nginx 支持Rewrite功能。下载PCRE安装包输入以下命令  cd /usr/local/src/wget http://downloads.sourceforge">
   
     <link rel="alternative" href="/atom.xml" title="知音空间" type="application/atom+xml">
   
@@ -164,13 +162,13 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Centos-Redis
+      Linux  centos7——安装Nginx
     </h1>
   
 
         
         <a href class="archive-article-date">
-  	<time datetime="2019-02-01T07:19:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-01</time>
+  	<time datetime="2019-04-03T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-04</time>
 </a>
         <!-- 需要添加的位置 -->
         <!-- 开始添加字数统计-->
@@ -180,7 +178,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="color:teal">  字数统计: </span>
-        <span class="post-count">335字</span>
+        <span class="post-count">307字</span>
       </span>
     </span>
 
@@ -200,47 +198,76 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
-<li>安装gcc<br>因为redis是c语言编写的，而gcc是编译c的<blockquote>
-<p>yum install gcc-c++</p>
+        <h3 id="Nginx安装"><a href="#Nginx安装" class="headerlink" title="Nginx安装"></a>Nginx安装</h3><ol>
+<li><p>安装编译工具及库文件</p>
+<blockquote>
+<p>yum -y install make zlib zlib-devel gcc-c++ libtool  openssl openssl-devel</p>
 </blockquote>
 </li>
-<li>wget方式下载redis的压缩包，并进行解压，以及编译地址  <blockquote>
-<p>wget <a href="http://download.redis.io/releases/redis-3.2.9.tar.gz" target="_blank" rel="noopener">http://download.redis.io/releases/redis-3.2.9.tar.gz</a><br>解压<br>tar -zxvf redis版本</p>
+<li><p>安装PCRE</p>
+<blockquote>
+<p>PCRE 作用是让Nginx 支持Rewrite功能。<br>下载PCRE安装包<br>输入以下命令  cd /usr/local/src/<br>wget <a href="http://downloads.sourceforge.net/project/pcre/pcre/8.35/pcre-8.35.tar.gz" target="_blank" rel="noopener">http://downloads.sourceforge.net/project/pcre/pcre/8.35/pcre-8.35.tar.gz</a><br>然后进行解压   tar zxvf pcre-8.35.tar.gz</p>
 </blockquote>
 </li>
-<li>进入/usr/local查看刚才解压的redis（注明：我下载到/usr/local下了，根据目录不同进行查看）<br>进入目录<br>cd redis<br>使用 make 进行编译</li>
+<li><p>进入安装包目录</p>
+<blockquote>
+<p>cd pcre-8.35</p>
+</blockquote>
+</li>
+<li><p>编译安装</p>
+<blockquote>
+<p>./configure<br>make &amp;&amp; make install<br>输入第四步的时候可能会报错在<br>（腾讯服务器  输入<br>yum install -y openssl*<br>yum -y install ncurses-devel）   如果没报错则不用管</p>
+</blockquote>
+</li>
+<li><p>查看pcre版本</p>
+<blockquote>
+<p>pcre-config –version</p>
+</blockquote>
+</li>
+</ol>
+<h5 id="Nginx命令"><a href="#Nginx命令" class="headerlink" title="Nginx命令"></a>Nginx命令</h5><ul>
+<li><p>cd /usr/local/src/</p>
+<blockquote>
+<p>wget <a href="http://nginx.org/download/nginx-1.6.2.tar.gz" target="_blank" rel="noopener">http://nginx.org/download/nginx-1.6.2.tar.gz</a></p>
+</blockquote>
+</li>
+<li><p>解压安装包</p>
+<blockquote>
+<p>tar zxvf nginx-1.6.2.tar.gz</p>
+</blockquote>
+</li>
+<li><p>进入安装包</p>
+<blockquote>
+<p>cd nginx-1.6.2</p>
+</blockquote>
+</li>
+<li><p>进行编译</p>
+<blockquote>
+<p>./configure –prefix=/usr/local/webserver/nginx –with-http_stub_status_module –with-http_ssl_module –with-pcre=/usr/local/src/pcre-8.35<br>make<br>make install</p>
+</blockquote>
+</li>
+<li><p>查看nginx版本</p>
+<blockquote>
+<p>/usr/local/webserver/nginx/sbin/nginx -v</p>
+</blockquote>
+</li>
+<li><p>启动nginx   </p>
+<blockquote>
+<p>/usr/local/webserver/nginx/sbin/nginx</p>
+</blockquote>
+</li>
+<li><p>常用命令</p>
+<blockquote>
+<p>/usr/local/webserver/nginx/sbin/nginx -s reload            # 重新载入配置文件<br>/usr/local/webserver/nginx/sbin/nginx -s reopen            # 重启 Nginx<br>/usr/local/webserver/nginx/sbin/nginx -s stop              # 停止 Nginx</p>
+</blockquote>
+</li>
+<li><p>记得开放端口</p>
+</li>
+<li><p>需要配置https的点击  <a href="/linux/nginxHttps.html">Linux centos7——Nginx安装https</a></p>
+</li>
+<li><p>有问题联系me  18235398825  及微信</p>
+</li>
 </ul>
-<ul>
-<li>安装redis<blockquote>
-<p>make PREFIX=/usr/local/redis install<br>  安装到/usr/local/redis/</p>
-</blockquote>
-</li>
-</ul>
-<ul>
-<li>把redis-3.2.9下的redis.conf拷贝到/usr/local/redis下<blockquote>
-<p>cp /usr/local/redis-3.2.9/redis.conf /usr/local/redis/</p>
-</blockquote>
-</li>
-<li>启动redis服务‘<br>进入redis下<blockquote>
-<p>cd redis<br>./bin/redis-service</p>
-</blockquote>
-</li>
-</ul>
-<p>跳出一个图极为ok（后期补图片）</p>
-<ul>
-<li>修改配置文件<blockquote>
-<p>vi /usr/local/redis/redis.conf<br> 把 daemonize no 改为daemonize yes</p>
-</blockquote>
-</li>
-</ul>
-<ul>
-<li>redis外连有两种模式<blockquote>
-<p>①把redis.conf 中protected-mode yes  改为no   这是不推荐使用的<br>②设置密码<br>先启动redis    ./bin/redis-service ./redis.conf<br>./bin/redis-cli<br>进入redis后输入config get requirepass<br>然后在输入config set requirepass “密码”<br>然后下次在开启时就需要输入<br>./bin/redis-service ./redis.conf<br>./bin/redis-cli -a 密码<br>关闭<br>./bin/redis-cli -a 密码 shutdown<br>如果连接中遇到<br><img src="https://img2018.cnblogs.com/blog/1581553/201901/1581553-20190125183228315-820347342.png" alt="Alt text"></p>
-</blockquote>
-</li>
-</ul>
-<p>需要在配置文件中  把  requirepass前面的#号去掉  然后值必须和redis中设置的密码一致<br>这样足以创建成功<br>如需探讨  微信f2582134978</p>
 
       
 
@@ -325,8 +352,8 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <!--<img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/linux/centos-redis.html" alt="微信分享二维码">-->
-      <img src="//api.qrserver.com/vi/create-qr-code/?size=150x150&date=http://yoursite.com/linux/centos-redis.html" alt="微信分享二维码">
+      <!--<img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/linux/centos-nginx.html" alt="微信分享二维码">-->
+      <img src="//api.qrserver.com/vi/create-qr-code/?size=150x150&date=http://yoursite.com/linux/centos-nginx.html" alt="微信分享二维码">
     </div>
 </div>
 

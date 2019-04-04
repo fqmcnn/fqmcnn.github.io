@@ -6,21 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Centos-Redis | 知音空间</title>
+  <title>Nginx安装https | 知音空间</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="安装gcc因为redis是c语言编写的，而gcc是编译c的 yum install gcc-c++   wget方式下载redis的压缩包，并进行解压，以及编译地址   wget http://download.redis.io/releases/redis-3.2.9.tar.gz解压tar -zxvf redis版本   进入/usr/local查看刚才解压的redis（注明：我下载到/us">
+  <meta name="description" content="登录腾讯云或者阿里云后台找到域名解析  比如你要配置一个www开头的找到对应域名  点击解析  添加记录然后需要等10分钟   购买SSL证书  然后选择自动DNS验证验证估计10分钟以内吧  这个看个人情况   证书下来后再nginx中配置  将已获取到的1_www.domain.com_bundle.crt 证书文件和 2_www.domain.com.key 私钥文件拷贝到 Nginx 服">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Centos-Redis">
-<meta property="og:url" content="http://yoursite.com/linux/centos-redis.html">
+<meta property="og:title" content="Nginx安装https">
+<meta property="og:url" content="http://yoursite.com/linux/nginxHttps.html">
 <meta property="og:site_name" content="知音空间">
-<meta property="og:description" content="安装gcc因为redis是c语言编写的，而gcc是编译c的 yum install gcc-c++   wget方式下载redis的压缩包，并进行解压，以及编译地址   wget http://download.redis.io/releases/redis-3.2.9.tar.gz解压tar -zxvf redis版本   进入/usr/local查看刚才解压的redis（注明：我下载到/us">
+<meta property="og:description" content="登录腾讯云或者阿里云后台找到域名解析  比如你要配置一个www开头的找到对应域名  点击解析  添加记录然后需要等10分钟   购买SSL证书  然后选择自动DNS验证验证估计10分钟以内吧  这个看个人情况   证书下来后再nginx中配置  将已获取到的1_www.domain.com_bundle.crt 证书文件和 2_www.domain.com.key 私钥文件拷贝到 Nginx 服">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://img2018.cnblogs.com/blog/1581553/201901/1581553-20190125183228315-820347342.png">
-<meta property="og:updated_time" content="2019-03-01T07:31:29.422Z">
+<meta property="og:image" content="http://yoursite.com/assets/img/256.png">
+<meta property="og:image" content="http://yoursite.com/assets/img/556.png">
+<meta property="og:image" content="http://yoursite.com/assets/img/656.png">
+<meta property="og:updated_time" content="2019-04-04T05:26:04.148Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Centos-Redis">
-<meta name="twitter:description" content="安装gcc因为redis是c语言编写的，而gcc是编译c的 yum install gcc-c++   wget方式下载redis的压缩包，并进行解压，以及编译地址   wget http://download.redis.io/releases/redis-3.2.9.tar.gz解压tar -zxvf redis版本   进入/usr/local查看刚才解压的redis（注明：我下载到/us">
-<meta name="twitter:image" content="https://img2018.cnblogs.com/blog/1581553/201901/1581553-20190125183228315-820347342.png">
+<meta name="twitter:title" content="Nginx安装https">
+<meta name="twitter:description" content="登录腾讯云或者阿里云后台找到域名解析  比如你要配置一个www开头的找到对应域名  点击解析  添加记录然后需要等10分钟   购买SSL证书  然后选择自动DNS验证验证估计10分钟以内吧  这个看个人情况   证书下来后再nginx中配置  将已获取到的1_www.domain.com_bundle.crt 证书文件和 2_www.domain.com.key 私钥文件拷贝到 Nginx 服">
+<meta name="twitter:image" content="http://yoursite.com/assets/img/256.png">
   
     <link rel="alternative" href="/atom.xml" title="知音空间" type="application/atom+xml">
   
@@ -164,13 +166,13 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Centos-Redis
+      Nginx安装https
     </h1>
   
 
         
         <a href class="archive-article-date">
-  	<time datetime="2019-02-01T07:19:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-01</time>
+  	<time datetime="2019-04-03T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-04</time>
 </a>
         <!-- 需要添加的位置 -->
         <!-- 开始添加字数统计-->
@@ -180,7 +182,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="color:teal">  字数统计: </span>
-        <span class="post-count">335字</span>
+        <span class="post-count">278字</span>
       </span>
     </span>
 
@@ -201,46 +203,52 @@
     <div class="article-entry" itemprop="articleBody">
       
         <ul>
-<li>安装gcc<br>因为redis是c语言编写的，而gcc是编译c的<blockquote>
-<p>yum install gcc-c++</p>
+<li><p>登录腾讯云或者阿里云后台找到域名解析</p>
+<blockquote>
+<p>比如你要配置一个www开头的<br>找到对应域名  点击解析  添加记录<br><img src="/assets/img/256.png" alt="Alt text"><br>然后需要等10分钟</p>
 </blockquote>
 </li>
-<li>wget方式下载redis的压缩包，并进行解压，以及编译地址  <blockquote>
-<p>wget <a href="http://download.redis.io/releases/redis-3.2.9.tar.gz" target="_blank" rel="noopener">http://download.redis.io/releases/redis-3.2.9.tar.gz</a><br>解压<br>tar -zxvf redis版本</p>
+<li><p>购买SSL证书<br><img src="/assets/img/556.png" alt="Alt text"><br><img src="/assets/img/656.png" alt="Alt text"></p>
+<blockquote>
+<p>然后选择自动DNS验证<br>验证估计10分钟以内吧  这个看个人情况</p>
 </blockquote>
 </li>
-<li>进入/usr/local查看刚才解压的redis（注明：我下载到/usr/local下了，根据目录不同进行查看）<br>进入目录<br>cd redis<br>使用 make 进行编译</li>
+<li><p>证书下来后再nginx中配置</p>
+<blockquote>
+<p>将已获取到的1_<a href="http://www.domain.com_bundle.crt" target="_blank" rel="noopener">www.domain.com_bundle.crt</a> 证书文件和 2_<a href="http://www.domain.com.key" target="_blank" rel="noopener">www.domain.com.key</a> 私钥文件拷贝到 Nginx 服务器的 </p>
+</blockquote>
+</li>
+<li><p>在nginx中配置</p>
+<blockquote>
+<p>server {</p>
+<pre><code>listen 443;
+server_name www.domain.com; #填写绑定证书的域名
+ssl on;
+ssl_certificate 1_www.domain.com_bundle.crt;
+ssl_certificate_key 2_www.domain.com.key;
+ssl_session_timeout 5m;
+ssl_protocols TLSv1 TLSv1.1 TLSv1.2; #按照这个协议配置
+ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;#按照这个套件配置
+ssl_prefer_server_ciphers on;
+location / {
+    root   html; #站点目录
+    index  index.html index.htm;
+}
+</code></pre><p>}</p>
+</blockquote>
+</li>
+<li><p>然后加载nginx.conf查看配置有没有问题</p>
+<blockquote>
+<p>命令   在sbin目录输入   ./nginx –t</p>
+</blockquote>
+</li>
+<li><p>记得开放443端口</p>
+</li>
+<li><p>需要配置http强制跳转https的点击   <a href="/linux/SSLhttps.html">http请求域名强制跳转https  前提需要绑定安全证书</a></p>
+</li>
+<li><p>有问题联系me  18235398825  及微信</p>
+</li>
 </ul>
-<ul>
-<li>安装redis<blockquote>
-<p>make PREFIX=/usr/local/redis install<br>  安装到/usr/local/redis/</p>
-</blockquote>
-</li>
-</ul>
-<ul>
-<li>把redis-3.2.9下的redis.conf拷贝到/usr/local/redis下<blockquote>
-<p>cp /usr/local/redis-3.2.9/redis.conf /usr/local/redis/</p>
-</blockquote>
-</li>
-<li>启动redis服务‘<br>进入redis下<blockquote>
-<p>cd redis<br>./bin/redis-service</p>
-</blockquote>
-</li>
-</ul>
-<p>跳出一个图极为ok（后期补图片）</p>
-<ul>
-<li>修改配置文件<blockquote>
-<p>vi /usr/local/redis/redis.conf<br> 把 daemonize no 改为daemonize yes</p>
-</blockquote>
-</li>
-</ul>
-<ul>
-<li>redis外连有两种模式<blockquote>
-<p>①把redis.conf 中protected-mode yes  改为no   这是不推荐使用的<br>②设置密码<br>先启动redis    ./bin/redis-service ./redis.conf<br>./bin/redis-cli<br>进入redis后输入config get requirepass<br>然后在输入config set requirepass “密码”<br>然后下次在开启时就需要输入<br>./bin/redis-service ./redis.conf<br>./bin/redis-cli -a 密码<br>关闭<br>./bin/redis-cli -a 密码 shutdown<br>如果连接中遇到<br><img src="https://img2018.cnblogs.com/blog/1581553/201901/1581553-20190125183228315-820347342.png" alt="Alt text"></p>
-</blockquote>
-</li>
-</ul>
-<p>需要在配置文件中  把  requirepass前面的#号去掉  然后值必须和redis中设置的密码一致<br>这样足以创建成功<br>如需探讨  微信f2582134978</p>
 
       
 
@@ -325,8 +333,8 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <!--<img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/linux/centos-redis.html" alt="微信分享二维码">-->
-      <img src="//api.qrserver.com/vi/create-qr-code/?size=150x150&date=http://yoursite.com/linux/centos-redis.html" alt="微信分享二维码">
+      <!--<img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/linux/nginxHttps.html" alt="微信分享二维码">-->
+      <img src="//api.qrserver.com/vi/create-qr-code/?size=150x150&date=http://yoursite.com/linux/nginxHttps.html" alt="微信分享二维码">
     </div>
 </div>
 
