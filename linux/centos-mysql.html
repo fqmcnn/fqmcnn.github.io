@@ -15,16 +15,16 @@
 <meta property="og:site_name" content="知音空间">
 <meta property="og:description" content="查看系统自带的mysql  rpm -qa | grep mysql   如果系统中有安装的mysql将其卸载  rpm -e –nodeps 自带的mysql版本     下载mysql官方的Yum Repository  wget -i -c http://dev.mysql.com/get/mysql57-community-release-el7-10.noarch.rpm   yum">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://img2018.cnblogs.com/blog/1581553/201901/1581553-20190124173508197-480676611.png">
-<meta property="og:image" content="https://img2018.cnblogs.com/blog/1581553/201901/1581553-20190124173845013-273949521.png">
-<meta property="og:image" content="https://img2018.cnblogs.com/blog/1581553/201901/1581553-20190124174341312-1293706508.png">
-<meta property="og:image" content="https://img2018.cnblogs.com/blog/1581553/201901/1581553-20190124174524941-694709060.png">
-<meta property="og:image" content="https://img2018.cnblogs.com/blog/1581553/201901/1581553-20190124174936841-629100760.png">
-<meta property="og:updated_time" content="2019-03-01T07:39:04.766Z">
+<meta property="og:image" content="http://yoursite.com/assets/img/1581553-20190124173508197-480676611.png">
+<meta property="og:image" content="http://yoursite.com/assets/img/1581553-20190124173845013-273949521.png">
+<meta property="og:image" content="http://yoursite.com/assets/img/1581553-20190124174341312-1293706508.png">
+<meta property="og:image" content="http://yoursite.com/assets/img/1581553-20190124174524941-694709060.png">
+<meta property="og:image" content="http://yoursite.com/assets/img/1581553-20190124174936841-629100760.png">
+<meta property="og:updated_time" content="2019-04-05T12:20:02.963Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Centos-Mysql">
 <meta name="twitter:description" content="查看系统自带的mysql  rpm -qa | grep mysql   如果系统中有安装的mysql将其卸载  rpm -e –nodeps 自带的mysql版本     下载mysql官方的Yum Repository  wget -i -c http://dev.mysql.com/get/mysql57-community-release-el7-10.noarch.rpm   yum">
-<meta name="twitter:image" content="https://img2018.cnblogs.com/blog/1581553/201901/1581553-20190124173508197-480676611.png">
+<meta name="twitter:image" content="http://yoursite.com/assets/img/1581553-20190124173508197-480676611.png">
   
     <link rel="alternative" href="/atom.xml" title="知音空间" type="application/atom+xml">
   
@@ -229,7 +229,7 @@
 <p>yum -y install mysql-community-server</p>
 </blockquote>
 <p>这一步可能装的时间有点长，安装完成后会覆盖之前的mariadb</p>
-<p><img src="https://img2018.cnblogs.com/blog/1581553/201901/1581553-20190124173508197-480676611.png" alt="Alt text"></p>
+<p><img src="/assets/img/1581553-20190124173508197-480676611.png" alt="Alt text"></p>
 </li>
 </ul>
 <p>  上图为下载完成</p>
@@ -241,7 +241,7 @@
 </li>
 <li><p>然后修改密码<br>通过命令在日志中找到密码</p>
 <blockquote>
-<p>grep “password” /var/log/mysqld.log<br><img src="https://img2018.cnblogs.com/blog/1581553/201901/1581553-20190124173845013-273949521.png" alt="Alt text"></p>
+<p>grep “password” /var/log/mysqld.log<br><img src="/assets/img/1581553-20190124173845013-273949521.png" alt="Alt text"></p>
 </blockquote>
 <blockquote>
 <p>mysql -u root -p</p>
@@ -262,16 +262,16 @@
 <blockquote>
 <p>select version();</p>
 </blockquote>
-<p><img src="https://img2018.cnblogs.com/blog/1581553/201901/1581553-20190124174341312-1293706508.png" alt="Alt text"><br>查看其他状态</p>
+<p><img src="/assets/img/1581553-20190124174341312-1293706508.png" alt="Alt text"><br>查看其他状态</p>
 <blockquote>
-<p>status<br><img src="https://img2018.cnblogs.com/blog/1581553/201901/1581553-20190124174524941-694709060.png" alt="Alt text"></p>
+<p>status<br><img src="/assets/img/1581553-20190124174524941-694709060.png" alt="Alt text"></p>
 </blockquote>
 <p>开放端口3306</p>
 <blockquote>
-<p>firewall-cmd –zone=public –add-port=3306/tcp –permanent    （–permanent永久生效，没有此参数重启后失效）</p>
+<p>firewall-cmd --zone=public --add-port=3306/tcp --permanent    （--permanent永久生效，没有此参数重启后失效）</p>
 </blockquote>
 <blockquote>
-<p>firewall-cmd –reload<br><img src="https://img2018.cnblogs.com/blog/1581553/201901/1581553-20190124174936841-629100760.png" alt="Alt text"> </p>
+<p>firewall-cmd --reload<br><img src="/assets/img/1581553-20190124174936841-629100760.png" alt="Alt text"> </p>
 </blockquote>
 <blockquote>
 <p><a href="../linux/index.html">Linux  centos7——防火墙命令</a></p>
@@ -527,15 +527,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">linux-bug</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">bug</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -547,15 +547,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">sql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">post</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">支付</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">springboot-jpa</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">maven</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -571,23 +583,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">maven</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">github</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">post</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">sql</a>
               </li>
             
             <div class="clearfix"></div>

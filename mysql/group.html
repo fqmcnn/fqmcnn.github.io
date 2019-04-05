@@ -8,22 +8,22 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>分组时遇见集合处理 | 知音空间</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="group by + group_concat() 1.group_concat(字段名)可以作为一个输出的字段来使用 2.表示分组之后，根据分组结果，使用group_concat()来放置每一组的某字段的值的集合 列出一些数据 select * from user GROUP BY sex 根据sex字段来分组，sex字段的值只有两个值（男、女），所以分为两组 当group by  单独使用时，">
+  <meta name="description" content="group by + group_concat()   group_concat(字段名)可以作为一个输出的字段来使用  2.表示分组之后，根据分组结果，使用group_concat()来放置每一组的某字段的值的集合 列出一些数据  select * from user GROUP BY sex  根据sex字段来分组，sex字段的值只有两个值（男、女），所以分为两组 当group by  单独">
 <meta property="og:type" content="website">
 <meta property="og:title" content="分组时遇见集合处理">
 <meta property="og:url" content="http://yoursite.com/mysql/group.html">
 <meta property="og:site_name" content="知音空间">
-<meta property="og:description" content="group by + group_concat() 1.group_concat(字段名)可以作为一个输出的字段来使用 2.表示分组之后，根据分组结果，使用group_concat()来放置每一组的某字段的值的集合 列出一些数据 select * from user GROUP BY sex 根据sex字段来分组，sex字段的值只有两个值（男、女），所以分为两组 当group by  单独使用时，">
+<meta property="og:description" content="group by + group_concat()   group_concat(字段名)可以作为一个输出的字段来使用  2.表示分组之后，根据分组结果，使用group_concat()来放置每一组的某字段的值的集合 列出一些数据  select * from user GROUP BY sex  根据sex字段来分组，sex字段的值只有两个值（男、女），所以分为两组 当group by  单独">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://img2018.cnblogs.com/blog/1581553/201901/1581553-20190114155912477-143583040.png">
-<meta property="og:image" content="https://img2018.cnblogs.com/blog/1581553/201901/1581553-20190114160236463-1024388484.png">
-<meta property="og:image" content="https://img2018.cnblogs.com/blog/1581553/201901/1581553-20190114160653287-1367485280.png">
-<meta property="og:image" content="https://img2018.cnblogs.com/blog/1581553/201901/1581553-20190114161154301-1962357135.png">
-<meta property="og:updated_time" content="2019-03-17T02:35:37.547Z">
+<meta property="og:image" content="http://yoursite.com/assets/img/1581553-20190114155912477-143583040.png">
+<meta property="og:image" content="http://yoursite.com/assets/img/1581553-20190114160236463-1024388484.png">
+<meta property="og:image" content="http://yoursite.com/assets/img/1581553-20190114160653287-1367485280.png">
+<meta property="og:image" content="http://yoursite.com/assets/img/1581553-20190114161154301-1962357135.png">
+<meta property="og:updated_time" content="2019-04-05T12:39:27.451Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="分组时遇见集合处理">
-<meta name="twitter:description" content="group by + group_concat() 1.group_concat(字段名)可以作为一个输出的字段来使用 2.表示分组之后，根据分组结果，使用group_concat()来放置每一组的某字段的值的集合 列出一些数据 select * from user GROUP BY sex 根据sex字段来分组，sex字段的值只有两个值（男、女），所以分为两组 当group by  单独使用时，">
-<meta name="twitter:image" content="https://img2018.cnblogs.com/blog/1581553/201901/1581553-20190114155912477-143583040.png">
+<meta name="twitter:description" content="group by + group_concat()   group_concat(字段名)可以作为一个输出的字段来使用  2.表示分组之后，根据分组结果，使用group_concat()来放置每一组的某字段的值的集合 列出一些数据  select * from user GROUP BY sex  根据sex字段来分组，sex字段的值只有两个值（男、女），所以分为两组 当group by  单独">
+<meta name="twitter:image" content="http://yoursite.com/assets/img/1581553-20190114155912477-143583040.png">
   
     <link rel="alternative" href="/atom.xml" title="知音空间" type="application/atom+xml">
   
@@ -183,7 +183,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="color:teal">  字数统计: </span>
-        <span class="post-count">281字</span>
+        <span class="post-count">279字</span>
       </span>
     </span>
 
@@ -203,19 +203,31 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>group by + group_concat()</p>
-<p>1.group_concat(字段名)可以作为一个输出的字段来使用</p>
+        <blockquote>
+<p>group by + group_concat()</p>
+</blockquote>
+<ol>
+<li>group_concat(字段名)可以作为一个输出的字段来使用</li>
+</ol>
 <p>2.表示分组之后，根据分组结果，使用group_concat()来放置每一组的某字段的值的集合</p>
-<p>列出一些数据<br><img src="https://img2018.cnblogs.com/blog/1581553/201901/1581553-20190114155912477-143583040.png" alt="Alt text"></p>
-<p>select * from user GROUP BY sex<br><img src="https://img2018.cnblogs.com/blog/1581553/201901/1581553-20190114160236463-1024388484.png" alt="Alt text"></p>
+<p>列出一些数据<br><img src="/assets/img/1581553-20190114155912477-143583040.png" alt="Alt text"></p>
+<blockquote>
+<p>select * from user GROUP BY sex<br><img src="/assets/img/1581553-20190114160236463-1024388484.png" alt="Alt text"></p>
+</blockquote>
 <p>根据sex字段来分组，sex字段的值只有两个值（男、女），所以分为两组</p>
 <p>当group by  单独使用时，只显示出每组的第一条记录</p>
 <p>所以group by 单独使用时的实际意义并不大</p>
-<p> select sex,GROUP_CONCAT(name) from user GROUP BY sex</p>
-<p><img src="https://img2018.cnblogs.com/blog/1581553/201901/1581553-20190114160653287-1367485280.png" alt="Alt text"></p>
+<blockquote>
+<p>select sex,GROUP_CONCAT(name) from user GROUP BY sex</p>
+</blockquote>
+<p><img src="/assets/img/1581553-20190114160653287-1367485280.png" alt="Alt text"></p>
+<blockquote>
 <p>group by + with rollup</p>
-<p>1.with rollup 的作用是：在最后新增一行，来记录当前列里所有记录的总和</p>
-<p>select sex,count(age) from user GROUP BY sex with rollup<br><img src="https://img2018.cnblogs.com/blog/1581553/201901/1581553-20190114161154301-1962357135.png" alt="Alt text"></p>
+</blockquote>
+<ol>
+<li>with rollup 的作用是：在最后新增一行，来记录当前列里所有记录的总和</li>
+</ol>
+<p>select sex,count(age) from user GROUP BY sex with rollup<br><img src="/assets/img/1581553-20190114161154301-1962357135.png" alt="Alt text"></p>
 <p>以上为一星期前所写</p>
 <p>今天想到一个取group_concat之中的一个第一个（即第一个逗号前的进行截取）</p>
 <p>只需要在你的group_concat() 语句前加substring_index(group_concat(),’,’,1)</p>
@@ -472,15 +484,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">linux-bug</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">bug</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -492,15 +504,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">sql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">post</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">支付</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">springboot-jpa</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">maven</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -516,23 +540,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">maven</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">github</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">post</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">sql</a>
               </li>
             
             <div class="clearfix"></div>
