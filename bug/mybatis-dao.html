@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Cause: java.lang.IllegalArgumentException: Invalid Comparison: java.util.ArrayList and java.lang.String | 知音空间</title>
+  <title>Cause: java.lang.IllegalArgumentException: Mapped Statements Collection Does Not Contain Value for... | 知音空间</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="翻译过来就是   原因：java.lang.IllegalArgumentException：无效比较：java.util.ArrayList和java.lang.String   这个情况在list集合查找数据的sql中出的问题，在接受list的时候加了判断  list!=’’ ,引起了集合与String类型的比较  &amp;lt;choose&amp;gt;      &amp;lt;when test=”nam">
+  <meta name="description" content="有的小伙伴再写sql的时候，可能都在工具中测试过了在同样汇报这个错 这个时候要检查的你dao层比如：   public List getUser(List userCodes) { return this.getSqlSession()         .selectLis(&amp;quot;com.qm.baby.user.getUser&amp;quot;,userCodes);   }  可能你的方法名忘">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Cause: java.lang.IllegalArgumentException: Invalid Comparison: java.util.ArrayList and java.lang.String">
-<meta property="og:url" content="http://yoursite.com/bug/IllegalArgumentException.html">
+<meta property="og:title" content="Cause: java.lang.IllegalArgumentException: Mapped Statements Collection Does Not Contain Value for...">
+<meta property="og:url" content="http://yoursite.com/bug/mybatis-dao.html">
 <meta property="og:site_name" content="知音空间">
-<meta property="og:description" content="翻译过来就是   原因：java.lang.IllegalArgumentException：无效比较：java.util.ArrayList和java.lang.String   这个情况在list集合查找数据的sql中出的问题，在接受list的时候加了判断  list!=’’ ,引起了集合与String类型的比较  &amp;lt;choose&amp;gt;      &amp;lt;when test=”nam">
+<meta property="og:description" content="有的小伙伴再写sql的时候，可能都在工具中测试过了在同样汇报这个错 这个时候要检查的你dao层比如：   public List getUser(List userCodes) { return this.getSqlSession()         .selectLis(&amp;quot;com.qm.baby.user.getUser&amp;quot;,userCodes);   }  可能你的方法名忘">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-18T06:16:39.763Z">
+<meta property="og:updated_time" content="2019-04-29T06:25:22.772Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Cause: java.lang.IllegalArgumentException: Invalid Comparison: java.util.ArrayList and java.lang.String">
-<meta name="twitter:description" content="翻译过来就是   原因：java.lang.IllegalArgumentException：无效比较：java.util.ArrayList和java.lang.String   这个情况在list集合查找数据的sql中出的问题，在接受list的时候加了判断  list!=’’ ,引起了集合与String类型的比较  &amp;lt;choose&amp;gt;      &amp;lt;when test=”nam">
+<meta name="twitter:title" content="Cause: java.lang.IllegalArgumentException: Mapped Statements Collection Does Not Contain Value for...">
+<meta name="twitter:description" content="有的小伙伴再写sql的时候，可能都在工具中测试过了在同样汇报这个错 这个时候要检查的你dao层比如：   public List getUser(List userCodes) { return this.getSqlSession()         .selectLis(&amp;quot;com.qm.baby.user.getUser&amp;quot;,userCodes);   }  可能你的方法名忘">
   
     <link rel="alternative" href="/atom.xml" title="知音空间" type="application/atom+xml">
   
@@ -162,13 +162,13 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Cause: java.lang.IllegalArgumentException: Invalid Comparison: java.util.ArrayList and java.lang.String
+      Cause: java.lang.IllegalArgumentException: Mapped Statements Collection Does Not Contain Value for...
     </h1>
   
 
         
         <a href class="archive-article-date">
-  	<time datetime="2019-03-14T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-15</time>
+  	<time datetime="2019-04-28T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-29</time>
 </a>
         <!-- 需要添加的位置 -->
         <!-- 开始添加字数统计-->
@@ -178,7 +178,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="color:teal">  字数统计: </span>
-        <span class="post-count">157字</span>
+        <span class="post-count">72字</span>
       </span>
     </span>
 
@@ -198,19 +198,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>翻译过来就是</p>
-</blockquote>
+        <p>有的小伙伴再写sql的时候，可能都在工具中测试过了<br>在同样汇报这个错</p>
+<p>这个时候要检查的你dao层<br>比如： </p>
 <blockquote>
-<p>原因：java.lang.IllegalArgumentException：无效比较：java.util.ArrayList和java.lang.String</p>
+<p>public List<user> getUser(List<string> userCodes) {</string></user></p>
+<pre><code>return this.getSqlSession()
+        .selectLis(&quot;com.qm.baby.user.getUser&quot;,userCodes);
+</code></pre><p>  }</p>
 </blockquote>
-<blockquote>
-<p>这个情况在list集合查找数据的sql中出的问题，在接受list的时候加了判断  list!=’’ ,引起了集合与String类型的比较</p>
-</blockquote>
-<p>&lt;choose&gt;<br>      &lt;when test=”names!= null and names!=’’”&gt;<br>        and name in<br>        &lt;foreach collection=”names” item=”name” index=”index” open=”(“ close=”)” separator=”,”&gt;<br>          #{name}<br>        &lt;/foreach&gt;<br>      &lt;/when&gt;<br>      &lt;otherwise&gt;<br>        and name= ‘’<br>      &lt;/otherwise&gt;<br>    &lt;/choose&gt;</p>
-<blockquote>
-<p>换成<br>&lt;choose&gt;<br>      &lt;&lt;when test=”names!= null and names.size&gt;0”&gt;<br>        and name in<br>        &lt;foreach collection=”names” item=”name” index=”index” open=”(“ close=”)” separator=”,”&gt;<br>          #{name}<br>        &lt;/foreach&gt;<br>      &lt;/when&gt;<br>      &lt;otherwise&gt;<br>        and name= ‘’<br>      &lt;/otherwise&gt;<br>    &lt;/choose&gt;</p>
-</blockquote>
+<p>可能你的方法名忘记写了 <span style="color :red">getUser</span></p>
 
       
 
@@ -295,8 +291,8 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <!--<img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/bug/IllegalArgumentException.html" alt="微信分享二维码">-->
-      <img src="//api.qrserver.com/vi/create-qr-code/?size=150x150&date=http://yoursite.com/bug/IllegalArgumentException.html" alt="微信分享二维码">
+      <!--<img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/bug/mybatis-dao.html" alt="微信分享二维码">-->
+      <img src="//api.qrserver.com/vi/create-qr-code/?size=150x150&date=http://yoursite.com/bug/mybatis-dao.html" alt="微信分享二维码">
     </div>
 </div>
 
