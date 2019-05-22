@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Spring事务注解详解 | 知音空间</title>
+  <title>Springboot-Log | 知音空间</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="事务传播属性 @Transactional(propagation=Propagation.REQUIRED)//如果有事务，那么加入事务，没有的话新创建一个  @Transactional(propagation=Propagation.NOT_SUPPORTED)//这个方法不开启事务@Transactional(propagation=Propagation.REQUIREDS_NEW)//">
+  <meta name="description" content="日志级别logger.trace();logger.debug();logger.info();logger.warn();logger.error();springboot 默认是info logging.lever日志级别 可以指定完整的路径logging.file    指定文件名 logging.path    指定目录  一般使用这个   spring.log为默认文件 在控制台输出日志">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Spring事务注解详解">
-<meta property="og:url" content="http://yoursite.com/spring/transaction.html">
+<meta property="og:title" content="Springboot-Log">
+<meta property="og:url" content="http://yoursite.com/springboot/springboot-log.html">
 <meta property="og:site_name" content="知音空间">
-<meta property="og:description" content="事务传播属性 @Transactional(propagation=Propagation.REQUIRED)//如果有事务，那么加入事务，没有的话新创建一个  @Transactional(propagation=Propagation.NOT_SUPPORTED)//这个方法不开启事务@Transactional(propagation=Propagation.REQUIREDS_NEW)//">
+<meta property="og:description" content="日志级别logger.trace();logger.debug();logger.info();logger.warn();logger.error();springboot 默认是info logging.lever日志级别 可以指定完整的路径logging.file    指定文件名 logging.path    指定目录  一般使用这个   spring.log为默认文件 在控制台输出日志">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-07T13:41:04.672Z">
+<meta property="og:updated_time" content="2019-05-12T12:44:54.488Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Spring事务注解详解">
-<meta name="twitter:description" content="事务传播属性 @Transactional(propagation=Propagation.REQUIRED)//如果有事务，那么加入事务，没有的话新创建一个  @Transactional(propagation=Propagation.NOT_SUPPORTED)//这个方法不开启事务@Transactional(propagation=Propagation.REQUIREDS_NEW)//">
+<meta name="twitter:title" content="Springboot-Log">
+<meta name="twitter:description" content="日志级别logger.trace();logger.debug();logger.info();logger.warn();logger.error();springboot 默认是info logging.lever日志级别 可以指定完整的路径logging.file    指定文件名 logging.path    指定目录  一般使用这个   spring.log为默认文件 在控制台输出日志">
   
     <link rel="alternative" href="/atom.xml" title="知音空间" type="application/atom+xml">
   
@@ -162,13 +162,13 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Spring事务注解详解
+      Springboot-Log
     </h1>
   
 
         
         <a href class="archive-article-date">
-  	<time datetime="2019-04-05T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-06</time>
+  	<time datetime="2019-03-29T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-30</time>
 </a>
         <!-- 需要添加的位置 -->
         <!-- 开始添加字数统计-->
@@ -178,7 +178,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="color:teal">  字数统计: </span>
-        <span class="post-count">866字</span>
+        <span class="post-count">113字</span>
       </span>
     </span>
 
@@ -187,7 +187,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text" style="color:teal">  阅读时长: </span>
-        <span class="post-count">3min</span>
+        <span class="post-count">1min</span>
       </span>
     </span>
 </div>
@@ -198,63 +198,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h6 id="事务传播属性"><a href="#事务传播属性" class="headerlink" title="事务传播属性"></a>事务传播属性</h6><ul>
-<li><p>@Transactional(propagation=Propagation.REQUIRED)//如果有事务，那么加入事务，没有的话新创建一个</p>
-</li>
-<li><p>@Transactional(propagation=Propagation.NOT_SUPPORTED)//这个方法不开启事务<br>@Transactional(propagation=Propagation.REQUIREDS_NEW)//不管是否存在事务，都创建一个新的事务，原来的挂起，新的执行完毕，继续执行老的事务</p>
-</li>
-<li><p>@Transactional(propagation=Propagation.MANDATORY)//必须在一个已有的事务中执行，否则抛出异常</p>
-</li>
-<li><p>@Transactional(propagation=Propagation.NEVER)//不能在一个事务中执行，就是当前必须没有事务，否则抛出异常</p>
-</li>
-<li><p>@Transactional(propagation=Propagation.SUPPORTS)//其他bean调用这个方法，如果在其他bean中声明了事务，就是用事务。没有声明，就不用事务。</p>
-</li>
-<li><p>@Transactional(propagation=Propagation.NESTED)//如果一个活动的事务存在，则运行在一个嵌套的事务中，如果没有活动的事务，则按照REQUIRED属性执行，它使用一个单独的事务。这个书屋拥有多个回滚的保存点，内部事务的回滚不会对外部事务造成影响，它只对DataSource TransactionManager事务管理器起效。</p>
-</li>
-<li><p>@Transactional(propagation=Propagation.REQUIRED,readOnly=true)//只读，不能更新，删除</p>
-</li>
-<li><p>@Transactional(propagation=Propagation.REQUIRED,timeout=30)//超时30秒</p>
-</li>
-<li><p>@Transactional(propagation=Propagation.REQUIRED,isolation=Isolation.DEFAULT)//数据库隔离级别</p>
-</li>
-</ul>
-<ul>
-<li>事务传播行为种类</li>
-</ul>
-<blockquote>
-<p>Spring在TransactionDefinition接口中规定了7种类型的事务传播行为，<br>它们规定了事务方法和事务方法发生嵌套调用时事务如何进行传播：说明</p>
-</blockquote>
-<blockquote>
-<p>PROPAGATION_REQUIRED<br>如果当前没有事务，就新建一个事务，如果已经存在一个事务中，加入到这个事务中。这是最常见的选择。</p>
-</blockquote>
-<blockquote>
-<p>PROPAGATION_SUPPORTS<br>支持当前事务，如果当前没有事务，就以非事务方式执行。</p>
-</blockquote>
-<blockquote>
-<p>PROPAGATION_MANDATORY<br>使用当前的事务，如果当前没有事务，就抛出异常。</p>
-</blockquote>
-<blockquote>
-<p>PROPAGATION_REQUIRES_NEW<br>新建事务，如果当前存在事务，把当前事务挂起。</p>
-</blockquote>
-<blockquote>
-<p>PROPAGATION_NOT_SUPPORTED<br>以非事务方式执行操作，如果当前存在事务，就把当前事务挂起。</p>
-</blockquote>
-<blockquote>
-<p>PROPAGATION_NEVER<br>以非事务方式执行，如果当前存在事务，则抛出异常。</p>
-</blockquote>
-<blockquote>
-<p>PROPAGATION_NESTED<br>如果当前存在事务，则在嵌套事务内执行。如果当前没有事务，则执行与PROPAGATION_REQUIRED类似的操作。</p>
-</blockquote>
-<h6 id="事务隔离级别"><a href="#事务隔离级别" class="headerlink" title="事务隔离级别"></a>事务隔离级别</h6><ul>
-<li><p>TransactionDefinition.ISOLATION_DEFAULT：这是默认值，表示使用底层数据库的默认隔离级别。对大部分数据库而言，通常这值就是 </p>
-</li>
-<li><p>TransactionDefinition.ISOLATION_READ_COMMITTED。<br>TransactionDefinition.ISOLATION_READ_UNCOMMITTED：该隔离级别表示一个事务可以读取另一个事务修改但还没有提交的数据。该级别不能防止脏读，不可重复读和幻读，因此很少使用该隔离级别。比如PostgreSQL实际上并没有此级别。</p>
-</li>
-<li><p>TransactionDefinition.ISOLATION_READ_COMMITTED：该隔离级别表示一个事务只能读取另一个事务已经提交的数据。该级别可以防止脏读，这也是大多数情况下的推荐值。<br>TransactionDefinition.ISOLATION_REPEATABLE_READ：该隔离级别表示一个事务在整个过程中可以多次重复执行某个查询，并且每次返回的记录都相同。该级别可以防止脏读和不可重复读。</p>
-</li>
-<li><p>TransactionDefinition.ISOLATION_SERIALIZABLE：所有的事务依次逐个执行，这样事务之间就完全不可能产生干扰，也就是说，该级别可以防止脏读、不可重复读以及幻读。但是这将严重影响程序的性能。通常情况下也不会用到该级别。</p>
-</li>
-</ul>
+        <p>日志级别<br>logger.trace();<br>logger.debug();<br>logger.info();<br>logger.warn();<br>logger.error();<br>springboot 默认是info</p>
+<p>logging.lever日志级别</p>
+<p>可以指定完整的路径<br>logging.file    指定文件名</p>
+<p>logging.path    指定目录  一般使用这个   spring.log为默认文件</p>
+<p>在控制台输出日志的格式<br>logging.pattern.console=%d{yyyy-MM-dd}[%thread] %-Slevel %logger{50} - %msg%n<br>指定文件日志的输出格式<br>logging.pattern.file=</p>
+<p>日志框架使用spring-loback.xml   属于springboot高级框架</p>
 
       
 
@@ -339,8 +288,8 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <!--<img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/spring/transaction.html" alt="微信分享二维码">-->
-      <img src="//api.qrserver.com/vi/create-qr-code/?size=150x150&date=http://yoursite.com/spring/transaction.html" alt="微信分享二维码">
+      <!--<img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/springboot/springboot-log.html" alt="微信分享二维码">-->
+      <img src="//api.qrserver.com/vi/create-qr-code/?size=150x150&date=http://yoursite.com/springboot/springboot-log.html" alt="微信分享二维码">
     </div>
 </div>
 

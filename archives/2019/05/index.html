@@ -6,19 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Spring事务注解详解 | 知音空间</title>
+  <title>Archives: 2019/5 | 知音空间</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="事务传播属性 @Transactional(propagation=Propagation.REQUIRED)//如果有事务，那么加入事务，没有的话新创建一个  @Transactional(propagation=Propagation.NOT_SUPPORTED)//这个方法不开启事务@Transactional(propagation=Propagation.REQUIREDS_NEW)//">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Spring事务注解详解">
-<meta property="og:url" content="http://yoursite.com/spring/transaction.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="知音空间">
+<meta property="og:url" content="http://yoursite.com/archives/2019/05/index.html">
 <meta property="og:site_name" content="知音空间">
-<meta property="og:description" content="事务传播属性 @Transactional(propagation=Propagation.REQUIRED)//如果有事务，那么加入事务，没有的话新创建一个  @Transactional(propagation=Propagation.NOT_SUPPORTED)//这个方法不开启事务@Transactional(propagation=Propagation.REQUIREDS_NEW)//">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-07T13:41:04.672Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Spring事务注解详解">
-<meta name="twitter:description" content="事务传播属性 @Transactional(propagation=Propagation.REQUIRED)//如果有事务，那么加入事务，没有的话新创建一个  @Transactional(propagation=Propagation.NOT_SUPPORTED)//这个方法不开启事务@Transactional(propagation=Propagation.REQUIREDS_NEW)//">
+<meta name="twitter:title" content="知音空间">
   
     <link rel="alternative" href="/atom.xml" title="知音空间" type="application/atom+xml">
   
@@ -64,9 +60,9 @@
 			</div>
 			<ul>
 			
-				<li><a href="../index.html">主页</a></li>
+				<li><a href="../../../index.html">主页</a></li>
 	        
-				<li><a href="../tags/index.html">随笔</a></li>
+				<li><a href="../../../tags/index.html">随笔</a></li>
 	        
 			</ul>
 		</nav>
@@ -138,9 +134,9 @@
 				<ul style="width: 50%">
 				
 				
-					<li style="width: 50%"><a href="../index.html">主页</a></li>
+					<li style="width: 50%"><a href="../../../index.html">主页</a></li>
 		        
-					<li style="width: 50%"><a href="../tags/index.html">随笔</a></li>
+					<li style="width: 50%"><a href="../../../tags/index.html">随笔</a></li>
 		        
 				</ul>
 			</nav>
@@ -155,257 +151,49 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-" class="article article-type-page " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      Spring事务注解详解
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href=".." class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="../../../2019/05/22/sk/" class="archive-article-date">
+  	<time datetime="2019-05-22T13:35:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-22</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="../../../2019/05/22/sk/">Sk</a>
     </h1>
   
 
-        
-        <a href class="archive-article-date">
-  	<time datetime="2019-04-05T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-06</time>
-</a>
-        <!-- 需要添加的位置 -->
-        <!-- 开始添加字数统计-->
-        
-          <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text" style="color:teal">  字数统计: </span>
-        <span class="post-count">866字</span>
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text" style="color:teal">  阅读时长: </span>
-        <span class="post-count">3min</span>
-      </span>
-    </span>
-</div>
+        <div class="article-info info-on-right">
           
-        <!-- 添加完成 -->
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h6 id="事务传播属性"><a href="#事务传播属性" class="headerlink" title="事务传播属性"></a>事务传播属性</h6><ul>
-<li><p>@Transactional(propagation=Propagation.REQUIRED)//如果有事务，那么加入事务，没有的话新创建一个</p>
-</li>
-<li><p>@Transactional(propagation=Propagation.NOT_SUPPORTED)//这个方法不开启事务<br>@Transactional(propagation=Propagation.REQUIREDS_NEW)//不管是否存在事务，都创建一个新的事务，原来的挂起，新的执行完毕，继续执行老的事务</p>
-</li>
-<li><p>@Transactional(propagation=Propagation.MANDATORY)//必须在一个已有的事务中执行，否则抛出异常</p>
-</li>
-<li><p>@Transactional(propagation=Propagation.NEVER)//不能在一个事务中执行，就是当前必须没有事务，否则抛出异常</p>
-</li>
-<li><p>@Transactional(propagation=Propagation.SUPPORTS)//其他bean调用这个方法，如果在其他bean中声明了事务，就是用事务。没有声明，就不用事务。</p>
-</li>
-<li><p>@Transactional(propagation=Propagation.NESTED)//如果一个活动的事务存在，则运行在一个嵌套的事务中，如果没有活动的事务，则按照REQUIRED属性执行，它使用一个单独的事务。这个书屋拥有多个回滚的保存点，内部事务的回滚不会对外部事务造成影响，它只对DataSource TransactionManager事务管理器起效。</p>
-</li>
-<li><p>@Transactional(propagation=Propagation.REQUIRED,readOnly=true)//只读，不能更新，删除</p>
-</li>
-<li><p>@Transactional(propagation=Propagation.REQUIRED,timeout=30)//超时30秒</p>
-</li>
-<li><p>@Transactional(propagation=Propagation.REQUIRED,isolation=Isolation.DEFAULT)//数据库隔离级别</p>
-</li>
-</ul>
-<ul>
-<li>事务传播行为种类</li>
-</ul>
-<blockquote>
-<p>Spring在TransactionDefinition接口中规定了7种类型的事务传播行为，<br>它们规定了事务方法和事务方法发生嵌套调用时事务如何进行传播：说明</p>
-</blockquote>
-<blockquote>
-<p>PROPAGATION_REQUIRED<br>如果当前没有事务，就新建一个事务，如果已经存在一个事务中，加入到这个事务中。这是最常见的选择。</p>
-</blockquote>
-<blockquote>
-<p>PROPAGATION_SUPPORTS<br>支持当前事务，如果当前没有事务，就以非事务方式执行。</p>
-</blockquote>
-<blockquote>
-<p>PROPAGATION_MANDATORY<br>使用当前的事务，如果当前没有事务，就抛出异常。</p>
-</blockquote>
-<blockquote>
-<p>PROPAGATION_REQUIRES_NEW<br>新建事务，如果当前存在事务，把当前事务挂起。</p>
-</blockquote>
-<blockquote>
-<p>PROPAGATION_NOT_SUPPORTED<br>以非事务方式执行操作，如果当前存在事务，就把当前事务挂起。</p>
-</blockquote>
-<blockquote>
-<p>PROPAGATION_NEVER<br>以非事务方式执行，如果当前存在事务，则抛出异常。</p>
-</blockquote>
-<blockquote>
-<p>PROPAGATION_NESTED<br>如果当前存在事务，则在嵌套事务内执行。如果当前没有事务，则执行与PROPAGATION_REQUIRED类似的操作。</p>
-</blockquote>
-<h6 id="事务隔离级别"><a href="#事务隔离级别" class="headerlink" title="事务隔离级别"></a>事务隔离级别</h6><ul>
-<li><p>TransactionDefinition.ISOLATION_DEFAULT：这是默认值，表示使用底层数据库的默认隔离级别。对大部分数据库而言，通常这值就是 </p>
-</li>
-<li><p>TransactionDefinition.ISOLATION_READ_COMMITTED。<br>TransactionDefinition.ISOLATION_READ_UNCOMMITTED：该隔离级别表示一个事务可以读取另一个事务修改但还没有提交的数据。该级别不能防止脏读，不可重复读和幻读，因此很少使用该隔离级别。比如PostgreSQL实际上并没有此级别。</p>
-</li>
-<li><p>TransactionDefinition.ISOLATION_READ_COMMITTED：该隔离级别表示一个事务只能读取另一个事务已经提交的数据。该级别可以防止脏读，这也是大多数情况下的推荐值。<br>TransactionDefinition.ISOLATION_REPEATABLE_READ：该隔离级别表示一个事务在整个过程中可以多次重复执行某个查询，并且每次返回的记录都相同。该级别可以防止脏读和不可重复读。</p>
-</li>
-<li><p>TransactionDefinition.ISOLATION_SERIALIZABLE：所有的事务依次逐个执行，这样事务之间就完全不可能产生干扰，也就是说，该级别可以防止脏读、不可重复读以及幻读。但是这将严重影响程序的性能。通常情况下也不会用到该级别。</p>
-</li>
-</ul>
+          
 
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/img/20190225231228.jpg">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
         </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
-        </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <!--<img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/spring/transaction.html" alt="微信分享二维码">-->
-      <img src="//api.qrserver.com/vi/create-qr-code/?size=150x150&date=http://yoursite.com/spring/transaction.html" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
+  
+  
+    </div></section>
   
 
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <!-- 来必力City版安装代码 -->
-<div id="lv-container" data-id="city" data-uid="MTAyMC80MzE4NS8xOTczMQ==">
-    <script type="text/javascript">
-       (function(d, s) {
-           window.livereOPtions = {
-               refer: 'www.companionspace.cn' + location.pathname
-           };
-
-           var j, e = d.getElementsByTagName(s)[0];
     
-           if (typeof LivereTower === 'function') { return; }
-    
-           j = d.createElement(s);
-           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-           j.async = true;
-    
-           e.parentNode.insertBefore(j, e);
-       })(document, 'script');
-    </script>
-    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
-    </div>
-    <!-- City版安装代码已完成 -->
-  
-
-  
-  
-  
-
-  
-
-  
-
-  
 
 
           </div>
@@ -441,7 +229,7 @@
 		mathjax: false,
 		isHome: false,
 		isPost: false,
-		isArchive: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
