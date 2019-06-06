@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Cause: java.lang.IllegalArgumentException: Mapped Statements Collection Does Not Contain Value for... | 知音空间</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="有的小伙伴再写sql的时候，可能都在工具中测试过了在同样汇报这个错 这个时候要检查的你dao层比如：   public List getUser(List userCodes) { return this.getSqlSession()         .selectLis(&amp;quot;com.qm.baby.user.getUser&amp;quot;,userCodes);   }  可能你的方法名忘">
+  <meta name="description" content="有的小伙伴再写sql的时候，可能都在工具中测试过了在同样汇报这个错 这个时候要检查的你dao层比如：1234public List&amp;lt;User&amp;gt; getUser(List&amp;lt;String&amp;gt; userCodes) &amp;#123;    return this.getSqlSession().selectLis(&amp;quot;com.qm.baby.user.getUser&amp;quot;">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Cause: java.lang.IllegalArgumentException: Mapped Statements Collection Does Not Contain Value for...">
 <meta property="og:url" content="http://yoursite.com/bug/mybatis-dao.html">
 <meta property="og:site_name" content="知音空间">
-<meta property="og:description" content="有的小伙伴再写sql的时候，可能都在工具中测试过了在同样汇报这个错 这个时候要检查的你dao层比如：   public List getUser(List userCodes) { return this.getSqlSession()         .selectLis(&amp;quot;com.qm.baby.user.getUser&amp;quot;,userCodes);   }  可能你的方法名忘">
+<meta property="og:description" content="有的小伙伴再写sql的时候，可能都在工具中测试过了在同样汇报这个错 这个时候要检查的你dao层比如：1234public List&amp;lt;User&amp;gt; getUser(List&amp;lt;String&amp;gt; userCodes) &amp;#123;    return this.getSqlSession().selectLis(&amp;quot;com.qm.baby.user.getUser&amp;quot;">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-29T06:25:22.772Z">
+<meta property="og:updated_time" content="2019-06-06T00:59:45.830Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Cause: java.lang.IllegalArgumentException: Mapped Statements Collection Does Not Contain Value for...">
-<meta name="twitter:description" content="有的小伙伴再写sql的时候，可能都在工具中测试过了在同样汇报这个错 这个时候要检查的你dao层比如：   public List getUser(List userCodes) { return this.getSqlSession()         .selectLis(&amp;quot;com.qm.baby.user.getUser&amp;quot;,userCodes);   }  可能你的方法名忘">
+<meta name="twitter:description" content="有的小伙伴再写sql的时候，可能都在工具中测试过了在同样汇报这个错 这个时候要检查的你dao层比如：1234public List&amp;lt;User&amp;gt; getUser(List&amp;lt;String&amp;gt; userCodes) &amp;#123;    return this.getSqlSession().selectLis(&amp;quot;com.qm.baby.user.getUser&amp;quot;">
   
     <link rel="alternative" href="/atom.xml" title="知音空间" type="application/atom+xml">
   
@@ -178,7 +178,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="color:teal">  字数统计: </span>
-        <span class="post-count">72字</span>
+        <span class="post-count">80字</span>
       </span>
     </span>
 
@@ -199,13 +199,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>有的小伙伴再写sql的时候，可能都在工具中测试过了<br>在同样汇报这个错</p>
-<p>这个时候要检查的你dao层<br>比如： </p>
-<blockquote>
-<p>public List<user> getUser(List<string> userCodes) {</string></user></p>
-<pre><code>return this.getSqlSession()
-        .selectLis(&quot;com.qm.baby.user.getUser&quot;,userCodes);
-</code></pre><p>  }</p>
-</blockquote>
+<p>这个时候要检查的你dao层<br>比如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public List&lt;User&gt; getUser(List&lt;String&gt; userCodes) &#123;</span><br><span class="line"></span><br><span class="line">    return this.getSqlSession().selectLis(&quot;com.qm.baby.user.getUser&quot;,userCodes);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>可能你的方法名忘记写了 <span style="color :red">getUser</span></p>
 
       
@@ -462,15 +456,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">linux-bug</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">bug</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -494,10 +488,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
@@ -506,11 +496,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">wm_concat</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">支付</a>
+                <a href="javascript:void(0)" class="js-tag color1">maven</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -522,7 +516,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">maven</a>
+                <a href="javascript:void(0)" class="js-tag color3">支付</a>
               </li>
              
               <li class="article-tag-list-item">

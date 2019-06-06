@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="知音空间">
 <meta property="og:description" content="首先pom文件需要引入一下两个依赖1.引入thymeleaf 模板1234&amp;lt;dependency&amp;gt;    &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;    &amp;lt;artifactId&amp;gt;spring-boot-starter-thymeleaf&amp;lt;/artifactId&amp;gt;&amp;lt;/dependency&amp;">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-05T14:06:22.018Z">
+<meta property="og:updated_time" content="2019-06-05T14:10:47.217Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Springboot-Thymeleaf">
 <meta name="twitter:description" content="首先pom文件需要引入一下两个依赖1.引入thymeleaf 模板1234&amp;lt;dependency&amp;gt;    &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;    &amp;lt;artifactId&amp;gt;spring-boot-starter-thymeleaf&amp;lt;/artifactId&amp;gt;&amp;lt;/dependency&amp;">
@@ -178,7 +178,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="color:teal">  字数统计: </span>
-        <span class="post-count">308字</span>
+        <span class="post-count">316字</span>
       </span>
     </span>
 
@@ -203,7 +203,7 @@
 <p>3.配置文件的设置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">  thymeleaf:</span><br><span class="line">    cache: false  #关闭缓存</span><br><span class="line">    mode: HTML5</span><br><span class="line">    encoding: UTF-8</span><br><span class="line">    servlet:</span><br><span class="line">      content-type: text/html</span><br><span class="line">    prefix: classpath:/templates/</span><br><span class="line">    suffix: .html</span><br><span class="line">  mvc:</span><br><span class="line">    static-path-pattern: /static/**</span><br></pre></td></tr></table></figure></p>
 <p>4.在项目中建一个controller包 准备测试用<br>比如建立一个HelloController<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@Controller</span><br><span class="line">public class HelloController &#123;</span><br><span class="line"></span><br><span class="line">    @RequestMapping(&quot;/hellobaby&quot;)</span><br><span class="line">    public String hello(Map&lt;Object, Object&gt; map) &#123;</span><br><span class="line">        map.put(&quot;hello&quot;, &quot;就问你简不简单&quot;);</span><br><span class="line">        return &quot;/hello&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>5.建立hello.html 页面<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot; xmlns:th=&quot;http://www.thymeleaf.org&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div th:text=&quot;$&#123;hello&#125;&quot;&gt;这里欢迎&lt;/div&gt;</span><br><span class="line">    &lt;h1&gt;hello&lt;/h1&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
-<p>页面需要引入xmlns:th=”<a href="http://www.thymeleaf.org&quot;" target="_blank" rel="noopener">http://www.thymeleaf.org&quot;</a></p>
+<p>页面需要引入导入thymeleaf的名称空间 xmlns:th=”<a href="http://www.thymeleaf.org&quot;" target="_blank" rel="noopener">http://www.thymeleaf.org&quot;</a></p>
 <p><span style="color:red">切记在此controller中不要用@RestController  用@RestController默认配置的跳转页面就会失效</span><br>然后启动你的项目，访问localhost:8080/hellobaby </p>
 
       
@@ -460,15 +460,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">linux-bug</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">bug</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -492,10 +492,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
@@ -504,11 +500,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">wm_concat</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">支付</a>
+                <a href="javascript:void(0)" class="js-tag color1">maven</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -520,7 +520,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">maven</a>
+                <a href="javascript:void(0)" class="js-tag color3">支付</a>
               </li>
              
               <li class="article-tag-list-item">

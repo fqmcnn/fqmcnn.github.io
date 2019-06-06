@@ -18,7 +18,7 @@
 <meta property="og:image" content="http://yoursite.com/assets/img/256.png">
 <meta property="og:image" content="http://yoursite.com/assets/img/556.png">
 <meta property="og:image" content="http://yoursite.com/assets/img/656.png">
-<meta property="og:updated_time" content="2019-04-04T05:26:04.148Z">
+<meta property="og:updated_time" content="2019-06-06T01:04:46.504Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Nginx安装https">
 <meta name="twitter:description" content="登录腾讯云或者阿里云后台找到域名解析  比如你要配置一个www开头的找到对应域名  点击解析  添加记录然后需要等10分钟   购买SSL证书  然后选择自动DNS验证验证估计10分钟以内吧  这个看个人情况   证书下来后再nginx中配置  将已获取到的1_www.domain.com_bundle.crt 证书文件和 2_www.domain.com.key 私钥文件拷贝到 Nginx 服">
@@ -182,7 +182,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="color:teal">  字数统计: </span>
-        <span class="post-count">278字</span>
+        <span class="post-count">282字</span>
       </span>
     </span>
 
@@ -219,23 +219,7 @@
 </blockquote>
 </li>
 <li><p>在nginx中配置</p>
-<blockquote>
-<p>server {</p>
-<pre><code>listen 443;
-server_name www.domain.com; #填写绑定证书的域名
-ssl on;
-ssl_certificate 1_www.domain.com_bundle.crt;
-ssl_certificate_key 2_www.domain.com.key;
-ssl_session_timeout 5m;
-ssl_protocols TLSv1 TLSv1.1 TLSv1.2; #按照这个协议配置
-ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;#按照这个套件配置
-ssl_prefer_server_ciphers on;
-location / {
-    root   html; #站点目录
-    index  index.html index.htm;
-}
-</code></pre><p>}</p>
-</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen 443;</span><br><span class="line">    server_name www.domain.com; #填写绑定证书的域名</span><br><span class="line">    ssl on;</span><br><span class="line">    ssl_certificate 1_www.domain.com_bundle.crt;</span><br><span class="line">    ssl_certificate_key 2_www.domain.com.key;</span><br><span class="line">    ssl_session_timeout 5m;</span><br><span class="line">    ssl_protocols TLSv1 TLSv1.1 TLSv1.2; #按照这个协议配置</span><br><span class="line">    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;#按照这个套件配置</span><br><span class="line">    ssl_prefer_server_ciphers on;</span><br><span class="line">    location / &#123;</span><br><span class="line">        root   html; #站点目录</span><br><span class="line">        index  index.html index.htm;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>然后加载nginx.conf查看配置有没有问题</p>
 <blockquote>
@@ -504,15 +488,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">linux-bug</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">bug</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -536,10 +520,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
@@ -548,11 +528,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">wm_concat</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">支付</a>
+                <a href="javascript:void(0)" class="js-tag color1">maven</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -564,7 +548,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">maven</a>
+                <a href="javascript:void(0)" class="js-tag color3">支付</a>
               </li>
              
               <li class="article-tag-list-item">

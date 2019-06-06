@@ -18,7 +18,7 @@
 <meta property="og:image" content="http://yoursite.com/assets/img/1581553-20190122155302669-1582052676.png">
 <meta property="og:image" content="http://yoursite.com/assets/img/1581553-20190122155814833-697591543.png">
 <meta property="og:image" content="http://yoursite.com/assets/img/20190405204404.jpg">
-<meta property="og:updated_time" content="2019-04-05T12:44:47.149Z">
+<meta property="og:updated_time" content="2019-06-06T01:15:55.676Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="微信支付App版——Java">
 <meta name="twitter:description" content="现在随着社会的发展，很多用户都在用第三方支付前段时间公司要做微信支付和支付宝支付对于我来说是一个挑战，虽然有微信的支付文档　　https://pay.weixin.qq.com/wiki/doc/api/index.html我阅读了一下感觉挺简单的   但还是踩了两天坑才做出来 首先我们需要看一下统一下单接口需要的参数也许第一次接触的人不是很清楚接下来一步一步的操作开打 https://pay.">
@@ -182,7 +182,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="color:teal">  字数统计: </span>
-        <span class="post-count">3.4k字</span>
+        <span class="post-count">3.6k字</span>
       </span>
     </span>
 
@@ -191,7 +191,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text" style="color:teal">  阅读时长: </span>
-        <span class="post-count">18min</span>
+        <span class="post-count">19min</span>
       </span>
     </span>
 </div>
@@ -219,607 +219,21 @@
 <blockquote>
 <p>这里的签名是需要加密，需要二次加密<br>之前也看了一些文档代码、以及询问朋友，结果经过测试都是有误，因为一些jia包引用类不全，自己整理了一套　　希望能帮到大家</p>
 </blockquote>
-<p>/**<br> * Description<br> * Copyright (C),<br> * FileName: WeiXinController<br> * Author:   QiMing<br> * Date:     2019/1/22 16:05<br> */<br>package com.mopin.morepick.api.controller.pay.wechartPay;</p>
-<p>import com.github.pagehelper.util.StringUtil;<br>import com.mopin.morepick.dto.ResponseCode;<br>import com.mopin.morepick.dto.ResponseMessage;<br>import com.mopin.morepick.service.orders.OrdersService;<br>import io.swagger.annotations.*;<br>import org.springframework.beans.factory.annotation.Autowired;<br>import org.springframework.web.bind.annotation.RequestMapping;<br>import org.springframework.web.bind.annotation.RequestMethod;<br>import org.springframework.web.bind.annotation.RequestParam;<br>import org.springframework.web.bind.annotation.RestController;</p>
-<p>import java.util.Map;</p>
-<p>@Api(tags = “微信付款”, description = “微信付款模块”)<br>@ApiResponses(value = {<br>        @ApiResponse(code = -1, message = “未知错误”),<br>        @ApiResponse(code = 200, message = “数据获取成功或操作失败”),<br>        @ApiResponse(code = 40002, message = “参数错误”)})<br>@RestController<br>@RequestMapping(“/buypay”)<br>public class WeiXinController {</p>
-<pre><code>/**
- * 订单
- */
-@Autowired
-private OrdersService ordersService;
-
-/**
- * @param pkOrders, ip
- * @return com.mopin.morepick.dto.ResponseMessage
- * @Description 统一下单（微信）
- * @author QiMing 
- * @date 2018/9/5 17:14
- */
-@RequestMapping(value = &quot;/getcreate&quot;, method = RequestMethod.POST)
-@ApiOperation(value = &quot;统一下单&quot;)
-public ResponseMessage getcreate(@RequestParam @ApiParam(value = &quot;订单主键 &quot;, name = &quot;pkOrders&quot;, required = true) String pkOrders,
-                                 @RequestParam @ApiParam(value = &quot;ip &quot;, name = &quot;ip&quot;, required = true) String ip,
-                                 @RequestParam @ApiParam(value = &quot;用户 &quot;, name = &quot;pkUser&quot;, required = true) String pkUser) {
-
-    if (StringUtil.isNotEmpty(pkOrders) &amp;&amp; StringUtil.isNotEmpty(ip)) {
-        Map&lt;String, Object&gt; o = ordersService.crate(pkOrders, ip, pkUser);
-        if (o.size() == 7) {
-            return ResponseMessage.createSuccessResult().setData(o).setMsg(&quot;获取数据成功&quot;);
-        } else if (o.size() == 2) {
-            return ResponseMessage.createErrorResult(ResponseCode.PARAMS_ERROR_CODE, &quot;无此订单,或拼单尚未完成&quot;);
-        }
-
-    }
-    return ResponseMessage.createErrorResult(ResponseCode.PARAMS_ERROR_CODE, &quot;参数错误&quot;);
-}
-</code></pre><p>}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Description</span><br><span class="line"> * Copyright (C),</span><br><span class="line"> * FileName: WeiXinController</span><br><span class="line"> * Author:   QiMing </span><br><span class="line"> * Date:     2019/1/22 16:05</span><br><span class="line"> */</span><br><span class="line">package com.mopin.morepick.api.controller.pay.wechartPay;</span><br><span class="line"></span><br><span class="line">import com.github.pagehelper.util.StringUtil;</span><br><span class="line">import com.mopin.morepick.dto.ResponseCode;</span><br><span class="line">import com.mopin.morepick.dto.ResponseMessage;</span><br><span class="line">import com.mopin.morepick.service.orders.OrdersService;</span><br><span class="line">import io.swagger.annotations.*;</span><br><span class="line">import org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line">import org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line">import org.springframework.web.bind.annotation.RequestMethod;</span><br><span class="line">import org.springframework.web.bind.annotation.RequestParam;</span><br><span class="line">import org.springframework.web.bind.annotation.RestController;</span><br><span class="line"></span><br><span class="line">import java.util.Map;</span><br><span class="line"></span><br><span class="line">@Api(tags = &quot;微信付款&quot;, description = &quot;微信付款模块&quot;)</span><br><span class="line">@ApiResponses(value = &#123;</span><br><span class="line">        @ApiResponse(code = -1, message = &quot;未知错误&quot;),</span><br><span class="line">        @ApiResponse(code = 200, message = &quot;数据获取成功或操作失败&quot;),</span><br><span class="line">        @ApiResponse(code = 40002, message = &quot;参数错误&quot;)&#125;)</span><br><span class="line">@RestController</span><br><span class="line">@RequestMapping(&quot;/buypay&quot;)</span><br><span class="line">public class WeiXinController &#123;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 订单</span><br><span class="line">     */</span><br><span class="line">    @Autowired</span><br><span class="line">    private OrdersService ordersService;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * @param pkOrders, ip</span><br><span class="line">     * @return com.mopin.morepick.dto.ResponseMessage</span><br><span class="line">     * @Description 统一下单（微信）</span><br><span class="line">     * @author QiMing </span><br><span class="line">     * @date 2018/9/5 17:14</span><br><span class="line">     */</span><br><span class="line">    @RequestMapping(value = &quot;/getcreate&quot;, method = RequestMethod.POST)</span><br><span class="line">    @ApiOperation(value = &quot;统一下单&quot;)</span><br><span class="line">    public ResponseMessage getcreate(@RequestParam @ApiParam(value = &quot;订单主键 &quot;, name = &quot;pkOrders&quot;, required = true) String pkOrders,</span><br><span class="line">                                     @RequestParam @ApiParam(value = &quot;ip &quot;, name = &quot;ip&quot;, required = true) String ip,</span><br><span class="line">                                     @RequestParam @ApiParam(value = &quot;用户 &quot;, name = &quot;pkUser&quot;, required = true) String pkUser) &#123;</span><br><span class="line"></span><br><span class="line">        if (StringUtil.isNotEmpty(pkOrders) &amp;&amp; StringUtil.isNotEmpty(ip)) &#123;</span><br><span class="line">            Map&lt;String, Object&gt; o = ordersService.crate(pkOrders, ip, pkUser);</span><br><span class="line">            if (o.size() == 7) &#123;</span><br><span class="line">                return ResponseMessage.createSuccessResult().setData(o).setMsg(&quot;获取数据成功&quot;);</span><br><span class="line">            &#125; else if (o.size() == 2) &#123;</span><br><span class="line">                return ResponseMessage.createErrorResult(ResponseCode.PARAMS_ERROR_CODE, &quot;无此订单,或拼单尚未完成&quot;);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        return ResponseMessage.createErrorResult(ResponseCode.PARAMS_ERROR_CODE, &quot;参数错误&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>service层我就不写了  相信大家知道怎么创建<br>接下来是实现层<br>/**<br> * @Description 微信下单<br> * @param   pkOrders<br> * @return  com.mopin.morepick.model.orders.Orders<br> * @author  QiMing<br> * @date  2018/9/4 14:03<br> */<br>@Override<br>public Map&lt;String, Object&gt; crate(String pkOrders, String Ip, String pkUser) {</p>
+<p>service层我就不写了  相信大家知道怎么创建<br>接下来是实现层<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @Description 微信下单</span><br><span class="line"> * @param   pkOrders</span><br><span class="line"> * @return  com.mopin.morepick.model.orders.Orders</span><br><span class="line"> * @author  QiMing </span><br><span class="line"> * @date  2018/9/4 14:03</span><br><span class="line"> */</span><br><span class="line">@Override</span><br><span class="line">public Map&lt;String, Object&gt; crate(String pkOrders, String Ip, String pkUser) &#123;</span><br><span class="line"></span><br><span class="line">    String Body = &quot;测试&quot;;</span><br><span class="line">    String Appid = WXPayConfig.appid;</span><br><span class="line">    String Mch_id = WXPayConfig.mch_id;</span><br><span class="line">    String NOstr = CommonUtil.getRandomString(32);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 这个地方我想说一下</span><br><span class="line">     * 价钱可能定义的是Double类型  它可能会失去准确度</span><br><span class="line">     * 因为微信支付只接受两位小数的数据</span><br><span class="line">     * 比如你数据库中的值是38.88  是需要乘100的</span><br><span class="line">     * 但是有的时候数据库中的值是38  当你支付时会出现报错，说你价钱格式不对  那就是double失去精准度了</span><br><span class="line">     * 在文章结尾我会附上工具类</span><br><span class="line">     * </span><br><span class="line">     * 大家可能会看到一些参数怎么来的  比如 personalOrder.getPrice() personalOrder.getOrdersNo();这些呢是我从数据库中提取的希望不要困扰到大家</span><br><span class="line">     */</span><br><span class="line">    String price = String.valueOf(Math.round(personalOrder.getPrice()*100));</span><br><span class="line">    BigDecimal Price = new BigDecimal(price);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    String OrderNo = personalOrder.getOrdersNo();</span><br><span class="line">    String Notify_url = WXPayConfig.notify_url;</span><br><span class="line">    SortedMap&lt;String, Object&gt; map = new TreeMap&lt;&gt;();</span><br><span class="line">    map.put(&quot;appid&quot;, Appid);</span><br><span class="line">    map.put(&quot;mch_id&quot;, Mch_id);</span><br><span class="line">    map.put(&quot;nonce_str&quot;, NOstr);</span><br><span class="line">    map.put(&quot;body&quot;, Body);</span><br><span class="line">    String key = WXPayConfig.key;</span><br><span class="line">    map.put(&quot;attach&quot;, &quot;测试&quot;);</span><br><span class="line">    map.put(&quot;out_trade_no&quot;, OrderNo);</span><br><span class="line">    map.put(&quot;total_fee&quot;, Price);</span><br><span class="line">    map.put(&quot;spbill_create_ip&quot;, Ip);</span><br><span class="line">    map.put(&quot;notify_url&quot;, Notify_url);</span><br><span class="line">    map.put(&quot;trade_type&quot;, WXPayConfig.trade_type);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    String Sign = CommonUtil.signatures(map, key);//密钥</span><br><span class="line">    map.put(&quot;sign&quot;, Sign);</span><br><span class="line">    String xml = CommonUtil.getRequestXml(map);</span><br><span class="line">    String result = &quot;&quot;;</span><br><span class="line">    try &#123;</span><br><span class="line">        result = CommonUtil.post(WXPayConfig.unifiedorder, xml);</span><br><span class="line">    &#125; catch (Exception e) &#123;</span><br><span class="line">        e.getMessage();</span><br><span class="line">    &#125;</span><br><span class="line">    /*------------------------------------------*/</span><br><span class="line"></span><br><span class="line">    Map&lt;String, String&gt; map11 = null;</span><br><span class="line">    String prepay_id = null;</span><br><span class="line">    try &#123;</span><br><span class="line">        map11 = CommonUtil.doXMLParse(result);</span><br><span class="line">        String return_code = map11.get(&quot;return_code&quot;);</span><br><span class="line">        if (return_code.contains(&quot;SUCCESS&quot;)) &#123;</span><br><span class="line">            prepay_id = map11.get(&quot;prepay_id&quot;);//获取到prepay_id</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; catch (JDOMException | IOException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    /*_____________________________________________*/</span><br><span class="line"></span><br><span class="line">    Map&lt;String, Object&gt; map1 = new HashMap&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    /*——————————————二次——————————————————*/</span><br><span class="line">    long timestamp = DateUtil.tenten();</span><br><span class="line">    SortedMap&lt;String, Object&gt; smap = new TreeMap&lt;&gt;();</span><br><span class="line">    smap.put(&quot;appid&quot;, Appid);</span><br><span class="line">    smap.put(&quot;partnerid&quot;, Mch_id);</span><br><span class="line">    smap.put(&quot;prepayid&quot;, prepay_id);</span><br><span class="line">    smap.put(&quot;package&quot;, &quot;Sign=WXPay&quot;);</span><br><span class="line">    smap.put(&quot;timestamp&quot;, timestamp);</span><br><span class="line">    smap.put(&quot;noncestr&quot;, NOstr);</span><br><span class="line">    String sign = CommonUtil.signatures(smap, key);//密钥</span><br><span class="line">    /*————————————————————————————————*/</span><br><span class="line"></span><br><span class="line">    map1.put(&quot;appid&quot;, Appid);</span><br><span class="line">    map1.put(&quot;mch_id&quot;, Mch_id);</span><br><span class="line">    map1.put(&quot;body&quot;, Body);</span><br><span class="line">    map1.put(&quot;prepay_id&quot;, prepay_id);</span><br><span class="line">    map1.put(&quot;nocestr&quot;, NOstr);</span><br><span class="line">    map1.put(&quot;sign&quot;, sign);</span><br><span class="line">    map1.put(&quot;timestamp&quot;, timestamp);</span><br><span class="line">    return map1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
-<pre><code>String Body = &quot;测试&quot;;
-String Appid = WXPayConfig.appid;
-String Mch_id = WXPayConfig.mch_id;
-String NOstr = CommonUtil.getRandomString(32);
-
-
-/**
- * 这个地方我想说一下
- * 价钱可能定义的是Double类型  它可能会失去准确度
- * 因为微信支付只接受两位小数的数据
- * 比如你数据库中的值是38.88  是需要乘100的
- * 但是有的时候数据库中的值是38  当你支付时会出现报错，说你价钱格式不对  那就是double失去精准度了
- * 在文章结尾我会附上工具类
- * 
- * 大家可能会看到一些参数怎么来的  比如 personalOrder.getPrice() personalOrder.getOrdersNo();这些呢是我从数据库中提取的希望不要困扰到大家
- */
-String price = String.valueOf(Math.round(personalOrder.getPrice()*100));
-BigDecimal Price = new BigDecimal(price);
-
-
-
-String OrderNo = personalOrder.getOrdersNo();
-String Notify_url = WXPayConfig.notify_url;
-SortedMap&lt;String, Object&gt; map = new TreeMap&lt;&gt;();
-map.put(&quot;appid&quot;, Appid);
-map.put(&quot;mch_id&quot;, Mch_id);
-map.put(&quot;nonce_str&quot;, NOstr);
-map.put(&quot;body&quot;, Body);
-String key = WXPayConfig.key;
-map.put(&quot;attach&quot;, &quot;测试&quot;);
-map.put(&quot;out_trade_no&quot;, OrderNo);
-map.put(&quot;total_fee&quot;, Price);
-map.put(&quot;spbill_create_ip&quot;, Ip);
-map.put(&quot;notify_url&quot;, Notify_url);
-map.put(&quot;trade_type&quot;, WXPayConfig.trade_type);
-
-
-String Sign = CommonUtil.signatures(map, key);//密钥
-map.put(&quot;sign&quot;, Sign);
-String xml = CommonUtil.getRequestXml(map);
-String result = &quot;&quot;;
-try {
-    result = CommonUtil.post(WXPayConfig.unifiedorder, xml);
-} catch (Exception e) {
-    e.getMessage();
-}
-/*------------------------------------------*/
-
-Map&lt;String, String&gt; map11 = null;
-String prepay_id = null;
-try {
-    map11 = CommonUtil.doXMLParse(result);
-    String return_code = map11.get(&quot;return_code&quot;);
-    if (return_code.contains(&quot;SUCCESS&quot;)) {
-        prepay_id = map11.get(&quot;prepay_id&quot;);//获取到prepay_id
-    }
-} catch (JDOMException | IOException e) {
-    e.printStackTrace();
-}
-
-
-/*_____________________________________________*/
-
-Map&lt;String, Object&gt; map1 = new HashMap&lt;&gt;();
-
-/*——————————————二次——————————————————*/
-long timestamp = DateUtil.tenten();
-SortedMap&lt;String, Object&gt; smap = new TreeMap&lt;&gt;();
-smap.put(&quot;appid&quot;, Appid);
-smap.put(&quot;partnerid&quot;, Mch_id);
-smap.put(&quot;prepayid&quot;, prepay_id);
-smap.put(&quot;package&quot;, &quot;Sign=WXPay&quot;);
-smap.put(&quot;timestamp&quot;, timestamp);
-smap.put(&quot;noncestr&quot;, NOstr);
-String sign = CommonUtil.signatures(smap, key);//密钥
-/*————————————————————————————————*/
-
-map1.put(&quot;appid&quot;, Appid);
-map1.put(&quot;mch_id&quot;, Mch_id);
-map1.put(&quot;body&quot;, Body);
-map1.put(&quot;prepay_id&quot;, prepay_id);
-map1.put(&quot;nocestr&quot;, NOstr);
-map1.put(&quot;sign&quot;, sign);
-map1.put(&quot;timestamp&quot;, timestamp);
-return map1;
-</code></pre><p>}</p>
 <blockquote>
-<p>微信工具类之一<br>public class WXPayConfig {</p>
+<p>微信工具类之一<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line">public class WXPayConfig &#123;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 开放平台对应的appid</span><br><span class="line">     */</span><br><span class="line">    public static final String appid = &quot;.....&quot;;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 微信支付分配的商户号</span><br><span class="line">     */</span><br><span class="line">    public static final String mch_id = &quot;....&quot;;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * key</span><br><span class="line">     */</span><br><span class="line">    public static final String key = &quot;.....&quot;;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 退款接口</span><br><span class="line">     */</span><br><span class="line">    public static final String refundUrl = &quot;https://api.mch.weixin.qq.com/secapi/pay/refund&quot;;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 回调地址</span><br><span class="line">     */</span><br><span class="line">    public static final String notify_url = &quot;https://。。。。&quot;;//回调接口需要用https访问通的</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 交易类型</span><br><span class="line">     */</span><br><span class="line">    public static final String trade_type = &quot;APP&quot;;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 统一下单接口</span><br><span class="line">     */</span><br><span class="line">    public static final String unifiedorder = &quot;https://api.mch.weixin.qq.com/pay/unifiedorder&quot;;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 查询订单接口</span><br><span class="line">     */</span><br><span class="line">    public static final String orderquery = &quot;https://api.mch.weixin.qq.com/pay/orderquery&quot;;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 关闭订单 订单生成后不能马上调用关单接口，最短调用时间间隔为5分钟。</span><br><span class="line">     */</span><br><span class="line">    public static final String closeOrder = &quot;https://api.mch.weixin.qq.com/pay/closeorder&quot;;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 查询退款 如果单个支付订单部分退款次数超过20次请使用退款单号查询</span><br><span class="line">     */</span><br><span class="line">    public static final String refundquery = &quot;https://api.mch.weixin.qq.com/pay/refundquery&quot;;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 下载对账单</span><br><span class="line">     */</span><br><span class="line">    public static final String downloadbill = &quot;https://api.mch.weixin.qq.com/pay/downloadbill&quot;;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 下载资金对账单</span><br><span class="line">     */</span><br><span class="line">    public static final String downloadfundflow = &quot;https://api.mch.weixin.qq.com/pay/downloadfundflow&quot;;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 交易保障</span><br><span class="line">     */</span><br><span class="line">    public static final String report = &quot;https://api.mch.weixin.qq.com/payitil/report&quot;;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 证书地址</span><br><span class="line">     */</span><br><span class="line">    //public static final String address = &quot;&quot;;//本地</span><br><span class="line"></span><br><span class="line">    public static final String address = &quot;&quot;;//linux  发布上线时一定要用你上传在linux上的地址</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
-<pre><code>/**
- * 开放平台对应的appid
- */
-public static final String appid = &quot;.....&quot;;
-
-/**
- * 微信支付分配的商户号
- */
-public static final String mch_id = &quot;....&quot;;
-
-/**
- * key
- */
-public static final String key = &quot;.....&quot;;
-
-/**
- * 退款接口
- */
-public static final String refundUrl = &quot;https://api.mch.weixin.qq.com/secapi/pay/refund&quot;;
-
-/**
- * 回调地址
- */
-public static final String notify_url = &quot;https://。。。。&quot;;//回调接口需要用https访问通的
-
-/**
- * 交易类型
- */
-public static final String trade_type = &quot;APP&quot;;
-
-/**
- * 统一下单接口
- */
-public static final String unifiedorder = &quot;https://api.mch.weixin.qq.com/pay/unifiedorder&quot;;
-
-/**
- * 查询订单接口
- */
-public static final String orderquery = &quot;https://api.mch.weixin.qq.com/pay/orderquery&quot;;
-
-/**
- * 关闭订单 订单生成后不能马上调用关单接口，最短调用时间间隔为5分钟。
- */
-public static final String closeOrder = &quot;https://api.mch.weixin.qq.com/pay/closeorder&quot;;
-
-/**
- * 查询退款 如果单个支付订单部分退款次数超过20次请使用退款单号查询
- */
-public static final String refundquery = &quot;https://api.mch.weixin.qq.com/pay/refundquery&quot;;
-
-/**
- * 下载对账单
- */
-public static final String downloadbill = &quot;https://api.mch.weixin.qq.com/pay/downloadbill&quot;;
-
-/**
- * 下载资金对账单
- */
-public static final String downloadfundflow = &quot;https://api.mch.weixin.qq.com/pay/downloadfundflow&quot;;
-
-/**
- * 交易保障
- */
-public static final String report = &quot;https://api.mch.weixin.qq.com/payitil/report&quot;;
-
-/**
- * 证书地址
- */
-//public static final String address = &quot;&quot;;//本地
-
-public static final String address = &quot;&quot;;//linux  发布上线时一定要用你上传在linux上的地址
-</code></pre><p>}</p>
 <blockquote>
-<p>微信工具类之一<br>import org.apache.commons.lang3.StringUtils;<br>import org.apache.http.Consts;<br>import org.apache.http.HttpEntity;<br>import org.apache.http.HttpResponse;<br>import org.apache.http.client.methods.CloseableHttpResponse;<br>import org.apache.http.client.methods.HttpPost;<br>import org.apache.http.conn.ssl.SSLConnectionSocketFactory;<br>import org.apache.http.entity.StringEntity;<br>import org.apache.http.impl.client.CloseableHttpClient;<br>import org.apache.http.impl.client.HttpClients;<br>import org.apache.http.ssl.SSLContexts;<br>import org.apache.http.util.EntityUtils;<br>import org.jdom2.Document;<br>import org.jdom2.Element;<br>import org.jdom2.JDOMException;<br>import org.jdom2.input.SAXBuilder;</p>
+<p>微信工具类之一<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br></pre></td><td class="code"><pre><span class="line">import org.apache.commons.lang3.StringUtils;</span><br><span class="line">import org.apache.http.Consts;</span><br><span class="line">import org.apache.http.HttpEntity;</span><br><span class="line">import org.apache.http.HttpResponse;</span><br><span class="line">import org.apache.http.client.methods.CloseableHttpResponse;</span><br><span class="line">import org.apache.http.client.methods.HttpPost;</span><br><span class="line">import org.apache.http.conn.ssl.SSLConnectionSocketFactory;</span><br><span class="line">import org.apache.http.entity.StringEntity;</span><br><span class="line">import org.apache.http.impl.client.CloseableHttpClient;</span><br><span class="line">import org.apache.http.impl.client.HttpClients;</span><br><span class="line">import org.apache.http.ssl.SSLContexts;</span><br><span class="line">import org.apache.http.util.EntityUtils;</span><br><span class="line">import org.jdom2.Document;</span><br><span class="line">import org.jdom2.Element;</span><br><span class="line">import org.jdom2.JDOMException;</span><br><span class="line">import org.jdom2.input.SAXBuilder;</span><br><span class="line"></span><br><span class="line">import javax.net.ssl.SSLContext;</span><br><span class="line">import java.io.*;</span><br><span class="line">import java.net.URI;</span><br><span class="line">import java.security.KeyStore;</span><br><span class="line">import java.security.MessageDigest;</span><br><span class="line">import java.text.SimpleDateFormat;</span><br><span class="line">import java.util.*;</span><br><span class="line"></span><br><span class="line">public class CommonUtil &#123;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * @Description 随机字符串生成</span><br><span class="line">     * @param  length</span><br><span class="line">     * @return  java.lang.String</span><br><span class="line">     * @author  QiMing </span><br><span class="line">     * @date  2018/9/6 15:25</span><br><span class="line">     */</span><br><span class="line">    public static String getRandomString(int length) &#123; //length表示生成字符串的长度</span><br><span class="line">        String base = &quot;abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;</span><br><span class="line">        Random random = new Random();</span><br><span class="line">        StringBuffer sb = new StringBuffer();</span><br><span class="line">        for (int i = 0; i &lt; length; i++) &#123;</span><br><span class="line">            int number = random.nextInt(base.length());</span><br><span class="line">            sb.append(base.charAt(number));</span><br><span class="line">        &#125;</span><br><span class="line">        return sb.toString();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * @Description 请求下单xml组装</span><br><span class="line">     * @param   parameters</span><br><span class="line">     * @return  java.lang.String</span><br><span class="line">     * @author  QiMing </span><br><span class="line">     * @date  2018/9/6 15:24</span><br><span class="line">     */</span><br><span class="line">    public static String getRequestXml(SortedMap&lt;String, Object&gt; parameters) &#123;</span><br><span class="line"></span><br><span class="line">        StringBuffer sb = new StringBuffer();</span><br><span class="line">        sb.append(&quot;&lt;xml&gt;&quot;);</span><br><span class="line">        Set es = parameters.entrySet();</span><br><span class="line">        Iterator it = es.iterator();</span><br><span class="line">        while (it.hasNext()) &#123;</span><br><span class="line">            Map.Entry entry = (Map.Entry) it.next();</span><br><span class="line">            String key = (String) entry.getKey();</span><br><span class="line">            Object value = entry.getValue();</span><br><span class="line">            if (&quot;appid&quot;.equalsIgnoreCase(key)||&quot;attach&quot;.equalsIgnoreCase(key)</span><br><span class="line">                    || &quot;body&quot;.equalsIgnoreCase(key)||</span><br><span class="line">                    &quot;mch_id&quot;.equalsIgnoreCase(key)||</span><br><span class="line">                    &quot;nonce_str&quot;.equalsIgnoreCase(key)||</span><br><span class="line">                    &quot;out_trade_no&quot;.equalsIgnoreCase(key)||</span><br><span class="line">                    &quot;total_fee&quot;.equalsIgnoreCase(key)||</span><br><span class="line">                    &quot;spbill_create_ip&quot;.equalsIgnoreCase(key)||</span><br><span class="line">                    &quot;notify_url&quot;.equalsIgnoreCase(key)||</span><br><span class="line">                    &quot;trade_type&quot;.equalsIgnoreCase(key)||</span><br><span class="line">                    &quot;sign&quot;.equalsIgnoreCase(key)) &#123;</span><br><span class="line">                sb.append(&quot;&lt;&quot; + key + &quot;&gt;&quot; + &quot;&lt;![CDATA[&quot; + value + &quot;]]&gt;&lt;/&quot; + key + &quot;&gt;&quot;);</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                sb.append(&quot;&lt;&quot; + key + &quot;&gt;&quot; + value + &quot;&lt;/&quot; + key + &quot;&gt;&quot;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        sb.append(&quot;&lt;/xml&gt;&quot;);</span><br><span class="line">        return sb.toString();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * @Description 退款</span><br><span class="line">     * @param   parameters</span><br><span class="line">     * @return  java.lang.String</span><br><span class="line">     * @author  QiMing </span><br><span class="line">     * @date  2018/9/6 15:24</span><br><span class="line">     */</span><br><span class="line">    public static String getRefundXml(SortedMap&lt;String, Object&gt; parameters) &#123;</span><br><span class="line"></span><br><span class="line">        StringBuffer sb = new StringBuffer();</span><br><span class="line">        sb.append(&quot;&lt;xml&gt;&quot;);</span><br><span class="line">        Set es = parameters.entrySet();</span><br><span class="line">        Iterator it = es.iterator();</span><br><span class="line">        while (it.hasNext()) &#123;</span><br><span class="line">            Map.Entry entry = (Map.Entry) it.next();</span><br><span class="line">            String key = (String) entry.getKey();</span><br><span class="line">            Object value = entry.getValue();</span><br><span class="line">            if (&quot;appid&quot;.equalsIgnoreCase(key)||</span><br><span class="line">                &quot;mch_id&quot;.equalsIgnoreCase(key)||</span><br><span class="line">                &quot;nonce_str&quot;.equalsIgnoreCase(key)||</span><br><span class="line">                &quot;out_trade_no&quot;.equalsIgnoreCase(key)||</span><br><span class="line">                &quot;out_refund_no&quot;.equalsIgnoreCase(key)||</span><br><span class="line">                &quot;total_fee&quot;.equalsIgnoreCase(key)||</span><br><span class="line">                &quot;refund_fee&quot;.equalsIgnoreCase(key)||</span><br><span class="line">                &quot;sign&quot;.equalsIgnoreCase(key)) &#123;</span><br><span class="line">                sb.append(&quot;&lt;&quot; + key + &quot;&gt;&quot; + &quot;&lt;![CDATA[&quot; + value + &quot;]]&gt;&lt;/&quot; + key + &quot;&gt;&quot;);</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                sb.append(&quot;&lt;&quot; + key + &quot;&gt;&quot; + value + &quot;&lt;/&quot; + key + &quot;&gt;&quot;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        sb.append(&quot;&lt;/xml&gt;&quot;);</span><br><span class="line">        return sb.toString();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 微信支付加密工具</span><br><span class="line">     */</span><br><span class="line">    public static String signatures(SortedMap&lt;String, Object&gt; map, String key) &#123;</span><br><span class="line">        Set&lt;String&gt; keySet = map.keySet();</span><br><span class="line">        String[] str = new String[map.size()];</span><br><span class="line">        StringBuilder tmp = new StringBuilder();</span><br><span class="line">        // 进行字典排序</span><br><span class="line">        str = keySet.toArray(str);</span><br><span class="line">        Arrays.sort(str);</span><br><span class="line">        for (int i = 0; i &lt; str.length; i++) &#123;</span><br><span class="line">            String t = str[i] + &quot;=&quot; + map.get(str[i]) + &quot;&amp;&quot;;</span><br><span class="line">            tmp.append(t);</span><br><span class="line">        &#125;</span><br><span class="line">        if (StringUtils.isNotBlank(key)) &#123;</span><br><span class="line">            tmp.append(&quot;key=&quot; + key);</span><br><span class="line">        &#125;</span><br><span class="line">        String tosend = tmp.toString();</span><br><span class="line">        MessageDigest md = null;</span><br><span class="line">        byte[] bytes = null;</span><br><span class="line">        try &#123;</span><br><span class="line"></span><br><span class="line">            md = MessageDigest.getInstance(&quot;MD5&quot;);</span><br><span class="line">            bytes = md.digest(tosend.getBytes(&quot;UTF-8&quot;));</span><br><span class="line">        &#125; catch (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        String singe = byteToStr(bytes);</span><br><span class="line">        return singe.toUpperCase();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    public static String byteToStr(byte[] byteArray) &#123;</span><br><span class="line">        String strDigest = &quot;&quot;;</span><br><span class="line">        for (int i = 0; i &lt; byteArray.length; i++) &#123;</span><br><span class="line">            strDigest += byteToHexStr(byteArray[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        return strDigest;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static String byteToHexStr(byte bytes) &#123;</span><br><span class="line">        char[] Digit = &#123; &apos;0&apos;, &apos;1&apos;, &apos;2&apos;, &apos;3&apos;, &apos;4&apos;, &apos;5&apos;, &apos;6&apos;, &apos;7&apos;, &apos;8&apos;, &apos;9&apos;, &apos;A&apos;, &apos;B&apos;, &apos;C&apos;, &apos;D&apos;, &apos;E&apos;, &apos;F&apos; &#125;;</span><br><span class="line">        char[] tempArr = new char[2];</span><br><span class="line">        tempArr[0] = Digit[(bytes &gt;&gt;&gt; 4) &amp; 0X0F];</span><br><span class="line">        tempArr[1] = Digit[bytes &amp; 0X0F];</span><br><span class="line"></span><br><span class="line">        String s = new String(tempArr);</span><br><span class="line">        return s;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 验证回调签名</span><br><span class="line">     * @return</span><br><span class="line">     */</span><br><span class="line">    public static boolean isTenpaySign(Map&lt;String, String&gt; map, String apiKey) throws UnsupportedEncodingException &#123;</span><br><span class="line">        String charset = &quot;utf-8&quot;;</span><br><span class="line">        String signFromAPIResponse = map.get(&quot;sign&quot;);</span><br><span class="line">        if (signFromAPIResponse == null || signFromAPIResponse.equals(&quot;&quot;)) &#123;</span><br><span class="line">            System.out.println(&quot;API返回的数据签名数据不存在，有可能被第三方篡改!!!&quot;);</span><br><span class="line">            return false;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(&quot;服务器回包里面的签名是:&quot; + signFromAPIResponse);</span><br><span class="line">        //过滤空 设置 TreeMap</span><br><span class="line">        SortedMap&lt;String, String&gt; packageParams = new TreeMap&lt;&gt;();</span><br><span class="line">        for (String parameter : map.keySet()) &#123;</span><br><span class="line">            String parameterValue = map.get(parameter);</span><br><span class="line">            String v = &quot;&quot;;</span><br><span class="line">            if (null != parameterValue) &#123;</span><br><span class="line">                v = parameterValue.trim();</span><br><span class="line">            &#125;</span><br><span class="line">            packageParams.put(parameter, v);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        StringBuffer sb = new StringBuffer();</span><br><span class="line">        Set es = packageParams.entrySet();</span><br><span class="line">        Iterator it = es.iterator();</span><br><span class="line">        while (it.hasNext()) &#123;</span><br><span class="line">            Map.Entry entry = (Map.Entry) it.next();</span><br><span class="line">            String k = (String) entry.getKey();</span><br><span class="line">            String v = (String) entry.getValue();</span><br><span class="line">            if (!&quot;sign&quot;.equals(k) &amp;&amp; null != v &amp;&amp; !&quot;&quot;.equals(v)) &#123;</span><br><span class="line">                sb.append(k + &quot;=&quot; + v + &quot;&amp;&quot;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        sb.append(&quot;key=&quot; + apiKey);</span><br><span class="line"></span><br><span class="line">        //将API返回的数据根据用签名算法进行计算新的签名，用来跟API返回的签名进行比较</span><br><span class="line"></span><br><span class="line">        //算出签名</span><br><span class="line">        String resultSign = &quot;&quot;;</span><br><span class="line">        String tobesign = sb.toString();</span><br><span class="line">        if (null == charset || &quot;&quot;.equals(charset)) &#123;</span><br><span class="line">            resultSign = MD5Util.MD5Encode(tobesign, charset).toUpperCase();</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            resultSign = MD5Util.MD5Encode(tobesign, charset).toUpperCase();</span><br><span class="line">        &#125;</span><br><span class="line">        String tenpaySign = packageParams.get(&quot;sign&quot;).toUpperCase();</span><br><span class="line">        return tenpaySign.equals(resultSign);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * @Description 退款的请求方法</span><br><span class="line">     * @param   requestUrl, requestMethod, outputStr</span><br><span class="line">     * @return  java.lang.String</span><br><span class="line">     * @author  QiMing </span><br><span class="line">     * @date  2018/9/6 15:23</span><br><span class="line">     */</span><br><span class="line">    public static String httpsRequest2(String requestUrl, String requestMethod, String outputStr) throws Exception &#123;</span><br><span class="line"></span><br><span class="line">        KeyStore keyStore = KeyStore.getInstance(&quot;PKCS12&quot;);</span><br><span class="line">        StringBuilder res = new StringBuilder(&quot;&quot;);</span><br><span class="line">        FileInputStream instream = new FileInputStream(new File(WXPayConfig.address));</span><br><span class="line">        try &#123;</span><br><span class="line">            keyStore.load(instream, WXPayConfig.mch_id.toCharArray());</span><br><span class="line">        &#125; finally &#123;</span><br><span class="line">            instream.close();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        // Trust own CA and all self-signed certs</span><br><span class="line">        SSLContext sslcontext = SSLContexts.custom().loadKeyMaterial(keyStore, WXPayConfig.mch_id.toCharArray()).build();</span><br><span class="line">        // Allow TLSv1 protocol only</span><br><span class="line">        SSLConnectionSocketFactory sslsf = new SSLConnectionSocketFactory(sslcontext, new String[] &#123; &quot;TLSv1&quot; &#125;, null, SSLConnectionSocketFactory.BROWSER_COMPATIBLE_HOSTNAME_VERIFIER);</span><br><span class="line">        CloseableHttpClient httpclient = HttpClients.custom().setSSLSocketFactory(sslsf).build();</span><br><span class="line">        try &#123;</span><br><span class="line"></span><br><span class="line">            HttpPost httpost = new HttpPost(requestUrl);</span><br><span class="line">            httpost.addHeader(&quot;Connection&quot;, &quot;keep-alive&quot;);</span><br><span class="line">            httpost.addHeader(&quot;Accept&quot;, &quot;*/*&quot;);</span><br><span class="line">            httpost.addHeader(&quot;Content-Type&quot;, &quot;application/x-www-form-urlencoded; charset=UTF-8&quot;);</span><br><span class="line">            httpost.addHeader(&quot;Host&quot;, &quot;api.mch.weixin.qq.com&quot;);</span><br><span class="line">            httpost.addHeader(&quot;X-Requested-With&quot;, &quot;XMLHttpRequest&quot;);</span><br><span class="line">            httpost.addHeader(&quot;Cache-Control&quot;, &quot;max-age=0&quot;);</span><br><span class="line">            httpost.addHeader(&quot;User-Agent&quot;, &quot;Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0) &quot;);</span><br><span class="line">            StringEntity entity2 = new StringEntity(outputStr, Consts.UTF_8);</span><br><span class="line">            httpost.setEntity(entity2);</span><br><span class="line">            System.out.println(&quot;executing request&quot; + httpost.getRequestLine());</span><br><span class="line"></span><br><span class="line">            CloseableHttpResponse response = httpclient.execute(httpost);</span><br><span class="line"></span><br><span class="line">            try &#123;</span><br><span class="line">                HttpEntity entity = response.getEntity();</span><br><span class="line"></span><br><span class="line">                System.out.println(&quot;----------------------------------------&quot;);</span><br><span class="line">                System.out.println(response.getStatusLine());</span><br><span class="line">                if (entity != null) &#123;</span><br><span class="line">                    System.out.println(&quot;Response content length: &quot; + entity.getContentLength());</span><br><span class="line">                    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(entity.getContent()));</span><br><span class="line">                    String text = &quot;&quot;;</span><br><span class="line">                    res.append(text);</span><br><span class="line">                    while ((text = bufferedReader.readLine()) != null) &#123;</span><br><span class="line">                        res.append(text);</span><br><span class="line">                        System.out.println(text);</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                &#125;</span><br><span class="line">                EntityUtils.consume(entity);</span><br><span class="line">            &#125; finally &#123;</span><br><span class="line">                response.close();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; finally &#123;</span><br><span class="line">            httpclient.close();</span><br><span class="line">        &#125;</span><br><span class="line">        return res.toString();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * @Description xml解析</span><br><span class="line">     * @param   strxml</span><br><span class="line">     * @return  java.util.Map</span><br><span class="line">     * @author  QiMing </span><br><span class="line">     * @date  2018/9/6 15:25</span><br><span class="line">     */</span><br><span class="line">    public static Map doXMLParse(String strxml) throws JDOMException, IOException &#123;</span><br><span class="line"></span><br><span class="line">        strxml = strxml.replaceFirst(&quot;encoding=\&quot;.*\&quot;&quot;, &quot;encoding=\&quot;UTF-8\&quot;&quot;);</span><br><span class="line"></span><br><span class="line">        if (null == strxml || &quot;&quot;.equals(strxml)) &#123;</span><br><span class="line">            return null;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        Map&lt;String,Object&gt; m = new HashMap&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        InputStream in = new ByteArrayInputStream(strxml.getBytes(&quot;UTF-8&quot;));</span><br><span class="line">        SAXBuilder builder = new SAXBuilder();</span><br><span class="line">        Document doc = builder.build(in);</span><br><span class="line">        Element root = doc.getRootElement();</span><br><span class="line">        List list = root.getChildren();</span><br><span class="line">        Iterator it = list.iterator();</span><br><span class="line">        while (it.hasNext()) &#123;</span><br><span class="line">            Element e = (Element) it.next();</span><br><span class="line">            String k = e.getName();</span><br><span class="line">            String v = &quot;&quot;;</span><br><span class="line">            List children = e.getChildren();</span><br><span class="line">            if (children.isEmpty()) &#123;</span><br><span class="line">                v = e.getTextNormalize();</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                v = getChildrenText(children);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            m.put(k, v);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        //关闭流</span><br><span class="line">        in.close();</span><br><span class="line"></span><br><span class="line">        return m;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    public static String getChildrenText(List children) &#123;</span><br><span class="line">        StringBuffer sb = new StringBuffer();</span><br><span class="line">        if (!children.isEmpty()) &#123;</span><br><span class="line">            Iterator it = children.iterator();</span><br><span class="line">            while (it.hasNext()) &#123;</span><br><span class="line">                Element e = (Element) it.next();</span><br><span class="line">                String name = e.getName();</span><br><span class="line">                String value = e.getTextNormalize();</span><br><span class="line">                List list = e.getChildren();</span><br><span class="line">                sb.append(&quot;&lt;&quot; + name + &quot;&gt;&quot;);</span><br><span class="line">                if (!list.isEmpty()) &#123;</span><br><span class="line">                    sb.append(getChildrenText(list));</span><br><span class="line">                &#125;</span><br><span class="line">                sb.append(value);</span><br><span class="line">                sb.append(&quot;&lt;/&quot; + name + &quot;&gt;&quot;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        return sb.toString();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static String post(String url, String str)throws Exception &#123;</span><br><span class="line">        // 处理请求地址</span><br><span class="line">        URI uri = new URI(url);</span><br><span class="line">        HttpPost post = new HttpPost(uri);</span><br><span class="line">        post.setEntity(new StringEntity(str,&quot;UTF-8&quot;));</span><br><span class="line">        CloseableHttpClient client = HttpClients.createDefault();</span><br><span class="line"></span><br><span class="line">        // 执行请求</span><br><span class="line">        HttpResponse response = client.execute(post);</span><br><span class="line"></span><br><span class="line">        if (response.getStatusLine().getStatusCode() == 200) &#123;</span><br><span class="line">            // 处理请求结果</span><br><span class="line">            StringBuffer buffer = new StringBuffer();</span><br><span class="line">            InputStream in = null;</span><br><span class="line">            try &#123;</span><br><span class="line">                in = response.getEntity().getContent();</span><br><span class="line">                BufferedReader reader = new BufferedReader(</span><br><span class="line">                        new InputStreamReader(in));</span><br><span class="line">                String line = null;</span><br><span class="line">                while ((line = reader.readLine()) != null) &#123;</span><br><span class="line">                    buffer.append(line);</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">            &#125; finally &#123;</span><br><span class="line">                // 关闭流</span><br><span class="line">                if (in != null)</span><br><span class="line">                    in.close();</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            return buffer.toString();</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            return null;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
-<p>import javax.net.ssl.SSLContext;<br>import java.io.*;<br>import java.net.URI;<br>import java.security.KeyStore;<br>import java.security.MessageDigest;<br>import java.text.SimpleDateFormat;<br>import java.util.*;</p>
-<p>public class CommonUtil {</p>
-<pre><code>/**
- * @Description 随机字符串生成
- * @param  length
- * @return  java.lang.String
- * @author  QiMing 
- * @date  2018/9/6 15:25
- */
-public static String getRandomString(int length) { //length表示生成字符串的长度
-    String base = &quot;abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;
-    Random random = new Random();
-    StringBuffer sb = new StringBuffer();
-    for (int i = 0; i &lt; length; i++) {
-        int number = random.nextInt(base.length());
-        sb.append(base.charAt(number));
-    }
-    return sb.toString();
-}
-
-/**
- * @Description 请求下单xml组装
- * @param   parameters
- * @return  java.lang.String
- * @author  QiMing 
- * @date  2018/9/6 15:24
- */
-public static String getRequestXml(SortedMap&lt;String, Object&gt; parameters) {
-
-    StringBuffer sb = new StringBuffer();
-    sb.append(&quot;&lt;xml&gt;&quot;);
-    Set es = parameters.entrySet();
-    Iterator it = es.iterator();
-    while (it.hasNext()) {
-        Map.Entry entry = (Map.Entry) it.next();
-        String key = (String) entry.getKey();
-        Object value = entry.getValue();
-        if (&quot;appid&quot;.equalsIgnoreCase(key)||&quot;attach&quot;.equalsIgnoreCase(key)
-                || &quot;body&quot;.equalsIgnoreCase(key)||
-                &quot;mch_id&quot;.equalsIgnoreCase(key)||
-                &quot;nonce_str&quot;.equalsIgnoreCase(key)||
-                &quot;out_trade_no&quot;.equalsIgnoreCase(key)||
-                &quot;total_fee&quot;.equalsIgnoreCase(key)||
-                &quot;spbill_create_ip&quot;.equalsIgnoreCase(key)||
-                &quot;notify_url&quot;.equalsIgnoreCase(key)||
-                &quot;trade_type&quot;.equalsIgnoreCase(key)||
-                &quot;sign&quot;.equalsIgnoreCase(key)) {
-            sb.append(&quot;&lt;&quot; + key + &quot;&gt;&quot; + &quot;&lt;![CDATA[&quot; + value + &quot;]]&gt;&lt;/&quot; + key + &quot;&gt;&quot;);
-        } else {
-            sb.append(&quot;&lt;&quot; + key + &quot;&gt;&quot; + value + &quot;&lt;/&quot; + key + &quot;&gt;&quot;);
-        }
-    }
-    sb.append(&quot;&lt;/xml&gt;&quot;);
-    return sb.toString();
-}
-
-/**
- * @Description 退款
- * @param   parameters
- * @return  java.lang.String
- * @author  QiMing 
- * @date  2018/9/6 15:24
- */
-public static String getRefundXml(SortedMap&lt;String, Object&gt; parameters) {
-
-    StringBuffer sb = new StringBuffer();
-    sb.append(&quot;&lt;xml&gt;&quot;);
-    Set es = parameters.entrySet();
-    Iterator it = es.iterator();
-    while (it.hasNext()) {
-        Map.Entry entry = (Map.Entry) it.next();
-        String key = (String) entry.getKey();
-        Object value = entry.getValue();
-        if (&quot;appid&quot;.equalsIgnoreCase(key)||
-            &quot;mch_id&quot;.equalsIgnoreCase(key)||
-            &quot;nonce_str&quot;.equalsIgnoreCase(key)||
-            &quot;out_trade_no&quot;.equalsIgnoreCase(key)||
-            &quot;out_refund_no&quot;.equalsIgnoreCase(key)||
-            &quot;total_fee&quot;.equalsIgnoreCase(key)||
-            &quot;refund_fee&quot;.equalsIgnoreCase(key)||
-            &quot;sign&quot;.equalsIgnoreCase(key)) {
-            sb.append(&quot;&lt;&quot; + key + &quot;&gt;&quot; + &quot;&lt;![CDATA[&quot; + value + &quot;]]&gt;&lt;/&quot; + key + &quot;&gt;&quot;);
-        } else {
-            sb.append(&quot;&lt;&quot; + key + &quot;&gt;&quot; + value + &quot;&lt;/&quot; + key + &quot;&gt;&quot;);
-        }
-    }
-    sb.append(&quot;&lt;/xml&gt;&quot;);
-    return sb.toString();
-}
-
-
-/**
- * 微信支付加密工具
- */
-public static String signatures(SortedMap&lt;String, Object&gt; map, String key) {
-    Set&lt;String&gt; keySet = map.keySet();
-    String[] str = new String[map.size()];
-    StringBuilder tmp = new StringBuilder();
-    // 进行字典排序
-    str = keySet.toArray(str);
-    Arrays.sort(str);
-    for (int i = 0; i &lt; str.length; i++) {
-        String t = str[i] + &quot;=&quot; + map.get(str[i]) + &quot;&amp;&quot;;
-        tmp.append(t);
-    }
-    if (StringUtils.isNotBlank(key)) {
-        tmp.append(&quot;key=&quot; + key);
-    }
-    String tosend = tmp.toString();
-    MessageDigest md = null;
-    byte[] bytes = null;
-    try {
-
-        md = MessageDigest.getInstance(&quot;MD5&quot;);
-        bytes = md.digest(tosend.getBytes(&quot;UTF-8&quot;));
-    } catch (Exception e) {
-        e.printStackTrace();
-    }
-
-    String singe = byteToStr(bytes);
-    return singe.toUpperCase();
-
-}
-public static String byteToStr(byte[] byteArray) {
-    String strDigest = &quot;&quot;;
-    for (int i = 0; i &lt; byteArray.length; i++) {
-        strDigest += byteToHexStr(byteArray[i]);
-    }
-    return strDigest;
-}
-
-public static String byteToHexStr(byte bytes) {
-    char[] Digit = { &apos;0&apos;, &apos;1&apos;, &apos;2&apos;, &apos;3&apos;, &apos;4&apos;, &apos;5&apos;, &apos;6&apos;, &apos;7&apos;, &apos;8&apos;, &apos;9&apos;, &apos;A&apos;, &apos;B&apos;, &apos;C&apos;, &apos;D&apos;, &apos;E&apos;, &apos;F&apos; };
-    char[] tempArr = new char[2];
-    tempArr[0] = Digit[(bytes &gt;&gt;&gt; 4) &amp; 0X0F];
-    tempArr[1] = Digit[bytes &amp; 0X0F];
-
-    String s = new String(tempArr);
-    return s;
-}
-
-/**
- * 验证回调签名
- * @return
- */
-public static boolean isTenpaySign(Map&lt;String, String&gt; map, String apiKey) throws UnsupportedEncodingException {
-    String charset = &quot;utf-8&quot;;
-    String signFromAPIResponse = map.get(&quot;sign&quot;);
-    if (signFromAPIResponse == null || signFromAPIResponse.equals(&quot;&quot;)) {
-        System.out.println(&quot;API返回的数据签名数据不存在，有可能被第三方篡改!!!&quot;);
-        return false;
-    }
-    System.out.println(&quot;服务器回包里面的签名是:&quot; + signFromAPIResponse);
-    //过滤空 设置 TreeMap
-    SortedMap&lt;String, String&gt; packageParams = new TreeMap&lt;&gt;();
-    for (String parameter : map.keySet()) {
-        String parameterValue = map.get(parameter);
-        String v = &quot;&quot;;
-        if (null != parameterValue) {
-            v = parameterValue.trim();
-        }
-        packageParams.put(parameter, v);
-    }
-
-    StringBuffer sb = new StringBuffer();
-    Set es = packageParams.entrySet();
-    Iterator it = es.iterator();
-    while (it.hasNext()) {
-        Map.Entry entry = (Map.Entry) it.next();
-        String k = (String) entry.getKey();
-        String v = (String) entry.getValue();
-        if (!&quot;sign&quot;.equals(k) &amp;&amp; null != v &amp;&amp; !&quot;&quot;.equals(v)) {
-            sb.append(k + &quot;=&quot; + v + &quot;&amp;&quot;);
-        }
-    }
-    sb.append(&quot;key=&quot; + apiKey);
-
-    //将API返回的数据根据用签名算法进行计算新的签名，用来跟API返回的签名进行比较
-
-    //算出签名
-    String resultSign = &quot;&quot;;
-    String tobesign = sb.toString();
-    if (null == charset || &quot;&quot;.equals(charset)) {
-        resultSign = MD5Util.MD5Encode(tobesign, charset).toUpperCase();
-    } else {
-        resultSign = MD5Util.MD5Encode(tobesign, charset).toUpperCase();
-    }
-    String tenpaySign = packageParams.get(&quot;sign&quot;).toUpperCase();
-    return tenpaySign.equals(resultSign);
-}
-
-
-
-/**
- * @Description 退款的请求方法
- * @param   requestUrl, requestMethod, outputStr
- * @return  java.lang.String
- * @author  QiMing 
- * @date  2018/9/6 15:23
- */
-public static String httpsRequest2(String requestUrl, String requestMethod, String outputStr) throws Exception {
-
-    KeyStore keyStore = KeyStore.getInstance(&quot;PKCS12&quot;);
-    StringBuilder res = new StringBuilder(&quot;&quot;);
-    FileInputStream instream = new FileInputStream(new File(WXPayConfig.address));
-    try {
-        keyStore.load(instream, WXPayConfig.mch_id.toCharArray());
-    } finally {
-        instream.close();
-    }
-
-    // Trust own CA and all self-signed certs
-    SSLContext sslcontext = SSLContexts.custom().loadKeyMaterial(keyStore, WXPayConfig.mch_id.toCharArray()).build();
-    // Allow TLSv1 protocol only
-    SSLConnectionSocketFactory sslsf = new SSLConnectionSocketFactory(sslcontext, new String[] { &quot;TLSv1&quot; }, null, SSLConnectionSocketFactory.BROWSER_COMPATIBLE_HOSTNAME_VERIFIER);
-    CloseableHttpClient httpclient = HttpClients.custom().setSSLSocketFactory(sslsf).build();
-    try {
-
-        HttpPost httpost = new HttpPost(requestUrl);
-        httpost.addHeader(&quot;Connection&quot;, &quot;keep-alive&quot;);
-        httpost.addHeader(&quot;Accept&quot;, &quot;*/*&quot;);
-        httpost.addHeader(&quot;Content-Type&quot;, &quot;application/x-www-form-urlencoded; charset=UTF-8&quot;);
-        httpost.addHeader(&quot;Host&quot;, &quot;api.mch.weixin.qq.com&quot;);
-        httpost.addHeader(&quot;X-Requested-With&quot;, &quot;XMLHttpRequest&quot;);
-        httpost.addHeader(&quot;Cache-Control&quot;, &quot;max-age=0&quot;);
-        httpost.addHeader(&quot;User-Agent&quot;, &quot;Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0) &quot;);
-        StringEntity entity2 = new StringEntity(outputStr, Consts.UTF_8);
-        httpost.setEntity(entity2);
-        System.out.println(&quot;executing request&quot; + httpost.getRequestLine());
-
-        CloseableHttpResponse response = httpclient.execute(httpost);
-
-        try {
-            HttpEntity entity = response.getEntity();
-
-            System.out.println(&quot;----------------------------------------&quot;);
-            System.out.println(response.getStatusLine());
-            if (entity != null) {
-                System.out.println(&quot;Response content length: &quot; + entity.getContentLength());
-                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(entity.getContent()));
-                String text = &quot;&quot;;
-                res.append(text);
-                while ((text = bufferedReader.readLine()) != null) {
-                    res.append(text);
-                    System.out.println(text);
-                }
-
-            }
-            EntityUtils.consume(entity);
-        } finally {
-            response.close();
-        }
-    } finally {
-        httpclient.close();
-    }
-    return res.toString();
-
-}
-
-/**
- * @Description xml解析
- * @param   strxml
- * @return  java.util.Map
- * @author  QiMing 
- * @date  2018/9/6 15:25
- */
-public static Map doXMLParse(String strxml) throws JDOMException, IOException {
-
-    strxml = strxml.replaceFirst(&quot;encoding=\&quot;.*\&quot;&quot;, &quot;encoding=\&quot;UTF-8\&quot;&quot;);
-
-    if (null == strxml || &quot;&quot;.equals(strxml)) {
-        return null;
-    }
-
-    Map&lt;String,Object&gt; m = new HashMap&lt;&gt;();
-
-    InputStream in = new ByteArrayInputStream(strxml.getBytes(&quot;UTF-8&quot;));
-    SAXBuilder builder = new SAXBuilder();
-    Document doc = builder.build(in);
-    Element root = doc.getRootElement();
-    List list = root.getChildren();
-    Iterator it = list.iterator();
-    while (it.hasNext()) {
-        Element e = (Element) it.next();
-        String k = e.getName();
-        String v = &quot;&quot;;
-        List children = e.getChildren();
-        if (children.isEmpty()) {
-            v = e.getTextNormalize();
-        } else {
-            v = getChildrenText(children);
-        }
-
-        m.put(k, v);
-    }
-
-    //关闭流
-    in.close();
-
-    return m;
-}
-
-
-public static String getChildrenText(List children) {
-    StringBuffer sb = new StringBuffer();
-    if (!children.isEmpty()) {
-        Iterator it = children.iterator();
-        while (it.hasNext()) {
-            Element e = (Element) it.next();
-            String name = e.getName();
-            String value = e.getTextNormalize();
-            List list = e.getChildren();
-            sb.append(&quot;&lt;&quot; + name + &quot;&gt;&quot;);
-            if (!list.isEmpty()) {
-                sb.append(getChildrenText(list));
-            }
-            sb.append(value);
-            sb.append(&quot;&lt;/&quot; + name + &quot;&gt;&quot;);
-        }
-    }
-
-    return sb.toString();
-}
-
-public static String post(String url, String str)throws Exception {
-    // 处理请求地址
-    URI uri = new URI(url);
-    HttpPost post = new HttpPost(uri);
-    post.setEntity(new StringEntity(str,&quot;UTF-8&quot;));
-    CloseableHttpClient client = HttpClients.createDefault();
-
-    // 执行请求
-    HttpResponse response = client.execute(post);
-
-    if (response.getStatusLine().getStatusCode() == 200) {
-        // 处理请求结果
-        StringBuffer buffer = new StringBuffer();
-        InputStream in = null;
-        try {
-            in = response.getEntity().getContent();
-            BufferedReader reader = new BufferedReader(
-                    new InputStreamReader(in));
-            String line = null;
-            while ((line = reader.readLine()) != null) {
-                buffer.append(line);
-            }
-
-        } finally {
-            // 关闭流
-            if (in != null)
-                in.close();
-        }
-
-        return buffer.toString();
-    } else {
-        return null;
-    }
-
-}
-</code></pre><p>}</p>
 <blockquote>
-<p>接下来这个工具类就是处理价钱的问题了<br>import java.math.RoundingMode;<br>import java.text.DecimalFormat;<br>import java.text.NumberFormat;</p>
+<p>接下来这个工具类就是处理价钱的问题了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">import java.math.RoundingMode;</span><br><span class="line">import java.text.DecimalFormat;</span><br><span class="line">import java.text.NumberFormat;</span><br><span class="line"></span><br><span class="line">public class DoubleUtil &#123;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * @Title NonRounding</span><br><span class="line">     * @Description 不保留四舍五入</span><br><span class="line">     * @param   d</span><br><span class="line">     * @return  double</span><br><span class="line">     * @author  QiMing</span><br><span class="line">     * @date  2019/1/3 16:45</span><br><span class="line">     */</span><br><span class="line">    public static double NonRounding(double d)&#123;</span><br><span class="line">        NumberFormat nf = NumberFormat.getNumberInstance();</span><br><span class="line">        // 保留两位小数</span><br><span class="line">        nf.setMaximumFractionDigits(2);</span><br><span class="line">        // 如果不需要四舍五入，可以使用RoundingMode.DOWN</span><br><span class="line">        nf.setRoundingMode(RoundingMode.UP);</span><br><span class="line">        double dou = Double.valueOf(nf.format(d));</span><br><span class="line">        return dou;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * @Title rounding</span><br><span class="line">     * @Description 四舍五入</span><br><span class="line">     * @param   d</span><br><span class="line">     * @return  double</span><br><span class="line">     * @author  QiMing</span><br><span class="line">     * @date  2019/1/3 16:49</span><br><span class="line">     */</span><br><span class="line">    public static double rounding(double d)&#123;</span><br><span class="line"></span><br><span class="line">        DecimalFormat df = new DecimalFormat(&quot;#.00&quot;);</span><br><span class="line">        double dou = Double.valueOf(df.format(d));</span><br><span class="line">        return dou;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
-<p>public class DoubleUtil {</p>
-<pre><code>/**
- * @Title NonRounding
- * @Description 不保留四舍五入
- * @param   d
- * @return  double
- * @author  QiMing
- * @date  2019/1/3 16:45
- */
-public static double NonRounding(double d){
-    NumberFormat nf = NumberFormat.getNumberInstance();
-    // 保留两位小数
-    nf.setMaximumFractionDigits(2);
-    // 如果不需要四舍五入，可以使用RoundingMode.DOWN
-    nf.setRoundingMode(RoundingMode.UP);
-    double dou = Double.valueOf(nf.format(d));
-    return dou;
-}
-
-/**
- * @Title rounding
- * @Description 四舍五入
- * @param   d
- * @return  double
- * @author  QiMing
- * @date  2019/1/3 16:49
- */
-public static double rounding(double d){
-
-    DecimalFormat df = new DecimalFormat(&quot;#.00&quot;);
-    double dou = Double.valueOf(df.format(d));
-    return dou;
-}
-</code></pre><p>}</p>
 <blockquote>
-<p>到此把数据给到Ios端即可<br>这是一些需要的jar包<br>&lt;dependency&gt;<br>   &lt;groupId&gt;org.jdom&lt;/groupId&gt;<br>   &lt;artifactId&gt;jdom2&lt;/artifactId&gt;<br>   &lt;version&gt;2.0.5&lt;/version&gt;<br>&lt;/dependency&gt;<br>&lt;!– <a href="https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient" target="_blank" rel="noopener">https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient</a> –&gt;<br>&lt;dependency&gt;<br>   &lt;groupId&gt;org.apache.httpcomponents&lt;/groupId&gt;<br>   &lt;artifactId&gt;httpclient&lt;/artifactId&gt;<br>   &lt;version&gt;4.5.3&lt;/version&gt;<br>&lt;/dependency&gt;<br>&lt;dependency&gt;<br>   &lt;groupId&gt;com.alipay.sdk&lt;/groupId&gt;<br>   &lt;artifactId&gt;alipay-sdk-java&lt;/artifactId&gt;<br>   &lt;version&gt;3.0.52.ALL&lt;/version&gt;<br>&lt;/dependency&gt;<br>&lt;dependency&gt;<br>    &lt;groupId&gt;com.github.wxpay&lt;/groupId&gt;<br>   &lt;artifactId&gt;wxpay-sdk&lt;/artifactId&gt;<br>   &lt;version&gt;0.0.3&lt;/version&gt;<br>&lt;/dependency&gt;</p>
+<p>到此把数据给到Ios端即可<br>这是一些需要的jar包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">   &lt;groupId&gt;org.jdom&lt;/groupId&gt;</span><br><span class="line">   &lt;artifactId&gt;jdom2&lt;/artifactId&gt;</span><br><span class="line">   &lt;version&gt;2.0.5&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">&lt;!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">   &lt;groupId&gt;org.apache.httpcomponents&lt;/groupId&gt;</span><br><span class="line">   &lt;artifactId&gt;httpclient&lt;/artifactId&gt;</span><br><span class="line">   &lt;version&gt;4.5.3&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">   &lt;groupId&gt;com.alipay.sdk&lt;/groupId&gt;</span><br><span class="line">   &lt;artifactId&gt;alipay-sdk-java&lt;/artifactId&gt;</span><br><span class="line">   &lt;version&gt;3.0.52.ALL&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.github.wxpay&lt;/groupId&gt;</span><br><span class="line">   &lt;artifactId&gt;wxpay-sdk&lt;/artifactId&gt;</span><br><span class="line">   &lt;version&gt;0.0.3&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <blockquote>
 <p>如遇到bug可联系我  我们一起清除bug让自己的知识更丰富<br><img src="/assets/img/20190405204404.jpg" alt="Alt text"></p>
@@ -1079,15 +493,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">linux-bug</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">bug</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1111,10 +525,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
@@ -1123,11 +533,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">wm_concat</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">支付</a>
+                <a href="javascript:void(0)" class="js-tag color1">maven</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1139,7 +553,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">maven</a>
+                <a href="javascript:void(0)" class="js-tag color3">支付</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Http请求域名强制跳转https | 知音空间</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="网站添加了https证书后，当http方式访问网站时就会报404错误，所以需要做http到https的强制跳转设置. —————一、采用nginx的rewrite方法———————下面是将所有的http请求通过rewrite重写到https上。例如将所有的www.nihao.com域名的http访问强制跳转到https。下面配置均可以实现：   server {    listen 80;">
+  <meta name="description" content="网站添加了https证书后，当http方式访问网站时就会报404错误，所以需要做http到https的强制跳转设置. —————一、采用nginx的rewrite方法———————下面是将所有的http请求通过rewrite重写到https上。例如将所有的www.nihao.com域名的http访问强制跳转到https。下面配置均可以实现：  123456789101112131415161718">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Http请求域名强制跳转https">
 <meta property="og:url" content="http://yoursite.com/linux/SSLhttps.html">
 <meta property="og:site_name" content="知音空间">
-<meta property="og:description" content="网站添加了https证书后，当http方式访问网站时就会报404错误，所以需要做http到https的强制跳转设置. —————一、采用nginx的rewrite方法———————下面是将所有的http请求通过rewrite重写到https上。例如将所有的www.nihao.com域名的http访问强制跳转到https。下面配置均可以实现：   server {    listen 80;">
+<meta property="og:description" content="网站添加了https证书后，当http方式访问网站时就会报404错误，所以需要做http到https的强制跳转设置. —————一、采用nginx的rewrite方法———————下面是将所有的http请求通过rewrite重写到https上。例如将所有的www.nihao.com域名的http访问强制跳转到https。下面配置均可以实现：  123456789101112131415161718">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-04T05:24:36.728Z">
+<meta property="og:updated_time" content="2019-06-06T01:03:54.292Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Http请求域名强制跳转https">
-<meta name="twitter:description" content="网站添加了https证书后，当http方式访问网站时就会报404错误，所以需要做http到https的强制跳转设置. —————一、采用nginx的rewrite方法———————下面是将所有的http请求通过rewrite重写到https上。例如将所有的www.nihao.com域名的http访问强制跳转到https。下面配置均可以实现：   server {    listen 80;">
+<meta name="twitter:description" content="网站添加了https证书后，当http方式访问网站时就会报404错误，所以需要做http到https的强制跳转设置. —————一、采用nginx的rewrite方法———————下面是将所有的http请求通过rewrite重写到https上。例如将所有的www.nihao.com域名的http访问强制跳转到https。下面配置均可以实现：  123456789101112131415161718">
   
     <link rel="alternative" href="/atom.xml" title="知音空间" type="application/atom+xml">
   
@@ -178,7 +178,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="color:teal">  字数统计: </span>
-        <span class="post-count">145字</span>
+        <span class="post-count">151字</span>
       </span>
     </span>
 
@@ -201,17 +201,7 @@
         <h6 id="网站添加了https证书后，当http方式访问网站时就会报404错误，所以需要做http到https的强制跳转设置"><a href="#网站添加了https证书后，当http方式访问网站时就会报404错误，所以需要做http到https的强制跳转设置" class="headerlink" title="网站添加了https证书后，当http方式访问网站时就会报404错误，所以需要做http到https的强制跳转设置."></a>网站添加了https证书后，当http方式访问网站时就会报404错误，所以需要做http到https的强制跳转设置.</h6><blockquote>
 <p>—————一、采用nginx的rewrite方法———————<br>下面是将所有的http请求通过rewrite重写到https上。<br>例如将所有的<a href="http://www.nihao.com域名的http访问强制跳转到https。" target="_blank" rel="noopener">www.nihao.com域名的http访问强制跳转到https。</a><br>下面配置均可以实现：</p>
 </blockquote>
-<blockquote>
-<p>server {<br>    listen 80;<br>    server_name <a href="http://www.nihao.com" target="_blank" rel="noopener">www.nihao.com</a>;<br>    index index.html index.php index.htm;</p>
-<pre><code>access_log  /usr/local/nginx/logs/8080-access.log main;
-error_log  /usr/local/nginx/logs/8080-error.log;
-
- #重点在此
-if ($host ~* &quot;^nihao.com$&quot;) {
-  rewrite ^/(.*)$ https://www.nihao.com/ permanent;
-}
-</code></pre><p>   location ~ / {<br>     root  html;<br>     index index.html index.php index.htm;<br>   }<br>}</p>
-</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen 80;</span><br><span class="line">    server_name www.nihao.com;</span><br><span class="line">    index index.html index.php index.htm;</span><br><span class="line"></span><br><span class="line">    access_log  /usr/local/nginx/logs/8080-access.log main;</span><br><span class="line">    error_log  /usr/local/nginx/logs/8080-error.log;</span><br><span class="line">    </span><br><span class="line">    #重点在此</span><br><span class="line">    if ($host ~* &quot;^nihao.com$&quot;) &#123;</span><br><span class="line">    rewrite ^/(.*)$ https://www.nihao.com/ permanent;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    location ~ / &#123;</span><br><span class="line">        root  html;</span><br><span class="line">        index index.html index.php index.htm;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <!-- https://blog.csdn.net/baidu_37895884/article/details/78200825 --> 
       
 
@@ -467,15 +457,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">linux-bug</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">bug</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -499,10 +489,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
@@ -511,11 +497,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">wm_concat</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">支付</a>
+                <a href="javascript:void(0)" class="js-tag color1">maven</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -527,7 +517,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">maven</a>
+                <a href="javascript:void(0)" class="js-tag color3">支付</a>
               </li>
              
               <li class="article-tag-list-item">

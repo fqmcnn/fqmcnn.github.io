@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Cause: java.lang.IllegalArgumentException: Invalid Comparison: java.util.ArrayList and java.lang.String | 知音空间</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="翻译过来就是   原因：java.lang.IllegalArgumentException：无效比较：java.util.ArrayList和java.lang.String   这个情况在list集合查找数据的sql中出的问题，在接受list的时候加了判断  list!=’’ ,引起了集合与String类型的比较  &amp;lt;choose&amp;gt;      &amp;lt;when test=”nam">
+  <meta name="description" content="翻译过来就是   原因：java.lang.IllegalArgumentException：无效比较：java.util.ArrayList和java.lang.String   这个情况在list集合查找数据的sql中出的问题，在接受list的时候加了判断  list!=’’ ,引起了集合与String类型的比较1234567891011&amp;lt;choose&amp;gt;  &amp;lt;when te">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Cause: java.lang.IllegalArgumentException: Invalid Comparison: java.util.ArrayList and java.lang.String">
 <meta property="og:url" content="http://yoursite.com/bug/IllegalArgumentException.html">
 <meta property="og:site_name" content="知音空间">
-<meta property="og:description" content="翻译过来就是   原因：java.lang.IllegalArgumentException：无效比较：java.util.ArrayList和java.lang.String   这个情况在list集合查找数据的sql中出的问题，在接受list的时候加了判断  list!=’’ ,引起了集合与String类型的比较  &amp;lt;choose&amp;gt;      &amp;lt;when test=”nam">
+<meta property="og:description" content="翻译过来就是   原因：java.lang.IllegalArgumentException：无效比较：java.util.ArrayList和java.lang.String   这个情况在list集合查找数据的sql中出的问题，在接受list的时候加了判断  list!=’’ ,引起了集合与String类型的比较1234567891011&amp;lt;choose&amp;gt;  &amp;lt;when te">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-18T06:16:39.763Z">
+<meta property="og:updated_time" content="2019-06-06T00:57:29.896Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Cause: java.lang.IllegalArgumentException: Invalid Comparison: java.util.ArrayList and java.lang.String">
-<meta name="twitter:description" content="翻译过来就是   原因：java.lang.IllegalArgumentException：无效比较：java.util.ArrayList和java.lang.String   这个情况在list集合查找数据的sql中出的问题，在接受list的时候加了判断  list!=’’ ,引起了集合与String类型的比较  &amp;lt;choose&amp;gt;      &amp;lt;when test=”nam">
+<meta name="twitter:description" content="翻译过来就是   原因：java.lang.IllegalArgumentException：无效比较：java.util.ArrayList和java.lang.String   这个情况在list集合查找数据的sql中出的问题，在接受list的时候加了判断  list!=’’ ,引起了集合与String类型的比较1234567891011&amp;lt;choose&amp;gt;  &amp;lt;when te">
   
     <link rel="alternative" href="/atom.xml" title="知音空间" type="application/atom+xml">
   
@@ -178,7 +178,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="color:teal">  字数统计: </span>
-        <span class="post-count">157字</span>
+        <span class="post-count">196字</span>
       </span>
     </span>
 
@@ -205,11 +205,10 @@
 <p>原因：java.lang.IllegalArgumentException：无效比较：java.util.ArrayList和java.lang.String</p>
 </blockquote>
 <blockquote>
-<p>这个情况在list集合查找数据的sql中出的问题，在接受list的时候加了判断  list!=’’ ,引起了集合与String类型的比较</p>
+<p>这个情况在list集合查找数据的sql中出的问题，在接受list的时候加了判断  list!=’’ ,引起了集合与String类型的比较<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;choose&gt;</span><br><span class="line">  &lt;when test=&quot;names!= null and names!=&apos;&apos;&quot;&gt;</span><br><span class="line">    and name in</span><br><span class="line">    &lt;foreach collection=&quot;names&quot; item=&quot;name&quot; index=&quot;index&quot; open=&quot;(&quot; close=&quot;)&quot; separator=&quot;,&quot;&gt;</span><br><span class="line">      #&#123;name&#125;</span><br><span class="line">    &lt;/foreach&gt;</span><br><span class="line">  &lt;/when&gt;</span><br><span class="line">  &lt;otherwise&gt;</span><br><span class="line">    and name= &apos;&apos;</span><br><span class="line">  &lt;/otherwise&gt;</span><br><span class="line">&lt;/choose&gt;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
-<p>&lt;choose&gt;<br>      &lt;when test=”names!= null and names!=’’”&gt;<br>        and name in<br>        &lt;foreach collection=”names” item=”name” index=”index” open=”(“ close=”)” separator=”,”&gt;<br>          #{name}<br>        &lt;/foreach&gt;<br>      &lt;/when&gt;<br>      &lt;otherwise&gt;<br>        and name= ‘’<br>      &lt;/otherwise&gt;<br>    &lt;/choose&gt;</p>
 <blockquote>
-<p>换成<br>&lt;choose&gt;<br>      &lt;&lt;when test=”names!= null and names.size&gt;0”&gt;<br>        and name in<br>        &lt;foreach collection=”names” item=”name” index=”index” open=”(“ close=”)” separator=”,”&gt;<br>          #{name}<br>        &lt;/foreach&gt;<br>      &lt;/when&gt;<br>      &lt;otherwise&gt;<br>        and name= ‘’<br>      &lt;/otherwise&gt;<br>    &lt;/choose&gt;</p>
+<p>换成<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;choose&gt;</span><br><span class="line">  &lt;&lt;when test=&quot;names!= null and names.size&gt;0&quot;&gt;</span><br><span class="line">    and name in</span><br><span class="line">    &lt;foreach collection=&quot;names&quot; item=&quot;name&quot; index=&quot;index&quot; open=&quot;(&quot; close=&quot;)&quot; separator=&quot;,&quot;&gt;</span><br><span class="line">      #&#123;name&#125;</span><br><span class="line">    &lt;/foreach&gt;</span><br><span class="line">  &lt;/when&gt;</span><br><span class="line">  &lt;otherwise&gt;</span><br><span class="line">    and name= &apos;&apos;</span><br><span class="line">  &lt;/otherwise&gt;</span><br><span class="line">&lt;/choose&gt;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 
       
@@ -466,15 +465,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">linux-bug</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">bug</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -498,10 +497,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
@@ -510,11 +505,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">wm_concat</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">支付</a>
+                <a href="javascript:void(0)" class="js-tag color1">maven</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -526,7 +525,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">maven</a>
+                <a href="javascript:void(0)" class="js-tag color3">支付</a>
               </li>
              
               <li class="article-tag-list-item">

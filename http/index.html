@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Http | 知音空间</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="import java.io.BufferedReader;import java.io.IOException;import java.io.InputStreamReader;import java.io.PrintWriter;import java.net.URL;import java.net.URLConnection; public class HttpSend { 　　//测试">
+  <meta name="description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172import java.io.BufferedReader;import java.io.IOException;import j">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Http">
 <meta property="og:url" content="http://yoursite.com/http/index.html">
 <meta property="og:site_name" content="知音空间">
-<meta property="og:description" content="import java.io.BufferedReader;import java.io.IOException;import java.io.InputStreamReader;import java.io.PrintWriter;import java.net.URL;import java.net.URLConnection; public class HttpSend { 　　//测试">
+<meta property="og:description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172import java.io.BufferedReader;import java.io.IOException;import j">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-17T02:07:24.731Z">
+<meta property="og:updated_time" content="2019-06-06T01:01:36.664Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Http">
-<meta name="twitter:description" content="import java.io.BufferedReader;import java.io.IOException;import java.io.InputStreamReader;import java.io.PrintWriter;import java.net.URL;import java.net.URLConnection; public class HttpSend { 　　//测试">
+<meta name="twitter:description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172import java.io.BufferedReader;import java.io.IOException;import j">
   
     <link rel="alternative" href="/atom.xml" title="知音空间" type="application/atom+xml">
   
@@ -178,7 +178,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="color:teal">  字数统计: </span>
-        <span class="post-count">311字</span>
+        <span class="post-count">335字</span>
       </span>
     </span>
 
@@ -198,69 +198,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>import java.io.BufferedReader;<br>import java.io.IOException;<br>import java.io.InputStreamReader;<br>import java.io.PrintWriter;<br>import java.net.URL;<br>import java.net.URLConnection;</p>
-<p>public class HttpSend {</p>
-<p>　　//测试　<br>    public static void main(String args[]){<br>        sendPost(路径,””);<br>    }</p>
-<pre><code>/**
- * 向指定 URL 发送POST方法的请求
- *
- * @param url
- *            发送请求的 URL
- * @param param
- *            请求参数，请求参数应该是 name1=value1&amp;name2=value2 的形式。
- * @return 所代表远程资源的响应结果
- */
-public static String sendPost(String url, String param) {
-    PrintWriter out = null;
-    BufferedReader in = null;
-    String result = &quot;&quot;;
-    try {
-        URL realUrl = new URL(url);
-        // 打开和URL之间的连接
-        URLConnection conn = realUrl.openConnection();
-        // 设置通用的请求属性
-        conn.setRequestProperty(&quot;accept&quot;, &quot;*/*&quot;);
-        conn.setRequestProperty(&quot;connection&quot;, &quot;Keep-Alive&quot;);
-        conn.setRequestProperty(&quot;user-agent&quot;,
-                &quot;Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1;SV1)&quot;);
-        // 发送POST请求必须设置如下两行
-        conn.setDoOutput(true);
-        conn.setDoInput(true);
-        // 获取URLConnection对象对应的输出流
-        out = new PrintWriter(conn.getOutputStream());
-        // 发送请求参数
-        out.print(param);
-        // flush输出流的缓冲
-        out.flush();
-        // 定义BufferedReader输入流来读取URL的响应
-        in = new BufferedReader(
-                new InputStreamReader(conn.getInputStream(),&quot;utf-8&quot;));
-        String line;
-        while ((line = in.readLine()) != null) {
-            result += line;
-        }
-    } catch (Exception e) {
-        System.out.println(&quot;发送 POST 请求出现异常！&quot;+e);
-        e.printStackTrace();
-    }
-    //使用finally块来关闭输出流、输入流
-    finally{
-        try{
-            if(out!=null){
-                out.close();
-            }
-            if(in!=null){
-                in.close();
-            }
-        }
-        catch(IOException ex){
-            ex.printStackTrace();
-        }
-    }
-    return result;
-}
-</code></pre><p>}</p>
-
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line">import java.io.BufferedReader;</span><br><span class="line">import java.io.IOException;</span><br><span class="line">import java.io.InputStreamReader;</span><br><span class="line">import java.io.PrintWriter;</span><br><span class="line">import java.net.URL;</span><br><span class="line">import java.net.URLConnection;</span><br><span class="line"></span><br><span class="line">public class HttpSend &#123;</span><br><span class="line">　　//测试　</span><br><span class="line">    public static void main(String args[])&#123;</span><br><span class="line">        sendPost(路径,&quot;&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 向指定 URL 发送POST方法的请求</span><br><span class="line">     *</span><br><span class="line">     * @param url</span><br><span class="line">     *            发送请求的 URL</span><br><span class="line">     * @param param</span><br><span class="line">     *            请求参数，请求参数应该是 name1=value1&amp;name2=value2 的形式。</span><br><span class="line">     * @return 所代表远程资源的响应结果</span><br><span class="line">     */</span><br><span class="line">    public static String sendPost(String url, String param) &#123;</span><br><span class="line">        PrintWriter out = null;</span><br><span class="line">        BufferedReader in = null;</span><br><span class="line">        String result = &quot;&quot;;</span><br><span class="line">        try &#123;</span><br><span class="line">            URL realUrl = new URL(url);</span><br><span class="line">            // 打开和URL之间的连接</span><br><span class="line">            URLConnection conn = realUrl.openConnection();</span><br><span class="line">            // 设置通用的请求属性</span><br><span class="line">            conn.setRequestProperty(&quot;accept&quot;, &quot;*/*&quot;);</span><br><span class="line">            conn.setRequestProperty(&quot;connection&quot;, &quot;Keep-Alive&quot;);</span><br><span class="line">            conn.setRequestProperty(&quot;user-agent&quot;,</span><br><span class="line">                    &quot;Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1;SV1)&quot;);</span><br><span class="line">            // 发送POST请求必须设置如下两行</span><br><span class="line">            conn.setDoOutput(true);</span><br><span class="line">            conn.setDoInput(true);</span><br><span class="line">            // 获取URLConnection对象对应的输出流</span><br><span class="line">            out = new PrintWriter(conn.getOutputStream());</span><br><span class="line">            // 发送请求参数</span><br><span class="line">            out.print(param);</span><br><span class="line">            // flush输出流的缓冲</span><br><span class="line">            out.flush();</span><br><span class="line">            // 定义BufferedReader输入流来读取URL的响应</span><br><span class="line">            in = new BufferedReader(</span><br><span class="line">                    new InputStreamReader(conn.getInputStream(),&quot;utf-8&quot;));</span><br><span class="line">            String line;</span><br><span class="line">            while ((line = in.readLine()) != null) &#123;</span><br><span class="line">                result += line;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; catch (Exception e) &#123;</span><br><span class="line">            System.out.println(&quot;发送 POST 请求出现异常！&quot;+e);</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        //使用finally块来关闭输出流、输入流</span><br><span class="line">        finally&#123;</span><br><span class="line">            try&#123;</span><br><span class="line">                if(out!=null)&#123;</span><br><span class="line">                    out.close();</span><br><span class="line">                &#125;</span><br><span class="line">                if(in!=null)&#123;</span><br><span class="line">                    in.close();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            catch(IOException ex)&#123;</span><br><span class="line">                ex.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -515,15 +453,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">linux-bug</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">bug</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -547,10 +485,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
@@ -559,11 +493,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">wm_concat</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">支付</a>
+                <a href="javascript:void(0)" class="js-tag color1">maven</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -575,7 +513,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">maven</a>
+                <a href="javascript:void(0)" class="js-tag color3">支付</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="知音空间">
 <meta property="og:description" content="有的时候我们经常需要把sql中的某个字段换成想要的值或者说当某个字段为空值赋值为0或true写一个简单的例子第一种写法ifnullselect name,ifnull(age,‘0’),adress from user第二种写法case when then else endselect name,case when age is null then 1 else age end,adress f">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-17T02:43:18.537Z">
+<meta property="og:updated_time" content="2019-06-06T01:09:26.756Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Sql某字段重新赋值">
 <meta name="twitter:description" content="有的时候我们经常需要把sql中的某个字段换成想要的值或者说当某个字段为空值赋值为0或true写一个简单的例子第一种写法ifnullselect name,ifnull(age,‘0’),adress from user第二种写法case when then else endselect name,case when age is null then 1 else age end,adress f">
@@ -178,7 +178,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="color:teal">  字数统计: </span>
-        <span class="post-count">170字</span>
+        <span class="post-count">192字</span>
       </span>
     </span>
 
@@ -199,7 +199,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>有的时候我们经常需要把sql中的某个字段换成想要的值<br>或者说当某个字段为空值赋值为0或true<br>写一个简单的例子<br>第一种写法<br>ifnull<br>select name,ifnull(age,‘0’),adress from user<br>第二种写法<br>case when then else end<br>select name,case when age is null then 1 else age end,adress from user<br>第三种写法<br>select name,#{需要的字段及mapper传入的值},age from 表名<br>mybatis的判断<br>&lt;choose&gt;<br>  &lt;when test=””&gt;<br>      //…<br>  &lt;/when&gt;<br>  &lt;otherwise&gt;<br>      //…<br>  &lt;/otherwise&gt;<br>&lt;/choose&gt;<br>&lt;choose&gt;<br>     &lt;when test=”xxx!= null and xxx !=’’”&gt;<br>       and name in<br>       &lt;foreach collection=”names” item=”name” index=”index” open=”(“ close=”)” separator=”,”&gt;<br>         #{name}<br>       &lt;/foreach&gt;<br>     &lt;/when&gt;<br>     &lt;otherwise&gt;<br>       and name= ‘’<br>     &lt;/otherwise&gt;<br>   &lt;/choose&gt;</p>
+<p>有的时候我们经常需要把sql中的某个字段换成想要的值<br>或者说当某个字段为空值赋值为0或true<br>写一个简单的例子<br>第一种写法<br>ifnull<br>select name,ifnull(age,‘0’),adress from user<br>第二种写法<br>case when then else end<br>select name,case when age is null then 1 else age end,adress from user<br>第三种写法<br>select name,#{需要的字段及mapper传入的值},age from 表名<br>mybatis的判断<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;choose&gt;</span><br><span class="line">  &lt;when test=&quot;&quot;&gt;</span><br><span class="line">  //...</span><br><span class="line">  &lt;/when&gt;</span><br><span class="line">  &lt;otherwise&gt;</span><br><span class="line">  //...</span><br><span class="line">  &lt;/otherwise&gt;</span><br><span class="line">&lt;/choose&gt;</span><br><span class="line">&lt;choose&gt;</span><br><span class="line">  &lt;when test=&quot;xxx!= null and xxx !=&apos;&apos;&quot;&gt;</span><br><span class="line">    and name in</span><br><span class="line">    &lt;foreach collection=&quot;names&quot; item=&quot;name&quot; index=&quot;index&quot; open=&quot;(&quot; close=&quot;)&quot; separator=&quot;,&quot;&gt;</span><br><span class="line">        #&#123;name&#125;</span><br><span class="line">    &lt;/foreach&gt;</span><br><span class="line">  &lt;/when&gt;</span><br><span class="line">  &lt;otherwise&gt;</span><br><span class="line">    and name= &apos;&apos;</span><br><span class="line">  &lt;/otherwise&gt;</span><br><span class="line">&lt;/choose&gt;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 
       
@@ -456,15 +456,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">linux-bug</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">bug</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -488,10 +488,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
@@ -500,11 +496,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">wm_concat</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">支付</a>
+                <a href="javascript:void(0)" class="js-tag color1">maven</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -516,7 +516,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">maven</a>
+                <a href="javascript:void(0)" class="js-tag color3">支付</a>
               </li>
              
               <li class="article-tag-list-item">
