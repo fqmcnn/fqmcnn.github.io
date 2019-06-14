@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tags | 知音空间</title>
+  <title>Java 开发常用判断去重... | 知音空间</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="正在持续更新中，后期把自己总结的所有知识与大家分享">
+  <meta name="description" content="1.List中去除nulllist.removeAll(Collections.singleton(null));此类 Collections 映入的包1import org.apache.commons.collections.CollectionUtils; 2.字符串查用判空StringUtils.isBlank()StringUtils.isEmpty() 相对比较isBlank比isEm">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Tags">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+<meta property="og:title" content="Java 开发常用判断去重...">
+<meta property="og:url" content="http://yoursite.com/javadev/dev.html">
 <meta property="og:site_name" content="知音空间">
-<meta property="og:description" content="正在持续更新中，后期把自己总结的所有知识与大家分享">
+<meta property="og:description" content="1.List中去除nulllist.removeAll(Collections.singleton(null));此类 Collections 映入的包1import org.apache.commons.collections.CollectionUtils; 2.字符串查用判空StringUtils.isBlank()StringUtils.isEmpty() 相对比较isBlank比isEm">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-13T01:41:51.687Z">
+<meta property="og:updated_time" content="2019-06-14T02:09:20.921Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tags">
-<meta name="twitter:description" content="正在持续更新中，后期把自己总结的所有知识与大家分享">
+<meta name="twitter:title" content="Java 开发常用判断去重...">
+<meta name="twitter:description" content="1.List中去除nulllist.removeAll(Collections.singleton(null));此类 Collections 映入的包1import org.apache.commons.collections.CollectionUtils; 2.字符串查用判空StringUtils.isBlank()StringUtils.isEmpty() 相对比较isBlank比isEm">
   
     <link rel="alternative" href="/atom.xml" title="知音空间" type="application/atom+xml">
   
@@ -162,13 +162,13 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Tags
+      Java 开发常用判断去重...
     </h1>
   
 
         
         <a href class="archive-article-date">
-  	<time datetime="2019-01-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-01</time>
+  	<time datetime="2019-06-09T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-10</time>
 </a>
         <!-- 需要添加的位置 -->
         <!-- 开始添加字数统计-->
@@ -178,7 +178,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="color:teal">  字数统计: </span>
-        <span class="post-count">24字</span>
+        <span class="post-count">143字</span>
       </span>
     </span>
 
@@ -198,9 +198,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ol>
-<li>正在持续更新中，后期把自己总结的所有知识与大家分享</li>
-</ol>
+        <p>1.List中去除null<br>list.removeAll(Collections.singleton(null));<br>此类 Collections 映入的包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import org.apache.commons.collections.CollectionUtils;</span><br></pre></td></tr></table></figure></p>
+<p>2.字符串查用判空<br>StringUtils.isBlank()<br>StringUtils.isEmpty()</p>
+<p>相对比较isBlank比isEmpty强大一点<br>在做判空的时候isBlank能判断字符串中的String aa = “ “;<br>而isEmpty是不行的</p>
+<p>3.StringUtils引入的包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import org.apache.commons.lang3.StringUtils;</span><br></pre></td></tr></table></figure></p>
+<p>4.集合判空<br>CollectionUtils.isNotEmpty();<br>引入的包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import org.apache.commons.collections.CollectionUtils;</span><br></pre></td></tr></table></figure></p>
+<p>5.List集合去重<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; list = new ArrayList&lt;&gt;();</span><br><span class="line">list.add(&quot;你好&quot;);</span><br><span class="line">list.add(&quot;baby&quot;);</span><br><span class="line">list.add(&quot;你好&quot;);</span><br><span class="line">Set&lt;String&gt; set = new HashSet&lt;String&gt;();</span><br><span class="line">set.addAll(list);</span><br><span class="line">list.clear();</span><br><span class="line">list.addAll(set);</span><br></pre></td></tr></table></figure></p>
 
       
 
@@ -285,8 +288,8 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <!--<img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/tags/" alt="微信分享二维码">-->
-      <img src="//api.qrserver.com/vi/create-qr-code/?size=150x150&date=http://yoursite.com/tags/" alt="微信分享二维码">
+      <!--<img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/javadev/dev.html" alt="微信分享二维码">-->
+      <img src="//api.qrserver.com/vi/create-qr-code/?size=150x150&date=http://yoursite.com/javadev/dev.html" alt="微信分享二维码">
     </div>
 </div>
 

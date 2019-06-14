@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tags | 知音空间</title>
+  <title>Java 文档注释 | 知音空间</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="正在持续更新中，后期把自己总结的所有知识与大家分享">
+  <meta name="description" content="Java 支持三种注释方式。前两种分别是 // 和 / /，第三种被称作说明注释，它以 /* 开始，以 /结束。说明注释允许你在程序中嵌入关于程序的信息。你可以使用 javadoc 工具软件来生成信息，并输出到HTML文件中。说明注释，使你更加方便的记录你的程序信息。  标签描述示例@author标识一个类的作者@author description@deprecated指名一个过期的类或成员@">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Tags">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+<meta property="og:title" content="Java 文档注释">
+<meta property="og:url" content="http://yoursite.com/javadev/document.html">
 <meta property="og:site_name" content="知音空间">
-<meta property="og:description" content="正在持续更新中，后期把自己总结的所有知识与大家分享">
+<meta property="og:description" content="Java 支持三种注释方式。前两种分别是 // 和 / /，第三种被称作说明注释，它以 /* 开始，以 /结束。说明注释允许你在程序中嵌入关于程序的信息。你可以使用 javadoc 工具软件来生成信息，并输出到HTML文件中。说明注释，使你更加方便的记录你的程序信息。  标签描述示例@author标识一个类的作者@author description@deprecated指名一个过期的类或成员@">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-13T01:41:51.687Z">
+<meta property="og:updated_time" content="2019-06-14T06:29:26.600Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tags">
-<meta name="twitter:description" content="正在持续更新中，后期把自己总结的所有知识与大家分享">
+<meta name="twitter:title" content="Java 文档注释">
+<meta name="twitter:description" content="Java 支持三种注释方式。前两种分别是 // 和 / /，第三种被称作说明注释，它以 /* 开始，以 /结束。说明注释允许你在程序中嵌入关于程序的信息。你可以使用 javadoc 工具软件来生成信息，并输出到HTML文件中。说明注释，使你更加方便的记录你的程序信息。  标签描述示例@author标识一个类的作者@author description@deprecated指名一个过期的类或成员@">
   
     <link rel="alternative" href="/atom.xml" title="知音空间" type="application/atom+xml">
   
@@ -162,13 +162,13 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Tags
+      Java 文档注释
     </h1>
   
 
         
         <a href class="archive-article-date">
-  	<time datetime="2019-01-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-01</time>
+  	<time datetime="2019-06-10T06:41:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-10</time>
 </a>
         <!-- 需要添加的位置 -->
         <!-- 开始添加字数统计-->
@@ -178,7 +178,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="color:teal">  字数统计: </span>
-        <span class="post-count">24字</span>
+        <span class="post-count">372字</span>
       </span>
     </span>
 
@@ -198,10 +198,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ol>
-<li>正在持续更新中，后期把自己总结的所有知识与大家分享</li>
-</ol>
-
+        <blockquote>
+<p>Java 支持三种注释方式。前两种分别是 // 和 /<em> </em>/，第三种被称作说明注释，它以 /*<em> 开始，以 </em>/结束。<br>说明注释允许你在程序中嵌入关于程序的信息。你可以使用 javadoc 工具软件来生成信息，并输出到HTML文件中。<br>说明注释，使你更加方便的记录你的程序信息。</p>
+</blockquote>
+<table border="1"><tr align="center" bgcolor="#BDBDBD"><td>标签</td><td>描述</td><td>示例</td></tr><tr align="center"><td>@author</td><td>标识一个类的作者</td><td>@author description</td></tr><tr align="center" bgcolor="#FFEFD5"><td>@deprecated</td><td>指名一个过期的类或成员</td><td>@deprecated description</td></tr><tr align="center"><td>{@docRoot}</td><td>指明当前文档根目录的路径</td><td>Directory Path</td></tr><tr align="center" bgcolor="#FFEFD5"><td>@exception</td><td>标志一个类抛出的异常</td><td>@exception exception-name explanation</td></tr><tr align="center"><td>{@inheritDoc}</td><td>从直接父类继承的注释</td><td>Inherits a comment from the immediate surperclass.</td></tr><tr align="center" bgcolor="#FFEFD5"><td>{@link}</td><td>插入一个到另一个主题的链接</td><td>{@link name text}</td></tr><tr align="center"><td>{@linkplain}</td><td>插入一个到另一个主题的链接，但是该链接显示纯文本字体</td><td>Inserts an in-line link to another topic.</td></tr><tr align="center" bgcolor="#FFEFD5"><td>@param</td><td>说明一个方法的参数</td><td>@param parameter-name explanation</td></tr><tr align="center"><td>@return</td><td>说明返回值类型</td><td>@return explanation</td></tr><tr align="center" bgcolor="#FFEFD5"><td>@see</td><td>指定一个到另一个主题的链接</td><td>@see anchor</td></tr><tr align="center"><td>@serial</td><td>说明一个序列化属性</td><td>@serial description</td></tr><tr align="center" bgcolor="#FFEFD5"><td>@serialData</td><td>说明通过writeObject( ) 和 writeExternal( )方法写的数据</td><td>@serialData description</td></tr><tr align="center"><td>@serialField</td><td>说明一个ObjectStreamField组件</td><td>@serialField name type description</td></tr><tr align="center" bgcolor="#FFEFD5"><td>@since</td><td>标记当引入一个特定的变化时</td><td>@since release</td></tr><tr align="center"><td>@throws</td><td>和 @exception标签一样</td><td>The @throws tag has the same meaning as the @exception tag</td></tr><tr align="center" bgcolor="#FFEFD5"><td>{@value}</td><td>显示常量的值，该常量必须是static属性</td><td>Displays the value of a constant, which must be a static field.</td></tr><tr align="center"><td>@version</td><td>指定类的版本</td><td>@version info</td></tr></table>
       
 
       
@@ -285,8 +285,8 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <!--<img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/tags/" alt="微信分享二维码">-->
-      <img src="//api.qrserver.com/vi/create-qr-code/?size=150x150&date=http://yoursite.com/tags/" alt="微信分享二维码">
+      <!--<img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/javadev/document.html" alt="微信分享二维码">-->
+      <img src="//api.qrserver.com/vi/create-qr-code/?size=150x150&date=http://yoursite.com/javadev/document.html" alt="微信分享二维码">
     </div>
 </div>
 
