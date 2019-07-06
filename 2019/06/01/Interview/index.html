@@ -8,25 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>回顾知识 | 知音空间</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.面向对象的特征有哪些方面？ 1、抽象：抽象是将一类对象的共同特征总结出来构造类的过程，包括数据抽象和行为抽象两方面。抽象只关注对象有哪些属性和行为，并不关注这些行为的细节是什么。2、继承：继承是从已有类得到继承信息创建新类的过程。提供继承信息的类被称为父类(超类、基类);得到继承信息的类被称为子类(派生类)。继承让变化中的软件系统有了一定的延续性，同时继承也是封装程序中可变因素的重要手段。3、">
+  <meta name="description" content="2018 bat 经典 Java8新特性持续更新中">
+<meta name="keywords" content="bat面试">
 <meta property="og:type" content="article">
 <meta property="og:title" content="回顾知识">
 <meta property="og:url" content="http://yoursite.com/2019/06/01/Interview/index.html">
 <meta property="og:site_name" content="知音空间">
-<meta property="og:description" content="1.面向对象的特征有哪些方面？ 1、抽象：抽象是将一类对象的共同特征总结出来构造类的过程，包括数据抽象和行为抽象两方面。抽象只关注对象有哪些属性和行为，并不关注这些行为的细节是什么。2、继承：继承是从已有类得到继承信息创建新类的过程。提供继承信息的类被称为父类(超类、基类);得到继承信息的类被称为子类(派生类)。继承让变化中的软件系统有了一定的延续性，同时继承也是封装程序中可变因素的重要手段。3、">
+<meta property="og:description" content="2018 bat 经典 Java8新特性持续更新中">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/assets/img/2018bat1.png">
-<meta property="og:image" content="http://yoursite.com/assets/img/2018bat2.png">
-<meta property="og:image" content="http://yoursite.com/assets/img/2018bat3.png">
-<meta property="og:image" content="http://yoursite.com/assets/img/2018bat4.png">
-<meta property="og:image" content="http://yoursite.com/assets/img/2018bat5.png">
-<meta property="og:image" content="http://yoursite.com/assets/img/2018bat6.png">
-<meta property="og:image" content="http://yoursite.com/assets/img/2018bat7.png">
-<meta property="og:updated_time" content="2019-07-05T07:34:39.054Z">
+<meta property="og:updated_time" content="2019-07-06T06:37:30.451Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="回顾知识">
-<meta name="twitter:description" content="1.面向对象的特征有哪些方面？ 1、抽象：抽象是将一类对象的共同特征总结出来构造类的过程，包括数据抽象和行为抽象两方面。抽象只关注对象有哪些属性和行为，并不关注这些行为的细节是什么。2、继承：继承是从已有类得到继承信息创建新类的过程。提供继承信息的类被称为父类(超类、基类);得到继承信息的类被称为子类(派生类)。继承让变化中的软件系统有了一定的延续性，同时继承也是封装程序中可变因素的重要手段。3、">
-<meta name="twitter:image" content="http://yoursite.com/assets/img/2018bat1.png">
+<meta name="twitter:description" content="2018 bat 经典 Java8新特性持续更新中">
   
     <link rel="alternative" href="/atom.xml" title="知音空间" type="application/atom+xml">
   
@@ -68,7 +61,7 @@
 		<nav class="header-menu">
 			<!--添加音乐-->
 			<div style="position:absolute; bottom: 100px left:auto; width: 100%">
-					<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="52" src="//music.163.com/outchain/player?type=2&id=451126768&auto=1&height=32"></iframe>
+					<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="52" src="//music.163.com/outchain/player?type=2&id=1366755643&auto=1&height=32"></iframe>
 			</div>
 			<ul>
 			
@@ -186,7 +179,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="color:teal">  字数统计: </span>
-        <span class="post-count">5.6k字</span>
+        <span class="post-count">13字</span>
       </span>
     </span>
 
@@ -195,7 +188,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text" style="color:teal">  阅读时长: </span>
-        <span class="post-count">20min</span>
+        <span class="post-count">1min</span>
       </span>
     </span>
 </div>
@@ -206,123 +199,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="1-面向对象的特征有哪些方面？"><a href="#1-面向对象的特征有哪些方面？" class="headerlink" title="1.面向对象的特征有哪些方面？"></a><strong style="color: red">1.面向对象的特征有哪些方面？</strong></h4><blockquote>
-<p>1、抽象：抽象是将一类对象的共同特征总结出来构造类的过程，包括数据抽象和行为抽象两方面。抽象只关注对象有哪些属性和行为，并不关注这些行为的细节是什么。<br>2、继承：继承是从已有类得到继承信息创建新类的过程。提供继承信息的类被称为父类(超类、基类);得到继承信息的类被称为子类(派生类)。继承让变化中的软件系统有了一定的延续性，同时继承也是封装程序中可变因素的重要手段。<br>3、封装: 通常认为封装是把数据和操作数据的方法绑定起来，对数据的访问只能通过已定义的接口。面向对象的本质就是将现实世界描绘成一系列完全自治、封闭的对象。我们在类中编写的方法就是对实现细节的一种封装；我们编写一个类就是对数据和数据操作的封装。可以说，封装就是隐藏一切可隐藏的东西，只向外界提供最简单的编程接口（可以想想普通洗衣机和全自动洗衣机的差别，明显全自动洗衣机封装更好因此操作起来更简单；我们现在使用的智能手机也是封装得足够好的，因为几个按键就搞定了所有的事情）。<br>4、多态性：多态性是指允许不同子类型的对象对同一消息作出不同的响应。简单的说就是用同样的对象引用调用同样的方法但是做了不同的事情。多态性分为编译时的多态性和运行时的多态性。如果将对象的方法视为对象向外界提供的服务，那么运行时的多态性可以解释为：当A系统访问B系统提供的服务时，B系统有多种提供服务的方式，但一切对A系统来说都是透明的（就像电动剃须刀是A系统，它的供电系统是B系统，B系统可以使用电池供电或者用交流电，甚至还有可能是太阳能，A系统只会通过B类对象调用供电的方法，但并不知道供电系统的底层实现是什么，究竟通过何种方式获得了动力）。方法重载（overload）实现的是编译时的多态性（也称为前绑定），而方法重写（override）实现的是运行时的多态性（也称为后绑定）。运行时的多态是面向对象最精髓的东西，要实现多态需要做两件事：1. 方法重写（子类继承父类并重写父类中已有的或抽象的方法）；2. 对象造型（用父类型引用引用子类型对象，这样同样的引用调用同样的方法就会根据子类对象的不同而表现出不同的行为）。</p>
-</blockquote>
-<h4 id="2-访问修饰符public-private-protected-以及不写（默认）时的区别？"><a href="#2-访问修饰符public-private-protected-以及不写（默认）时的区别？" class="headerlink" title="2.访问修饰符public,private,protected,以及不写（默认）时的区别？"></a><strong style="color: red">2.访问修饰符public,private,protected,以及不写（默认）时的区别？</strong></h4><table>
-<thead>
-<tr>
-<th style="text-align:center">作用域</th>
-<th style="text-align:center">当前类</th>
-<th style="text-align:center">同包</th>
-<th style="text-align:center">子类</th>
-<th style="text-align:center">其他</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">public</td>
-<td style="text-align:center">&radic;</td>
-<td style="text-align:center">&radic;</td>
-<td style="text-align:center">&radic;</td>
-<td style="text-align:center">&radic;</td>
-</tr>
-<tr>
-<td style="text-align:center">protected</td>
-<td style="text-align:center">&radic;</td>
-<td style="text-align:center">&radic;</td>
-<td style="text-align:center">&radic;</td>
-<td style="text-align:center">&times;</td>
-</tr>
-<tr>
-<td style="text-align:center">default</td>
-<td style="text-align:center">&radic;</td>
-<td style="text-align:center">&radic;</td>
-<td style="text-align:center">&times;</td>
-<td style="text-align:center">&times;</td>
-</tr>
-<tr>
-<td style="text-align:center">private</td>
-<td style="text-align:center">&radic;</td>
-<td style="text-align:center">&times;</td>
-<td style="text-align:center">&times;</td>
-<td style="text-align:center">&times;</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>类的成员不写访问修饰时默认为default。默认对于同一个包中的其他类相当于公开（public），对于不是同一个包中的其他类相当于私有（private）。受保护（protected）对子类相当于公开，对不是同一包中的没有父子关系的类相当于私有。</p>
-</blockquote>
-<p>持续更新中<br><a id="more"></a></p>
-<h4 id="3-String-是最基本的数据类型吗？"><a href="#3-String-是最基本的数据类型吗？" class="headerlink" title="3.String 是最基本的数据类型吗？"></a><strong style="color: red">3.String 是最基本的数据类型吗？</strong></h4><blockquote>
-<p>不是。Java中的基本数据类型只有8个：byte、short、int、long、float、double、char、boolean;除了基本类型（private type）和枚举类型（enumeration type）,剩下的都是引用类型（reference type）。</p>
-</blockquote>
-<h4 id="4-float-f-3-4-是否正确？"><a href="#4-float-f-3-4-是否正确？" class="headerlink" title="4.float f = 3.4;是否正确？"></a><strong style="color: red">4.float f = 3.4;是否正确？</strong></h4><blockquote>
-<p>不正确。3.4是双精度数，将双精度（double）赋值给浮点型（float）属于下转型（down-casting,也称为窄化）会造成精度损失，因此需要强制类型转换float f = (float)3.4;或者写成float f = 3.4F;</p>
-</blockquote>
-<p><strong style="color: red">5.short s1 = 1; s1 = s1 + 1;有错吗？short s1 = 1; s1 += 1;有错吗？</strong></p>
-<blockquote>
-<p>对于short s1 = 1; s1 = s1 + 1; 由于1是int类型，因此s1+1 运算结果也是int型，需要强制转换类型才能赋值给short型。而short s1 = 1; s1+=1;可以正确编辑，因此s1+=1;相当与s1= （short）(s1+1);其中有隐含的强制类型转换。</p>
-</blockquote>
-<h4 id="6-Java-有没有goto"><a href="#6-Java-有没有goto" class="headerlink" title="6.Java 有没有goto?"></a><strong style="color: red">6.Java 有没有goto?</strong></h4><blockquote>
-<p>goto是Java中的保留字，在目前版本的Java中没有使用。（根据James Gosling(Java之父)编写《The Java Programming Language》一书的附录中给出了一个Java关键字列表，其中有goto和const，但是这两个是目前无法使用的关键字，因此有些地方将其称之为保留字，其实保留字这个词应该有更广泛的意义，因为熟悉C语言的程序员都知道，在系统类库中使用过的有特殊意义的单词或单词的组合都被视为保留字）</p>
-</blockquote>
-<h4 id="7-int-和Integer-有什么区别"><a href="#7-int-和Integer-有什么区别" class="headerlink" title="7.int 和Integer 有什么区别?"></a><strong style="color: red">7.int 和Integer 有什么区别?</strong></h4><blockquote>
-<p>Java是一个近乎纯洁的面向对象编程语言，但是为了编程的方便还是引入不是对象的基本数据类型，但是为了能够将这些基本数据类型当成对象操作，Java为每一个基本数据类型都引入了对应的包装类型（wrapper class），int的包装类就是Integer，从JDK 1.5开始引入了自动装箱/拆箱机制，使得二者可以相互转换。<br>Java 为每个原始类型提供了包装类型：<br>原始类型: boolean，char，byte，short，int，long，float，double<br>包装类型：Boolean，Character，Byte，Short，Integer，Long，Float，Double<br><img src="/assets/img/2018bat1.png" alt="Alt text"><br>补充：最近还遇到一个面试题，也是和自动装箱和拆箱相关的，代码如下所示：<br><img src="/assets/img/2018bat2.png" alt="Alt text"><br>如果不明就里很容易认为两个输出要么都是true要么都是false。首先需要注意的是f1、f2、f3、f4四个变量都是Integer对象，所以下面的==运算比较的不是值而是引用。装箱的本质是什么呢？当我们给一个Integer对象赋一个int值的时候，会调用Integer类的静态方法valueOf，如果看看valueOf的源代码就知道发生了什么。<br><img src="/assets/img/2018bat3.png" alt="Alt text"><br>IntegerCache是Integer的内部类，其代码如下所示：<br><img src="/assets/img/2018bat4.png" alt="Alt text"><br>简单的说，如果字面量的值在-128到127之间，那么不会new新的Integer对象，而是直接引用常量池中的Integer对象，所以上面的面试题中f1==f2的结果是true，而f3==f4的结果是false。越是貌似简单的面试题其中的玄机就越多，需要面试者有相当深厚的功力。</p>
-</blockquote>
-<h4 id="8-amp-和-amp-amp-的区别？"><a href="#8-amp-和-amp-amp-的区别？" class="headerlink" title="8.&amp;和&amp;&amp;的区别？"></a><strong style="color: red">8.&amp;和&amp;&amp;的区别？</strong></h4><blockquote>
-<p>&amp;运算符有两种用法：(1)按位与；(2)逻辑与。&amp;&amp;运算符是短路与运算。逻辑与跟短路与的差别是非常巨大的，虽然二者都要求运算符左右两端的布尔值都是true整个表达式的值才是true。&amp;&amp;之所以称为短路运算是因为，如果&amp;&amp;左边的表达式的值是false，右边的表达式会被直接短路掉，不会进行运算。很多时候我们可能都需要用&amp;&amp;而不是&amp;，例如在验证用户登录时判定用户名不是null而且不是空字符串，应当写为：username != null &amp;&amp;!username.equals(“”)，二者的顺序不能交换，更不能用&amp;运算符，因为第一个条件如果不成立，根本不能进行字符串的equals比较，否则会产生NullPointerException异常。注意：逻辑或运算符（|）和短路或运算符（||）的差别也是如此。<br>补充：如果你熟悉JavaScript，那你可能更能感受到短路运算的强大，想成为JavaScript的高手就先从玩转短路运算开始吧。</p>
-</blockquote>
-<h4 id="9、解释内存中的栈（stack）、堆-heap-和静态存储区的用法"><a href="#9、解释内存中的栈（stack）、堆-heap-和静态存储区的用法" class="headerlink" title="9、解释内存中的栈（stack）、堆(heap)和静态存储区的用法"></a><strong style="color: red">9、解释内存中的栈（stack）、堆(heap)和静态存储区的用法</strong></h4><blockquote>
-<p>通常我们定义一个基本数据类型的变量，一个对象的引用，还有就是函数调用的现场保存都使用内存中的栈空间；而通过new关键字和构造器创建的对象放在堆空间；程序中的字面量（literal）如直接书写的100、“hello”和常量都是放在静态存储区中。栈空间操作最快但是也很小，通常大量的对象都是放在堆空间，整个内存包括硬盘上的虚拟内存都可以被当成堆空间来使用。<br>String str = new String(“hello”);<br>上面的语句中str放在栈上，用new创建出来的字符串对象放在堆上，而“hello”这个字面量放在静态存储区。<br>补充：较新版本的Java中使用了一项叫“逃逸分析“的技术，可以将一些局部对象放在栈上以提升对象的操作性能。</p>
-</blockquote>
-<h4 id="10-Math-round-11-5-等于多少-Math-round-11-5-等于多少"><a href="#10-Math-round-11-5-等于多少-Math-round-11-5-等于多少" class="headerlink" title="10.Math.round(11.5) 等于多少? Math.round(-11.5)等于多少?"></a><strong style="color: red">10.Math.round(11.5) 等于多少? Math.round(-11.5)等于多少?</strong></h4><blockquote>
-<p>Math.round(11.5)的返回值是12，Math.round(-11.5)的返回值是-11。四舍五入的原理是在参数上加0.5然后进行下取整。</p>
-</blockquote>
-<h4 id="11-swtich是否能作用在byte上，是否能作用在long上，是否能作用在String上？"><a href="#11-swtich是否能作用在byte上，是否能作用在long上，是否能作用在String上？" class="headerlink" title="11.swtich是否能作用在byte上，是否能作用在long上，是否能作用在String上？"></a><strong style="color: red">11.swtich是否能作用在byte上，是否能作用在long上，是否能作用在String上？</strong></h4><blockquote>
-<p>早期的JDK中，switch（expr）中，expr可以是byte、short、char、int。从1.5版本开始，Java中引入了枚举类型（enum），expr也可以是枚举，从JDK 1.7版开始，还可以是字符串（String）。长整型（long）是不可以的。</p>
-</blockquote>
-<h4 id="12-用最有效的方法计算2乘以8？"><a href="#12-用最有效的方法计算2乘以8？" class="headerlink" title="12.用最有效的方法计算2乘以8？"></a><strong style="color: red">12.用最有效的方法计算2乘以8？</strong></h4><blockquote>
-<p>2 &lt;&lt; 3(左移3位相当于乘以2的3次方，右移3位相当于除以2的3次方，右移3位相当于除以2的3次方)<br>补充：我们为编写的类重写hashCode方法时，可能会看到如下所示的代码，其实我们不太理解为什么要使用这样的乘法运算来产生哈希码（散列码），而且为什么这个数是个素数，为什么通常选择31这个数？前两个问题的答案你可以自己百度一下，选择31是因为可以用移位和减法运算来代替乘法，从而得到更好的性能。说到这里你可能已经想到了：31 * num &lt;==&gt; (num &lt;&lt; 5) - num，左移5位相当于乘以2的5次方（32）再减去自身就相当于乘以31。现在的VM都能自动完成这个优化。</p>
-</blockquote>
-<p><img src="/assets/img/2018bat5.png" alt="Alt text"><br><img src="/assets/img/2018bat6.png" alt="Alt text"></p>
-<h4 id="13-数组有没有length-方法？String有没有length-方法？"><a href="#13-数组有没有length-方法？String有没有length-方法？" class="headerlink" title="13.数组有没有length()方法？String有没有length()方法？"></a><strong style="color: red">13.数组有没有length()方法？String有没有length()方法？</strong></h4><blockquote>
-<p>数组没有length()方法，有length的属性。String有length()方法。JavaScript中，获得字符串的长度是通过length属性得到的，这一点容易和Java混淆。</p>
-</blockquote>
-<h4 id="14-在Java中，如何跳出当前的多重嵌套循环？"><a href="#14-在Java中，如何跳出当前的多重嵌套循环？" class="headerlink" title="14.在Java中，如何跳出当前的多重嵌套循环？"></a><strong style="color: red">14.在Java中，如何跳出当前的多重嵌套循环？</strong></h4><blockquote>
-<p>在最外层循环前加一个标记如A,然后用break A;可以跳出多重循环。(Java中支持带标签的break和continue语句，作用有点类似于C和C++中的goto语句，但是就像要避免使用goto一样，应该避免使用带标签的break和continue，因为它不会让你的程序变得更优雅，很多时候甚至有相反的作用，所以这种语法其实不知道更好)</p>
-</blockquote>
-<h4 id="15-构造器-constructor-是否可被重写（override）？"><a href="#15-构造器-constructor-是否可被重写（override）？" class="headerlink" title="15.构造器(constructor)是否可被重写（override）？"></a><strong style="color: red">15.构造器(constructor)是否可被重写（override）？</strong></h4><blockquote>
-<p>构造器不能被继承，因此不能被重写，但可以被重载。</p>
-</blockquote>
-<h4 id="16-两个对象值相同（x-equals-y-true），但却可有不同的hash-code-这句话对不对？"><a href="#16-两个对象值相同（x-equals-y-true），但却可有不同的hash-code-这句话对不对？" class="headerlink" title="16.两个对象值相同（x.equals(y) == true），但却可有不同的hash code,这句话对不对？"></a><strong style="color: red">16.两个对象值相同（x.equals(y) == true），但却可有不同的hash code,这句话对不对？</strong></h4><blockquote>
-<p>不对，如果两个对象x和y满足x.equals(y) == true,它们的哈希码（hash code）应当相同。Java对于eqauls方法和hashCode方法是这样规定的：(1)如果两个对象相同（equals方法返回true），那么它们的hashCode值一定要相同；(2)如果两个对象的hashCode相同，它们并不一定相同。当然，你未必要按照要求去做，但是如果你违背了上述原则就会发现在使用容器时，相同的对象可以出现在Set集合中，同时增加新元素的效率会大大下降（对于使用哈希存储的系统，如果哈希码频繁的冲突将会造成存取性能急剧下降）。<br>补充：关于equals和hashCode方法，很多Java程序都知道，但很多人也就是仅仅知道而已，在Joshua Bloch的大作《Effective Java》（很多软件公司，《Effective Java》、《Java编程思想》以及《重构：改善既有代码质量》是Java程序员必看书籍）中是这样介绍equals方法的：首先equals方法必须满足自反性（x.equals(x)必须返回true）、对称性（x.equals(y)返回true时，y.equals(x)也必须返回true）、传递性（x.equals(y)和y.equals(z)都返回true时，x.equals(z)也必须返回true）和一致性（当x和y引用的对象信息没有被修改时，多次调用x.equals(y)应该得到同样的返回值），而且对于任何非null值的引用x，x.equals(null)必须返回false。实现高质量的equals方法的诀窍包括：1. 使用==操作符检查“参数是否为这个对象的引用”；2. 使用instanceof操作符检查“参数是否为正确的类型”；3. 对于类中的关键属性，检查参数传入对象的属性是否与之相匹配；4. 编写完equals方法后，问自己它是否满足对称性、传递性、一致性；5. 重写equals时总是要重写hashCode；6. 不要将equals方法参数中的Object对象替换为其他的类型，在重写时不要忘掉@Override注解。</p>
-</blockquote>
-<h4 id="17-是否可以继承String类？"><a href="#17-是否可以继承String类？" class="headerlink" title="17.是否可以继承String类？"></a><strong style="color: red">17.是否可以继承String类？</strong></h4><blockquote>
-<p>String类是final类，不可以被继承。<br>补充：继承String本身就是一个错误的行为，对String类型最好的重用方式是关联(HAS-A)而不是继承（IS-A）。</p>
-</blockquote>
-<h4 id="18-当一个对象被当作参数传递到一个方法后，此方法可改变这个对象的属性，并可返回变化后的结果，那么这里到底是值传递还是引用传递？"><a href="#18-当一个对象被当作参数传递到一个方法后，此方法可改变这个对象的属性，并可返回变化后的结果，那么这里到底是值传递还是引用传递？" class="headerlink" title="18.当一个对象被当作参数传递到一个方法后，此方法可改变这个对象的属性，并可返回变化后的结果，那么这里到底是值传递还是引用传递？"></a><strong style="color: red">18.当一个对象被当作参数传递到一个方法后，此方法可改变这个对象的属性，并可返回变化后的结果，那么这里到底是值传递还是引用传递？</strong></h4><blockquote>
-<p>是值传递。Java编程语言只有值传递参数。当一个对象例作为一个参数被传递到方法中时，参数的值就是该对对象的引用。对象的属性可以在被调用过称中被改变，但对象的引用是永远不会改变的。C++和C#中可以通过传引用或传输出参数来改变传入的参数的值。<br>补充：Java中没有传引用实在是非常的不方便，这一点在Java 8中仍然没有得到改进，正是如此在Java编写的代码中才会出现大量的Wrapper类（将需要通过方法调用修改的引用置于一个Wrapper类中，再将Wrapper对象传入方法），这样的做法只会让代码变得臃肿，尤其是让从C和C++转型为Java程序员的开发者无法容忍。</p>
-</blockquote>
-<h4 id="19-String-和StringBuilder、StringBuffer-的区别"><a href="#19-String-和StringBuilder、StringBuffer-的区别" class="headerlink" title="19.String 和StringBuilder、StringBuffer 的区别?"></a><strong style="color: red">19.String 和StringBuilder、StringBuffer 的区别?</strong></h4><blockquote>
-<p>Java 平台提供了两种类型的字符串：String和StringBuffer / StringBuilder，它们可以储存和操作字符串。其中String是只读字符串，也就意味着String引用的字符串内容是不能被改变的。而StringBuffer和StringBuilder类表示的字符串对象可以直接进行修改。StringBuilder是JDK 1.5中引入的，它和StringBuffer的方法完全相同，区别在于它是在单线程环境下使用的，因为它的所有方面都没有被synchronized修饰，因此它的效率也比StringBuffer略高。<br>补充1：有一个面试题问：有没有哪种情况用+做字符串连接比调用StringBuffer / StringBuilder对象的append方法性能更好？如果连接后得到的字符串在静态存储区中是早已存在的，那么用+做字符串连接是优于StringBuffer / StringBuilder的append方法的。<br>补充2：下面也是一个面试题，问程序的输出，看看自己能不能说出正确答案。<br><img src="/assets/img/2018bat7.png" alt="Alt text"></p>
-</blockquote>
-<h4 id="20-重载（Overload）和重写（Override）的区别。重载的方法能否根据返回类型进行区分"><a href="#20-重载（Overload）和重写（Override）的区别。重载的方法能否根据返回类型进行区分" class="headerlink" title="20.重载（Overload）和重写（Override）的区别。重载的方法能否根据返回类型进行区分?"></a><strong style="color: red">20.重载（Overload）和重写（Override）的区别。重载的方法能否根据返回类型进行区分?</strong></h4><blockquote>
-<p>方法的重载和重写都是实现多态的方式，区别在于前者实现的是编译时的多态性，而后者实现的是运行时的多态性。重载发生在一个类中，同名的方法如果有不同的参数列表（参数类型不同、参数个数不同或者二者都不同）则视为重载；重写发生在子类与父类之间，重写要求子类被重写方法与父类被重写方法有相同的返回类型，比父类被重写方法更好访问，不能比父类被重写方法声明更多的异常（里氏代换原则）。重载对返回类型没有特殊的要求。<br>补充：华为的面试题中曾经问过这样一个问题：为什么不能根据返回类型来区分重载，说出你的答案吧！ </p>
-</blockquote>
-<h4 id="21-描述一下JVM-加载class文件的原理机制"><a href="#21-描述一下JVM-加载class文件的原理机制" class="headerlink" title="21.描述一下JVM 加载class文件的原理机制?"></a><strong style="color: red">21.描述一下JVM 加载class文件的原理机制?</strong></h4><blockquote>
-<p>JVM 中类的装载是由类加载器（ClassLoader） 和它的子类来实现的，Java中的类加载器是一个重要的Java 运行时系统组件，它负责在运行时查找和装入类文件中的类。<br>补充：<br>1.由于Java的跨平台性，经过编译的Java源程序并不是一个可执行程序，而是一个或多个类文件。当Java程序需要使用某个类时，JVM会确保这个类已经被加载、连接(验证、准备和解析)和初始化。类的加载是指把类的.class文件中的数据读入到内存中，通常是创建一个字节数组读入.class文件，然后产生与所加载类对应的Class对象。加载完成后，Class对象还不完整，所以此时的类还不可用。当类被加载后就进入连接阶段，这一阶段包括验证、准备(为静态变量分配内存并设置默认的初始值)和解析(将符号引用替换为直接引用)三个步骤。最后JVM对类进行初始化，包括：1如果类存在直接的父类并且这个类还没有被初始化，那么就先初始化父类；2如果类中存在初始化语句，就依次执行这些初始化语句。<br>2.类的加载是由类加载器完成的，类加载器包括：根加载器（BootStrap）、扩展加载器（Extension）、系统加载器（System）和用户自定义类加载器（java.lang.ClassLoader的子类）。从JDK 1.2开始，类加载过程采取了父亲委托机制(PDM)。PDM更好的保证了Java平台的安全性，在该机制中，JVM自带的Bootstrap是根加载器，其他的加载器都有且仅有一个父类加载器。类的加载首先请求父类加载器加载，父类加载器无能为力时才由其子类加载器自行加载。JVM不会向Java程序提供对Bootstrap的引用。下面是关于几个类加载器的说明：<br>a)Bootstrap：一般用本地代码实现，负责加载JVM基础核心类库（rt.jar）；<br>b)Extension：从java.ext.dirs系统属性所指定的目录中加载类库，它的父加载器是Bootstrap；<br>c)System：又叫应用类加载器，其父类是Extension。它是应用最广泛的类加载器。它从环境变量classpath或者系统属性java.class.path所指定的目录中记载类，是用户自定义加载器的默认父加载器。</p>
-</blockquote>
-<h4 id="22-char-型变量中能不能存贮一个中文汉字-为什么"><a href="#22-char-型变量中能不能存贮一个中文汉字-为什么" class="headerlink" title="22.char 型变量中能不能存贮一个中文汉字?为什么?"></a><strong style="color: red">22.char 型变量中能不能存贮一个中文汉字?为什么?</strong></h4><blockquote>
-<p>char类型可以存储一个中文汉字，因为Java中使用的编码是Unicode（不选择任何特定的编码，直接使用字符在字符集中的编号，这是统一的唯一方法），一个char类型占2个字节（16bit），所以放一个中文是没问题的。<br>补充：使用Unicode意味着字符在JVM内部和外部有不同的表现形式，在JVM内部都是Unicode，当这个字符被从JVM内部转移到外部时（例如存入文件系统中），需要进行编码转换。所以Java中有字节流和字符流，以及在字符流和字节流之间进行转换的转换流，如InputStreamReader和OutputStreamReader，这两个类是字节流和字符流之间的适配器类，承担了编码转换的任务；对于C程序员来说，要完成这样的编码转换恐怕要依赖于union（联合体/共用体）共享内存的特征来实现了。</p>
-</blockquote>
-<h4 id="23-抽象类（abstract-class）和接口（interface）有什么异同"><a href="#23-抽象类（abstract-class）和接口（interface）有什么异同" class="headerlink" title="23.抽象类（abstract class）和接口（interface）有什么异同?"></a><strong style="color: red">23.抽象类（abstract class）和接口（interface）有什么异同?</strong></h4><blockquote>
-<p>抽象类和接口都不能够实例化，但可以定义抽象类和接口类型的引用。一个类如果继承了某个抽象类或者实现了某个接口都需要对其中的抽象方法全部进行实现，否则该类仍然需要被声明为抽象类。接口比抽象类更加抽象，因为抽象类中可以定义构造器，可以有抽象方法和具体方法，而接口中不能定义构造器而且其中的方法全部都是抽象方法。抽象类中的成员可以是private、默认、protected、public的，而接口中的成员全都是public的。抽象类中可以定义成员变量，而接口中定义的成员变量实际上都是常量。有抽象方法的类必须被声明为抽象类，而抽象类未必要有抽象方法。</p>
-</blockquote>
-<h4 id="24-静态嵌套类-Static-Nested-Class-和内部类（Inner-Class）的不同？"><a href="#24-静态嵌套类-Static-Nested-Class-和内部类（Inner-Class）的不同？" class="headerlink" title="24.静态嵌套类(Static Nested Class)和内部类（Inner Class）的不同？"></a><strong style="color: red">24.静态嵌套类(Static Nested Class)和内部类（Inner Class）的不同？</strong></h4><blockquote>
-<p>Static Nested Class是被声明为静态（static）的内部类，它可以不依赖于外部类实例被实例化。而通常的内部类需要在外部类实例化后才能实例化，其语法看起来挺诡异的，如下所示。<br>&lt;!–</p>
-</blockquote>
-<h4 id="25"><a href="#25" class="headerlink" title="25."></a><strong style="color: red">25.</strong></h4><h4 id="26"><a href="#26" class="headerlink" title="26."></a><strong style="color: red">26.</strong></h4><h4 id="27"><a href="#27" class="headerlink" title="27."></a><strong style="color: red">27.</strong></h4><h4 id="28"><a href="#28" class="headerlink" title="28."></a><strong style="color: red">28.</strong></h4><h4 id="29"><a href="#29" class="headerlink" title="29."></a><strong style="color: red">29.</strong></h4><p>–&gt;</p>
+        <ol>
+<li><a href="/interview/2018bat.html">2018 bat 经典</a></li>
+<li><a href="/interview/NewFeatures.html">Java8新特性</a><br>持续更新中<a id="more"></a></li>
+</ol>
 
       
 
@@ -357,6 +237,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">bat面试</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -426,7 +317,7 @@
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Java 开发常用
+          Java 开发常用与扩展
         
       </div>
     </a>
@@ -597,7 +488,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ElasticSearch</a>
+                <a href="javascript:void(0)" class="js-tag color1">bat面试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -613,11 +504,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Excel 常用快捷键</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Excel 常用快捷键</a>
+                <a href="javascript:void(0)" class="js-tag color4">ElasticSearch</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -633,7 +532,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -645,19 +548,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">IdeaHotKey</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">dataGrip</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">乱码</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -673,15 +572,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">maven</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">支付</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">HotKey</a>
+                <a href="javascript:void(0)" class="js-tag color1">maven</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -694,6 +589,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">注解</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">HotKey</a>
               </li>
             
             <div class="clearfix"></div>
