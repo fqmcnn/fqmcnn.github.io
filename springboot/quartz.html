@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Sql某字段重新赋值 | 知音空间</title>
+  <title>SpringBoor-Quartz | 知音空间</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="有的时候我们经常需要把sql中的某个字段换成想要的值或者说当某个字段为空值赋值为0或true写一个简单的例子第一种写法ifnullselect name,ifnull(age,‘0’),adress from user第二种写法case when then else endselect name,case when age is null then 1 else age end,adress f">
+  <meta name="description" content="Quartz官方文档Quartz是OpenSymphony开源组织在Job scheduling领域又一个开源项目 你了解Quartz吗？ Quartz 是一个完全由 Java 编写的开源作业调度框架，为在 Java 应用程序中进行作业调度提供了简单却强大的机制。Quartz 可以与 J2EE 与 J2SE 应用程序相结合也可以单独使用。Quartz 允许程序开发人员根据时间的间隔来调度作业。Qu">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Sql某字段重新赋值">
-<meta property="og:url" content="http://yoursite.com/mysql/assignment.html">
+<meta property="og:title" content="SpringBoor-Quartz">
+<meta property="og:url" content="http://yoursite.com/springboot/quartz.html">
 <meta property="og:site_name" content="知音空间">
-<meta property="og:description" content="有的时候我们经常需要把sql中的某个字段换成想要的值或者说当某个字段为空值赋值为0或true写一个简单的例子第一种写法ifnullselect name,ifnull(age,‘0’),adress from user第二种写法case when then else endselect name,case when age is null then 1 else age end,adress f">
+<meta property="og:description" content="Quartz官方文档Quartz是OpenSymphony开源组织在Job scheduling领域又一个开源项目 你了解Quartz吗？ Quartz 是一个完全由 Java 编写的开源作业调度框架，为在 Java 应用程序中进行作业调度提供了简单却强大的机制。Quartz 可以与 J2EE 与 J2SE 应用程序相结合也可以单独使用。Quartz 允许程序开发人员根据时间的间隔来调度作业。Qu">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-06T01:09:26.756Z">
+<meta property="og:updated_time" content="2019-07-09T02:23:19.790Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sql某字段重新赋值">
-<meta name="twitter:description" content="有的时候我们经常需要把sql中的某个字段换成想要的值或者说当某个字段为空值赋值为0或true写一个简单的例子第一种写法ifnullselect name,ifnull(age,‘0’),adress from user第二种写法case when then else endselect name,case when age is null then 1 else age end,adress f">
+<meta name="twitter:title" content="SpringBoor-Quartz">
+<meta name="twitter:description" content="Quartz官方文档Quartz是OpenSymphony开源组织在Job scheduling领域又一个开源项目 你了解Quartz吗？ Quartz 是一个完全由 Java 编写的开源作业调度框架，为在 Java 应用程序中进行作业调度提供了简单却强大的机制。Quartz 可以与 J2EE 与 J2SE 应用程序相结合也可以单独使用。Quartz 允许程序开发人员根据时间的间隔来调度作业。Qu">
   
     <link rel="alternative" href="/atom.xml" title="知音空间" type="application/atom+xml">
   
@@ -162,13 +162,13 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Sql某字段重新赋值
+      SpringBoor-Quartz
     </h1>
   
 
         
         <a href class="archive-article-date">
-  	<time datetime="2019-02-28T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-01</time>
+  	<time datetime="2019-06-09T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-10</time>
 </a>
         <!-- 需要添加的位置 -->
         <!-- 开始添加字数统计-->
@@ -178,7 +178,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="color:teal">  字数统计: </span>
-        <span class="post-count">192字</span>
+        <span class="post-count">655字</span>
       </span>
     </span>
 
@@ -187,7 +187,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text" style="color:teal">  阅读时长: </span>
-        <span class="post-count">1min</span>
+        <span class="post-count">2min</span>
       </span>
     </span>
 </div>
@@ -198,8 +198,37 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>有的时候我们经常需要把sql中的某个字段换成想要的值<br>或者说当某个字段为空值赋值为0或true<br>写一个简单的例子<br>第一种写法<br>ifnull<br>select name,ifnull(age,‘0’),adress from user<br>第二种写法<br>case when then else end<br>select name,case when age is null then 1 else age end,adress from user<br>第三种写法<br>select name,#{需要的字段及mapper传入的值},age from 表名<br>mybatis的判断<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;choose&gt;</span><br><span class="line">  &lt;when test=&quot;&quot;&gt;</span><br><span class="line">  //...</span><br><span class="line">  &lt;/when&gt;</span><br><span class="line">  &lt;otherwise&gt;</span><br><span class="line">  //...</span><br><span class="line">  &lt;/otherwise&gt;</span><br><span class="line">&lt;/choose&gt;</span><br><span class="line">&lt;choose&gt;</span><br><span class="line">  &lt;when test=&quot;xxx!= null and xxx !=&apos;&apos;&quot;&gt;</span><br><span class="line">    and name in</span><br><span class="line">    &lt;foreach collection=&quot;names&quot; item=&quot;name&quot; index=&quot;index&quot; open=&quot;(&quot; close=&quot;)&quot; separator=&quot;,&quot;&gt;</span><br><span class="line">        #&#123;name&#125;</span><br><span class="line">    &lt;/foreach&gt;</span><br><span class="line">  &lt;/when&gt;</span><br><span class="line">  &lt;otherwise&gt;</span><br><span class="line">    and name= &apos;&apos;</span><br><span class="line">  &lt;/otherwise&gt;</span><br><span class="line">&lt;/choose&gt;</span><br></pre></td></tr></table></figure></p>
+        <h2 id="Quartz官方文档"><a href="#Quartz官方文档" class="headerlink" title="Quartz官方文档"></a>Quartz官方文档</h2><p>Quartz是OpenSymphony开源组织在Job scheduling领域又一个开源项目</p>
+<h4 id="你了解Quartz吗？"><a href="#你了解Quartz吗？" class="headerlink" title="你了解Quartz吗？"></a>你了解Quartz吗？</h4><blockquote>
+<p>Quartz 是一个完全由 Java 编写的开源作业调度框架，为在 Java 应用程序中进行作业调度提供了简单却强大的机制。<br>Quartz 可以与 J2EE 与 J2SE 应用程序相结合也可以单独使用。<br>Quartz 允许程序开发人员根据时间的间隔来调度作业。<br>Quartz 实现了作业和触发器的多对多的关系，还能把多个作业与不同的触发器关联。</p>
+</blockquote>
+<h4 id="Quartz-核心概念"><a href="#Quartz-核心概念" class="headerlink" title="Quartz 核心概念"></a>Quartz 核心概念</h4><p>我们需要明白 Quartz 的几个核心概念，这样理解起 Quartz 的原理就会变得简单了。</p>
+<ol>
+<li>Job表示一个工作，要执行的具体内容。此接口中只有一个方法，如下<pre><code>void execute(JobExecutionContext context);</code></pre></li>
+<li>JobDetail表示一个具体的可执行的调度程序，Job是这个可执行程调度程序所要执行的内容，另外JobDetail还包含了这个任务调度的方案和策略。</li>
+<li>Trigger代表一个调度参数的配置，什么时候去调。</li>
+<li>Scheduler代表一个调度容器，一个调度容器中可以注册多个JobDetail和Trigger。当Trigger与JobDetail组合，就可以被Scheduler容器调度了。</li>
+</ol>
+<h4 id="Quartz的运行环境"><a href="#Quartz的运行环境" class="headerlink" title="Quartz的运行环境"></a>Quartz的运行环境</h4><ul>
+<li>Quartz可以运行嵌入在另一个独立式应用程序。</li>
+<li>Quartz可以在应用程序服务器或servlet容器）内被实例化，并且参与XA事务。</li>
+<li>Quartz可以作为一个独立的程序运行（其自己的Java虚拟机内），可以通过RMI使用</li>
+<li>Quartz可以被实例化，作为独立的项目集群（负载平衡和故障转移功能），用于作业的执行。</li>
+</ul>
+<h4 id="Quartz-Api，Jobs和Triggers"><a href="#Quartz-Api，Jobs和Triggers" class="headerlink" title="Quartz Api，Jobs和Triggers"></a>Quartz Api，Jobs和Triggers</h4><p><strong>Quartz Api的关键接口是</strong></p>
+<ul>
+<li>Scheduler - 与调度程序交互的主要Api</li>
+<li>Job - 由希望由调度程序执行的组件实现的接口</li>
+<li>JobDetail - 用于定义作业的实例</li>
+<li>Trigger (触发器)- 定义执行给定作业的计划的组件。</li>
+<li>JobBuilder - 用于定义/构建JobDetail示例，用于定义作业的实例。</li>
+<li>TriggerBuiler - 用于定义/构建触发器实例</li>
+</ul>
+<blockquote>
+<p>Scheduler的生命期，从SchedulerFactory创建它时开始，到Scheduler调用shutdown()方法时结束；Scheduler被创建后，可以增加、删除和列举Job和Trigger，以及执行其它与调度相关的操作（如暂停Trigger）。但是，Scheduler只有在调用start()方法后，才会真正地触发trigger（即执行job）。</p>
+</blockquote>
+<blockquote>
+<p>Quartz提供的“builder”类，可以认为是一种领域特定语言（DSL，Domain Specific Language)。<br>quartz 使用<code>quartz.properties</code>文件配置<br>秒分时天月周年</p>
 </blockquote>
 
       
@@ -285,8 +314,8 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <!--<img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/mysql/assignment.html" alt="微信分享二维码">-->
-      <img src="//api.qrserver.com/vi/create-qr-code/?size=150x150&date=http://yoursite.com/mysql/assignment.html" alt="微信分享二维码">
+      <!--<img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/springboot/quartz.html" alt="微信分享二维码">-->
+      <img src="//api.qrserver.com/vi/create-qr-code/?size=150x150&date=http://yoursite.com/springboot/quartz.html" alt="微信分享二维码">
     </div>
 </div>
 
