@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>ElasticSearch | 知音空间</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="ElasticSearch简介 ElasticSearch是基于Lucene的搜索服务器。它提供了一个分布式多用户能力的全文搜索引擎，基于RESTful web接口。ElasticSearch使用Java开发的，并作用为Apache许可条款下的开发源码发布，是当前流行的企业级搜索引擎。设计用于云计算中，能够达到实时搜索，稳定，可靠，快速，安装使用方便。更新中">
+  <meta name="description" content="ElasticSearch简介 ElasticSearch是基于Lucene的搜索服务器。它提供了一个分布式多用户能力的全文搜索引擎，基于RESTful web接口。ElasticSearch使用Java开发的，并作用为Apache许可条款下的开发源码发布，是当前流行的企业级搜索引擎。设计用于云计算中，能够达到实时搜索，稳定，可靠，快速，安装使用方便。  核心角色  节点和集群cluster代表一">
 <meta property="og:type" content="website">
 <meta property="og:title" content="ElasticSearch">
 <meta property="og:url" content="http://yoursite.com/javadev/elasticSearch.html">
 <meta property="og:site_name" content="知音空间">
-<meta property="og:description" content="ElasticSearch简介 ElasticSearch是基于Lucene的搜索服务器。它提供了一个分布式多用户能力的全文搜索引擎，基于RESTful web接口。ElasticSearch使用Java开发的，并作用为Apache许可条款下的开发源码发布，是当前流行的企业级搜索引擎。设计用于云计算中，能够达到实时搜索，稳定，可靠，快速，安装使用方便。更新中">
+<meta property="og:description" content="ElasticSearch简介 ElasticSearch是基于Lucene的搜索服务器。它提供了一个分布式多用户能力的全文搜索引擎，基于RESTful web接口。ElasticSearch使用Java开发的，并作用为Apache许可条款下的开发源码发布，是当前流行的企业级搜索引擎。设计用于云计算中，能够达到实时搜索，稳定，可靠，快速，安装使用方便。  核心角色  节点和集群cluster代表一">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-05T07:32:12.459Z">
+<meta property="og:updated_time" content="2019-07-11T02:24:36.874Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ElasticSearch">
-<meta name="twitter:description" content="ElasticSearch简介 ElasticSearch是基于Lucene的搜索服务器。它提供了一个分布式多用户能力的全文搜索引擎，基于RESTful web接口。ElasticSearch使用Java开发的，并作用为Apache许可条款下的开发源码发布，是当前流行的企业级搜索引擎。设计用于云计算中，能够达到实时搜索，稳定，可靠，快速，安装使用方便。更新中">
+<meta name="twitter:description" content="ElasticSearch简介 ElasticSearch是基于Lucene的搜索服务器。它提供了一个分布式多用户能力的全文搜索引擎，基于RESTful web接口。ElasticSearch使用Java开发的，并作用为Apache许可条款下的开发源码发布，是当前流行的企业级搜索引擎。设计用于云计算中，能够达到实时搜索，稳定，可靠，快速，安装使用方便。  核心角色  节点和集群cluster代表一">
   
     <link rel="alternative" href="/atom.xml" title="知音空间" type="application/atom+xml">
   
@@ -178,7 +178,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="color:teal">  字数统计: </span>
-        <span class="post-count">107字</span>
+        <span class="post-count">1k字</span>
       </span>
     </span>
 
@@ -187,7 +187,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text" style="color:teal">  阅读时长: </span>
-        <span class="post-count">1min</span>
+        <span class="post-count">4min</span>
       </span>
     </span>
 </div>
@@ -199,8 +199,35 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h4 id="ElasticSearch简介"><a href="#ElasticSearch简介" class="headerlink" title="ElasticSearch简介"></a><strong>ElasticSearch简介</strong></h4><blockquote>
-<p>ElasticSearch是基于Lucene的搜索服务器。它提供了一个分布式多用户能力的全文搜索引擎，基于RESTful web接口。<br>ElasticSearch使用Java开发的，并作用为Apache许可条款下的开发源码发布，是当前流行的企业级搜索引擎。设计用于云计算中，能够达到实时搜索，稳定，可靠，快速，安装使用方便。<br><em style="color: red">更新中</em></p>
+<p>ElasticSearch是基于Lucene的搜索服务器。它提供了一个分布式多用户能力的全文搜索引擎，基于RESTful web接口。<br>ElasticSearch使用Java开发的，并作用为Apache许可条款下的开发源码发布，是当前流行的企业级搜索引擎。设计用于云计算中，能够达到实时搜索，稳定，可靠，快速，安装使用方便。</p>
 </blockquote>
+<h4 id="核心角色"><a href="#核心角色" class="headerlink" title="核心角色"></a><strong>核心角色</strong></h4><blockquote>
+<ul>
+<li>节点和集群<br>cluster代表一个集群，集群中有多个节点，其中一个为主节点，这个主节点是可以通过选举产生的，主从节点是对于集群内部来说的。es的一个概念就是去中心化，字面上理解就是务中心节点，这个对于集群外部来说，因为从外部来看es集群，在逻辑上是整体。单个Elastic实例成为一个节点（node）。一组节点构成一个集群。</li>
+<li>Shards分片<br>代表索引分片，es可以把一个完整的索引分成多个分片，这样的好处是可以把一个大的索引拆分成多个，分布到不通的节点上。构成分布式搜索。分片的数量只能在索引创建前指定，并且索引创建后不能更改。</li>
+<li>Document 文档<br>Index 里面单条的记录称为Document(文档)。许多条Document构成了一个Index。Document使用JSON格式表示。</li>
+<li>Index索引<br>Elastic会索引所有字段，查找数据的时候，直接查找该索引。每个Index（即理解为数据库名称）的名字必须是小写</li>
+<li>Type类型<br>Document可以根据Type进行虚拟的逻辑分组，用来过滤Document，及理解为数据库表名称。</li>
+</ul>
+</blockquote>
+<h4 id="与SpringBoot2整合"><a href="#与SpringBoot2整合" class="headerlink" title="与SpringBoot2整合"></a><strong>与SpringBoot2整合</strong></h4><ol>
+<li><p>依赖</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-starter-data-elasticsearch&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;$&#123;spring-boot.version&#125;&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">    application:</span><br><span class="line">    name: ware-elastic-search</span><br><span class="line">    data:</span><br><span class="line">    elasticsearch:</span><br><span class="line">    # 默认 elasticsearch</span><br><span class="line">    cluster-name: elasticsearch</span><br><span class="line">    # 9200作为Http协议，主要用于外部通讯</span><br><span class="line">    # 9300作为Tcp协议，jar之间就是通过tcp协议通讯</span><br><span class="line">    cluster-nodes: 192.168.72.130:9300</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>实体类配置<br>Document配置<br>加上@Document注解之后，默认情况下这个实体中所有的属性都会被建立索引、并且分词。<br>indexName索引名称 理解为数据库名 限定小写<br>type理解为数据库的表名称<br>shards = 5 默认分区数<br>replicas = 1 每个分区默认的备份数<br>refreshInterval = “1s” 刷新间隔<br>indexStoreType = “fs” 索引文件存储类型</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">@Document(indexName = &quot;requestlogindex&quot;,type = &quot;requestlog&quot;)</span><br><span class="line">public class RequestLog &#123;</span><br><span class="line">    //Id注解Elasticsearch里相应于该列就是主键，查询时可以使用主键查询</span><br><span class="line">    @Id</span><br><span class="line">    private Long id;</span><br><span class="line">    private String orderNo;</span><br><span class="line">    private String userId;</span><br><span class="line">    private String userName;</span><br><span class="line">    private String createTime;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>数据交互层<br>实现ElasticsearchRepository接口</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">public interface RequestLogRepository extends ElasticsearchRepository&lt;RequestLog,Long&gt; &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>演示案例<br>数据增加，修改，查询，排序，多条件查询</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line">@Service</span><br><span class="line">public class RequestLogServiceImpl implements RequestLogService &#123;</span><br><span class="line">    @Resource</span><br><span class="line">    private RequestLogRepository requestLogRepository ;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public String esInsert(Integer num) &#123;</span><br><span class="line">        for (int i = 0 ; i &lt; num ; i++)&#123;</span><br><span class="line">            RequestLog requestLog = new RequestLog() ;</span><br><span class="line">            requestLog.setId(System.currentTimeMillis());</span><br><span class="line">            requestLog.setOrderNo(DateUtil.formatDate(new Date(),DateUtil.DATE_FORMAT_02)+System.currentTimeMillis());</span><br><span class="line">            requestLog.setUserId(&quot;userId&quot;+i);</span><br><span class="line">            requestLog.setUserName(&quot;张三&quot;+i);</span><br><span class="line">            requestLog.setCreateTime(DateUtil.formatDate(new Date(),DateUtil.DATE_FORMAT_01));</span><br><span class="line">            requestLogRepository.save(requestLog) ;</span><br><span class="line">        &#125;</span><br><span class="line">        return &quot;success&quot; ;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public Iterable&lt;RequestLog&gt; esFindAll ()&#123;</span><br><span class="line">        return requestLogRepository.findAll() ;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public String esUpdateById(RequestLog requestLog) &#123;</span><br><span class="line">        requestLogRepository.save(requestLog);</span><br><span class="line">        return &quot;success&quot; ;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public Optional&lt;RequestLog&gt; esSelectById(Long id) &#123;</span><br><span class="line">        return requestLogRepository.findById(id) ;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public Iterable&lt;RequestLog&gt; esFindOrder() &#123;</span><br><span class="line">        // 用户名倒序</span><br><span class="line">        // Sort sort = new Sort(Sort.Direction.DESC,&quot;userName.keyword&quot;) ;</span><br><span class="line">        // 创建时间正序</span><br><span class="line">        Sort sort = new Sort(Sort.Direction.ASC,&quot;createTime.keyword&quot;) ;</span><br><span class="line">        return requestLogRepository.findAll(sort) ;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public Iterable&lt;RequestLog&gt; esFindOrders() &#123;</span><br><span class="line">        List&lt;Sort.Order&gt; sortList = new ArrayList&lt;&gt;() ;</span><br><span class="line">        Sort.Order sort1 = new Sort.Order(Sort.Direction.ASC,&quot;createTime.keyword&quot;) ;</span><br><span class="line">        Sort.Order sort2 = new Sort.Order(Sort.Direction.DESC,&quot;userName.keyword&quot;) ;</span><br><span class="line">        sortList.add(sort1) ;</span><br><span class="line">        sortList.add(sort2) ;</span><br><span class="line">        Sort orders = Sort.by(sortList) ;</span><br><span class="line">        return requestLogRepository.findAll(orders) ;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public Iterable&lt;RequestLog&gt; search() &#123;</span><br><span class="line">        // 全文搜索关键字</span><br><span class="line">        /*</span><br><span class="line">        String queryString=&quot;张三&quot;;</span><br><span class="line">        QueryStringQueryBuilder builder = new QueryStringQueryBuilder(queryString);</span><br><span class="line">        requestLogRepository.search(builder) ;</span><br><span class="line">        */</span><br><span class="line">        /*</span><br><span class="line">         * 多条件查询</span><br><span class="line">         */</span><br><span class="line">        QueryBuilder builder = QueryBuilders.boolQuery()</span><br><span class="line">                // .must(QueryBuilders.matchQuery(&quot;userName.keyword&quot;, &quot;历张&quot;)) 搜索不到</span><br><span class="line">                .must(QueryBuilders.matchQuery(&quot;userName&quot;, &quot;张三&quot;)) // 可以搜索</span><br><span class="line">                .must(QueryBuilders.matchQuery(&quot;orderNo&quot;, &quot;20190613736278243&quot;));</span><br><span class="line">        return requestLogRepository.search(builder) ;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><em style="color: red">更新中</em></p>
 
       
 
@@ -480,7 +507,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">hadoop</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -489,6 +524,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -509,14 +556,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">post</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -548,7 +587,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">注解</a>
+                <a href="javascript:void(0)" class="js-tag color3">支付</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -556,7 +595,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">支付</a>
+                <a href="javascript:void(0)" class="js-tag color3">注解</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">HotKey</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -569,10 +612,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Quartz</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">HotKey</a>
               </li>
             
             <div class="clearfix"></div>
