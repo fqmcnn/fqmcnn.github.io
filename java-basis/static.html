@@ -6,18 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Static | 知音空间</title>
+  <title>Static、Final、This、Super 关键字 | 知音空间</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Static 关键字表明一个成员变量或者是成员方法可以在没有所属的类的实例的情况下直接被访问声明为static的方法有以下几条限制  仅能调用其他的static方法 只能访问static变量 不能以任何方式引用this或super 不能被覆盖  声明为static的变量实质上就是全局变量。（+final就是全局变量）当声明一个对象时，并不产生static变量的拷贝，而是该类所有的实例变量共用同一个">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Static">
+<meta property="og:title" content="Static、Final、This、Super 关键字">
 <meta property="og:url" content="http://yoursite.com/java-basis/static.html">
 <meta property="og:site_name" content="知音空间">
 <meta property="og:description" content="Static 关键字表明一个成员变量或者是成员方法可以在没有所属的类的实例的情况下直接被访问声明为static的方法有以下几条限制  仅能调用其他的static方法 只能访问static变量 不能以任何方式引用this或super 不能被覆盖  声明为static的变量实质上就是全局变量。（+final就是全局变量）当声明一个对象时，并不产生static变量的拷贝，而是该类所有的实例变量共用同一个">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-15T01:02:45.412Z">
+<meta property="og:updated_time" content="2019-07-30T06:07:02.076Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Static">
+<meta name="twitter:title" content="Static、Final、This、Super 关键字">
 <meta name="twitter:description" content="Static 关键字表明一个成员变量或者是成员方法可以在没有所属的类的实例的情况下直接被访问声明为static的方法有以下几条限制  仅能调用其他的static方法 只能访问static变量 不能以任何方式引用this或super 不能被覆盖  声明为static的变量实质上就是全局变量。（+final就是全局变量）当声明一个对象时，并不产生static变量的拷贝，而是该类所有的实例变量共用同一个">
   
     <link rel="alternative" href="/atom.xml" title="知音空间" type="application/atom+xml">
@@ -162,7 +162,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Static
+      Static、Final、This、Super 关键字
     </h1>
   
 
@@ -178,7 +178,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="color:teal">  字数统计: </span>
-        <span class="post-count">163字</span>
+        <span class="post-count">824字</span>
       </span>
     </span>
 
@@ -187,7 +187,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text" style="color:teal">  阅读时长: </span>
-        <span class="post-count">1min</span>
+        <span class="post-count">3min</span>
       </span>
     </span>
 </div>
@@ -206,6 +206,30 @@
 <li>不能被覆盖</li>
 </ol>
 <p>声明为static的变量实质上就是全局变量。（+final就是全局变量）当声明一个对象时，并不产生static变量的拷贝，而是该类所有的实例变量共用同一个static变量<br>对于静态类，只能用于嵌套类内部类中</p>
+<h1 id="Final-关键字"><a href="#Final-关键字" class="headerlink" title="Final 关键字"></a>Final 关键字</h1><p><strong>final关机纳兹主要用在三个地方：变量、方法、类</strong></p>
+<ul>
+<li>对于一个final变量，如果是基本数据类型的变量，则其数值一旦在初始化之后白能不能更改；如果是引用数据类型的变量，则在对其初始化之后便不能再让其指向另一个对象。</li>
+<li>当用final修饰一个类时，表明这个类不能被继承。</li>
+<li>使用final方法的原因有两个。第一个原因是把方法锁定，以防任何继承类修改它的含义；第二个原因是效率。在早期的Java实现版本中，会将final方法转为内嵌调用。但是如果方法过于庞大，可能看不到内嵌调用带来的任何性能提升（现在的Java版本已经不需要使用final方法进行这些优化了）。类中所有的private方法都隐式地指定为final。</li>
+</ul>
+<h2 id="This关键字"><a href="#This关键字" class="headerlink" title="This关键字"></a>This关键字</h2><p>this关键字用于引用类地当前实例。例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">class Test &#123;</span><br><span class="line">    Users[] users;</span><br><span class="line"></span><br><span class="line">    void getUsers()&#123;</span><br><span class="line">        int total = this.users.length;</span><br><span class="line">        System.out.println(&quot;users total: &quot; + total);</span><br><span class="line">        this.report();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    void report()&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在上面地示例中，this关键字用于两个对方：</p>
+<ul>
+<li>this.users.length; 访问类Test的当前实例的变量。</li>
+<li>this.report(); 调用类Test的当前实例的方法。</li>
+</ul>
+<p>此关键字可选的，这意味着如果上面的示例在不使用此关键字的情况下表现相同。但是，使用此关键字可能会使代码更易读或易懂。</p>
+<h2 id="Super-关键字"><a href="#Super-关键字" class="headerlink" title="Super 关键字"></a>Super 关键字</h2><p>super关键字用于从子类访问父类的变量和方法。例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public class Super &#123;</span><br><span class="line">    protected int number;</span><br><span class="line"></span><br><span class="line">    protected showNumber()&#123;</span><br><span class="line">        System.out.println(&quot;number = &quot;+ number);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class Sub extends Super &#123;</span><br><span class="line">    void bar()&#123;</span><br><span class="line">        super.number = 10;</span><br><span class="line">        super.showNumber();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在上面的例子中，Sub类访问父类成员变量number并调用其其父类Super的showNumber()方法。</p>
+<p>使用this和super要注意的问题；</p>
+<ul>
+<li>在构造器中使用super（）调用父类中的其他构造方法时，该语句必须处于构造器的首行，否者编译器会报错。另外，this调用本类中的其他构造方法时，也要放在首行。</li>
+<li>this、super不能用在static方法中。</li>
+</ul>
+<p>简单解释一下</p>
+<ul>
+<li>被 static 修饰的成员属于类，不属于单个这个类的某个对象，被类中所有对象共享。而 this 代表对本类对象的引用，指向本类对象；而 super 代表对父类对象的引用，指向父类对象；所以， this和super是属于对象范畴的东西，而静态方法是属于类范畴的东西。</li>
+</ul>
 
       
 
@@ -477,6 +501,34 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Excel 常用快捷键</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Factory Pattern</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Abstract Factory Pattern</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Singleton Pattern</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Builder Pattern</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Adapter Pattern</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Bridge Pattern</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ElasticSearch</a>
               </li>
              
@@ -497,11 +549,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Excel 常用快捷键</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
+                <a href="javascript:void(0)" class="js-tag color1">dubbo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -509,11 +557,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -529,11 +573,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">post</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">国际ID</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -549,7 +605,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">国际ID</a>
+                <a href="javascript:void(0)" class="js-tag color5">Eclipse Hotkey</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -561,23 +617,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">wm_concat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">支付</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">wm_concat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">证件照</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">去除不必要的人</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">maven</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">注解</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">HotKey</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -590,6 +646,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Quartz</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">注解</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">HotKey</a>
               </li>
             
             <div class="clearfix"></div>

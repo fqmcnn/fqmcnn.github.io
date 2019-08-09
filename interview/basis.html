@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>基础篇 | 知音空间</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Static 关键字 字符串拼接+和concat的区别 Java序列化你应该知道的一切">
+  <meta name="description" content="Static、Final、This、Super 关键字 字符串拼接+和concat的区别 Java序列化你应该知道的一切">
 <meta property="og:type" content="website">
 <meta property="og:title" content="基础篇">
 <meta property="og:url" content="http://yoursite.com/interview/basis.html">
 <meta property="og:site_name" content="知音空间">
-<meta property="og:description" content="Static 关键字 字符串拼接+和concat的区别 Java序列化你应该知道的一切">
+<meta property="og:description" content="Static、Final、This、Super 关键字 字符串拼接+和concat的区别 Java序列化你应该知道的一切">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-12T08:13:38.160Z">
+<meta property="og:updated_time" content="2019-07-30T02:45:38.126Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基础篇">
-<meta name="twitter:description" content="Static 关键字 字符串拼接+和concat的区别 Java序列化你应该知道的一切">
+<meta name="twitter:description" content="Static、Final、This、Super 关键字 字符串拼接+和concat的区别 Java序列化你应该知道的一切">
   
     <link rel="alternative" href="/atom.xml" title="知音空间" type="application/atom+xml">
   
@@ -178,7 +178,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="color:teal">  字数统计: </span>
-        <span class="post-count">26字</span>
+        <span class="post-count">2.1k字</span>
       </span>
     </span>
 
@@ -187,7 +187,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text" style="color:teal">  阅读时长: </span>
-        <span class="post-count">1min</span>
+        <span class="post-count">7min</span>
       </span>
     </span>
 </div>
@@ -199,10 +199,130 @@
     <div class="article-entry" itemprop="articleBody">
       
         <ol>
-<li><a href="/java-basis/static.html">Static 关键字</a></li>
+<li><a href="/java-basis/static.html">Static、Final、This、Super 关键字</a></li>
 <li><a href="/java-bssis/concat.html">字符串拼接+和concat的区别</a></li>
 <li><a href="/java-bssis/serializable.html">Java序列化你应该知道的一切</a></li>
 </ol>
+<a id="more"></a>
+<p>以下归个人理解，不对的地方还请大家多多指出！<br>谢谢！</p>
+<h4 id="get和post的区别？"><a href="#get和post的区别？" class="headerlink" title="get和post的区别？"></a>get和post的区别？</h4><blockquote>
+<ul>
+<li>get是从服务器上获取数据，post是向服务器传送数据。</li>
+<li>get传送的数据量较小，不能大于2kb。post传送的数据较大，一般被默认为不受限制。</li>
+<li>get安全性非常低，post安全性较高。但是执行效率却比Post方法好</li>
+<li>在进行文件上传时只能使用post而不能是get。</li>
+</ul>
+</blockquote>
+<h4 id="String、StringBuffer、StringBuilder区别？"><a href="#String、StringBuffer、StringBuilder区别？" class="headerlink" title="String、StringBuffer、StringBuilder区别？"></a>String、StringBuffer、StringBuilder区别？</h4><p>相同处：  都是管理字符串的<br>String        字符串常量   不可变  使用字符串拼接时是不同的2个空间<br>StringBuffer  字符串变量   可变    线程安全  字符串拼接直接在字符串后追加<br>StringBuilder 字符串变量   可变    非线程安全  字符串拼接直接在字符串后追加<br>1.StringBuilder执行效率高于StringBuffer高于String.<br>2.String是一个常量，是不可变的，所以对于每一次+=赋值都会创建一个新的对象， StringBuffer和StringBuilder都是可变的，当进行字符串拼接时采用append方 法，在原来的基础上进行追加，所以性能比String要高，又因为StringBuffer  是线程安全的而StringBuilder是线程非安全的，所以StringBuilder的效率高于 StringBuffer.<br>3.对于大数据量的字符串的拼接，采用StringBuffer,StringBuilder.</p>
+<h4 id="final、finally、finalize的区别？"><a href="#final、finally、finalize的区别？" class="headerlink" title="final、finally、finalize的区别？"></a>final、finally、finalize的区别？</h4><p>Final是一个修饰符：<br>当final修饰一个变量的时候，变量变成一个常量，它不能被二次赋值<br>当final修饰的变量为静态变量（即由static修饰）时，必须在声明这个变 量的时候给它赋值<br>当final修饰方法时，该方法不能被重写<br>当final修饰类时，该类不能被继承<br>Final不能修饰抽象类，因为抽象类中会有需要子类实现的抽 象方法，（抽 象类中可以有抽象方法，也可以有普通方法，当一个抽象类中没有抽象方 法时，这个抽象类也就没有了它存在的必要）<br>Final不能修饰接口，因为接口中有需要其实现类来实现的方法<br>Finally：<br>Finally只能与try/catch语句结合使用，finally语句块中的语句一定会执行， 并且会在return，continue，break关键字之前执行<br>finalize：<br>Finalize是一个方法，属于java.lang.Object类，finalize()方法是GC （garbage collector垃圾回收）运行机制的一部分，finalize()方法是在 GC清理它所从 属的对象时被调用的</p>
+<h4 id="mybatis中-和-的区别？"><a href="#mybatis中-和-的区别？" class="headerlink" title="mybatis中$和#的区别？"></a>mybatis中$和#的区别？</h4><p>${}是拼接占位符。 用表的时候可以用$<br>#{}是sql的变量占位符  安全能防止sql注入</p>
+<h4 id="Sptring"><a href="#Sptring" class="headerlink" title="Sptring?"></a>Sptring?</h4><ul>
+<li><p>Spring 是完全面向接口的设计，降低程序耦合性，主要是事务控制并创建bean实例对象。在ssh整合时，充当黏合剂的作用。IOC(Inversion of Control) 控制反转/依赖注入，又称DI(Dependency Injection) (依赖注入)  </p>
+</li>
+<li><p>IOC的作用：产生对象实例，所以它是基于工厂设计模式的</p>
+</li>
+<li><p>Spring IOC的注入</p>
+<ul>
+<li>通过属性进行注入，通过构造函数进行注入，</li>
+<li>注入对象数组     注入List集合   </li>
+<li>注入Map集合      注入Properties类型</li>
+</ul>
+</li>
+<li><p>Spring IOC 自动绑定模式：</p>
+<ul>
+<li>可以设置autowire按以下方式进行绑定</li>
+<li>按byType只要类型一致会自动寻找，            </li>
+<li>按byName自动按属性名称进行自动查找匹配.</li>
+</ul>
+</li>
+<li><p>AOP 面向方面（切面）编程</p>
+<ul>
+<li>AOP是OOP的延续，是Aspect Oriented Programming的缩写，</li>
+<li>意思是面向方面(切面)编程。</li>
+<li>注：OOP(Object-Oriented Programming ) 面向对象编程</li>
+</ul>
+</li>
+<li><p>AOP  主要应用于日志记录，性能统计，安全控制,事务处理（项目中使用的）等方面。</p>
+</li>
+<li><p>Spring中实现AOP技术：</p>
+<ul>
+<li>在Spring中可以通过代理模式来实现AOP</li>
+<li>代理模式分为<ul>
+<li>静态代理：一个接口，分别有一个真实实现和一个代理实现。</li>
+<li>动态代理：通过代理类的代理，接口和实现类之间可以不直接发生联系，而可以在运行期（Runtime）实现动态关联。<ul>
+<li>动态代理有两种实现方式，可以通过jdk的动态代理实现也可以通过cglib来实现而AOP默认是通过jdk的动态代理来实现的。jdk的动态代理必须要有接口的支持，而cglib不需要，它是基于类的。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Spring AOP事务的描述：</p>
+<ul>
+<li>在spring-common.xml里通过<code>&lt;aop:config&gt;</code>里面先设定一个表达式，设定对service里那些方法  如：对add* ,delete*,update*等开头的方法进行事务拦截。我们需要配置事务的传播（propagation=”REQUIRED”）特性,通常把增,删,改以外的操作需要配置成只读事务（read-only=”true”）.只读事务可以提高性能。之后引入tx:advice,在tx:advice引用 transactionManager（事务管理）,在事务管理里再引入sessionFactory,sessionFactory注入 dataSource，最后通过<code>&lt;aop:config&gt;</code> 引入txAdvice。</li>
+</ul>
+</li>
+<li><p>Spring实现ioc控制反转描述：</p>
+<ul>
+<li>原来需要我们自己进行bean的创建以及注入，而现在交给</li>
+<li>spring容器去完成bean的创建以及注入。</li>
+<li>所谓的“控制反转”就是 对象控制权的转移，从程序代码本身转移到了外部容器。</li>
+<li>官方解释:</li>
+<li>控制反转即IoC (Inversion of Control)，它把传统上由程序代码直接操控的对象的调用权交给容器，通过容器来实现对象组件的装配和管理。所谓的“控制反转”概念就是对组件对象控制权的转移，从程序代码本身转移到了外部容器。</li>
+</ul>
+</li>
+</ul>
+<h4 id="事务？"><a href="#事务？" class="headerlink" title="事务？"></a>事务？</h4><ol>
+<li>原子性（Atomicity）<ul>
+<li>原子性是指事务是一个不可分割的工作单位，事务中的操作要么都发生，要么都不发生。  </li>
+</ul>
+</li>
+<li>一致性（Consistency）<ul>
+<li>事务必须使数据库从一个一致性状态变换到另外一个一致性状态。(数据不被破坏)</li>
+</ul>
+</li>
+<li>隔离性（Isolation）<ul>
+<li>事务的隔离性是指一个事务的执行不能被其他事务干扰.</li>
+</ul>
+</li>
+<li>持久性（Durability）<ul>
+<li>持久性是指一个事务一旦被提交，它对数据库中数据的改变就是永久性的.即使系统重启也不会丢失.</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>在JDBC中，事务默认是自动提交的，每次执行一个 SQL 语句时，如果执行成功，就会向数据库自动提交，而不能回滚。</li>
+<li>为了让多个 SQL 语句作为一个事务执行：<ul>
+<li>执行语句前调用 Connection 对象的 setAutoCommit(false);以取消自动提交事务</li>
+<li>在所有的 SQL 语句都成功执行后，调用 commit(); 方法提交事务</li>
+<li>在出现异常时，调用 rollback(); 方法回滚事务</li>
+</ul>
+</li>
+</ul>
+<h4 id="List和Map区别？"><a href="#List和Map区别？" class="headerlink" title="List和Map区别？"></a>List和Map区别？</h4><blockquote>
+<p>一个是存储单列表数据的集合，另一个是储存键和值的双列数据的集合，List中存储的数据是有序的，并允许重复；<br>map中存储数据是没有顺序的，其键不能重复，它的值可以有重复的<br>①list有重复值，map没有重复key担忧重复值<br>②lsit有序，map不一定有序<br>③list只能存单序列值，map可以存双序列值</p>
+</blockquote>
+<h4 id="Arraylist、Vector、Linkedlist-的存储性能和特性"><a href="#Arraylist、Vector、Linkedlist-的存储性能和特性" class="headerlink" title="Arraylist、Vector、Linkedlist  的存储性能和特性"></a>Arraylist、Vector、Linkedlist  的存储性能和特性</h4><blockquote>
+<p>①arraylist和vector使用数组存储，linkedlist使用链表式存储元素<br>②ArrayList和vector插入删除数据效率差，linkedlist使用链表效率高<br>③ArrayList和vector查询时按数组下标查询不需要遍历，效率高；linkedlist需要遍历查询效率低<br>④vector是线程安全，ArrayList线程不安全</p>
+</blockquote>
+<h4 id="微服务事务"><a href="#微服务事务" class="headerlink" title="微服务事务"></a>微服务事务</h4><p>CAP  一致性、可用性、容错性。<br>eureka 遵守ap原则   高可用<br>zookeeper遵守cp原则 不能保证高可用</p>
+<h4 id="IO的实现类"><a href="#IO的实现类" class="headerlink" title="IO的实现类"></a>IO的实现类</h4><ul>
+<li>InputStream 、OutputStream、Reader、Writer</li>
+</ul>
+<h4 id="for和foreach对比"><a href="#for和foreach对比" class="headerlink" title="for和foreach对比"></a>for和foreach对比</h4><ul>
+<li>foreach适用于只是进行集合或数组遍历，for则在较复杂的循环中效率更高。</li>
+<li>foreach不能对数组或集合进行修改（添加删除操作），如果想要修改就要用for循环。</li>
+</ul>
+<p>###SpringBoot</p>
+<h4 id="SpringBootApplication有哪个注解组成？"><a href="#SpringBootApplication有哪个注解组成？" class="headerlink" title="SpringBootApplication有哪个注解组成？"></a>SpringBootApplication有哪个注解组成？</h4><ul>
+<li><code>@componentscan</code>包加载、<code>@configuration</code>组件扫描、<code>@enableautoconfiguration</code>配置控制</li>
+</ul>
+<p>####SpringBoot中配置有几种方式？</p>
+<ul>
+<li><code>@ConfigurationProperties</code>：告诉SpringBoot将本类中的所有属性和配置文件中相关的配置进行绑定；prefix = “person”：配置文件中哪个下面的所有属性进行一一映射</li>
+<li><code>@PropertySource</code>：加载指定的配置文件；</li>
+<li><code>@ImportResource</code>：导入Spring的配置文件，让配置文件里面的内容生效；</li>
+</ul>
 
       
 
@@ -474,6 +594,34 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Excel 常用快捷键</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Factory Pattern</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Abstract Factory Pattern</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Singleton Pattern</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Builder Pattern</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Adapter Pattern</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Bridge Pattern</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ElasticSearch</a>
               </li>
              
@@ -494,11 +642,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Excel 常用快捷键</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
+                <a href="javascript:void(0)" class="js-tag color1">dubbo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -506,11 +650,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -526,11 +666,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">post</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">国际ID</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -546,7 +698,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">国际ID</a>
+                <a href="javascript:void(0)" class="js-tag color5">Eclipse Hotkey</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -558,23 +710,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">wm_concat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">支付</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">wm_concat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">证件照</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">去除不必要的人</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">maven</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">注解</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">HotKey</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -587,6 +739,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Quartz</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">注解</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">HotKey</a>
               </li>
             
             <div class="clearfix"></div>

@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="知音空间">
 <meta property="og:description" content="1.List中去除nulllist.removeAll(Collections.singleton(null));此类 Collections 映入的包1import org.apache.commons.collections.CollectionUtils; 2.字符串查用判空StringUtils.isBlank()StringUtils.isEmpty() 相对比较isBlank比isEm">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-14T02:09:20.921Z">
+<meta property="og:updated_time" content="2019-08-07T01:38:13.449Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 开发常用判断去重...">
 <meta name="twitter:description" content="1.List中去除nulllist.removeAll(Collections.singleton(null));此类 Collections 映入的包1import org.apache.commons.collections.CollectionUtils; 2.字符串查用判空StringUtils.isBlank()StringUtils.isEmpty() 相对比较isBlank比isEm">
@@ -178,7 +178,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="color:teal">  字数统计: </span>
-        <span class="post-count">143字</span>
+        <span class="post-count">783字</span>
       </span>
     </span>
 
@@ -187,7 +187,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text" style="color:teal">  阅读时长: </span>
-        <span class="post-count">1min</span>
+        <span class="post-count">4min</span>
       </span>
     </span>
 </div>
@@ -198,12 +198,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>1.List中去除null<br>list.removeAll(Collections.singleton(null));<br>此类 Collections 映入的包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import org.apache.commons.collections.CollectionUtils;</span><br></pre></td></tr></table></figure></p>
+        <p>1.List中去除null<br>list.removeAll(Collections.singleton(null));<br>此类 <code>Collections</code> 映入的包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import org.apache.commons.collections.CollectionUtils;</span><br></pre></td></tr></table></figure></p>
 <p>2.字符串查用判空<br>StringUtils.isBlank()<br>StringUtils.isEmpty()</p>
 <p>相对比较isBlank比isEmpty强大一点<br>在做判空的时候isBlank能判断字符串中的String aa = “ “;<br>而isEmpty是不行的</p>
 <p>3.StringUtils引入的包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import org.apache.commons.lang3.StringUtils;</span><br></pre></td></tr></table></figure></p>
 <p>4.集合判空<br>CollectionUtils.isNotEmpty();<br>引入的包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import org.apache.commons.collections.CollectionUtils;</span><br></pre></td></tr></table></figure></p>
 <p>5.List集合去重<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; list = new ArrayList&lt;&gt;();</span><br><span class="line">list.add(&quot;你好&quot;);</span><br><span class="line">list.add(&quot;baby&quot;);</span><br><span class="line">list.add(&quot;你好&quot;);</span><br><span class="line">Set&lt;String&gt; set = new HashSet&lt;String&gt;();</span><br><span class="line">set.addAll(list);</span><br><span class="line">list.clear();</span><br><span class="line">list.addAll(set);</span><br></pre></td></tr></table></figure></p>
+<h4 id="6-实体对象不实现hashcode和equals方法也能实现去重逻辑"><a href="#6-实体对象不实现hashcode和equals方法也能实现去重逻辑" class="headerlink" title="6.实体对象不实现hashcode和equals方法也能实现去重逻辑"></a>6.实体对象不实现hashcode和equals方法也能实现去重逻辑</h4><p><code>User</code>实体对象<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">public class User &#123;</span><br><span class="line">	private String name;</span><br><span class="line">	private String age;</span><br><span class="line">	private String sex;</span><br><span class="line">	private Integer id;</span><br><span class="line"></span><br><span class="line">	public String getName() &#123;</span><br><span class="line">		return name;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public void setName(String name) &#123;</span><br><span class="line">		this.name = name;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public String getAge() &#123;</span><br><span class="line">		return age;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public void setAge(String age) &#123;</span><br><span class="line">		this.age = age;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public String getSex() &#123;</span><br><span class="line">		return sex;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public void setSex(String sex) &#123;</span><br><span class="line">		this.sex = sex;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public Integer getId() &#123;</span><br><span class="line">		return id;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public void setId(Integer id) &#123;</span><br><span class="line">		this.id = id;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public User(String name, String age, String sex, Integer id) &#123;</span><br><span class="line">		this.name = name;</span><br><span class="line">		this.age = age;</span><br><span class="line">		this.sex = sex;</span><br><span class="line">		this.id = id;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public User() &#123;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">List&lt;User&gt; list = new ArrayList&lt;&gt;();</span><br><span class="line">list.add(new User(&quot;小白&quot;,&quot;12&quot;,&quot;女&quot;,12));</span><br><span class="line">list.add(new User(&quot;李白&quot;,&quot;12&quot;,&quot;男&quot;,12));</span><br><span class="line">list.add(new User(&quot;baby&quot;,&quot;12&quot;,&quot;女&quot;,12));</span><br><span class="line">list.add(new User(&quot;小白&quot;,&quot;12&quot;,&quot;女&quot;,12));</span><br><span class="line">list.add(new User(&quot;小白&quot;,&quot;12&quot;,&quot;女&quot;,12));</span><br><span class="line"></span><br><span class="line">Set&lt;User&gt; set = new TreeSet&lt;&gt;(new Comparator&lt;User&gt;() &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public int compare(User user, User t1) &#123;</span><br><span class="line">        // 数据对比</span><br><span class="line">        return (user.getName().compareTo(t1.getName()));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">set.addAll(list);</span><br></pre></td></tr></table></figure>
+<p>打印结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">User&#123;name=&apos;baby&apos;, age=&apos;12&apos;, sex=&apos;女&apos;, id=12&#125;</span><br><span class="line">User&#123;name=&apos;小白&apos;, age=&apos;12&apos;, sex=&apos;女&apos;, id=12&#125;</span><br><span class="line">User&#123;name=&apos;李白&apos;, age=&apos;12&apos;, sex=&apos;男&apos;, id=12&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="Set源码"><a href="#Set源码" class="headerlink" title="Set源码"></a>Set源码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">public interface Set&lt;E&gt; extends Collection&lt;E&gt; &#123;</span><br><span class="line">    int size();</span><br><span class="line"></span><br><span class="line">    boolean isEmpty();</span><br><span class="line"></span><br><span class="line">    boolean contains(Object var1);</span><br><span class="line"></span><br><span class="line">    Iterator&lt;E&gt; iterator();</span><br><span class="line"></span><br><span class="line">    Object[] toArray();</span><br><span class="line"></span><br><span class="line">    &lt;T&gt; T[] toArray(T[] var1);</span><br><span class="line"></span><br><span class="line">    boolean add(E var1);</span><br><span class="line"></span><br><span class="line">    boolean remove(Object var1);</span><br><span class="line"></span><br><span class="line">    boolean containsAll(Collection&lt;?&gt; var1);</span><br><span class="line"></span><br><span class="line">    boolean addAll(Collection&lt;? extends E&gt; var1);</span><br><span class="line"></span><br><span class="line">    boolean retainAll(Collection&lt;?&gt; var1);</span><br><span class="line"></span><br><span class="line">    boolean removeAll(Collection&lt;?&gt; var1);</span><br><span class="line"></span><br><span class="line">    void clear();</span><br><span class="line"></span><br><span class="line">    boolean equals(Object var1);</span><br><span class="line"></span><br><span class="line">    int hashCode();</span><br><span class="line"></span><br><span class="line">    default Spliterator&lt;E&gt; spliterator() &#123;</span><br><span class="line">        return Spliterators.spliterator(this, 1);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里用到<code>Comparator</code>这个类，<code>Comparator</code>比较器重写了<code>compareTo</code>的方法。<code>compareTo</code>这个方法只是一个对比，做不到去重的目的。因为Set的源码中实现了<code>hashcode</code>和<code>equals</code>方法，在加上<code>Comparator</code>就是可以实现去重了！</p>
+<h4 id="关心的地方来了"><a href="#关心的地方来了" class="headerlink" title="关心的地方来了"></a>关心的地方来了</h4><p><strong>集合对象根据多个字段去重</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">List&lt;User&gt; list = new ArrayList&lt;&gt;();</span><br><span class="line">list.add(new User(&quot;李白&quot;,&quot;123&quot;,1));</span><br><span class="line">list.add(new User(&quot;李白1&quot;,&quot;1234&quot;,1));</span><br><span class="line">list.add(new User(&quot;李白1&quot;,&quot;1235&quot;,1));</span><br><span class="line">list.add(new User(&quot;李白&quot;,&quot;123&quot;,1));</span><br><span class="line">for(User u : list)&#123;</span><br><span class="line">    System.out.println(&quot;去重前的数据&quot; + u);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Set&lt;User&gt; set = new TreeSet&lt;&gt;(new Comparator&lt;User&gt;() &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public int compare(User user0, User t1) &#123;</span><br><span class="line">        int count = 1;//=0表示去重</span><br><span class="line">		count = user0.getUsername().compareTo(t1.getUsername()) +</span><br><span class="line">				user0.getPassword().compareTo(t1.getPassword());</span><br><span class="line">        return count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">set.addAll(list);</span><br><span class="line">System.out.println(&quot;________________&quot;);</span><br><span class="line">for(User u : set)&#123;</span><br><span class="line">    System.out.println(&quot;去重后的数据&quot; + u);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
 
@@ -475,6 +481,34 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Excel 常用快捷键</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Factory Pattern</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Abstract Factory Pattern</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Singleton Pattern</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Builder Pattern</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Adapter Pattern</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Bridge Pattern</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ElasticSearch</a>
               </li>
              
@@ -495,11 +529,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Excel 常用快捷键</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
+                <a href="javascript:void(0)" class="js-tag color1">dubbo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -507,11 +537,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -527,11 +553,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">post</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">国际ID</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -547,7 +585,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">国际ID</a>
+                <a href="javascript:void(0)" class="js-tag color5">Eclipse Hotkey</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -559,23 +597,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">wm_concat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">支付</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">wm_concat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">证件照</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">去除不必要的人</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">maven</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">注解</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">HotKey</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -588,6 +626,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Quartz</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">注解</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">HotKey</a>
               </li>
             
             <div class="clearfix"></div>

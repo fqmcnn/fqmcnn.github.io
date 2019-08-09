@@ -16,10 +16,12 @@
 <meta property="og:site_name" content="知音空间">
 <meta property="og:description" content="excel简单操作快捷键简介Ctrl+Shift+1保留整数(四舍五入)Ctrl+E智能填充(当前列使用)Alt+=快速求和Ctrl+\找不同特殊操作步骤特殊符号选中单元格区域，将字体设置为Wingding2  (输入R代表勾，S代表叉)添加下划线__选中单元格，右键设置单元格，选择数字–&amp;gt;自定义–&amp;gt;输入@*_  即可快速对齐选择单元格–&amp;gt;Ctrl+1  —&amp;gt;单元格格式–&amp;">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-14T07:32:59.324Z">
+<meta property="og:image" content="http://yoursite.com/assets/img/Inked20190808105314_LI.jpg">
+<meta property="og:updated_time" content="2019-08-09T03:21:07.841Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="excelHotKey">
 <meta name="twitter:description" content="excel简单操作快捷键简介Ctrl+Shift+1保留整数(四舍五入)Ctrl+E智能填充(当前列使用)Alt+=快速求和Ctrl+\找不同特殊操作步骤特殊符号选中单元格区域，将字体设置为Wingding2  (输入R代表勾，S代表叉)添加下划线__选中单元格，右键设置单元格，选择数字–&amp;gt;自定义–&amp;gt;输入@*_  即可快速对齐选择单元格–&amp;gt;Ctrl+1  —&amp;gt;单元格格式–&amp;">
+<meta name="twitter:image" content="http://yoursite.com/assets/img/Inked20190808105314_LI.jpg">
   
     <link rel="alternative" href="/atom.xml" title="知音空间" type="application/atom+xml">
   
@@ -179,7 +181,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="color:teal">  字数统计: </span>
-        <span class="post-count">242字</span>
+        <span class="post-count">491字</span>
       </span>
     </span>
 
@@ -200,6 +202,46 @@
     <div class="article-entry" itemprop="articleBody">
       
         <table border="1"><tr align="center" bgcolor="#7EC0EE"><td colspan="2">excel简单操作</td></tr><tr align="center" bgcolor="#00B2EE"><td>快捷键</td><td>简介</td></tr><tr align="center"><td>Ctrl+Shift+1</td><td>保留整数(四舍五入)</td></tr><tr align="center"><td>Ctrl+E</td><td>智能填充(当前列使用)</td></tr><tr align="center"><td>Alt+=</td><td>快速求和</td></tr><tr align="center"><td>Ctrl+\</td><td>找不同</td></tr><tr align="center" bgcolor="##7CFC00"><td>特殊操作</td><td>步骤</td></tr><tr align="center"><td>特殊符号</td><td>选中单元格区域，将字体设置为Wingding2  (输入R代表勾，S代表叉)</td></tr><tr align="center"><td>添加下划线__</td><td>选中单元格，右键设置单元格，选择数字–&gt;自定义–&gt;输入@*_  即可</td></tr><tr align="center"><td>快速对齐</td><td>选择单元格–&gt;Ctrl+1  —&gt;单元格格式–&gt;对齐–&gt;选择 分散对齐 缩进加值   即可</td></tr><tr align="center"><td>快速删除表格中的内容</td><td>选中单元格   按下delete  即可</td></tr><tr align="center"><td>快速删除表格中空行</td><td>选中表格 F5定位条件  选择空值   右键删除  即可</td></tr><tr align="center"><td>日期转换星期</td><td>选中单元格，右键单元格设置  –&gt;数字–&gt;自定义—&gt;输入4个a    即可</td></tr><tr align="center"><td>文字竖着看</td><td>选中文字 在字体前面加上一个@符号  即可 </td></tr></table>
+
+<h4 id="算数公式"><a href="#算数公式" class="headerlink" title="算数公式"></a>算数公式</h4><p><img src="/assets/img/Inked20190808105314_LI.jpg" alt="Alt text"></p>
+<blockquote>
+<p>把对应的公式输入在对应的列即可完成，简单的运算。</p>
+</blockquote>
+<ul>
+<li><p>函数  </p>
+<ul>
+<li>sum  总和  例如=sum(A1:A10)  也可选中列或行按下快捷 <code>alt+=</code> 即可</li>
+<li>average 平均数  例如=AVERAGE(D2,C2)  两数相加算出平均数</li>
+<li>min  最小值       例如=AVERAGE(D2,C2)     找出最小的值</li>
+<li>max  最大值       例如=AVERAGE(D2,C2)     找出最大的值</li>
+</ul>
+</li>
+<li><p>时间</p>
+<ul>
+<li>当天日期    =today()</li>
+<li>当天当前时间    =now()   再按<code>ctrl + 1</code>可选格式   </li>
+<li>算出生日    在表格中输入日期格式数据   然后相减即可</li>
+</ul>
+</li>
+<li><p>联接不同单元格的文本</p>
+<ul>
+<li>使用<code>&amp;</code>符号  比如 <code>=D3&amp;&quot;&quot;&amp;E3</code> 或者使用逗号隔开<code>=D3&amp;&quot;,&quot;&amp;E3</code></li>
+</ul>
+</li>
+<li><p>if语句</p>
+<ul>
+<li>例如   <code>=IF(A10=&quot;baby&quot;,TRUE,FALSE)</code>    <code>=IF(E9&lt;10,&quot;小于10&quot;,&quot;大于10&quot;)</code></li>
+</ul>
+</li>
+<li><p>countif</p>
+<ul>
+<li>A13在A13至A24区域出现了几次 <code>=COUNTIF(A13:A24,A13)</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="WORD一秒实现打勾方框"><a href="#WORD一秒实现打勾方框" class="headerlink" title="WORD一秒实现打勾方框"></a>WORD一秒实现打勾方框</h4><blockquote>
+<p>在word文件中输入2611，选中2611然后按下Alt+X快捷键即可</p>
+</blockquote>
 
       
 
@@ -310,11 +352,11 @@
   
 <nav id="article-nav">
   
-    <a href="../../../02/01/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="../photoShop/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Nice to Meet You!
+          photoShop
         
       </div>
     </a>
@@ -496,6 +538,34 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Excel 常用快捷键</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Factory Pattern</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Abstract Factory Pattern</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Singleton Pattern</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Builder Pattern</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Adapter Pattern</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Bridge Pattern</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ElasticSearch</a>
               </li>
              
@@ -516,11 +586,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Excel 常用快捷键</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
+                <a href="javascript:void(0)" class="js-tag color1">dubbo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -528,11 +594,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -548,11 +610,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">post</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">国际ID</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -568,7 +642,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">国际ID</a>
+                <a href="javascript:void(0)" class="js-tag color5">Eclipse Hotkey</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -580,23 +654,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">wm_concat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">支付</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">wm_concat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">证件照</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">去除不必要的人</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">maven</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">注解</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">HotKey</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -609,6 +683,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Quartz</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">注解</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">HotKey</a>
               </li>
             
             <div class="clearfix"></div>
