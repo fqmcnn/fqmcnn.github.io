@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Orcal Sql中的如果 | 知音空间</title>
+  <title>Oracle 函数详解 | 知音空间</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="之前在mysql中我们使用ifnull但是在orcal中没有此函数，orcal用nvl和nvl2代替 nvl函数nvl函数格式：nvl(no1,no2)  解析：如果orcal第一个参数为空那么显示第二个参数的值，如果第一个参数的值不为空，则显示第一个参数本来的值。select nvl(age,12) from user  nvl2函数nvl2函数格式：nvl2(no1,no2,no3)  解析：">
+  <meta name="description" content="字符函数   函数 说明     ASCII(X) 返回字符X的ASCII码   CONCAT(x,y) 拼接、连接字符串x和y   INSTR(X,STR[,START][,N) 从X中查找str，可以指定从start开始，也可以指定从n开始   LENGTH(X) 返回X的长度   LOWER(X) X转换成小写   UPPER(X) X转换成大写   LTRIM(X[,TRIM_STR])">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Orcal Sql中的如果">
-<meta property="og:url" content="http://yoursite.com/orcal/orcal-if.html">
+<meta property="og:title" content="Oracle 函数详解">
+<meta property="og:url" content="http://yoursite.com/oracle/oracle-function.html">
 <meta property="og:site_name" content="知音空间">
-<meta property="og:description" content="之前在mysql中我们使用ifnull但是在orcal中没有此函数，orcal用nvl和nvl2代替 nvl函数nvl函数格式：nvl(no1,no2)  解析：如果orcal第一个参数为空那么显示第二个参数的值，如果第一个参数的值不为空，则显示第一个参数本来的值。select nvl(age,12) from user  nvl2函数nvl2函数格式：nvl2(no1,no2,no3)  解析：">
+<meta property="og:description" content="字符函数   函数 说明     ASCII(X) 返回字符X的ASCII码   CONCAT(x,y) 拼接、连接字符串x和y   INSTR(X,STR[,START][,N) 从X中查找str，可以指定从start开始，也可以指定从n开始   LENGTH(X) 返回X的长度   LOWER(X) X转换成小写   UPPER(X) X转换成大写   LTRIM(X[,TRIM_STR])">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-06T09:06:18.811Z">
+<meta property="og:updated_time" content="2019-08-17T09:27:16.183Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Orcal Sql中的如果">
-<meta name="twitter:description" content="之前在mysql中我们使用ifnull但是在orcal中没有此函数，orcal用nvl和nvl2代替 nvl函数nvl函数格式：nvl(no1,no2)  解析：如果orcal第一个参数为空那么显示第二个参数的值，如果第一个参数的值不为空，则显示第一个参数本来的值。select nvl(age,12) from user  nvl2函数nvl2函数格式：nvl2(no1,no2,no3)  解析：">
+<meta name="twitter:title" content="Oracle 函数详解">
+<meta name="twitter:description" content="字符函数   函数 说明     ASCII(X) 返回字符X的ASCII码   CONCAT(x,y) 拼接、连接字符串x和y   INSTR(X,STR[,START][,N) 从X中查找str，可以指定从start开始，也可以指定从n开始   LENGTH(X) 返回X的长度   LOWER(X) X转换成小写   UPPER(X) X转换成大写   LTRIM(X[,TRIM_STR])">
   
     <link rel="alternative" href="/atom.xml" title="知音空间" type="application/atom+xml">
   
@@ -162,13 +162,13 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Orcal Sql中的如果
+      Oracle 函数详解
     </h1>
   
 
         
         <a href class="archive-article-date">
-  	<time datetime="2019-07-09T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-10</time>
+  	<time datetime="2019-06-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-27</time>
 </a>
         <!-- 需要添加的位置 -->
         <!-- 开始添加字数统计-->
@@ -178,7 +178,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="color:teal">  字数统计: </span>
-        <span class="post-count">182字</span>
+        <span class="post-count">3k字</span>
       </span>
     </span>
 
@@ -187,7 +187,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text" style="color:teal">  阅读时长: </span>
-        <span class="post-count">1min</span>
+        <span class="post-count">12min</span>
       </span>
     </span>
 </div>
@@ -198,16 +198,361 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>之前在mysql中我们使用<code>ifnull</code>但是在orcal中没有此函数，orcal用<code>nvl</code>和<code>nvl2</code>代替</p>
-<h4 id="nvl函数"><a href="#nvl函数" class="headerlink" title="nvl函数"></a>nvl函数</h4><p><strong>nvl函数格式：nvl(no1,no2)</strong></p>
-<blockquote>
-<p>解析：如果orcal第一个参数为空那么显示第二个参数的值，如果第一个参数的值不为空，则显示第一个参数本来的值。<br><code>select nvl(age,12) from user</code></p>
+        <h4 id="字符函数"><a href="#字符函数" class="headerlink" title="字符函数"></a>字符函数</h4><table>
+<thead>
+<tr>
+<th style="text-align:center">函数</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">ASCII(X)</td>
+<td style="text-align:center">返回字符X的ASCII码</td>
+</tr>
+<tr>
+<td style="text-align:center">CONCAT(x,y)</td>
+<td style="text-align:center">拼接、连接字符串x和y</td>
+</tr>
+<tr>
+<td style="text-align:center">INSTR(X,STR[,START][,N)</td>
+<td style="text-align:center">从X中查找str，可以指定从start开始，也可以指定从n开始</td>
+</tr>
+<tr>
+<td style="text-align:center">LENGTH(X)</td>
+<td style="text-align:center">返回X的长度</td>
+</tr>
+<tr>
+<td style="text-align:center">LOWER(X)</td>
+<td style="text-align:center">X转换成小写</td>
+</tr>
+<tr>
+<td style="text-align:center">UPPER(X)</td>
+<td style="text-align:center">X转换成大写</td>
+</tr>
+<tr>
+<td style="text-align:center">LTRIM(X[,TRIM_STR])</td>
+<td style="text-align:center">把X的左边截去trim_str字符串，缺省截去空格</td>
+</tr>
+<tr>
+<td style="text-align:center">RTRIM(X[,TRIM_STR])</td>
+<td style="text-align:center">把X的右边截去trim_str字符串，缺省截去空格</td>
+</tr>
+<tr>
+<td style="text-align:center">TRIM([TRIM_STR  FROM]X)</td>
+<td style="text-align:center">把X的两边截去trim_str字符串，缺省截去空格</td>
+</tr>
+<tr>
+<td style="text-align:center">REPLACE(X,old,new)</td>
+<td style="text-align:center">在X中查找old，并替换成new</td>
+</tr>
+<tr>
+<td style="text-align:center">SUBSTR(X,start[,length])</td>
+<td style="text-align:center">返回X的字串，从start处开始，截取length个字符，缺省length，默认到结尾</td>
+</tr>
+</tbody>
+</table>
+<p>上面各函数的例子：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">示例</th>
+<th style="text-align:center">示例结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">SELECT ASCII(‘a’) FROM dual;</td>
+<td style="text-align:center">97</td>
+</tr>
+<tr>
+<td style="text-align:center">SELECT CONCAT(‘Hello’,’world’) FROM dual;</td>
+<td style="text-align:center">Helloworld</td>
+</tr>
+<tr>
+<td style="text-align:center">SELECT INSTR(‘Hello world’,’or’) FROM dual;</td>
+<td style="text-align:center">8</td>
+</tr>
+<tr>
+<td style="text-align:center">SELECT LENGTH(‘Hello’) FROM dual;</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td style="text-align:center">SELECT LOWER(‘Hello’) FROM dual;</td>
+<td style="text-align:center">hello</td>
+</tr>
+<tr>
+<td style="text-align:center">SELECT UPPER(‘hello’) FROM dual;</td>
+<td style="text-align:center">HELLO</td>
+</tr>
+<tr>
+<td style="text-align:center">SELECT LTRIM(‘=Hello=’,’=’) FROM dual;</td>
+<td style="text-align:center">Hello=</td>
+</tr>
+<tr>
+<td style="text-align:center">SELECT RTRIM(‘=Hello=’,’=’) FROM dual;</td>
+<td style="text-align:center">=Hello</td>
+</tr>
+<tr>
+<td style="text-align:center">SELECT TRIM(‘=’FROM’=Hello=’) FROM dual;</td>
+<td style="text-align:center">Hello</td>
+</tr>
+<tr>
+<td style="text-align:center">SELECT REPLACE(‘ABCDE’,’CD’,’AAA’)FROM dual;</td>
+<td style="text-align:center">ABAAAE</td>
+</tr>
+<tr>
+<td style="text-align:center">SELECT SUBSTR(‘ABCDE’,2,3) FROM dual;</td>
+<td style="text-align:center">BCD</td>
+</tr>
+</tbody>
+</table>
+<h4 id="数字函数"><a href="#数字函数" class="headerlink" title="数字函数"></a>数字函数</h4><blockquote>
+<p>数字函数接受数字参数，参数可以来自表中的一列，也可以是一个数字表达式</p>
 </blockquote>
-<h4 id="nvl2函数"><a href="#nvl2函数" class="headerlink" title="nvl2函数"></a>nvl2函数</h4><p><strong>nvl2函数格式：nvl2(no1,no2,no3)</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">函数</th>
+<th style="text-align:left">说明</th>
+<th style="text-align:left">示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">ABS(X)</td>
+<td style="text-align:left">X的绝对值</td>
+<td style="text-align:left">ABS(-3)=3</td>
+</tr>
+<tr>
+<td style="text-align:left">ACOS(X)</td>
+<td style="text-align:left">X的反余弦</td>
+<td style="text-align:left">ACOS(1)=0</td>
+</tr>
+<tr>
+<td style="text-align:left">COS(X)</td>
+<td style="text-align:left">余弦</td>
+<td style="text-align:left">COS(1)=0.54030230586814</td>
+</tr>
+<tr>
+<td style="text-align:left">CEIL(X)</td>
+<td style="text-align:left">大于或等于X的最小值</td>
+<td style="text-align:left">CEIL(5.4)=6</td>
+</tr>
+<tr>
+<td style="text-align:left">FLOOR(X)</td>
+<td style="text-align:left">小于或等于X的最大值</td>
+<td style="text-align:left">FLOOR(5.8)=5</td>
+</tr>
+<tr>
+<td style="text-align:left">LOG(X,Y)</td>
+<td style="text-align:left">X为底Y的对数</td>
+<td style="text-align:left">LOG(2，4)=2</td>
+</tr>
+<tr>
+<td style="text-align:left">MOD(X,Y)</td>
+<td style="text-align:left">X除以Y的余数</td>
+<td style="text-align:left">MOD(8，3)=2</td>
+</tr>
+<tr>
+<td style="text-align:left">POWER(X,Y)</td>
+<td style="text-align:left">X的Y次幂</td>
+<td style="text-align:left">POWER(2，3)=8</td>
+</tr>
+<tr>
+<td style="text-align:left">ROUND(X[,Y])</td>
+<td style="text-align:left">X在第Y位四舍五入</td>
+<td style="text-align:left">ROUND(3.456，2)=3.46</td>
+</tr>
+<tr>
+<td style="text-align:left">SQRT(X)</td>
+<td style="text-align:left">X的平方根</td>
+<td style="text-align:left">SQRT(4)=2</td>
+</tr>
+<tr>
+<td style="text-align:left">TRUNC(X[,Y])</td>
+<td style="text-align:left">X在第Y位截断</td>
+<td style="text-align:left">TRUNC(3.456，2)=3.45</td>
+</tr>
+</tbody>
+</table>
+<p><em>说明：</em></p>
 <blockquote>
-<p>解析：如果该函数的第一个参数为空那么显示第二个参数的值，如果第一个参数的值不为空，则显示第三个参数的值。<br><code>select nvl(age,12,10) from user</code></p>
+<p>ROUND(X[,Y])，四舍五入。<br>在缺省 y 时，默认 y=0；比如：ROUND(3.56)=4。<br>y 是正整数，就是四舍五入到小数点后 y 位。ROUND(5.654,2)=5.65。<br>y 是负整数，四舍五入到小数点左边|y|位。ROUND(351.654,-2)=400。</p>
 </blockquote>
-<h4 id="nullif函数"><a href="#nullif函数" class="headerlink" title="nullif函数"></a>nullif函数</h4><p><strong>NULLIF(no1,no2)函数的作用是如果no1和no2相等则返回空(NULL)，否则返回第一个值。</strong></p>
+<blockquote>
+<p>TRUNC(x[,y])，直接截取，不四舍五入。<br>在缺省 y 时，默认 y=0；比如：TRUNC (3.56)=3。<br>Y是正整数，就是四舍五入到小数点后 y 位。TRUNC (5.654,2)=5.65。<br>y 是负整数，四舍五入到小数点左边|y|位。TRUNC (351.654,-2)=300。</p>
+</blockquote>
+<h4 id="日期函数"><a href="#日期函数" class="headerlink" title="日期函数"></a>日期函数</h4><blockquote>
+<p>日期函数对日期进行运算。常用的日期函数有：<br><strong>ADD_MONTHS(d,n)</strong>,在某一个日期 d 上，加上指定的月数 n，返回计算后的新日期。<br>d 表示日期，n 表示要加的月数。<br>例：SELECT SYSDATE,add_months(SYSDATE,5) FROM dual;</p>
+</blockquote>
+<blockquote>
+<p><strong>LAST_DAY(d)</strong>，返回指定日期当月的最后一天。<br>例：SELECT SYSDATE,last_day(SYSDATE) FROM dual;</p>
+</blockquote>
+<blockquote>
+<p><strong>ROUND(d[,fmt])</strong>返回一个以 fmt 为格式的四舍五入日期值， d 是日期， fmt 是格式<br>模型。默认 fmt 为 DDD，即月中的某一天。<br>Ø  ① 如果 fmt 为“YEAR”则舍入到某年的 1 月 1 日，即前半年舍去，后半年作为下一年。<br>Ø  ② 如果 fmt 为“MONTH”则舍入到某月的 1 日，即前月舍去，后半月作为下一月。<br>Ø  ③ 默认为“DDD”，即月中的某一天，最靠近的天，前半天舍去，后半天作为第二天。<br>Ø  ④ 如果 fmt 为“DAY”则舍入到最近的周的周日，即上半周舍去，下半周作为下一周周日。<br>例：SELECT SYSDATE,ROUND(SYSDATE),ROUND(SYSDATE,’day’),<br>ROUND(SYSDATE,’month’),ROUND(SYSDATE,’year’) FROM dual;<br>与 ROUND 对应的函数时 TRUNC(d[,fmt])对日期的操作， TRUNC 与 ROUND 非常相似，只是不对日期进行舍入，直接截取到对应格式的第一天。</p>
+</blockquote>
+<blockquote>
+<p><strong>EXTRACT(fmt FROM d)</strong>，提取日期中的特定部分。<br>fmt 为：YEAR、MONTH、DAY、HOUR、MINUTE、SECOND。其中 YEAR、MONTH、DAY可以为 DATE 类型匹配，也可以与IMESTAMP 类型匹配；但是 HOUR、MINUTE、SECOND 必须与 TIMESTAMP 类型匹配。<br>HOUR 匹配的结果中没有加上时区，因此在中国运行的结果小 8 小时。<br>例：SELECT SYSDATE “date”,<br>      EXTRACT(YEAR FROM SYSDATE)”year”,<br>      EXTRACT(MONTH FROM SYSDATE)”month”,<br>      EXTRACT(DAY FROM SYSDATE)”day”,<br>      EXTRACT(HOUR FROM SYSTIMESTAMP)”hour”,<br>      EXTRACT(MINUTE FROM SYSTIMESTAMP)”minute”,<br>      EXTRACT(SECOND FROM SYSTIMESTAMP)”second”<br>FROM dual;</p>
+</blockquote>
+<h4 id="转换函数"><a href="#转换函数" class="headerlink" title="转换函数"></a>转换函数</h4><blockquote>
+<p>转换函数将值从一种数据类型转换为另外一种数据类型。常见的转换函数有：<br><strong>TO_CHAR(d|n[,fmt])</strong><br>把日期和数字转换为制定格式的字符串。Fmt是格式化字符串<br>代码演示：TO_CHAR对日期的处理<br>SELECT TO_CHAR(SYSDATE,’YYYY”年”MM”月”DD”日” HH24:MI:SS’)”date” FROM dual;</p>
+</blockquote>
+<p><em>代码解析：</em><br>在格式化字符串中，使用双引号对非格式化字符进行引用<br>针对数字的格式化，格式化字符有：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">示例</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">9</td>
+<td style="text-align:center">999</td>
+<td style="text-align:center">指定位置处显示数字</td>
+</tr>
+<tr>
+<td style="text-align:center">.</td>
+<td style="text-align:center">9.9</td>
+<td style="text-align:center">指定位置返回小数点</td>
+</tr>
+<tr>
+<td style="text-align:center">,</td>
+<td style="text-align:center">99,99</td>
+<td style="text-align:center">指定位置返回一个逗号</td>
+</tr>
+<tr>
+<td style="text-align:center">$</td>
+<td style="text-align:center">$999</td>
+<td style="text-align:center">数字开头返回一个美元符号</td>
+</tr>
+<tr>
+<td style="text-align:center">EEEE</td>
+<td style="text-align:center">9.99EEEE</td>
+<td style="text-align:center">科学计数法表示</td>
+</tr>
+<tr>
+<td style="text-align:center">L</td>
+<td style="text-align:center">L999</td>
+<td style="text-align:center">数字前加一个本地货币符号</td>
+</tr>
+<tr>
+<td style="text-align:center">PR</td>
+<td style="text-align:center">999PR</td>
+<td style="text-align:center">如果数字式负数则用尖括号进行表示</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>代码演示：TO_CHAR对数字的处理<br>SELECT TO_CHAR(-123123.45,’L9.9EEEEPR’)”date” FROM dual;</p>
+</blockquote>
+<blockquote>
+<p><strong>TO_DATE(X,[,fmt])</strong><br>把一个字符串以fmt格式转换成一个日期类型</p>
+</blockquote>
+<blockquote>
+<p><strong>TO_NUMBER(X,[,fmt])</strong><br>把一个字符串以fmt格式转换为一个数字<br>代码演示：TO_NUM函数<br>SELECT TO_NUMBER(‘-$12,345.67’,’$99,999.99’)”num” FROM dual;</p>
+</blockquote>
+<h4 id="其他单行函数"><a href="#其他单行函数" class="headerlink" title="其他单行函数"></a>其他单行函数</h4><blockquote>
+<p><strong>NVL(X,VALUE)</strong><br>如果X为空，返回value，否则返回X<br>例：对工资是2000元以下的员工，如果没发奖金，每人奖金100元<br>代码演示：NVL函数<br>SQL&gt; SELECT ENAME,JOB,SAL,NVL(COMM,100) FROM EMP WHERE SAL&lt;2000;</p>
+</blockquote>
+<hr>
+<p>ENAME    JOB    SAL    NVL(COMM,100) </p>
+<p>SMITH    CLERK    800    100 </p>
+<p>ALLEN    SALESMAN    1600    300 </p>
+<p>WARD    SALESMAN    1250    500 </p>
+<p>MARTIN    SALESMAN    1250    1400 </p>
+<p>TURNER    SALESMAN    1500    50 </p>
+<p>ADAMS    CLERK    1100    100 </p>
+<p>JAMES    CLERK    950    100 </p>
+<hr>
+<p>7 rows selected</p>
+<blockquote>
+<p><strong>NVL2(x,value1,value2)</strong><br>如果x非空，返回value1，否则返回value2<br>例：对EMP表中工资为2000元以下的员工，如果没有奖金，则奖金为200元，如果有奖金，则在原来的奖金基础上加100元<br>代码演示：NVL2函数<br>SQL&gt; SELECT ENAME,JOB,SAL,NVL2(COMM,comm+100,200) “comm”2   FROM EMP WHERE SAL&lt;2000;</p>
+</blockquote>
+<hr>
+<p>ENAME    JOB    SAL    comm </p>
+<p>SMITH    CLERK    800    200 </p>
+<p>ALLEN    SALESMAN    1600    400 </p>
+<p>WARD    SALESMAN    1250    600 </p>
+<p>MARTIN    SALESMAN    1250    1500 </p>
+<p>TURNER    SALESMAN    1500    150 </p>
+<p>ADAMS    CLERK    1100    200 </p>
+<p>JAMES    CLERK    950    200 </p>
+<p>MILLER    CLERK    1300    200</p>
+<hr>
+<p>8 rows selected</p>
+<h4 id="聚合函数"><a href="#聚合函数" class="headerlink" title="聚合函数"></a>聚合函数</h4><blockquote>
+<p>聚合函数同时对一组数据进行操作，返回一行结果，比如计算一组数据的总和，平均值等。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">名称</th>
+<th style="text-align:center">作用</th>
+<th style="text-align:center">语法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">AVG</td>
+<td style="text-align:center">平均值</td>
+<td style="text-align:center">AVG(表达式)</td>
+</tr>
+<tr>
+<td style="text-align:center">SUM</td>
+<td style="text-align:center">求和</td>
+<td style="text-align:center">SUM(表达式)</td>
+</tr>
+<tr>
+<td style="text-align:center">MIN、MAX</td>
+<td style="text-align:center">最小值、最大值</td>
+<td style="text-align:center">MIN(表达式)、MAX(表达式)</td>
+</tr>
+<tr>
+<td style="text-align:center">COUNT</td>
+<td style="text-align:center">数据统计</td>
+<td style="text-align:center">COUNT(表达式)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>例：求本月所有员工的基本工资总和<br>代码演示：sum函数<br>SQL&gt; SELECT SUM(sal) FROM emp;</p>
+</blockquote>
+<hr>
+<p>SUM(SAL)<br>29025</p>
+<blockquote>
+<p>例：求不同部门的平均工资<br>代码演示：AVG函数下的分组查询<br>SQL&gt; SELECT DEPTNO,AVG(SAL) FROM EMP GROUP BY DEPTNO;  </p>
+</blockquote>
+<hr>
+<p>DEPTNO    AVG(SAL)</p>
+<hr>
+<p>30    1566.66666<br>20     2175<br>10    2916.66666</p>
+<h3 id="Oracle-decode-函数用法"><a href="#Oracle-decode-函数用法" class="headerlink" title="Oracle decode 函数用法"></a>Oracle decode 函数用法</h3><p>含义解释:<br>decode(条件,值1,返回值1,值2,返回值2,…值n,返回值n,缺省值)</p>
+<p>该函数的含义如下：<br>IF 条件=值1 THEN<br>　　　　RETURN(翻译值1)<br>ELSIF 条件=值2 THEN<br>　　　　RETURN(翻译值2)<br>　　　　……<br>ELSIF 条件=值n THEN<br>　　　　RETURN(翻译值n)<br>ELSE<br>　　　　RETURN(缺省值)<br>END IF</p>
+<p>decode(字段货字段的运算，值1，值2，值3)<br>这个函数运行的结果是，当字段或字段的运算的值等于值1时，该函数返回值2，否则返回值3<br>当然值1，值2，值3也可以是表达式，这个函数使得某些sql语句简单了许多</p>
+<p>使用方法：<br>1、 比较大小<br>select decode(sign(变量1-变量2),-1,变量1,变量2) from dual; –取较小值<br><span style="color: red">oracle sign 函数 　取数字n的符号,大于0返回1,小于0返回-1,等于0返回0</span><br>例如：<br>变量1=10，变量2=20<br>则sign(变量1-变量2)返回-1，decode解码结果为“变量1”，达到了取较小值的目的。</p>
+<blockquote>
+<p>比如我要查询某班男生和女生的数量分别是多少?<br>通常我们这么写:<br>select count(*) from 表 where 性别 ＝ 男；<br>select count(*) from 表 where 性别 ＝ 女；<br>要想显示到一起还要union一下，太麻烦了<br>用decode呢，只需要一句话<br>select sum(decode(性别，男，1，0）)，sum(decode(性别，女，1，0）) from 表</p>
+</blockquote>
+<h4 id="Orcal-关键字"><a href="#Orcal-关键字" class="headerlink" title="Orcal 关键字"></a>Orcal 关键字</h4><ul>
+<li><strong>truncate</strong> :表格里的数据被清空，存储空间被释放。运行后会自动提交，包括之前其它未提交的会话，因而一旦清空无法回退。只有表格的创建者或者其他拥有删除任意表格权限的用户（如DBA）才能清空表格。</li>
+</ul>
+<h4 id="truncate命令和delete的区别："><a href="#truncate命令和delete的区别：" class="headerlink" title="truncate命令和delete的区别："></a>truncate命令和delete的区别：</h4><ol>
+<li>Truncate 在各种表上无论是大的还是小的都非常快。如果有Rollback命令delete将被撤销，而Truncate则不会被撤销。</li>
+<li>Truncate 是一种DDL 语言，向其他所有的DDL语言一样，他将被隐式提交，不能对Truncate使用rollback命令。</li>
+<li>Truncate 将重新设置高水平线和所有的索引。在对整个表和索引进行完全浏览时，经过Truncate操作后的表比delete操作后的表要快的多</li>
+<li>Truncate 不能触发任何delete触发器</li>
+<li>不能授予任何清空他人的表的权限</li>
+<li>当表被清空后表和表的索引将重新设置成初始大小，而delete则不能。</li>
+<li>不能清空父表。Truncate table(schema)table_name Drop(reuse)storage在默认是drop storage当使用DROP STORAGE时将缩短表和表索引，将表收缩到最小范围，并重新设置NEXT参数。REUSE STORAGE不会缩短表或者调整NEXT参数在特殊情况下使用 REUSE ST<br>DELETE语句执行删除的过程是每次从表中删除一行，并且同时将该行的的删除操作作为事务记录在日志中保存以便进行进行回滚操作。<br>TRUNCATE TABLE 则一次性地从表中删除所有的数据页并不把单独的删除操作记录记入日志保存，删除行是不能恢复的。并且在删除的过程中不会激活与表有关的删除触发器。执行速度快。</li>
+</ol>
+<blockquote>
+<p>TRUNCATE TABLE 在功能上与不带 WHERE 子句的 DELETE 语句相同：二者均删除表中的全部行。但 TRUNCATE TABLE 比 DELETE 速度快，且使用的系统和事务日志资源少。<br>DELETE 语句每次删除一行，并在事务日志中为所删除的每行记录一项。TRUNCATE TABLE 通过释放存储表数据所用的数据页来删除数据，并且只在事务日志中记录页的释放。<br>TRUNCATE TABLE 删除表中的所有行，但表结构及其列、约束、索引等保持不变。新行标识所用的计数值重置为该列的种子。<br>如果想保留标识计数值，请改用 DELETE。</p>
+</blockquote>
+<hr>
+<p>以上只是介绍一下两个命令的用法，下面说一下我的推荐用法，truncate命令速度快，占用资源少，如果你能确定当前表里的数据完全没有用的话可以使用此命令，方面快捷，如果数据或许有用，那你最好做好备份，否则一旦使用此命令，就悔不当初了，当然delete命令还是有好处的，如果不能保证此后的数据有不有用，但是当前不知道，或者干脆就是误删了，那么使用rollback命令直接回滚，当然rollback命令可以添加回滚点，定位回滚，恢复数据比较方便，所以说对与初学者，楼主强烈建议大家删除数据时使用delete命令，麻烦事麻烦了点，但是保险一点，这是我的教训啊，误用truncate命令清空了一个表，还好这个表是无关紧要的，否则我就只有以谢天下了。当然，非常强烈的建议是，做任何操作前，对于有用的数据都要事先备份，不管用不用得着，有备无患。</p>
 
       
 
@@ -292,8 +637,8 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <!--<img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/orcal/orcal-if.html" alt="微信分享二维码">-->
-      <img src="//api.qrserver.com/vi/create-qr-code/?size=150x150&date=http://yoursite.com/orcal/orcal-if.html" alt="微信分享二维码">
+      <!--<img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/oracle/oracle-function.html" alt="微信分享二维码">-->
+      <img src="//api.qrserver.com/vi/create-qr-code/?size=150x150&date=http://yoursite.com/oracle/oracle-function.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -463,27 +808,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ElasticSearch</a>
+                <a href="javascript:void(0)" class="js-tag color1">bat面试</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LocalDateTime</a>
+                <a href="javascript:void(0)" class="js-tag color5">linux-bug</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
+                <a href="javascript:void(0)" class="js-tag color4">bug</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">hadoop</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">dubbo</a>
+                <a href="javascript:void(0)" class="js-tag color1">github bug</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -511,23 +848,35 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">bat面试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">linux-bug</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">bug</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">github bug</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Excel 常用快捷键</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ElasticSearch</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">LocalDateTime</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">hadoop</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">dubbo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -535,7 +884,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">post</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -548,14 +901,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">redis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -575,19 +920,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">post</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">sql</a>
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -603,7 +940,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">maven</a>
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">sql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -615,11 +956,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">HotKey</a>
+                <a href="javascript:void(0)" class="js-tag color3">注解</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">注解</a>
+                <a href="javascript:void(0)" class="js-tag color1">maven</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">HotKey</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Orcal Sql中的like | 知音空间</title>
+  <title>Oracle 与 Mysql的区别 | 知音空间</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="orcal在mybatis中使用like如下 1234567891011&amp;lt;select id=&amp;quot;selectByName&amp;quot; parameterType=&amp;quot;string&amp;quot; resultMap=&amp;quot;BaseResultMap&amp;quot;&amp;gt;    SELECT userName    FROM USER        &amp;lt;if test=&amp;">
+  <meta name="description" content="Oracle与Mysql区别  Oracle是大型数据库而Mysql是中小型数据库，Oracle市场占有率达40%，Mysql只有20%左右，同时Mysql是开源的而Oracle价格非常高。 Oracle支持大并发，大访问量，是OLTP最好的工具。 安装所用的空间差别也是很大的，Mysql安装完后才152M而Oracle有3G左右，且使用的时候Oracle占用特别大的内存空间和其他机器性能。 Or">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Orcal Sql中的like">
-<meta property="og:url" content="http://yoursite.com/orcal/orcal-like.html">
+<meta property="og:title" content="Oracle 与 Mysql的区别">
+<meta property="og:url" content="http://yoursite.com/oracle/oracle-mysql.html">
 <meta property="og:site_name" content="知音空间">
-<meta property="og:description" content="orcal在mybatis中使用like如下 1234567891011&amp;lt;select id=&amp;quot;selectByName&amp;quot; parameterType=&amp;quot;string&amp;quot; resultMap=&amp;quot;BaseResultMap&amp;quot;&amp;gt;    SELECT userName    FROM USER        &amp;lt;if test=&amp;">
+<meta property="og:description" content="Oracle与Mysql区别  Oracle是大型数据库而Mysql是中小型数据库，Oracle市场占有率达40%，Mysql只有20%左右，同时Mysql是开源的而Oracle价格非常高。 Oracle支持大并发，大访问量，是OLTP最好的工具。 安装所用的空间差别也是很大的，Mysql安装完后才152M而Oracle有3G左右，且使用的时候Oracle占用特别大的内存空间和其他机器性能。 Or">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-06T09:05:56.594Z">
+<meta property="og:updated_time" content="2019-08-17T09:27:39.372Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Orcal Sql中的like">
-<meta name="twitter:description" content="orcal在mybatis中使用like如下 1234567891011&amp;lt;select id=&amp;quot;selectByName&amp;quot; parameterType=&amp;quot;string&amp;quot; resultMap=&amp;quot;BaseResultMap&amp;quot;&amp;gt;    SELECT userName    FROM USER        &amp;lt;if test=&amp;">
+<meta name="twitter:title" content="Oracle 与 Mysql的区别">
+<meta name="twitter:description" content="Oracle与Mysql区别  Oracle是大型数据库而Mysql是中小型数据库，Oracle市场占有率达40%，Mysql只有20%左右，同时Mysql是开源的而Oracle价格非常高。 Oracle支持大并发，大访问量，是OLTP最好的工具。 安装所用的空间差别也是很大的，Mysql安装完后才152M而Oracle有3G左右，且使用的时候Oracle占用特别大的内存空间和其他机器性能。 Or">
   
     <link rel="alternative" href="/atom.xml" title="知音空间" type="application/atom+xml">
   
@@ -162,13 +162,13 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Orcal Sql中的like
+      Oracle 与 Mysql的区别
     </h1>
   
 
         
         <a href class="archive-article-date">
-  	<time datetime="2019-07-09T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-10</time>
+  	<time datetime="2019-06-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-27</time>
 </a>
         <!-- 需要添加的位置 -->
         <!-- 开始添加字数统计-->
@@ -178,7 +178,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="color:teal">  字数统计: </span>
-        <span class="post-count">98字</span>
+        <span class="post-count">677字</span>
       </span>
     </span>
 
@@ -187,7 +187,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text" style="color:teal">  阅读时长: </span>
-        <span class="post-count">1min</span>
+        <span class="post-count">2min</span>
       </span>
     </span>
 </div>
@@ -198,9 +198,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>orcal在mybatis中使用like如下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;select id=&quot;selectByName&quot; parameterType=&quot;string&quot; resultMap=&quot;BaseResultMap&quot;&gt;</span><br><span class="line">    SELECT userName</span><br><span class="line">    FROM USER</span><br><span class="line">        &lt;if test=&quot;userName != null&quot;&gt;</span><br><span class="line">            AND userName like &apos;%&apos; || #&#123;userName&#125; || &apos;%&apos;</span><br><span class="line">        &lt;/if&gt;</span><br><span class="line">        或者</span><br><span class="line">        &lt;if test=&quot;userName != null&quot;&gt;</span><br><span class="line">            AND userName like concat(concat(&apos;%&apos;,&apos;$&#123;userName&#125;&apos;),&apos;%&apos;)</span><br><span class="line">        &lt;/if&gt;</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
-<p>在此说个简单的区别<br>orcal和mysql的区别，like后操作不同</p>
+        <h3 id="Oracle与Mysql区别"><a href="#Oracle与Mysql区别" class="headerlink" title="Oracle与Mysql区别"></a>Oracle与Mysql区别</h3><blockquote>
+<ol>
+<li>Oracle是大型数据库而Mysql是中小型数据库，Oracle市场占有率达40%，Mysql只有20%左右，同时Mysql是开源的而Oracle价格非常高。</li>
+<li>Oracle支持大并发，大访问量，是OLTP最好的工具。</li>
+<li>安装所用的空间差别也是很大的，Mysql安装完后才152M而Oracle有3G左右，且使用的时候Oracle占用特别大的内存空间和其他机器性能。</li>
+<li>Oracle也Mysql操作上的一些区别</li>
+</ol>
+<ul>
+<li>①主键<br>Mysql一般使用自动增长类型，在创建表时只要指定表的主键为auto increment,插入记录时，不需要再指定该记录的主键值，Mysql将自动增长；Oracle没有自动增长类型，主键一般使用的序列，插入记录时将序列号的下一个值付给该字段即可；只是ORM框架是只要是native主键生成策略即可。</li>
+<li>②单引号的处理<br>MYSQL里可以用双引号包起字符串，ORACLE里只可以用单引号包起字符串。在插入和修改字符串前必须做单引号的替换：把所有出现的一个单引号替换成两个单引号。</li>
+<li>③翻页的SQL语句的处理<br>MYSQL处理翻页的SQL语句比较简单，用LIMIT 开始位置, 记录个数；ORACLE处理翻页的SQL语句就比较繁琐了。每个结果集只有一个ROWNUM字段标明它的位置, 并且只能用ROWNUM&lt;100, 不能用ROWNUM&gt;80</li>
+<li>④ 长字符串的处理<br>长字符串的处理ORACLE也有它特殊的地方。INSERT和UPDATE时最大可操作的字符串长度小于等于4000个单字节, 如果要插入更长的字符串, 请考虑字段用CLOB类型，方法借用ORACLE里自带的DBMS_LOB程序包。插入修改记录前一定要做进行非空和长度判断，不能为空的字段值和超出长度字段值都应该提出警告,返回上次操作。</li>
+<li>⑤空字符的处理<br>MYSQL的非空字段也有空的内容，ORACLE里定义了非空字段就不容许有空的内容。按MYSQL的NOT NULL来定义ORACLE表结构, 导数据的时候会产生错误。因此导数据时要对空字符进行判断，如果为NULL或空字符，需要把它改成一个空格的字符串。</li>
+<li>⑥字符串的模糊比较<br>MYSQL里用 字段名 like ‘%字符串%’,ORACLE里也可以用 字段名 like ‘%字符串%’ 但这种方法不能使用索引, 速度不快。</li>
+<li>⑦Oracle实现了ANSII SQL中大部分功能，如，事务的隔离级别、传播特性等而Mysql在这方面还是比较的若</li>
+</ul>
+</blockquote>
 
       
 
@@ -285,8 +299,8 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <!--<img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/orcal/orcal-like.html" alt="微信分享二维码">-->
-      <img src="//api.qrserver.com/vi/create-qr-code/?size=150x150&date=http://yoursite.com/orcal/orcal-like.html" alt="微信分享二维码">
+      <!--<img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/oracle/oracle-mysql.html" alt="微信分享二维码">-->
+      <img src="//api.qrserver.com/vi/create-qr-code/?size=150x150&date=http://yoursite.com/oracle/oracle-mysql.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -456,27 +470,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ElasticSearch</a>
+                <a href="javascript:void(0)" class="js-tag color1">bat面试</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LocalDateTime</a>
+                <a href="javascript:void(0)" class="js-tag color5">linux-bug</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
+                <a href="javascript:void(0)" class="js-tag color4">bug</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">hadoop</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">dubbo</a>
+                <a href="javascript:void(0)" class="js-tag color1">github bug</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -504,23 +510,35 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">bat面试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">linux-bug</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">bug</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">github bug</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Excel 常用快捷键</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ElasticSearch</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">LocalDateTime</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">hadoop</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">dubbo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -528,7 +546,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">post</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -541,14 +563,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">redis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -568,19 +582,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">post</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">sql</a>
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -596,7 +602,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">maven</a>
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">sql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -608,11 +618,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">HotKey</a>
+                <a href="javascript:void(0)" class="js-tag color3">注解</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">注解</a>
+                <a href="javascript:void(0)" class="js-tag color1">maven</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">HotKey</a>
               </li>
              
               <li class="article-tag-list-item">

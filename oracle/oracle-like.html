@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Orcal 查询条件如何作为返回结果 | 知音空间</title>
+  <title>Oracle Sql中的like | 知音空间</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Orcal数据如下：我只想要名字中存在“李白”和”小白”的结果，但是返回数据我只要“李白和小白”    u_id username password     123 李白，baby 123   234 达令❤ 231   345 小白,lili 234    这也就是今天的主体 ，传入数据作为查询结果，首先要符合查询数据库存在的条件假如我传入的{“小白”，”李白”，”小明”}，一看就知道符合的数据">
+  <meta name="description" content="Oracle在mybatis中使用like如下 1234567891011&amp;lt;select id=&amp;quot;selectByName&amp;quot; parameterType=&amp;quot;string&amp;quot; resultMap=&amp;quot;BaseResultMap&amp;quot;&amp;gt;    SELECT userName    FROM USER        &amp;lt;if test=">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Orcal 查询条件如何作为返回结果">
-<meta property="og:url" content="http://yoursite.com/orcal/orcal-result.html">
+<meta property="og:title" content="Oracle Sql中的like">
+<meta property="og:url" content="http://yoursite.com/oracle/oracle-like.html">
 <meta property="og:site_name" content="知音空间">
-<meta property="og:description" content="Orcal数据如下：我只想要名字中存在“李白”和”小白”的结果，但是返回数据我只要“李白和小白”    u_id username password     123 李白，baby 123   234 达令❤ 231   345 小白,lili 234    这也就是今天的主体 ，传入数据作为查询结果，首先要符合查询数据库存在的条件假如我传入的{“小白”，”李白”，”小明”}，一看就知道符合的数据">
+<meta property="og:description" content="Oracle在mybatis中使用like如下 1234567891011&amp;lt;select id=&amp;quot;selectByName&amp;quot; parameterType=&amp;quot;string&amp;quot; resultMap=&amp;quot;BaseResultMap&amp;quot;&amp;gt;    SELECT userName    FROM USER        &amp;lt;if test=">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-06T08:35:47.051Z">
+<meta property="og:updated_time" content="2019-08-17T09:27:47.597Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Orcal 查询条件如何作为返回结果">
-<meta name="twitter:description" content="Orcal数据如下：我只想要名字中存在“李白”和”小白”的结果，但是返回数据我只要“李白和小白”    u_id username password     123 李白，baby 123   234 达令❤ 231   345 小白,lili 234    这也就是今天的主体 ，传入数据作为查询结果，首先要符合查询数据库存在的条件假如我传入的{“小白”，”李白”，”小明”}，一看就知道符合的数据">
+<meta name="twitter:title" content="Oracle Sql中的like">
+<meta name="twitter:description" content="Oracle在mybatis中使用like如下 1234567891011&amp;lt;select id=&amp;quot;selectByName&amp;quot; parameterType=&amp;quot;string&amp;quot; resultMap=&amp;quot;BaseResultMap&amp;quot;&amp;gt;    SELECT userName    FROM USER        &amp;lt;if test=">
   
     <link rel="alternative" href="/atom.xml" title="知音空间" type="application/atom+xml">
   
@@ -162,13 +162,13 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Orcal 查询条件如何作为返回结果
+      Oracle Sql中的like
     </h1>
   
 
         
         <a href class="archive-article-date">
-  	<time datetime="2019-04-10T14:37:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-10</time>
+  	<time datetime="2019-07-09T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-10</time>
 </a>
         <!-- 需要添加的位置 -->
         <!-- 开始添加字数统计-->
@@ -178,7 +178,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="color:teal">  字数统计: </span>
-        <span class="post-count">248字</span>
+        <span class="post-count">98字</span>
       </span>
     </span>
 
@@ -198,36 +198,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Orcal数据如下：我只想要名字中存在“李白”和”小白”的结果，但是返回数据我只要“李白和小白”</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">u_id</th>
-<th style="text-align:center">username</th>
-<th style="text-align:center">password</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">123</td>
-<td style="text-align:center">李白，baby</td>
-<td style="text-align:center">123</td>
-</tr>
-<tr>
-<td style="text-align:center">234</td>
-<td style="text-align:center">达令❤</td>
-<td style="text-align:center">231</td>
-</tr>
-<tr>
-<td style="text-align:center">345</td>
-<td style="text-align:center">小白,lili</td>
-<td style="text-align:center">234</td>
-</tr>
-</tbody>
-</table>
-<p>这也就是今天的主体 ，传入数据作为查询结果，首先要符合查询数据库存在的条件<br>假如我传入的{“小白”，”李白”，”小明”}，一看就知道符合的数据只有李白和小白，到这里大家肯定会想 <code>like</code>操作是少不了的，但是呢又需要把符合的数据返回来，还要只要传入的数据</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;select id=&quot;getUserName&quot; parameterType=&quot;list&quot; resultType=&quot;string&quot;&gt;</span><br><span class="line">	&lt;foreach collection=&quot;list&quot; item=&quot;item&quot; index=&quot;index&quot; separator=&quot;union all&quot; open=&quot;(&quot; close=&quot;)&quot; &gt;</span><br><span class="line">		SELECT DISTINCT #&#123;item&#125; FROM user WHERE</span><br><span class="line">		username like &apos;%&apos;||#&#123;item&#125;||&apos;%&apos;</span><br><span class="line">	&lt;/foreach&gt;</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
-<p><span style="color: red">谨记: orcal 中<code>like</code> 的条件左右需要加 <code>||</code>号</span><br>上面sql中注意  我用的是<code>union all</code></p>
+        <p>Oracle在mybatis中使用like如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;select id=&quot;selectByName&quot; parameterType=&quot;string&quot; resultMap=&quot;BaseResultMap&quot;&gt;</span><br><span class="line">    SELECT userName</span><br><span class="line">    FROM USER</span><br><span class="line">        &lt;if test=&quot;userName != null&quot;&gt;</span><br><span class="line">            AND userName like &apos;%&apos; || #&#123;userName&#125; || &apos;%&apos;</span><br><span class="line">        &lt;/if&gt;</span><br><span class="line">        或者</span><br><span class="line">        &lt;if test=&quot;userName != null&quot;&gt;</span><br><span class="line">            AND userName like concat(concat(&apos;%&apos;,&apos;$&#123;userName&#125;&apos;),&apos;%&apos;)</span><br><span class="line">        &lt;/if&gt;</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
+<p>在此说个简单的区别<br>Oracle和mysql的区别，like后操作不同</p>
 
       
 
@@ -312,8 +285,8 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <!--<img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/orcal/orcal-result.html" alt="微信分享二维码">-->
-      <img src="//api.qrserver.com/vi/create-qr-code/?size=150x150&date=http://yoursite.com/orcal/orcal-result.html" alt="微信分享二维码">
+      <!--<img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/oracle/oracle-like.html" alt="微信分享二维码">-->
+      <img src="//api.qrserver.com/vi/create-qr-code/?size=150x150&date=http://yoursite.com/oracle/oracle-like.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -483,27 +456,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ElasticSearch</a>
+                <a href="javascript:void(0)" class="js-tag color1">bat面试</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LocalDateTime</a>
+                <a href="javascript:void(0)" class="js-tag color5">linux-bug</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
+                <a href="javascript:void(0)" class="js-tag color4">bug</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">hadoop</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">dubbo</a>
+                <a href="javascript:void(0)" class="js-tag color1">github bug</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -531,23 +496,35 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">bat面试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">linux-bug</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">bug</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">github bug</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Excel 常用快捷键</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ElasticSearch</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">LocalDateTime</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">hadoop</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">dubbo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -555,7 +532,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">post</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -568,14 +549,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">redis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -595,19 +568,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">post</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">sql</a>
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -623,7 +588,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">maven</a>
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">sql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -635,11 +604,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">HotKey</a>
+                <a href="javascript:void(0)" class="js-tag color3">注解</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">注解</a>
+                <a href="javascript:void(0)" class="js-tag color1">maven</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">HotKey</a>
               </li>
              
               <li class="article-tag-list-item">
