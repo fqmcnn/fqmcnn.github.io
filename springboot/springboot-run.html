@@ -6,19 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Nginx: [Error] Invalid PID Number &#34;&#34; in &#34;/usr/local/nginx/logs/nginx.pid&#34; | 知音空间</title>
+  <title>SpringBoot 必懂SpringApplication | 知音空间</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在nginx中输入   ./nginx -s reload重启命令时出现nginx: [error] invalid PID number “” in “/usr/local/nginx/logs/nginx.pid”输入以下命令./nginx -c /usr/local/nginx/conf/nginx.conf在重启即可">
+  <meta name="description" content="SpringApplication是springboot驱动spring应用上下文的引导类，他的run()方法启动Spring应用，实质上是为Spring应用创建并初始化Spring上下文    初始化监听器，以及添加到SpringApplication的自定义监听器。 发布ApplicationStartedEvent事件，如果想监听ApplicationStartedEvent事件，你可以这">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Nginx: [Error] Invalid PID Number &quot;&quot; in &quot;&#x2F;usr&#x2F;local&#x2F;nginx&#x2F;logs&#x2F;nginx.pid&quot;">
-<meta property="og:url" content="http://yoursite.com/bug/linux-bug.html">
+<meta property="og:title" content="SpringBoot 必懂SpringApplication">
+<meta property="og:url" content="http://yoursite.com/springboot/springboot-run.html">
 <meta property="og:site_name" content="知音空间">
-<meta property="og:description" content="在nginx中输入   ./nginx -s reload重启命令时出现nginx: [error] invalid PID number “” in “/usr/local/nginx/logs/nginx.pid”输入以下命令./nginx -c /usr/local/nginx/conf/nginx.conf在重启即可">
+<meta property="og:description" content="SpringApplication是springboot驱动spring应用上下文的引导类，他的run()方法启动Spring应用，实质上是为Spring应用创建并初始化Spring上下文    初始化监听器，以及添加到SpringApplication的自定义监听器。 发布ApplicationStartedEvent事件，如果想监听ApplicationStartedEvent事件，你可以这">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-13T13:27:52.462Z">
+<meta property="og:image" content="http://yoursite.com/assets/img/20190817165338.png">
+<meta property="og:updated_time" content="2019-08-17T09:01:16.419Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Nginx: [Error] Invalid PID Number &quot;&quot; in &quot;&#x2F;usr&#x2F;local&#x2F;nginx&#x2F;logs&#x2F;nginx.pid&quot;">
-<meta name="twitter:description" content="在nginx中输入   ./nginx -s reload重启命令时出现nginx: [error] invalid PID number “” in “/usr/local/nginx/logs/nginx.pid”输入以下命令./nginx -c /usr/local/nginx/conf/nginx.conf在重启即可">
+<meta name="twitter:title" content="SpringBoot 必懂SpringApplication">
+<meta name="twitter:description" content="SpringApplication是springboot驱动spring应用上下文的引导类，他的run()方法启动Spring应用，实质上是为Spring应用创建并初始化Spring上下文    初始化监听器，以及添加到SpringApplication的自定义监听器。 发布ApplicationStartedEvent事件，如果想监听ApplicationStartedEvent事件，你可以这">
+<meta name="twitter:image" content="http://yoursite.com/assets/img/20190817165338.png">
   
     <link rel="alternative" href="/atom.xml" title="知音空间" type="application/atom+xml">
   
@@ -162,13 +164,13 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Nginx: [Error] Invalid PID Number &#34;&#34; in &#34;/usr/local/nginx/logs/nginx.pid&#34;
+      SpringBoot 必懂SpringApplication
     </h1>
   
 
         
         <a href class="archive-article-date">
-  	<time datetime="2019-02-28T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-01</time>
+  	<time datetime="2019-08-16T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-17</time>
 </a>
         <!-- 需要添加的位置 -->
         <!-- 开始添加字数统计-->
@@ -178,7 +180,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="color:teal">  字数统计: </span>
-        <span class="post-count">45字</span>
+        <span class="post-count">820字</span>
       </span>
     </span>
 
@@ -187,7 +189,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text" style="color:teal">  阅读时长: </span>
-        <span class="post-count">1min</span>
+        <span class="post-count">3min</span>
       </span>
     </span>
 </div>
@@ -199,8 +201,41 @@
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>在nginx中输入   ./nginx -s reload重启命令时出现<br>nginx: [error] invalid PID number “” in “/usr/local/nginx/logs/nginx.pid”<br>输入以下命令<br>./nginx -c /usr/local/nginx/conf/nginx.conf<br>在重启即可</p>
+<p>SpringApplication是springboot驱动spring应用上下文的引导类，他的run()方法启动Spring应用，实质上是为Spring应用创建并初始化Spring上下文</p>
 </blockquote>
+<p><img src="/assets/img/20190817165338.png" alt="Alt text"></p>
+<ol>
+<li>初始化监听器，以及添加到SpringApplication的自定义监听器。</li>
+<li>发布ApplicationStartedEvent事件，如果想监听ApplicationStartedEvent事件，你可以这样定义：public class ApplicationStartedListener implements ApplicationListener，然后通过SpringApplication.addListener(..)添加进去即可。</li>
+<li>装配参数和环境，确定是web环境还是非web环境。</li>
+<li>装配完环境后，就触发ApplicationEnvironmentPreparedEvent事件。</li>
+<li>如果SpringApplication的showBanner属性被设置为true，则打印启动的Banner。</li>
+<li>创建ApplicationContext，会根据是否是web环境，来决定创建什么类型的ApplicationContext。</li>
+<li>装配Context的环境变量，注册Initializers、beanNameGenerator等。</li>
+<li>发布ApplicationPreparedEvent事件。</li>
+<li>注册springApplicationArguments、springBootBanner，加载资源等</li>
+<li>遍历调用所有SpringApplicationRunListener的contextLoaded()方法。</li>
+<li>调用ApplicationContext的refresh()方法,装配context beanfactory等非常重要的核心组件。</li>
+<li>查找当前ApplicationContext中是否注册有CommandLineRunner，如果有，则遍历执行它们。</li>
+<li>发布ApplicationReadyEvent事件，启动完毕，表示服务已经可以开始正常提供服务了。通常我们这里会监听这个事件来打印一些监控性质的日志，表示应用正常启动了。</li>
+</ol>
+<h4 id="SpringBoot会触发其他的一些事件，这些事件按下列顺序触发："><a href="#SpringBoot会触发其他的一些事件，这些事件按下列顺序触发：" class="headerlink" title="SpringBoot会触发其他的一些事件，这些事件按下列顺序触发："></a>SpringBoot会触发其他的一些事件，这些事件按下列顺序触发：</h4><p>（1）ApplicationStartingEvent：项目刚启动时触发，此时除了注册监听器和初始器之外，其他所有处理都没有开始；<br>（2）ApplicationEnvironmentPreparedEvent：上下文得到环境信息之后触发，此时上下文创建还没有创建；<br>（3）ApplicationPreparedEvent：bean的定义信息加载完成之后触发，此时bean还没有初始化；<br>（4）ApplicationReadyEvent：在所有bean初始化完毕，所有回调处理完成，系统准备处理服务请求时触发；<br>（5）ApplicationFailedEvent：启动过程出现异常时候触发。</p>
+<h1 id="SpringApplication-run"><a href="#SpringApplication-run" class="headerlink" title="SpringApplication.run()"></a>SpringApplication.run()</h1><p>如果我们使用的是SpringApplication的静态run方法，那么，这个方法里面首先要创建一个SpringApplication对象实例，然后调用这个创建好的SpringApplication的实例方法。在SpringApplication实例初始化的时候，它会提前做几件事情：</p>
+<ol>
+<li>根据classpath里面是否存在某个特征类（org.springframework.web.context.ConfigurableWebApplicationContext）来决定是否应该创建一个为Web应用使用的ApplicationContext类型。</li>
+<li>使用SpringFactoriesLoader在应用的classpath中查找并加载所有可用的ApplicationContextInitializer。</li>
+<li>使用SpringFactoriesLoader在应用的classpath中查找并加载所有可用的ApplicationListener。</li>
+<li>推断并设置main方法的定义类。<br>它会执行以下步骤：</li>
+<li>创建一个合适的ApplicationContext实例 （取决于classpath）。</li>
+<li>注册一个CommandLinePropertySource，以便将命令行参数作为Spring properties。</li>
+<li>刷新application context，加载所有单例beans。</li>
+<li>激活所有CommandLineRunner beans。</li>
+</ol>
+<h2 id="Run启动方式"><a href="#Run启动方式" class="headerlink" title="Run启动方式"></a>Run启动方式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">@SpringBootApplication </span><br><span class="line">public class Application &#123;</span><br><span class="line">    //方式一</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        SpringApplication.run(Application.class, args);</span><br><span class="line">    &#125;</span><br><span class="line">    //方式二</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        SpringApplication app = new SpringApplication(MySpringConfiguration.class);</span><br><span class="line">        app.run(args);</span><br><span class="line">    &#125;</span><br><span class="line">	//方式三</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        new SpringApplicationBuilder()</span><br><span class="line">            .sources(Parent.class)</span><br><span class="line">            .child(Application.class)</span><br><span class="line">            .run(args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>SpringApplication.run()的底层其实就是new了一个SpringApplication的对象，并执行run()方法。</li>
+<li>有时我们需要创建多层次的ApplicationContext （例如，父子关系的Spring的ApplicationContext 和SpringMVC），这时我们可以使用SpringApplicationBuilder讲多个方法调用串起来，通过parent() 和 child()来创建多层次的ApplicationContext。</li>
+</ol>
 
       
 
@@ -285,8 +320,8 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <!--<img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/bug/linux-bug.html" alt="微信分享二维码">-->
-      <img src="//api.qrserver.com/vi/create-qr-code/?size=150x150&date=http://yoursite.com/bug/linux-bug.html" alt="微信分享二维码">
+      <!--<img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/springboot/springboot-run.html" alt="微信分享二维码">-->
+      <img src="//api.qrserver.com/vi/create-qr-code/?size=150x150&date=http://yoursite.com/springboot/springboot-run.html" alt="微信分享二维码">
     </div>
 </div>
 
