@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="知音空间">
 <meta property="og:description" content="Static、Final、This、Super 关键字 字符串拼接+和concat的区别 Java序列化你应该知道的一切">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-30T02:45:38.126Z">
+<meta property="og:updated_time" content="2019-09-02T06:56:57.145Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基础篇">
 <meta name="twitter:description" content="Static、Final、This、Super 关键字 字符串拼接+和concat的区别 Java序列化你应该知道的一切">
@@ -178,7 +178,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="color:teal">  字数统计: </span>
-        <span class="post-count">2.1k字</span>
+        <span class="post-count">3.3k字</span>
       </span>
     </span>
 
@@ -187,7 +187,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text" style="color:teal">  阅读时长: </span>
-        <span class="post-count">7min</span>
+        <span class="post-count">11min</span>
       </span>
     </span>
 </div>
@@ -211,6 +211,21 @@
 <li>get传送的数据量较小，不能大于2kb。post传送的数据较大，一般被默认为不受限制。</li>
 <li>get安全性非常低，post安全性较高。但是执行效率却比Post方法好</li>
 <li>在进行文件上传时只能使用post而不能是get。</li>
+</ul>
+</blockquote>
+<h4 id="泛型中通配符"><a href="#泛型中通配符" class="headerlink" title="泛型中通配符"></a>泛型中通配符</h4><blockquote>
+<p>我们在定义泛型类，泛型方法，泛型接口的时候经常会碰见很多不同的通配符，比如 T，E，K，V 等等，这些通配符又都是什么意思呢？</p>
+</blockquote>
+<blockquote>
+<p>常用的 T，E，K，V，？<br>本质上这些个都是通配符，没啥区别，只不过是编码时的一种约定俗成的东西。比如上述代码中的 T ，我们可以换成 A-Z 之间的任何一个 字母都可以，并不会影响程序的正常运行，但是如果换成其他的字母代替 T ，在可读性上可能会弱一些。通常情况下，T，E，K，V，？ 是这样约定的：</p>
+</blockquote>
+<blockquote>
+<ul>
+<li>？ 表示不确定的 java 类型</li>
+<li>T (type) 表示具体的一个java类型</li>
+<li>K V (key value) 分别代表java键值中的Key Value</li>
+<li>E (element) 代表Element</li>
+<li>？ 无界通配符</li>
 </ul>
 </blockquote>
 <h4 id="String、StringBuffer、StringBuilder区别？"><a href="#String、StringBuffer、StringBuilder区别？" class="headerlink" title="String、StringBuffer、StringBuilder区别？"></a>String、StringBuffer、StringBuilder区别？</h4><p>相同处：  都是管理字符串的<br>String        字符串常量   不可变  使用字符串拼接时是不同的2个空间<br>StringBuffer  字符串变量   可变    线程安全  字符串拼接直接在字符串后追加<br>StringBuilder 字符串变量   可变    非线程安全  字符串拼接直接在字符串后追加<br>1.StringBuilder执行效率高于StringBuffer高于String.<br>2.String是一个常量，是不可变的，所以对于每一次+=赋值都会创建一个新的对象， StringBuffer和StringBuilder都是可变的，当进行字符串拼接时采用append方 法，在原来的基础上进行追加，所以性能比String要高，又因为StringBuffer  是线程安全的而StringBuilder是线程非安全的，所以StringBuilder的效率高于 StringBuffer.<br>3.对于大数据量的字符串的拼接，采用StringBuffer,StringBuilder.</p>
@@ -302,8 +317,29 @@
 <h4 id="List和Map区别？"><a href="#List和Map区别？" class="headerlink" title="List和Map区别？"></a>List和Map区别？</h4><blockquote>
 <p>一个是存储单列表数据的集合，另一个是储存键和值的双列数据的集合，List中存储的数据是有序的，并允许重复；<br>map中存储数据是没有顺序的，其键不能重复，它的值可以有重复的<br>①list有重复值，map没有重复key担忧重复值<br>②lsit有序，map不一定有序<br>③list只能存单序列值，map可以存双序列值</p>
 </blockquote>
+<h4 id="list、set、map"><a href="#list、set、map" class="headerlink" title="list、set、map"></a>list、set、map</h4><ul>
+<li>list(对应顺序的好帮手)：list接口存储一组不唯一（可以有多个元素引用相同的对象），有序对象</li>
+<li>set(注重独一无二的性质)：不允许重复的集合。不会有多个元素引用相同的对象。</li>
+<li>map(用key来搜索的专家)：使用键值对存储。map会维护与key有关联的值。两个key可以引用相同的对象，但key不能重复，典型的key是String类型，但也可以是任何对象。</li>
+</ul>
 <h4 id="Arraylist、Vector、Linkedlist-的存储性能和特性"><a href="#Arraylist、Vector、Linkedlist-的存储性能和特性" class="headerlink" title="Arraylist、Vector、Linkedlist  的存储性能和特性"></a>Arraylist、Vector、Linkedlist  的存储性能和特性</h4><blockquote>
 <p>①arraylist和vector使用数组存储，linkedlist使用链表式存储元素<br>②ArrayList和vector插入删除数据效率差，linkedlist使用链表效率高<br>③ArrayList和vector查询时按数组下标查询不需要遍历，效率高；linkedlist需要遍历查询效率低<br>④vector是线程安全，ArrayList线程不安全</p>
+</blockquote>
+<h4 id="ArrayList与Vector区别呢？为什么要用ArrayList取代Vector呢？"><a href="#ArrayList与Vector区别呢？为什么要用ArrayList取代Vector呢？" class="headerlink" title="ArrayList与Vector区别呢？为什么要用ArrayList取代Vector呢？"></a>ArrayList与Vector区别呢？为什么要用ArrayList取代Vector呢？</h4><blockquote>
+<p><code>vector</code>类的所有方法都是同步的。可以由两个线程安全地访问一个Vector对象，但是一个线程访问Vector地话代码要在同步操作上耗费大量地时间。<br><code>ArrayList</code>不是同步的，所以在不需要保证线程安全时建议使用ArrayList。</p>
+</blockquote>
+<h4 id="HashMap和Hashtable的区别"><a href="#HashMap和Hashtable的区别" class="headerlink" title="HashMap和Hashtable的区别"></a>HashMap和Hashtable的区别</h4><ol>
+<li>线程是否安全：HashMap是非线程安全的，HashTable是线程安全的；Hashtable内部的方法基本都经过<code>synchronized</code>修饰。（如果你要保证线程的话就使用ConcurrtHashMap吧！）</li>
+<li>效率：因为线程安全的问题，HashMap要比HashTable效率高一点。另外，HashTable基本被淘汰，不要在代码中使用它。</li>
+<li>对null key和null value的支持：hashMap中，null可以作为键，这样的键只有一个，可以有一个或多个键所对应的值为null。但是在HashTable中put进的键值只要有一个null，直接抛出NullPointerException。</li>
+<li>初始容量大小和每次扩充量大小相同：①创建时如果不指定容量初始值，HashTable默认的初始大小为11，之后每次扩充，容量为原来的2n+1。hashMap默认初始化大小为16.之后每次扩充，容量为原来的2倍。②创建时如果给定了容量初始值，那么Hashtable会直接使用你给定的大小，而HashTable总是使用2的幂作为哈希表的大小。</li>
+</ol>
+<h4 id="ConcurrtHashMap-和-Hashtable的区别"><a href="#ConcurrtHashMap-和-Hashtable的区别" class="headerlink" title="ConcurrtHashMap 和 Hashtable的区别"></a>ConcurrtHashMap 和 Hashtable的区别</h4><blockquote>
+<p>ConcurrentHashMap和Hashtable 的区别主要体现在实现线程安全的方式上不同。</p>
+<ul>
+<li>底层数据结构：JDK1.7的ConcurrentHashMap 底层采用分段的数组+链表实现。JDK1.8采用的数据结构跟HashMap1.8的结构一样，数组+链表/红黑二叉树。HashTable和JDK1.8之前的HashMap的底层数据结构类似都是采用数组+链表的形式，数组事HashMap的主体，链表则是主要为了解决哈希冲突而存在的；</li>
+<li>实现线程安全的方法（重要）：在JDK1.7的时候，ConcurrentHashMap(分段锁)对整个桶数组进行了分割分段(Segment),每一把锁只锁容器其中一部分数据，多线程访问容器里不同数据段的数据，就不会存在锁竞争，提高并发访问率。到了JDK1.8的时候已经摒弃Segment的概念，而是直接用Node数组+链表+红黑树的数据结构来实现，并发控制使synchronized和CAS来操作。（JDK1.6后 对synchronized锁做了很多优化）整个看起来就像是优化过且线程安全的HashMap,虽然在JDK1.8中还能看到Segment的数据结构，但是已经简化了属性，只是为了兼容旧版本；Hashtable(同一把锁)：使用synchronized来保证线程安全，效率非常低下。当一个线程访问同步方法时，其他线程也访问同步方法，可能会进入阻塞或轮询状态，如使用put添加元素，另一个线程不能使用put添加元素，也不能使用get，竞争会越来越激烈效率越低。</li>
+</ul>
 </blockquote>
 <h4 id="微服务事务"><a href="#微服务事务" class="headerlink" title="微服务事务"></a>微服务事务</h4><p>CAP  一致性、可用性、容错性。<br>eureka 遵守ap原则   高可用<br>zookeeper遵守cp原则 不能保证高可用</p>
 <h4 id="IO的实现类"><a href="#IO的实现类" class="headerlink" title="IO的实现类"></a>IO的实现类</h4><ul>
@@ -582,15 +618,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">linux-bug</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">bug</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">github bug</a>
+                <a href="javascript:void(0)" class="js-tag color5">sort</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -618,7 +646,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Excel 常用快捷键</a>
+                <a href="javascript:void(0)" class="js-tag color5">linux-bug</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">bug</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">github bug</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -646,19 +682,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">post</a>
+                <a href="javascript:void(0)" class="js-tag color2">Excel 常用快捷键</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -671,6 +699,26 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">post</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -690,19 +738,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">国际ID</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">wm_concat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -710,11 +746,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">sql</a>
+                <a href="javascript:void(0)" class="js-tag color5">wm_concat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -726,7 +758,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">注解</a>
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">sql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -734,7 +770,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">HotKey</a>
+                <a href="javascript:void(0)" class="js-tag color3">注解</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -747,6 +783,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Quartz</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">HotKey</a>
               </li>
             
             <div class="clearfix"></div>
