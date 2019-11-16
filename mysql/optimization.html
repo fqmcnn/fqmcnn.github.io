@@ -16,7 +16,7 @@
 <meta property="og:description" content="1.explain做MySQL优化，我们要善用Explain查看sql执行计划  type列，连接类型。一个好的sql语句至少要达到range级别。杜绝出现all级别。 key列，使用到的索引名。如果没有选择索引，值是null。可以采用强制索引方式。 key_len列，索引长度。 rows列，扫描行数。该值是个预估值。 extra列，详细说明。注意，常见的不太友好的值，如：Using fileso">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/assets/img/20190726143124.png">
-<meta property="og:updated_time" content="2019-07-26T06:49:16.519Z">
+<meta property="og:updated_time" content="2019-11-07T07:44:49.038Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Sql优化">
 <meta name="twitter:description" content="1.explain做MySQL优化，我们要善用Explain查看sql执行计划  type列，连接类型。一个好的sql语句至少要达到range级别。杜绝出现all级别。 key列，使用到的索引名。如果没有选择索引，值是null。可以采用强制索引方式。 key_len列，索引长度。 rows列，扫描行数。该值是个预估值。 extra列，详细说明。注意，常见的不太友好的值，如：Using fileso">
@@ -220,7 +220,7 @@
 <h4 id="5-如果排序字段没有用到索引，就尽量少排序"><a href="#5-如果排序字段没有用到索引，就尽量少排序" class="headerlink" title="5.如果排序字段没有用到索引，就尽量少排序"></a>5.如果排序字段没有用到索引，就尽量少排序</h4><h4 id="6-如果限制条件中其他字段没有索引，尽量少用or"><a href="#6-如果限制条件中其他字段没有索引，尽量少用or" class="headerlink" title="6.如果限制条件中其他字段没有索引，尽量少用or"></a>6.如果限制条件中其他字段没有索引，尽量少用or</h4><blockquote>
 <p>or两边的字段中，如果有一个不是索引字段，而其它条件也不是索引字段，会造成该查询不走索引的情况。很多时候使用union all 或者是 union（必须的时候）的方式来代替“or”会得到更好的效果。</p>
 </blockquote>
-<h4 id="7。尽量用union-all代替union"><a href="#7。尽量用union-all代替union" class="headerlink" title="7。尽量用union all代替union"></a>7。尽量用union all代替union</h4><blockquote>
+<h4 id="7-尽量用union-all代替union"><a href="#7-尽量用union-all代替union" class="headerlink" title="7.尽量用union all代替union"></a>7.尽量用union all代替union</h4><blockquote>
 <p>union 和union all的差异主要是前者需要将结果集合并后在进行唯一性过滤操作，这就会设计到排序，增加大量的CPU运算，加大资源消耗及延迟。当然，union all的前提条件是两个结果集没有重复数据。</p>
 </blockquote>
 <h4 id="8-不使用order-by-rand"><a href="#8-不使用order-by-rand" class="headerlink" title="8.不使用order by rand()"></a>8.不使用order by rand()</h4><blockquote>
@@ -525,6 +525,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">bat面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">sort</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">linux-bug</a>
               </li>
              
@@ -534,18 +542,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">github bug</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">bat面试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">sort</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -573,10 +569,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Excel 常用快捷键</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ElasticSearch</a>
               </li>
              
@@ -601,7 +593,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -617,11 +609,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">post</a>
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -630,6 +618,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">html color</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Excel 常用快捷键</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">post</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -653,10 +657,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">wm_concat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
@@ -669,7 +669,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">maven</a>
+                <a href="javascript:void(0)" class="js-tag color5">wm_concat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -681,7 +681,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">HotKey</a>
+                <a href="javascript:void(0)" class="js-tag color1">maven</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -698,6 +698,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Quartz</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">HotKey</a>
               </li>
             
             <div class="clearfix"></div>

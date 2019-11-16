@@ -8,20 +8,20 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>解决数据库5.7版本乱码问题 | 知音空间</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="首先先查看自己的编码问题 mysql -r -p输入密码输入命令　　show variables like ‘%character%’;以上是我修改过的    如果没有改过  在、etc/my.conf添加值 vi /etc/my.conf在文件中添加如下[client]port = 3306socket = /var/lib/mysql/mysql.sockdefault-character-">
+  <meta name="description" content="首先先查看自己的编码问题 mysql -r -p输入密码输入命令　　show variables like &amp;#39;%character%&amp;#39;;以上是我修改过的    如果没有改过  在etc/my.conf添加值 vi /etc/my.conf在文件中添加如下[client]port = 3306socket = /var/lib/mysql/mysql.sockdefault-cha">
 <meta property="og:type" content="website">
 <meta property="og:title" content="解决数据库5.7版本乱码问题">
 <meta property="og:url" content="http://yoursite.com/linux/lm.html">
 <meta property="og:site_name" content="知音空间">
-<meta property="og:description" content="首先先查看自己的编码问题 mysql -r -p输入密码输入命令　　show variables like ‘%character%’;以上是我修改过的    如果没有改过  在、etc/my.conf添加值 vi /etc/my.conf在文件中添加如下[client]port = 3306socket = /var/lib/mysql/mysql.sockdefault-character-">
+<meta property="og:description" content="首先先查看自己的编码问题 mysql -r -p输入密码输入命令　　show variables like &amp;#39;%character%&amp;#39;;以上是我修改过的    如果没有改过  在etc/my.conf添加值 vi /etc/my.conf在文件中添加如下[client]port = 3306socket = /var/lib/mysql/mysql.sockdefault-cha">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/assets/img/1581553-20190126132620916-1164949934.png">
 <meta property="og:image" content="http://yoursite.com/assets/img/1581553-20190126133440937-532381162.png">
 <meta property="og:image" content="http://yoursite.com/assets/img/1581553-20190126133622522-1827437699.png">
-<meta property="og:updated_time" content="2019-04-05T12:31:46.188Z">
+<meta property="og:updated_time" content="2019-11-11T08:48:41.896Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="解决数据库5.7版本乱码问题">
-<meta name="twitter:description" content="首先先查看自己的编码问题 mysql -r -p输入密码输入命令　　show variables like ‘%character%’;以上是我修改过的    如果没有改过  在、etc/my.conf添加值 vi /etc/my.conf在文件中添加如下[client]port = 3306socket = /var/lib/mysql/mysql.sockdefault-character-">
+<meta name="twitter:description" content="首先先查看自己的编码问题 mysql -r -p输入密码输入命令　　show variables like &amp;#39;%character%&amp;#39;;以上是我修改过的    如果没有改过  在etc/my.conf添加值 vi /etc/my.conf在文件中添加如下[client]port = 3306socket = /var/lib/mysql/mysql.sockdefault-cha">
 <meta name="twitter:image" content="http://yoursite.com/assets/img/1581553-20190126132620916-1164949934.png">
   
     <link rel="alternative" href="/atom.xml" title="知音空间" type="application/atom+xml">
@@ -182,7 +182,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="color:teal">  字数统计: </span>
-        <span class="post-count">180字</span>
+        <span class="post-count">184字</span>
       </span>
     </span>
 
@@ -204,14 +204,14 @@
       
         <ul>
 <li>首先先查看自己的编码问题<blockquote>
-<p>mysql -r -p<br>输入密码<br>输入命令　　show variables like ‘%character%’;<br><img src="/assets/img/1581553-20190126132620916-1164949934.png" alt="Alt text"><br>以上是我修改过的</p>
+<p>mysql -r -p<br>输入密码<br>输入命令　　<code>show variables like &#39;%character%&#39;;</code><br><img src="/assets/img/1581553-20190126132620916-1164949934.png" alt="Alt text"><br>以上是我修改过的</p>
 </blockquote>
 </li>
 </ul>
 <p>如果没有改过<br><img src="/assets/img/1581553-20190126133440937-532381162.png" alt="Alt text"></p>
 <ul>
-<li>在、etc/my.conf添加值<blockquote>
-<p>vi /etc/my.conf<br>在文件中添加如下<br><img src="/assets/img/1581553-20190126133622522-1827437699.png" alt="Alt text"><br>[client]<br>port = 3306<br>socket = /var/lib/mysql/mysql.sock<br>default-character-set = utf8<br>在[mysqld]下添加<br>character-set-server=utf8<br>即可别的就不要在加了<br>亲身体验<br>然后保存退出<br>重启MySQL<br>service mysqld restart<br>没有报错就可以了<br>如有报错检查/etc/my.conf文件中的值<br>然后登陆MySQL<br>mysql -r -p<br>输入密码<br>检查编码<br>show variables like ‘%character%’;<br>更新<br>如有添加表情的在配置文件中把utf8改为utf8mb4即可<br>总结：人生需多尝试，方能知道解决方法</p>
+<li>在etc/my.conf添加值<blockquote>
+<p><code>vi /etc/my.conf</code><br>在文件中添加如下<br><img src="/assets/img/1581553-20190126133622522-1827437699.png" alt="Alt text"><br>[client]<br>port = 3306<br>socket = /var/lib/mysql/mysql.sock<br>default-character-set = utf8<br>在[mysqld]下添加<br>character-set-server=utf8<br>即可别的就不要在加了<br>亲身体验<br>然后保存退出<br>重启MySQL<br>service mysqld restart<br>没有报错就可以了<br>如有报错检查/etc/my.conf文件中的值<br>然后登陆MySQL<br>mysql -r -p<br>输入密码<br>检查编码<br><code>show variables like &#39;%character%&#39;;</code><br>更新<br>如有添加表情的在配置文件中把utf8改为utf8mb4即可<br>总结：人生需多尝试，方能知道解决方法</p>
 </blockquote>
 </li>
 </ul>
@@ -470,6 +470,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">bat面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">sort</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">linux-bug</a>
               </li>
              
@@ -479,18 +487,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">github bug</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">bat面试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">sort</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -518,10 +514,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Excel 常用快捷键</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ElasticSearch</a>
               </li>
              
@@ -546,7 +538,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -562,11 +554,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">post</a>
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -575,6 +563,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">html color</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Excel 常用快捷键</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">post</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -598,10 +602,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">wm_concat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
@@ -614,7 +614,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">maven</a>
+                <a href="javascript:void(0)" class="js-tag color5">wm_concat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -626,7 +626,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">HotKey</a>
+                <a href="javascript:void(0)" class="js-tag color1">maven</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -643,6 +643,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Quartz</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">HotKey</a>
               </li>
             
             <div class="clearfix"></div>

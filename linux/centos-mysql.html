@@ -8,22 +8,22 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Centos-Mysql | 知音空间</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="查看系统自带的mysql  rpm -qa | grep mysql   如果系统中有安装的mysql将其卸载  rpm -e –nodeps 自带的mysql版本     下载mysql官方的Yum Repository  wget -i -c http://dev.mysql.com/get/mysql57-community-release-el7-10.noarch.rpm   yum">
+  <meta name="description" content="查看系统自带的mysql  rpm -qa | grep mysql   如果系统中有安装的mysql将其卸载  rpm -e --nodeps 自带的mysql版本     下载mysql官方的Yum Repository  wget -i -c http://dev.mysql.com/get/mysql57-community-release-el7-10.noarch.rpm   yum">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Centos-Mysql">
 <meta property="og:url" content="http://yoursite.com/linux/centos-mysql.html">
 <meta property="og:site_name" content="知音空间">
-<meta property="og:description" content="查看系统自带的mysql  rpm -qa | grep mysql   如果系统中有安装的mysql将其卸载  rpm -e –nodeps 自带的mysql版本     下载mysql官方的Yum Repository  wget -i -c http://dev.mysql.com/get/mysql57-community-release-el7-10.noarch.rpm   yum">
+<meta property="og:description" content="查看系统自带的mysql  rpm -qa | grep mysql   如果系统中有安装的mysql将其卸载  rpm -e --nodeps 自带的mysql版本     下载mysql官方的Yum Repository  wget -i -c http://dev.mysql.com/get/mysql57-community-release-el7-10.noarch.rpm   yum">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/assets/img/1581553-20190124173508197-480676611.png">
 <meta property="og:image" content="http://yoursite.com/assets/img/1581553-20190124173845013-273949521.png">
 <meta property="og:image" content="http://yoursite.com/assets/img/1581553-20190124174341312-1293706508.png">
 <meta property="og:image" content="http://yoursite.com/assets/img/1581553-20190124174524941-694709060.png">
 <meta property="og:image" content="http://yoursite.com/assets/img/1581553-20190124174936841-629100760.png">
-<meta property="og:updated_time" content="2019-04-05T12:20:02.963Z">
+<meta property="og:updated_time" content="2019-11-16T01:12:56.952Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Centos-Mysql">
-<meta name="twitter:description" content="查看系统自带的mysql  rpm -qa | grep mysql   如果系统中有安装的mysql将其卸载  rpm -e –nodeps 自带的mysql版本     下载mysql官方的Yum Repository  wget -i -c http://dev.mysql.com/get/mysql57-community-release-el7-10.noarch.rpm   yum">
+<meta name="twitter:description" content="查看系统自带的mysql  rpm -qa | grep mysql   如果系统中有安装的mysql将其卸载  rpm -e --nodeps 自带的mysql版本     下载mysql官方的Yum Repository  wget -i -c http://dev.mysql.com/get/mysql57-community-release-el7-10.noarch.rpm   yum">
 <meta name="twitter:image" content="http://yoursite.com/assets/img/1581553-20190124173508197-480676611.png">
   
     <link rel="alternative" href="/atom.xml" title="知音空间" type="application/atom+xml">
@@ -184,7 +184,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="color:teal">  字数统计: </span>
-        <span class="post-count">243字</span>
+        <span class="post-count">251字</span>
       </span>
     </span>
 
@@ -207,26 +207,26 @@
         <ul>
 <li><p>查看系统自带的mysql</p>
 <blockquote>
-<p>rpm -qa | grep mysql</p>
+<p><code>rpm -qa | grep mysql</code></p>
 </blockquote>
 </li>
 <li><p>如果系统中有安装的mysql<br>将其卸载</p>
 <blockquote>
-<p>rpm -e –nodeps 自带的mysql版本</p>
+<p><code>rpm -e --nodeps 自带的mysql版本</code></p>
 </blockquote>
 </li>
 </ul>
 <ul>
 <li><p>下载mysql官方的Yum Repository</p>
 <blockquote>
-<p>wget -i -c <a href="http://dev.mysql.com/get/mysql57-community-release-el7-10.noarch.rpm" target="_blank" rel="noopener">http://dev.mysql.com/get/mysql57-community-release-el7-10.noarch.rpm</a></p>
+<p><code>wget -i -c http://dev.mysql.com/get/mysql57-community-release-el7-10.noarch.rpm</code></p>
 </blockquote>
 <blockquote>
-<p>yum -y install mysql57-community-release-el7-10.noarch.rpm</p>
+<p><code>yum -y install mysql57-community-release-el7-10.noarch.rpm</code></p>
 </blockquote>
 <p>安装MySQL服务</p>
 <blockquote>
-<p>yum -y install mysql-community-server</p>
+<p><code>yum -y install mysql-community-server</code></p>
 </blockquote>
 <p>这一步可能装的时间有点长，安装完成后会覆盖之前的mariadb</p>
 <p><img src="/assets/img/1581553-20190124173508197-480676611.png" alt="Alt text"></p>
@@ -241,17 +241,17 @@
 </li>
 <li><p>然后修改密码<br>通过命令在日志中找到密码</p>
 <blockquote>
-<p>grep “password” /var/log/mysqld.log<br><img src="/assets/img/1581553-20190124173845013-273949521.png" alt="Alt text"></p>
+<p><code>grep &quot;password&quot; /var/log/mysqld.log</code><br><img src="/assets/img/1581553-20190124173845013-273949521.png" alt="Alt text"></p>
 </blockquote>
 <blockquote>
-<p>mysql -u root -p</p>
+<p><code>mysql -u root -p</code></p>
 </blockquote>
 <p>然后输入密码</p>
 <p>在进行修改密码</p>
 </li>
 </ul>
 <blockquote>
-<p>mysql&gt; ALTER USER ‘root‘@’localhost’ IDENTIFIED BY ‘你的密码’;</p>
+<p><code>mysql&gt; ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;你的密码&#39;;</code></p>
 </blockquote>
 <ul>
 <li><p>退出  测试密码是否修改成功</p>
@@ -268,10 +268,10 @@
 </blockquote>
 <p>开放端口3306</p>
 <blockquote>
-<p>firewall-cmd --zone=public --add-port=3306/tcp --permanent    （--permanent永久生效，没有此参数重启后失效）</p>
+<p><code>firewall-cmd --zone=public --add-port=3306/tcp --permanent</code>    （--permanent永久生效，没有此参数重启后失效）</p>
 </blockquote>
 <blockquote>
-<p>firewall-cmd --reload<br><img src="/assets/img/1581553-20190124174936841-629100760.png" alt="Alt text"> </p>
+<p><code>firewall-cmd --reload</code><br><img src="/assets/img/1581553-20190124174936841-629100760.png" alt="Alt text"> </p>
 </blockquote>
 <blockquote>
 <p><a href="../linux/index.html">Linux  centos7——防火墙命令</a></p>
@@ -531,6 +531,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">bat面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">sort</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">linux-bug</a>
               </li>
              
@@ -540,18 +548,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">github bug</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">bat面试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">sort</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -579,10 +575,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Excel 常用快捷键</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ElasticSearch</a>
               </li>
              
@@ -607,7 +599,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -623,11 +615,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">post</a>
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -636,6 +624,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">html color</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Excel 常用快捷键</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">post</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -659,10 +663,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">wm_concat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
@@ -675,7 +675,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">maven</a>
+                <a href="javascript:void(0)" class="js-tag color5">wm_concat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -687,7 +687,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">HotKey</a>
+                <a href="javascript:void(0)" class="js-tag color1">maven</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -704,6 +704,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Quartz</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">HotKey</a>
               </li>
             
             <div class="clearfix"></div>
