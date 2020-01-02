@@ -540,7 +540,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <ol>
-<li><a href="/alibaba/阿里巴巴Java开发手册（详尽版）.pdf">Alibaba Java开发手册1.4    编码规范</a></li>
+<li><a href="/alibaba/阿里巴巴Java开发手册（详尽版）.pdf">Alibaba Java开发手册1.4 编码规范</a></li>
 <li><a href="/alibaba/Java-huashanxinban.pdf">Alibaba Java开发手册1.5 华山版</a></li>
 </ol>
 
@@ -812,7 +812,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="color:teal">  字数统计: </span>
-        <span class="post-count">56字</span>
+        <span class="post-count">58字</span>
       </span>
     </span>
 
@@ -837,6 +837,7 @@
 <li><a href="/javadev/document.html">Java 文档注释</a></li>
 <li><a href="/javadev/localdatetimeUtil.html">SimpleDateFormat 你还在用？赶快尝试一下JDK1.8的LocalDateTime、LocalDate…(内有1.8的时间工具类)</a></li>
 <li><a href="/javadev/regular.html">Java正则表达式</a></li>
+<li><a href="/javadev/collection.html">集合</a></li>
 </ol>
 <!--4. [java虚拟机JVM原理]()-->
 <!--5. []()-->
@@ -1063,7 +1064,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="color:teal">  字数统计: </span>
-        <span class="post-count">8字</span>
+        <span class="post-count">13字</span>
       </span>
     </span>
 
@@ -1085,6 +1086,7 @@
       
         <ol>
 <li><a href="/windown10/windown10HotKey.html">Windown10 官方快捷键总结</a></li>
+<li><a href="/windown10/windown10-split.html">Windown10 系统分盘</a></li>
 </ol>
 
       
@@ -1139,19 +1141,19 @@
 
 
   
-    <article id="post-orcal" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-oracle" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="2019/04/10/orcal/">Oracle</a>
+      <a class="article-title" href="2019/04/10/oracle/">Oracle</a>
     </h1>
   
 
         
-        <a href="2019/04/10/orcal/" class="archive-article-date">
+        <a href="2019/04/10/oracle/" class="archive-article-date">
   	<time datetime="2019-04-10T14:37:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-10</time>
 </a>
         <!-- 需要添加的位置 -->
@@ -1162,7 +1164,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="color:teal">  字数统计: </span>
-        <span class="post-count">177字</span>
+        <span class="post-count">185字</span>
       </span>
     </span>
 
@@ -1187,12 +1189,14 @@
 <p>删除重复记录（Oracle）<br>最高效的删除重复记录方法：<code>DELETE FROM EMP E WHERE E.ROWID &gt; (SELECT MIN(X.ROWID)FROM EMP X WHERE X.EMP_NO = E.EMP_NO);</code></p>
 <p>查询时间在最近三个月的数据<code>select username from t_user creation_ime BETWEEN ADD_MONTHS(SYSDATE, -3) AND SYSDATE</code></p>
 <ol>
+<li><a href="/oracle/oracle-introduction.html">Oracle 简介</a></li>
 <li><a href="/oracle/oracle-function.html">Oracle 函数详解</a></li>
 <li><a href="/oracle/oracle-mysql.html">Oracle 与 Mysql的区别</a></li>
 <li><a href="/oracle/oracle-fetch.html">Oracle FETCH</a></li>
 <li><a href="/oracle/oracle-result.html">Oracle 查询条件如何作为返回结果</a></li>
 <li><a href="/oracle/oracle-if.html">Oracle sql中的如果</a></li>
 <li><a href="/oracle/oracle-like.html">Oracle sql中的like</a></li>
+<li><a href="/oracle/oracle-stored-procedure.html">Oracle 存储过程</a></li>
 </ol>
 
       
@@ -1217,7 +1221,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="2019/04/10/orcal/">展开全文 >></a>
+          <a class="article-more-a" href="2019/04/10/oracle/">展开全文 >></a>
         </p>
       
 
@@ -1361,7 +1365,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 启明
+    		&copy; 2020 启明
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a><!--  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten-->
@@ -1456,6 +1460,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">linux-bug</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">bug</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">github bug</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">bat面试</a>
               </li>
              
@@ -1488,42 +1504,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ElasticSearch</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LocalDateTime</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">hadoop</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">dubbo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">linux-bug</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">bug</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">github bug</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
@@ -1532,7 +1512,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">post</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1560,11 +1544,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">post</a>
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">sql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">国际ID</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">支付</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">wm_concat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1584,39 +1584,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">国际ID</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">sql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">wm_concat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">支付</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">证件照</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">去除不必要的人</a>
+                <a href="javascript:void(0)" class="js-tag color3">注解</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">maven</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">注解</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1633,6 +1605,38 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">HotKey</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ElasticSearch</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">LocalDateTime</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">hadoop</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">dubbo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">证件照</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">去除不必要的人</a>
               </li>
             
             <div class="clearfix"></div>
