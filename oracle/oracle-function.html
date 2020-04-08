@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="知音空间">
 <meta property="og:description" content="字符函数   函数 说明     ASCII(X) 返回字符X的ASCII码   CONCAT(x,y) 拼接、连接字符串x和y   INSTR(X,STR[,START][,N) 从X中查找str，可以指定从start开始，也可以指定从n开始   LENGTH(X) 返回X的长度   LOWER(X) X转换成小写   UPPER(X) X转换成大写   LTRIM(X[,TRIM_STR])">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-17T09:27:16.183Z">
+<meta property="og:updated_time" content="2020-03-07T02:00:00.478Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Oracle 函数详解">
 <meta name="twitter:description" content="字符函数   函数 说明     ASCII(X) 返回字符X的ASCII码   CONCAT(x,y) 拼接、连接字符串x和y   INSTR(X,STR[,START][,N) 从X中查找str，可以指定从start开始，也可以指定从n开始   LENGTH(X) 返回X的长度   LOWER(X) X转换成小写   UPPER(X) X转换成大写   LTRIM(X[,TRIM_STR])">
@@ -536,7 +536,7 @@
 <blockquote>
 <p>比如我要查询某班男生和女生的数量分别是多少?<br>通常我们这么写:<br>select count(*) from 表 where 性别 ＝ 男；<br>select count(*) from 表 where 性别 ＝ 女；<br>要想显示到一起还要union一下，太麻烦了<br>用decode呢，只需要一句话<br>select sum(decode(性别，男，1，0）)，sum(decode(性别，女，1，0）) from 表</p>
 </blockquote>
-<h4 id="Orcal-关键字"><a href="#Orcal-关键字" class="headerlink" title="Orcal 关键字"></a>Orcal 关键字</h4><ul>
+<h4 id="Oracle-关键字"><a href="#Oracle-关键字" class="headerlink" title="Oracle 关键字"></a>Oracle 关键字</h4><ul>
 <li><strong>truncate</strong> :表格里的数据被清空，存储空间被释放。运行后会自动提交，包括之前其它未提交的会话，因而一旦清空无法回退。只有表格的创建者或者其他拥有删除任意表格权限的用户（如DBA）才能清空表格。</li>
 </ul>
 <h4 id="truncate命令和delete的区别："><a href="#truncate命令和delete的区别：" class="headerlink" title="truncate命令和delete的区别："></a>truncate命令和delete的区别：</h4><ol>
@@ -828,30 +828,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ElasticSearch</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LocalDateTime</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">hadoop</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">dubbo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Factory Pattern</a>
               </li>
              
@@ -876,15 +852,47 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ElasticSearch</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">LocalDateTime</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">hadoop</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">dubbo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Excel 常用快捷键</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
+                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -900,15 +908,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">redis</a>
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -952,7 +952,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">支付</a>
+                <a href="javascript:void(0)" class="js-tag color1">maven</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">注解</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -964,11 +968,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">注解</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">maven</a>
+                <a href="javascript:void(0)" class="js-tag color3">支付</a>
               </li>
              
               <li class="article-tag-list-item">

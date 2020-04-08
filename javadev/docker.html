@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="知音空间">
 <meta property="og:description" content="简介 Docker 是一个开源的应用容器引擎；是一个轻量级容器技术；Docker支持将软件编译成一个镜像；然后在镜像中各种软件做好配置，将镜像发布出去，其他使用者可以直接使用这个镜像；运行中的这个镜像成为容器，容器启动是非常快速的。  核心概念 docker主机(HOST):安装了Docker程序的机器(Docker直接安装在操作系统之上)；docker客户端(Client):连接docker主机">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-13T02:52:37.949Z">
+<meta property="og:updated_time" content="2020-02-26T02:58:28.254Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DOCKER">
 <meta name="twitter:description" content="简介 Docker 是一个开源的应用容器引擎；是一个轻量级容器技术；Docker支持将软件编译成一个镜像；然后在镜像中各种软件做好配置，将镜像发布出去，其他使用者可以直接使用这个镜像；运行中的这个镜像成为容器，容器启动是非常快速的。  核心概念 docker主机(HOST):安装了Docker程序的机器(Docker直接安装在操作系统之上)；docker客户端(Client):连接docker主机">
@@ -178,7 +178,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="color:teal">  字数统计: </span>
-        <span class="post-count">903字</span>
+        <span class="post-count">9.5k字</span>
       </span>
     </span>
 
@@ -187,7 +187,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text" style="color:teal">  阅读时长: </span>
-        <span class="post-count">3min</span>
+        <span class="post-count">36min</span>
       </span>
     </span>
 </div>
@@ -272,6 +272,578 @@
 <blockquote>
 <p>使用官方镜像可以节省大量的维护时间，因为官方镜像的所有安装步骤都使用了最佳实践。如果你有多个项目，可以共享这些镜像层，因为他们都可以使用相同对的基础镜像。<br>持续更新<br><a id="more"></a></p>
 </blockquote>
+<p>Docker是基于Go语言实现的云开源项目<br>Docker的主要目标是”Build,Ship and Run Any App,Anywhere”,也就是通过对应用组件的封装、分发、部署、运行等生命的管理，使用户的app（可以是一个web应用或数据库应用等等）及其运行环境能够做到”一次封装，到处运行”。</p>
+<p>Linux容器技术的出现就解决了这样一个问题，而docker就是在它的基础上发展过来的。将应用运行在docker容器上面，而docker容器在任何操作系统上都是一致的，这就实现了跨平台、跨服务器。只需要一次配置好环境，换到别的机子上就可以一键部署好，大大简化了操作。</p>
+<ul>
+<li>docker是什么？<ul>
+<li>docker解决了运行环境和配置问题软件容器，方便做继续继承并有助于整体发布的容器虚拟化技术。</li>
+</ul>
+</li>
+</ul>
+<p>虚拟机（Virtual machine）就是带环境安装的一种解决方案<br>它可以在一种系统里面运行另一种操作系统，比如在windowns系统里面运行linux系统。应用程序丢此毫无感知，因为虚拟机看上去跟真实系统一模一样，面对与底层系统来说，虚拟机就是一个普通文件，不需要了就删掉，对其他部分毫无影响。这类虚拟机完美的运行了另一套系统，能够使应用程序，操作系统和硬件三者之间的逻辑不变。<br>虚拟机的缺点：1.资源占用多 2.冗余步骤多 3.启动慢</p>
+<p>由于前面虚拟机存在这些缺点，linux发展出了另一种虚拟化技术：linux容器(linux containers，缩写为lxc)</p>
+<p>linux容器不是模拟一个完整的操作系统，而是对进程进行隔离。有了容器，就可以将软件运行所需的所有资源打包到一个隔离的容器中。容器与虚拟机不同，不需要捆绑一整套操作系统，只需要软件工作所需的库资源和设备。系统因此而变得高效轻量并保证部署在任何环境中的软件都能始终如一地运行。</p>
+<p>比较了Docker和传统虚拟机化方式地不同之处：传统虚拟机技术是虚拟出一套硬件后，在其上运行一个完整操作系统，在该操作系统上再运行所需应用进程。<br>而容器内的应用进程直接运行与宿主的内核，容器内没有自己的内核，而且也没有进行硬件虚拟。因此容器要比传统虚拟机更为轻便。<br>每个容器之间互相隔离，每个容器有自己的文件系统，容器之间进程不会相互影响，能区别计算资源。</p>
+<p>docker优势<br>更快速的应用交付和部署。<br>更便捷的升级和扩缩容。<br>更简单的系统运维。<br>更高效的计算资源利用。</p>
+<p>为什么用docker<br>更轻量：基于容器的虚拟化，仅包含业务运行所需的runtime环境，Centos/Ubuntu基础镜像仅170M；宿主机可部署100-1000个容器。<br>更高效：无操作系统虚拟化开销<br>    计算：轻量，无额外开销<br>    存储：系统盘auts/dm/overlayfs；数据盘volume<br>    网络：宿主机网络，NS隔离<br>更敏捷、更灵活：<br>    分层的存储和包管理，devops理念。<br>    支持多种网络配置。</p>
+<p>轻量、秒级的快速启动速度<br>简单、易用、活跃的社区<br>标准统一打包、部署、运行档案<br>镜像支持增量分发，易于部署<br>易于构建，良好的restapi ，也很适合自动化测试和持续集成<br>性能，尤其是内存和IO的开销</p>
+<p>docker hub 存储镜像</p>
+<p>uname -r 查看系统版本<br>docker centos6.5以上</p>
+<p>Docker 的基本组成：镜像、容器、仓库</p>
+<p>Docker镜像就是一个只读的模板。镜像可以用来创建Docker容器，一个镜像可以创建很多容器。</p>
+<p>Docker 利用镜像(Container)独立玉兴的一个或以组应用。容器是用镜像创建的运行实例。<br>它可以被启动、开始、停止、删除。每个容器都是相互隔离的、保证安全的平台。<br>可以把容器看做一个简易版的linux环境(包括root用户权限、进程空间、用户空间和网络空间等)和运行在其中的应用程序。<br>容器的定义和镜像几乎一摸一样，也是一堆层的统一视角，唯一区别在于容器的最上面那一层是可读可写的。</p>
+<p>仓库是集中存放镜像文件的场所。<br>仓库和仓库注册服务器是有区别的。仓库注册服务器上往往存放着多个仓库，每个仓库中又包含了多个镜像，每个镜像有不同的标签(tag)。</p>
+<p>仓库分为公开仓库和私有仓库两种形式。<br>最大的公开仓库是Docker Hub(<a href="https://hub.docker.com/),存放了数量庞大的镜像供用户下载。国内的公开仓库包括阿里云、网易云等。" target="_blank" rel="noopener">https://hub.docker.com/),存放了数量庞大的镜像供用户下载。国内的公开仓库包括阿里云、网易云等。</a></p>
+<p>容器 ———— 对象<br>镜像 ———— 类</p>
+<p>总结<br>需要正确的理解仓储/镜像/容器这几个概念：<br>Docker本身是一个容器运行载体或称之为管理引擎。我们把应用和配置依赖打包好形成一个可交付的运行环境，这个打包好的运行环境就似乎image镜像文件。只有通过这个镜像文件才能生成docker容器。image文件可以看作是容器的模板。Docker根据image文件生成容器的实例。同一个image文件，可以生成多个同时运行的容器实例。<br>image 文件生成的容器实例，本身也是一个文件，称为镜像文件。<br>一个容器运行一种服务，当我们需要的时候，就可以通过docker客户端创建一个对应的运行实例，也就是我们的容器。<br>至于仓库，就是放了一堆镜像的地方，我们可以把镜像发布到仓储中，需要的时候从仓库中拉下来就可以了。</p>
+<p>版本6.8<br>docker 安装<br>yum install -y epel-release<br>yum install -y docker-io<br>安装后的配置文件: /etc/sysconfig/docker/<br>启动: service docker start<br>查看版本: docker version</p>
+<p>版本7.0</p>
+<p>阿里云镜像加速<br>    是什么: <a href="https://dev.aliyun.com/search.html" target="_blank" rel="noopener">https://dev.aliyun.com/search.html</a><br>    注册一个属于自己的阿里云账户<br>    获取加速器地址连接<br>        登录阿里云开发者平台<br>        获取加速器地址<br>    配置本机docker运行镜像加速器<br>        vim /etc/sysconfig/docker/<br>        other_args= 配置<br>    重启docker service docker restart<br>    linux系统下配置完加速器需要检查是否生效<br>    7.0版本之后 配置文件更改  把官网上的数据拿下来</p>
+<p>网易云镜像加速</p>
+<p>docker run<br>开始 ———— 》 docker在本机中寻找镜像 —— 判断本机是否拥有———— 有直接运行，没有从docker hub上找  —— 有，下载到本地运行，没有返回错误，查不到该镜像。</p>
+<p>Docker是一个Client—Server结构的系统，Docker守护进程运行在主机上，然后通过Socker连接从客户端访问，守护进程从客户端接受命令并管理运行在主机上的容器。容器，是一个运行时环境，就是我们前面说到的集装箱。</p>
+<p>为什么docker比vm快？<br>docker有着比虚拟机更少的抽象层。由于docker不需要Hypervisor实现硬件资源虚拟化，运行在docker容器上的程序直接使用的都是实际物理机的硬件资源。因此在cpu、内存利用率上docker将会在效率上有明显优势。</p>
+<p>docker利用的是宿主机的内核，而不需要Guest Os。因此，当新建一个容器时，docker不需要和虚拟机一样重新加载一个操作系统内核。仍而避免引寻、加载操作系统内核返个比较费时费资源的过程，当新建一个虚拟机时，虚拟机软件需要加载Guest OS，返个新建过程是分钟级别的。而Docker由于直接利用宿主机的操作系统，则省略了返个过程，因此新建一个docker容器只需要几秒钟。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">Docker容器</th>
+<th style="text-align:center">虚拟机VM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">操作系统</td>
+<td style="text-align:center">与宿主机共享OS</td>
+<td style="text-align:center">宿主机OS上运行虚拟机OS</td>
+</tr>
+<tr>
+<td style="text-align:center">存储大小</td>
+<td style="text-align:center">镜像小，便于存储与传输</td>
+<td style="text-align:center">镜像庞大(vmdk\vdi等)</td>
+</tr>
+<tr>
+<td style="text-align:center">运行性能</td>
+<td style="text-align:center">几乎无额外性能损失</td>
+<td style="text-align:center">操作系统额外的cpu、内存消耗</td>
+</tr>
+<tr>
+<td style="text-align:center">移植性</td>
+<td style="text-align:center">轻便、灵活，适应于linux</td>
+<td style="text-align:center">笨重，与虚拟化技术耦合度高</td>
+</tr>
+<tr>
+<td style="text-align:center">硬件亲和性</td>
+<td style="text-align:center">面向软件开发者</td>
+<td style="text-align:center">面向硬件运维者</td>
+</tr>
+<tr>
+<td style="text-align:center">部署速度</td>
+<td style="text-align:center">快速、秒级</td>
+<td style="text-align:center">较慢、，10s以上</td>
+</tr>
+</tbody>
+</table>
+<p>docker 命令<br>查看版本 docker version<br>查看详情 docker info<br>docker帮助命令  docker –help</p>
+<p>镜像命令<br>列出本地主机上的镜像 docker images<br>repository: 表示镜像的仓库源<br>tag： 镜像的标签<br>imageId: 镜像id<br>created：镜像创建时间<br>size: 镜像大小<br>同一仓库源可以有多个tag，代表这个仓库源的不同个版本，我们使用repository:tag来定义不同的镜像。<br>如果你不指定一个镜像的版本标签，例如你只使用ubuntu，docker将默认使用ubuntu:latest镜像。</p>
+<p>docker image -a 列出本地所有的镜像(含中间映像层)<br>docker image -q 只显示镜像的ID<br>docker image –digests 显示镜像的摘要信息<br>docker image –no-trunc 显示完整的镜像信息</p>
+<p>docker search 查询某个XXX镜像名字<br>docker search –no-trunc 显示完整的镜像描述<br>docker search -s 列出收藏不小于指定值的镜像<br>docker search –automated 只列出automated build类型的镜像</p>
+<p>docker pull 下载某个镜像  默认相当于 docker pull 镜像名[:tag]</p>
+<p>docker rmi 删除某个镜像 docker rmi 镜像名[:tag]</p>
+<p>docker rmi -f 强制删除  一个或多个</p>
+<p>docker rmi -f $(docker image -qa) 删除全部</p>
+<p>容器命令<br>有镜像才能创建容器，这是根本的前提<br>docker run<br>    –name=”容器新名字” 为容器指定一个名称<br>    -d 后台运行容器，并返回容器ID，也即启动守护式容器<br>    -i 以交互模式运行容器，通常与 -t同时使用<br>    -t 以容器重新分配一个伪输入终端，通常与-i 同时使用<br>    -P 随机端口映射<br>    -p 指定端口映射，有以下四种<br>        ip: hostPort:containerPort<br>        ip::containerPort<br>        hostPort:containerPort<br>        containerPort</p>
+<p>列出当前正在运行的容器<br>docker ps<br>    -a 列出当前所有正在运行的容器+历史上运行过的<br>    -l 显示最近创建的容器<br>    -n 显示最近n个创建的容器<br>    -q 静默模式，只显示容器编号<br>    –no-trunc 不截断输出</p>
+<p>退出容器<br>    exit 容器停止退出<br>    ctal+p+Q  容器不停止退出</p>
+<p>启动容器<br>    docker start 容器id或者容器名字</p>
+<p>重启容器<br>    docker restart 容器id或者容器名字</p>
+<p>停止容器<br>    docker stop 容器id或者容器名</p>
+<p>强制停止容器<br>    docker kill 容器id或者容器名</p>
+<p>删除已停止的容器<br>    docker rm 容器id<br>    docker rm -f $(docker ps -a -q)<br>    docker ps -a -q | xargs docker rm</p>
+<p>重要：<br>启动守护式容器<br>    使用镜像centos:latest以后台模式启动一个容器<br>    docker run -d centos<br>    问题 然后docker ps -a 进行查看，会发现容器已经退出<br>    很重要的要说明一点: docker 容器后台运行，就必须有一个前台进程。<br>    容器运行的命令如果不是那些一直挂起的命令(比如运行top， tail)，就是会自动退出的。</p>
+<pre><code>这个是docker的机制问题，比如你的web容器，我们以nginx为例，正常情况下我们配置启动服务只需要响应的service即可。例如service nginx start
+但是，这样做，nginx为后台进程模式运行，就导致docker前台没有运行的应用。
+这样的容器后台启动后，会立即自杀因为他觉得他没事可做了。
+所以，最佳的解决方案是，将你要运行的程序以前台进程的形式运行。
+</code></pre><p>查看容器日志<br>    docker logs -f -t –tail 容器Id    -t 是加入的时间戳、-f 跟随最新的日志打印、–tail数字显示最后多少条<br>查看容器内运行的进程<br>    docker top 容器id<br>查看容器内部细节<br>    docker inspect 容器id<br>进入正在运行的容器并以命令行交互<br>    docker exec -it 容器ID bashshell<br>    从新进入docker attach 容器id<br>    两者区别<br>        attach 直接进入容器启动命令的终端，不会启动新的进程<br>        exec 是在容器中打开新的终端，并且可以启动新的进程<br>从容器内拷贝文件到主机上<br>    docker cp 容器id:容器内部路径目的的主机路径</p>
+<p>命令总结<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">attach    Attach to a running container                 # 当前 shell 下 attach 连接指定运行镜像</span><br><span class="line">build     Build an image from a Dockerfile              # 通过 Dockerfile 定制镜像</span><br><span class="line">commit    Create a new image from a container changes   # 提交当前容器为新的镜像</span><br><span class="line">cp        Copy files/folders from the containers filesystem to the host path   #从容器中拷贝指定文件或者目录到宿主机中</span><br><span class="line">create    Create a new container                        # 创建一个新的容器，同 run，但不启动容器</span><br><span class="line">diff      Inspect changes on a container&apos;s filesystem   # 查看 docker 容器变化</span><br><span class="line">events    Get real time events from the server          # 从 docker 服务获取容器实时事件</span><br><span class="line">exec      Run a command in an existing container        # 在已存在的容器上运行命令</span><br><span class="line">export    Stream the contents of a container as a tar archive   # 导出容器的内容流作为一个 tar 归档文件[对应 import ]</span><br><span class="line">history   Show the history of an image                  # 展示一个镜像形成历史</span><br><span class="line">images    List images                                   # 列出系统当前镜像</span><br><span class="line">import    Create a new filesystem image from the contents of a tarball # 从tar包中的内容创建一个新的文件系统映像[对应export]</span><br><span class="line">info      Display system-wide information               # 显示系统相关信息</span><br><span class="line">inspect   Return low-level information on a container   # 查看容器详细信息</span><br><span class="line">kill      Kill a running container                      # kill 指定 docker 容器</span><br><span class="line">load      Load an image from a tar archive              # 从一个 tar 包中加载一个镜像[对应 save]</span><br><span class="line">login     Register or Login to the docker registry server    # 注册或者登陆一个 docker 源服务器</span><br><span class="line">logout    Log out from a Docker registry server          # 从当前 Docker registry 退出</span><br><span class="line">logs      Fetch the logs of a container                 # 输出当前容器日志信息</span><br><span class="line">port      Lookup the public-facing port which is NAT-ed to PRIVATE_PORT    # 查看映射端口对应的容器内部源端口</span><br><span class="line">pause     Pause all processes within a container        # 暂停容器</span><br><span class="line">ps        List containers                               # 列出容器列表</span><br><span class="line">pull      Pull an image or a repository from the docker registry server   # 从docker镜像源服务器拉取指定镜像或者库镜像</span><br><span class="line">push      Push an image or a repository to the docker registry server    # 推送指定镜像或者库镜像至docker源服务器</span><br><span class="line">restart   Restart a running container                   # 重启运行的容器</span><br><span class="line">rm        Remove one or more containers                 # 移除一个或者多个容器</span><br><span class="line">rmi       Remove one or more images             # 移除一个或多个镜像[无容器使用该镜像才可删除，否则需删除相关容器才可继续或 -f 强制删除]</span><br><span class="line">run       Run a command in a new container              # 创建一个新的容器并运行一个命令</span><br><span class="line">save      Save an image to a tar archive                # 保存一个镜像为一个 tar 包[对应 load]</span><br><span class="line">search    Search for an image on the Docker Hub         # 在 docker hub 中搜索镜像</span><br><span class="line">start     Start a stopped containers                    # 启动容器</span><br><span class="line">stop      Stop a running containers                     # 停止容器</span><br><span class="line">tag       Tag an image into a repository                # 给源中镜像打标签</span><br><span class="line">top       Lookup the running processes of a container   # 查看容器中运行的进程信息</span><br><span class="line">unpause   Unpause a paused container                    # 取消暂停容器</span><br><span class="line">version   Show the docker version information           # 查看 docker 版本号</span><br><span class="line">wait      Block until a container stops, then print its exit code   # 截取容器停止时的退出状态值</span><br></pre></td></tr></table></figure></p>
+<p>docker镜像<br>    是什么：镜像是一种轻量级、可执行的独立软件包，用来打包软件运行环境和基于运行环境开发的软件，它包含运行某个软件所需的所有内容，包括代码、运行时、库、环境变量和配置文件。<br>        UnionFs(联合文件系统):<br>            Union文件系统(UnionFs)是一种分层、轻量级并且高性能的文件系统，它支持对文件系统的修改为一次提交来一层层的叠加，同时可以将不同目录挂载到同一虚拟文件系统下(unite serveral directories into a single virtual filesystem)。Union文件系统是docker镜像的基础。镜像可以通过分层来进行继承，基于基础镜像(没有父镜像)，可以制作各种具体的应用镜像。</p>
+<pre><code>        特性: 一次同时加载多个文件系统，但从外面看起来，只能看到一个文件系统，联合加载会把各层文件系统叠加起来，这样最终的文件系统会包含所有底层的文件和目录。
+
+    Docker镜像加载原理
+        docker的镜像实际上由一层一层的文件系统组成，这种层级的文件系统UnionFS。
+        bootfs(boot file sysyem)主要包含bootloader和kernel，bootloader主要是引导加载kernel，linux刚开启时会加载bootfs文件系统，在Docker镜像的最底层是bootfs。这一层与我们典型的linux/Unix系统是一样的，包含boot加载和内核。当boot加载完成之后整个内核就都在内存中了，此时内存的使用权已由bootfs转交给内核，此时系统也会卸载bootfs。
+
+        rootfs(root file system)，在bootfs之上。包含的就是典型的linux系统中/dev，/proc，/bin，/etc等标准目录和文件。rootfs就是各种不同的操作系统发行版，比如Ubuntu，Centos等等。
+
+        平时我们安装虚拟机的Centos都是好几个G，为什么Docker这里才200M？
+        对于一个精简的OS，rootfs可以很小，只需要包括最基本的命令、工具和程序库就可以了，因为底层直接用Host的kernel，自己只需要提供rootfs就行了。由此可见对于不同的linux发行版，bootfs基本是一致的，rootfs会有差别，因此不同的发行版可以公用bootfs。
+
+    分层的镜像
+        以我们的pull为例，在下载的过程中我们可以看到docker的镜像好像是在一层一层的在下载。
+
+    为什么docker镜像要采用这种分层结构呢
+        最大的好处就是——共享资源
+        比如：有多个镜像都从相同的base镜像构建而来，那么宿主机只需要在磁盘上保存一份base镜像，同时内存中也只需加载一份base镜像，就可以为所有容器服务了。而且镜像的每一层都可以被共享。
+
+特点
+    Docker镜像都是只读的当容器启动时，一个新的可写层被加载到镜像的顶部。这一层通常被称作“容器层”，“容器层”之下的都叫做“镜像层”。
+
+Docker镜像commit操作补充
+    docker commit 提交容器副本使之成为一个新的镜像
+    docker commit -m =&quot;提交的描述信息&quot; -a=&quot;作者&quot;容器ID要创建的目标镜像名:[标签名]
+
+    案例演示
+        从docker hub上下载tomcat镜像到本地并成功运行
+            docker run -it -p 8080:8080 tomcat
+                -p 主体端口:docker 容器端口
+                -P 随机分配端口
+                i 交互
+                t 终端
+        故意删除上一步镜像生产tomcat容器的文档
+        也即当前的tomcat运行实例是一个没有文档内容的容器，以它为模板commit一个没有文档(doc)的tomcat新镜像atguigu/tomcat02
+        启动我们的新镜像并和原来的对比
+            启动atguigu/tomcat02，它没有docs
+            新启动原来的tomcat，它有docs
+</code></pre><ul>
+<li><p>docker容器数据卷</p>
+<ul>
+<li><p>是什么</p>
+<ul>
+<li>先看看docker的理念</li>
+<li>将运用与运行的环境打包形成容器运行，运行可以伴随着容器，但是我们对数据的要求希望是持久的。</li>
+<li><p>容器之间希望有可能共享数据。</p>
+</li>
+<li><p>docker容器产生的数据，如果不通过docker commit生成新的镜像，使得数据作为镜像得一部分保存下来，那么当容器删除后，数据自然也就没有了。</p>
+</li>
+<li><p>为了能保存数据在docker中我们使用卷。</p>
+</li>
+</ul>
+</li>
+<li><p>能干嘛</p>
+<ul>
+<li><p>卷就是目录或文件，存在一个或多个容器中，由docker挂载到容器，但不属于联合文件系统，因此能够绕过Union file system 提供一些用于持续存储或共享数据得特性；</p>
+</li>
+<li><p>卷的设计目的就是数据得持久化，完全独立于容器得生存周期，因此docker不会在容器删除时删除挂载得数据卷。</p>
+</li>
+<li><p>特点:</p>
+</li>
+<li>1.数据卷可在容器之间共享或重用数据</li>
+<li>2.卷中的更改可以直接生效</li>
+<li>3.数据卷中的更改不会包含在镜像的更新中</li>
+<li>4.数据卷的生命周期一直持续到没有容器使用它为止。</li>
+<li>总结:</li>
+<li>容器的持久化</li>
+<li>容器间继承+共享数据</li>
+</ul>
+</li>
+<li><p>数据卷</p>
+<ul>
+<li><p>容器内添加</p>
+<ul>
+<li><p>直接添加</p>
+<ul>
+<li>命令: docker run -it -v/宿主机绝对路径目录:/容器内目录 镜像名</li>
+<li><p>查看数据卷是否挂载成功</p>
+</li>
+<li><p>容器和宿主机之间数据共享</p>
+</li>
+<li>容器停止退出后，主机修改后数据是否同步(完全同步)</li>
+<li>命令(带权限) docker run -it -v /宿主机绝对路径目录:/容器内目录:ro镜像名</li>
+</ul>
+</li>
+<li>docker File 添加<ul>
+<li>根目录下新建mydocker文件夹并进入</li>
+<li>可在DockerFile中使用volume指令来给镜像添加一个或多个数据卷<ul>
+<li>volume[“/dataVolumeContainer”,”/dataVolumeContainer2”,”/dataVolumeContainer3”]</li>
+<li>说明:出于可移植和分享的考虑，用-v主机目录：容器目录这种方法不能够直接在dockerfile中实现。由于宿主机目录是依赖于特定宿主机的，并不能够保证在所有的宿主机上都存在这样的特定目录。</li>
+</ul>
+</li>
+<li>file构建：编写脚本</li>
+<li>build后生成镜像<ul>
+<li>获得一个新镜像</li>
+</ul>
+</li>
+<li>run容器</li>
+<li>通过上述步骤，容器内的卷目录地址已经知道对应的主机目录地址哪？</li>
+<li>主机对应默认地址</li>
+</ul>
+</li>
+<li>备注:docker挂载主机目录docker访问出现cannot open directory.:Permission denied 解决办法:在挂载目录后多加一个—privileged=true参数即可</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>数据卷容器<ul>
+<li>是什么:命名的容器挂载数据卷，其它容器通过挂载这个(父容器)实现数据共享，挂载数据卷德容器，称之为数据卷容器</li>
+<li>总体介绍<ul>
+<li>以上一步新建德镜像zzyy/centos为模板并运行容器dc01/dc02/dc03</li>
+<li>它们已经具有容器卷<ul>
+<li>/dataVolumeContainer1</li>
+<li>/dataVolumeContainer2</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>容器间传递共享<ul>
+<li>先启动一个父容器dc01<ul>
+<li>在dataVolumeContainer2新增内容</li>
+</ul>
+</li>
+<li>dc02/dc03继承dc01<ul>
+<li>–volumes-from</li>
+<li>命令<ul>
+<li>dc02/dc03分别在dataVolumeContainer2各自新增内容</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>回到dc01可以看到02/03各自添加德都能共享了</li>
+<li>删除dc01，dc02修改后dc03可否访问</li>
+<li>删除dc02后dc03可否访问</li>
+<li>新建dc04继承dc03后再删除dc03</li>
+<li>结论:容器之间配置信息的传递，数据卷的生命周期一直持续到没有容器使用它为止</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>DockerFile解析</p>
+<ul>
+<li><p>是什么</p>
+<ul>
+<li>DOckerfile是用来构建docker镜像的构建文件，是由一系列命令和参数构成的脚本。</li>
+<li>构建三步骤<ul>
+<li>编写dockerfile文件、docker build 、docker run</li>
+</ul>
+</li>
+<li>文件什么样？？？<ul>
+<li>以centos为例</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>dockerfile构建过程解析</p>
+<ul>
+<li>dockerfile内容基础知识:<ul>
+<li>每条保留字指令都必须为大写字母且后面要跟随至少一个参数</li>
+<li>指令按照从上到下，顺序执行</li>
+<li>#表示注释</li>
+<li>每条指令都会创建一个新的镜像层，并对镜像进行提交。</li>
+</ul>
+</li>
+<li>docker执行dockerfile的大致流程<ul>
+<li>docker从基础镜像运行一个容器</li>
+<li>执行一条指令并对容器作出修改</li>
+<li>执行类似docker commit的操作提交一个新的镜像层</li>
+<li>docker再基于刚提交的镜像运行一个新容器</li>
+<li>执行的dockerfile中的下一条指令直到所有指令都执行完成</li>
+</ul>
+</li>
+<li><p>小总结</p>
+<ul>
+<li>从应用软件的角度来看，dockerfile、docker镜像与docker容器分别代表软件的三个不同阶段，dockerfile是软件的原材料、docker镜像是软件的交付品、docker容器则可以认为是软件的运行态。</li>
+<li><p>dockerfile面向开发，docker镜像成为交付标准，docker容器则涉及部署与运维，三者缺一不可，合理充当docker体系的基石。</p>
+</li>
+<li><p>dockerfile，需要定义一个dockerfile，dockerfile定义了进程需要的一切东西。dockerfile涉及的内容包括执行代码或者式文件、环境变量、依赖包、运行时环境、动态链接库、操作系统的发行版、服务进程和内核进程(当应用需要和系统服务和内核进程打交道，这时需要考虑如何涉及namespace的权限控制)等等。</p>
+</li>
+<li>docker镜像，在用dockerfile定义一个文件之后，docker build时会产生一个docker镜像，当运行docker镜像时，会真正开始提供服务；</li>
+<li>docker容器，容器是直接提供服务的。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>dockerfile体系结构(保留字指令)</p>
+<ul>
+<li>from:基础镜像，当前新镜像是基于哪个镜像的</li>
+<li>maintainer:镜像维护者的姓名和邮箱地址</li>
+<li>run:容器构建时需要运行的命令</li>
+<li>expose:当前容器对外暴露的端口</li>
+<li>workdir:指定在创建容器后，终端默认登录的进来工作目录，一个落脚点</li>
+<li>env:用来在构建镜像过程中设置环境变量<ul>
+<li>env my_path /usr/mytest</li>
+<li>这个环境变量可以在后续的任何run指令中使用，这就如同在命令前面指定了环境变量前缀一样；也可以在其它指令中直接使用这些环境变量，比如:workdir $my_path</li>
+</ul>
+</li>
+<li>add:在宿主机目录下的文件拷贝进镜像且add命令会自动处理url和解压tar压缩包</li>
+<li>copy:类似add，拷贝文件和目录到镜像中。将从构建上下文目录中&lt;源路径&gt;的文件/目录复制到新的一层的镜像内的&lt;目标路径&gt;位置<ul>
+<li>copy src dest</li>
+<li>copy [“src”,”dest”]</li>
+</ul>
+</li>
+<li>volume:容器数据卷，用于数据保存和持久化工作</li>
+<li>cmd:指定一个容器启动时要运行的命令<ul>
+<li>cmd容器启动命令</li>
+<li>cmd指令的格式和run相似，也是两种格式:</li>
+<li>shell格式:cmd&lt;命令&gt;</li>
+<li>exec格式:cmd[“可执行文件”,”参数1”,”参数2”…]</li>
+<li>参数列表格式:CMD[“参数1”,”参数2”…]在指定了entrypoint指令后，用cmd指定具体的参数。</li>
+<li>dockerfile中可以有多个cmd指令，但只有最后一个生效，cmd会被docker run之后的参数替换</li>
+</ul>
+</li>
+<li>entrypoint:指定一个容器启动时要运行的命令<ul>
+<li>entrypoint的目的和cmd一样，都是在指定容器启动程序及参数</li>
+</ul>
+</li>
+<li>onbuild:当构建一个被继承的dockerfile时运行命令，父镜像在被子继承后父镜像的onbuild被触发</li>
+<li>小总结<br>  |build|both|run|<br>  |:-:|:-:|:-:|<br>  |from|workdir|cmd|<br>  |maintainer|user|env|<br>  |copy||expose|<br>  |add||volume|<br>  |run||entrypoint|<br>  |onbuild|||<br>  |.dockerignore|||</li>
+</ul>
+</li>
+<li><p>案例</p>
+<ul>
+<li>base镜像(scratch):docker hub中99%的镜像都是通过在base镜像中安装和配置需要的软件构建出来的。</li>
+<li><p>自定义镜像mycentos</p>
+<ul>
+<li><p>编写</p>
+<ul>
+<li>hub默认centos镜像什么情况<ul>
+<li>自定义mycentos目的使我们自己的镜像具备如下:<ul>
+<li>登陆后的默认路径</li>
+<li>vim编辑器</li>
+<li>查看网络配置ifconfig支持</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>准备编写dockerfile文件</li>
+<li>mycentos内容dockerfile</li>
+</ul>
+</li>
+<li><p>构建:docker build -t 新镜像名字:tag .</p>
+</li>
+<li>运行:docker run -it 新镜像名字:tag</li>
+<li>列出镜像的变更历史:docker history 镜像名</li>
+</ul>
+</li>
+<li><p>cmd/entrypoint镜像案例</p>
+<ul>
+<li>都是指定一个容器启动时要运行的命令</li>
+<li><p>cmd</p>
+<ul>
+<li><p>dockerfile中可以有多个cmd指令，但只有最后一个生效，cmd会被docker run 之后的参数替换</p>
+</li>
+<li><p>case :tomcat的讲解演示 ：docker run -it -p 8888:8888 tomcat ls -l</p>
+</li>
+</ul>
+</li>
+<li>entrypoint<ul>
+<li>docker run 之后的参数会被当作参数传递给entrtpoint,之后形成新的命令组合</li>
+<li>case<ul>
+<li>制作cmd版可以查询ip信息的容器：curl命令解释 curl -s <a href="http://ip.cn" target="_blank" rel="noopener">http://ip.cn</a><ul>
+<li>curl命令可以用来执行下载、发送各种http请求，指定http头部等操作。如果系统没有curl可以使用yum install curl 安装，也可以下载安装。curl是将下载文件输出到stdout 使用命令 ：curl <a href="http://www.baidu.com" target="_blank" rel="noopener">http://www.baidu.com</a> 执行后，<a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a> de html就会显示在屏幕上了；这是最简单的使用方法。用这个命令获得了<a href="http://curl.haxx.se" target="_blank" rel="noopener">http://curl.haxx.se</a> 指向的页面，同样，如果这里的url指向的是一个文件或者一副图都可以直接下载到本地。如果下载的是html文档，那么缺省的将只显示文件头部，即html文档的header。要全部显示，请加参数-i。</li>
+</ul>
+</li>
+<li>问题：如果我们希望显示http头信息，就需要加上-i参数</li>
+<li>why<ul>
+<li>我们可以看到可执行文件找不到的报错，executable file not found。之前我们说过，跟在镜像名后面的是command，运行时会替换cmd的默认值。因此这里的-i替换了原来的cmd，而不是添加在原来的curl -s <a href="http://ip.cn" target="_blank" rel="noopener">http://ip.cn</a> 后面。而-i根本不是命令，所以自然找不到。那么如果我们希望加入-i这参数，我们就必须重新完整的输入这个命令； docker run myip curl -s <a href="http://ip.cn" target="_blank" rel="noopener">http://ip.cn</a> -i</li>
+</ul>
+</li>
+<li>制作entrypoint版查询ip信息的容器</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>自定义镜像tomcat9<ul>
+<li>mkdir -p /zzyyuse/mydockerfile/tomcat9</li>
+<li>在上述目录下touch c.txt</li>
+<li>将jdk和tomcat安装的压缩包拷贝进上一步目录<ul>
+<li>apache-tomcat-tar.gz</li>
+<li>jdk-8u171-linux-x64.tar.gz</li>
+</ul>
+</li>
+<li>在/zzyyuse/mydockerfile/tomcat9 目录下新建dockerfile文件，内容：<ul>
+<li>from centos</li>
+<li>maintainer zzyy<a href="mailto:&#x7a;&#x7a;&#x79;&#x79;&#98;&#115;&#x40;&#49;&#x32;&#x36;&#x2e;&#99;&#x6f;&#109;" target="_blank" rel="noopener">&#x7a;&#x7a;&#x79;&#x79;&#98;&#115;&#x40;&#49;&#x32;&#x36;&#x2e;&#99;&#x6f;&#109;</a></li>
+<li>#把宿主机当前上下文的c.txt 拷贝到容器/usr/local路径下</li>
+<li>copy c.txt /usr/local/cincontainer.txt</li>
+<li>#把java与tomcat添加到容器中</li>
+<li>add jdk-8u171-linux-x64.tar.gz /usr/local/</li>
+<li>add apache-tomcat-9.0.8.tar.gz /usr/local/</li>
+<li>#安装vim编辑器</li>
+<li>run yum -y install vim</li>
+<li>#设置工作访问时候的workdir路径，登录落脚点</li>
+<li>env mypath /usr/local</li>
+<li>workdir $mypath</li>
+<li>#配置java与tomcat环境变量</li>
+<li>env JAVA_HOME /usr/local/jdk1.8.0_171</li>
+<li>env CLASSPATH $JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar</li>
+<li>env CATALINA_HOME /usr/local/apache-tomcat-9.0.8</li>
+<li>env CATALINA_BASE /usr/local/apache-tomcat-9.0.8</li>
+<li>env PATH $PATH:$JAVA_HOME/bin:$CATALINA_HOME/lib:$CATALINA_HOME/bin</li>
+<li>#容器运行时监听的端口</li>
+<li>expose 8080</li>
+<li>#启动时运行tomcat</li>
+<li>#entrypoint [“/usr/local/apache-tomcat-9.0.8/bin/startup.sh”]</li>
+<li>#cmd [“/usr/local/apache-tomcat-9.0.8/bin/catalina.sh”,”run”]</li>
+<li>CMD /usr/local/apache-tomcat-9.0.8/bin/startup.sh $ tail -f /usr/local/apache-tomcat-9.0.8/bin/logs/catalina.out</li>
+</ul>
+</li>
+<li>构建:build</li>
+<li>run: docker run -d -p 9080:8080 –name myt9 -v /zzyyuse/mydockerfile/tomcat9/test:/usr/local/apache-tomcat-9.0.8/webapps/test -v /zzyyuse/mydockerfile/tomcat9/tomcat9logs/:/usr/local/apache-tomcat-9.0.8/logs –privileged=true zzyytomcat9</li>
+<li>验证:访问tomcat</li>
+<li>结论前述的容器卷将测试的web服务test发布</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>docker常用安装</p>
+<ul>
+<li>总结步骤：<ul>
+<li>搜索镜像、拉取镜像、查看镜像、启动镜像、停止容器、移除容器</li>
+</ul>
+</li>
+<li>tomcat<ul>
+<li>docker hub 上面查找tomcatt镜像<ul>
+<li>docker search tomcat</li>
+</ul>
+</li>
+<li>从docker hub 上拉取tomcat镜像到本地<ul>
+<li>docker pull tomcat <ul>
+<li>官网命令</li>
+<li>拉去完成</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>docker imgages查看是否有拉取到的tomcat</li>
+<li>使用tomcat镜像创建容器（也叫运行镜像）<ul>
+<li>docker run -it -p 8080:8080 tomcat <ul>
+<li>-p 主机端口:docker 容器端口</li>
+<li>-P 随机分配端口</li>
+<li>i 交互</li>
+<li>t 终端</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>mysql</p>
+<ul>
+<li>docker hub 上面查找mysql镜像</li>
+<li>从docker hub上(阿里云加速器)拉取mysql镜像到本地标签为5.6</li>
+<li><p>使用mysql5.6镜像创建容器(也叫运行镜像)</p>
+<ul>
+<li><p>docker run -p 12345:3306 –name mysql -v /zzyyuse/mysql/conf:/etc/mysql/conf.d -v /zzyyuse/mysql/logs:/logs:/logs -v /zzyyuse/mysql/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 -d mysql:5.6</p>
+</li>
+<li><p>命令说明</p>
+</li>
+<li>-p 12345:3306: 将主机的12345端口映射到docker容器的3306端口</li>
+<li>–name mysql: 运行服务名字</li>
+<li>-v /zzyyuse/mysql/conf:/etc/mysql/conf.d 将主机/zzyyuse/mysql 录下的conf/my.cnf 挂载到容器的 /etc/mysql/conf.d</li>
+<li>-v /zzyyyuse/mysql/logs:logs 将主机/zzyyuse/mysql 目录下的logs目录挂载到容器的/logs</li>
+<li>-v /zzyyuse/mysql/data:/var/lib/mysql 将主机/zzyyuse/mysql目录下的data目录挂载到容器的 /var/lib/mysql</li>
+<li>-e MYSQL_ROOT_PASSWORD=123456: 初始化root用户的密码</li>
+<li>-d mysql5.6 后台运行mysql5.6</li>
+<li>doceker exec -it MYSQL 运行成功后的容器ID   /bin/bash</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>redis <ul>
+<li>使用命令<ul>
+<li>docker run -p 6379:6379 -v /zzyyuse/myredis/data:/data -v /zzyyuse/myredis/conf/redis.conf:/usr/local/etc/redis/redis/conf -d redis:3.2 redis-server /usr/local/etc/redis/redis.conf –appendonly yes</li>
+</ul>
+</li>
+<li>在主机 /zzyyuse/myredis/conf/redis.conf 目录下新建redis.conf文件 vim /zzyyuse/myredis/conf/redis/conf/redis.conf</li>
+<li>测试redis-cli连接上来: docker exec -it 容器id redis-cli</li>
+<li>测试持久化文件生成</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>本地镜像发布到阿里云</p>
+<ul>
+<li>本地镜像发布到阿里云流程</li>
+<li>镜像的生成方法</li>
+<li>将本地镜像托送到阿里云<ul>
+<li>本地镜像素材原型</li>
+<li>阿里云开发者平台：<a href="https://dev.aliyun.com/search.html" target="_blank" rel="noopener">https://dev.aliyun.com/search.html</a></li>
+<li>创建仓库镜像<ul>
+<li>命名空间</li>
+<li>仓库名称</li>
+</ul>
+</li>
+<li>将镜像推送到registry：阿里云网络上面有——&gt;镜像管理页面  三行命令</li>
+<li>公有云可以查询到</li>
+<li>查看详情</li>
+</ul>
+</li>
+<li>将阿里云上的镜像下载到本地</li>
+</ul>
+</li>
+<li><p>docker 7.0之后  </p>
+<ul>
+<li>官网中文安装参考手册: <a href="https://docs.docker-cn.com/engine/installation/linux/docker-ce/centos/#prerequisites" target="_blank" rel="noopener">https://docs.docker-cn.com/engine/installation/linux/docker-ce/centos/#prerequisites</a></li>
+<li>确定你是centos7及以上版本：cat /etc/redhat-release</li>
+<li>yum安装gcc相关<ul>
+<li>能上外网</li>
+<li>yum -y install gcc-</li>
+<li>yum -y install gcc-c++</li>
+</ul>
+</li>
+<li>卸载旧版本:官网有最新版本<ul>
+<li>yum -y remove docker docker-common docker-selinux docker-engine</li>
+</ul>
+</li>
+<li>安装需要的软件包<ul>
+<li>yum install -y yum-utils device-mapper-persistent-data lvm2</li>
+</ul>
+</li>
+<li>设置stable镜像仓库<ul>
+<li>yum-config-manager –add-repo <a href="http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo" target="_blank" rel="noopener">http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</a></li>
+</ul>
+</li>
+<li>更新yum软件包索引<ul>
+<li>yum makecache fast</li>
+</ul>
+</li>
+<li>安装docker ce<ul>
+<li>yum -y install docker-ce</li>
+</ul>
+</li>
+<li>启动docker<ul>
+<li>systemctl start docker</li>
+</ul>
+</li>
+<li>测试<ul>
+<li>docker version</li>
+<li>docker run hello-world</li>
+</ul>
+</li>
+<li>配置镜像加速<ul>
+<li>mldir -p /etc/docker</li>
+<li>vim /etc/docker/daemon.json<ul>
+<li>#网易云</li>
+<li>{“registry-mirrors”:[“<a href="http://hub-mirror.c.163.com&quot;]}" target="_blank" rel="noopener">http://hub-mirror.c.163.com&quot;]}</a></li>
+<li>#阿里云</li>
+<li>{“registry-mirrors”:[https://{自己的编码}.mirror.aliyuncs.com]}</li>
+</ul>
+</li>
+<li>systemctl daemon-reload</li>
+<li>systemctl restart docker</li>
+</ul>
+</li>
+<li>卸载<ul>
+<li>systemctl stop docker</li>
+<li>yum -y remove docker-ce</li>
+<li>rm -rf /var/lib/docker</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>————————————————————————————————————————————————</p>
 
       
 
@@ -547,30 +1119,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ElasticSearch</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LocalDateTime</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">hadoop</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">dubbo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Factory Pattern</a>
               </li>
              
@@ -595,15 +1143,47 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ElasticSearch</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">LocalDateTime</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Rancher</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">hadoop</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">dubbo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Excel 常用快捷键</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
+                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -619,15 +1199,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">redis</a>
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -671,7 +1243,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">支付</a>
+                <a href="javascript:void(0)" class="js-tag color1">maven</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">注解</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -683,11 +1259,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">注解</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">maven</a>
+                <a href="javascript:void(0)" class="js-tag color3">支付</a>
               </li>
              
               <li class="article-tag-list-item">
