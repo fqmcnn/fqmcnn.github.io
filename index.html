@@ -153,6 +153,205 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-es6" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="2020/04/15/es6/">ES6语法</a>
+    </h1>
+  
+
+        
+        <a href="2020/04/15/es6/" class="archive-article-date">
+  	<time datetime="2020-04-15T01:57:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-15</time>
+</a>
+        <!-- 需要添加的位置 -->
+        <!-- 开始添加字数统计-->
+        
+          <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text" style="color:teal">  字数统计: </span>
+        <span class="post-count">14.1k字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text" style="color:teal">  阅读时长: </span>
+        <span class="post-count">57min</span>
+      </span>
+    </span>
+</div>
+          
+        <!-- 添加完成 -->
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="ES简介"><a href="#ES简介" class="headerlink" title="ES简介"></a>ES简介</h1><blockquote>
+<p>ES全程为ECMAScript(ES)，是由ECMAScrip国际化的脚本语言规范。应用程序使用它来启用客户端脚本。JavaScript、Jscript和ActionScript等语法受此规范的约束。</p>
+</blockquote>
+<h1 id="Javascript"><a href="#Javascript" class="headerlink" title="Javascript"></a>Javascript</h1><blockquote>
+<p>JavaScript 是由 Netscape 通信公司的开发人员 Brendan Eich 于1995年开发的, javascript 以 Mocha 的名字开始了自己的生活, 在正式更名为 JavaScript 之前, 它被短暂地命名为 LiveScript。它是一种由浏览器执行的脚本语言, 即在客户端上。它与 HTML 结合使用, 以开发响应式网页。</p>
+</blockquote>
+<ul>
+<li>本教程ES 6的实现包括以下新功能<ul>
+<li>对常量的支持</li>
+<li>块范围</li>
+<li>箭头函数</li>
+<li>扩展参数处理</li>
+<li>模板文字</li>
+<li>扩展的文字</li>
+<li>增强的对象属性</li>
+<li>解构分配</li>
+<li>模块类</li>
+<li>迭代器</li>
+<li>Generators函数</li>
+<li>集合</li>
+<li>针对各种类的新内置方法</li>
+<li>Promises对象</li>
+</ul>
+</li>
+</ul>
+<h1 id="ES-6-环境"><a href="#ES-6-环境" class="headerlink" title="ES 6 环境"></a>ES 6 环境</h1><blockquote>
+<p>本地环境设置<br>JavaScript 可以在任何浏览器、任何主机和任何操作系统上运行。将需要以下内容来编写和测试 JavaScript 程序标准</p>
+</blockquote>
+<blockquote>
+<p>文本编辑器<br>文本编辑器可以编写源代码。一些编辑器包括 Windows 记事本, 记事本 ++, Emacs, Vim 或 vi 等。使用的编辑器可能因操作系统而异。源文件通常使用扩展名. js命名</p>
+</blockquote>
+<blockquote>
+<p>安装 node. js<br>Node. js是服务器端 JavaScript 的开源跨平台运行时环境。Node. js 需要在没有浏览器支持的情况下运行 JavaScript。它使用谷歌 V8 JavaScript 引擎来执行代码。您可以下载 node. js 源代码或平台的预构建安装程序。</p>
+</blockquote>
+<p>下载地址：<a href="https://nodejs.org/en/download" target="_blank" rel="noopener">https://nodejs.org/en/download</a></p>
+<p>检验node安装是否成功   node -v</p>
+<ul>
+<li>集成开发环境 (IDE) 支持<ul>
+<li>JavaScript 可以构建在大量的开发环境中, 如 Visual Studio、Webstorm、phpstorm、Eclipse等。本节将讨论 Visual Studio 代码和支架 IDE。此处使用的开发环境是 Visual Studio 代码 (Windows 平台)。</li>
+</ul>
+</li>
+</ul>
+<p>ES 6 语法<br>ES 6 语法定义了编写程序的规则集。</p>
+<ul>
+<li>JavaScript程序可以由<ul>
+<li>变量：表示可以存储程序值得命名内存块。</li>
+<li>常量：表示常数/固定值</li>
+<li>运算符：定义如何处理操作的符号</li>
+<li>关键字：在语言环境中具有特殊含义的词</li>
+</ul>
+</li>
+</ul>
+<h1 id="JavaScript常用关键字"><a href="#JavaScript常用关键字" class="headerlink" title="JavaScript常用关键字"></a>JavaScript常用关键字</h1><table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">enum</td>
+<td style="text-align:center">Export</td>
+<td style="text-align:center">while</td>
+<td style="text-align:center">throw</td>
+</tr>
+<tr>
+<td style="text-align:center">else</td>
+<td style="text-align:center">var</td>
+<td style="text-align:center">let</td>
+<td style="text-align:center">static</td>
+</tr>
+<tr>
+<td style="text-align:center">return</td>
+<td style="text-align:center">module</td>
+<td style="text-align:center">type</td>
+<td style="text-align:center">instanceof</td>
+</tr>
+<tr>
+<td style="text-align:center">Switch</td>
+<td style="text-align:center">case</td>
+<td style="text-align:center">if</td>
+<td style="text-align:center">number</td>
+</tr>
+<tr>
+<td style="text-align:center">string</td>
+<td style="text-align:center">get</td>
+<td style="text-align:center">Typeof</td>
+<td style="text-align:center">finally</td>
+</tr>
+<tr>
+<td style="text-align:center">for</td>
+<td style="text-align:center">break</td>
+<td style="text-align:center">as</td>
+<td style="text-align:center">any</td>
+</tr>
+<tr>
+<td style="text-align:center">void</td>
+<td style="text-align:center">this</td>
+<td style="text-align:center">New</td>
+<td style="text-align:center">null</td>
+</tr>
+<tr>
+<td style="text-align:center">super</td>
+<td style="text-align:center">Catch</td>
+<td style="text-align:center">true</td>
+<td style="text-align:center">False</td>
+</tr>
+</tbody>
+</table>
+        
+          <a class="article-more-a" href="2020/04/15/es6/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="2020/04/15/es6/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-vue" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -176,7 +375,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="color:teal">  字数统计: </span>
-        <span class="post-count">759字</span>
+        <span class="post-count">4k字</span>
       </span>
     </span>
 
@@ -185,7 +384,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text" style="color:teal">  阅读时长: </span>
-        <span class="post-count">2min</span>
+        <span class="post-count">17min</span>
       </span>
     </span>
 </div>
@@ -196,12 +395,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Vue是什么？"><a href="#Vue是什么？" class="headerlink" title="Vue是什么？"></a>Vue是什么？</h1><blockquote>
+        <p><a href="https://cn.vuejs.org/" target="_blank" rel="noopener">中文官网</a><br><a href="https://vuejs.org/" target="_blank" rel="noopener">英文官网</a></p>
+<h1 id="Vue是什么？"><a href="#Vue是什么？" class="headerlink" title="Vue是什么？"></a>Vue是什么？</h1><blockquote>
 <p>Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的<strong>渐进式框架</strong>。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。<br>创作者：尤雨溪<br>作用：动态构建用户界面。</p>
 </blockquote>
 <h4 id="Vue-js的优点"><a href="#Vue-js的优点" class="headerlink" title="Vue.js的优点"></a>Vue.js的优点</h4><p>1.编码简洁，体积小运行效率高，适合移动/PC端开发：压缩后33k<br>2.更高的运行效率：基于虚拟dom，一种可以预先通过javaScript进行各种计算，把最终dom操作计算出来并优化的技术，由于这个Dom操作预处理操作，并没有真实的操作DOM，所以叫做虚拟DOM。<br>3.双向数据绑定：让开发者不用再去操作dom对象，把更多的精力投入到业务逻辑上。<br>4.生态丰富、学习成本低<br>5.遵循MVVM模式<br>6.它本身只关注UI，可以轻松引入vue插件或其他第三方库开发项目</p>
 <h1 id="搭建Vue环境"><a href="#搭建Vue环境" class="headerlink" title="搭建Vue环境"></a>搭建Vue环境</h1><ul>
-<li>安装Vue可以使用<script>标签引用，也可以使用CDN方法，感兴趣的童鞋可以去查阅。这里着重整理npm的安装方法，因为npm能很好的和Webpack等模块配合使用，在用Vue.js构建大型应用时推荐使用npm安装方法。</li>
+<li>安装Vue可以使用<code>&lt;script&gt;</code>标签引用，也可以使用CDN方法，感兴趣的童鞋可以去查阅。这里着重整理npm的安装方法，因为npm能很好的和Webpack等模块配合使用，在用Vue.js构建大型应用时推荐使用npm安装方法。</li>
 </ul>
 <p>Vue运行环境的搭建需要具备的东西：</p>
 <ul>
@@ -213,9 +413,9 @@
 <p>note：npm包管理器是集成在node中的，安装了node也就有了npm，输入npm -v命令，会显示npm的版本信息。</p>
 <p>cnpm的安装<br>在命令行中输入<code>npm install -g cnpm --registry=http://registry.npm.taobao.org</code> ,等待其安装完毕。没有报错则表明安装成功。</p>
 <p>vue-cli的安装<br>在命令行输入npm install -g vue-cli，等待安装完成。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 开发环境版本，包含了有帮助的命令行警告 --&gt;</span><br><span class="line">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;!-- 生产环境版本，优化了尺寸和速度 --&gt;</span><br><span class="line">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="Vue扩展插件"><a href="#Vue扩展插件" class="headerlink" title="Vue扩展插件"></a>Vue扩展插件</h4><p>1.vue-cli:vue 脚手架<br>2.vue-resource(axios):ajax请求<br>3.vue-roter:路由<br>4.vuex:状态管理<br>5.vue-lazyload:图片懒加载<br>6.vue-scroller:页面滑动相关<br>7.mint-ui:基于vue的UI组件库(移动端)<br>8.element-ui:基于vue的UI组件库(PC端)</p>
-</script></li></ul>
+        
+          <a class="article-more-a" href="2020/04/08/vue/#more">more >></a>
+        
       
 
       
@@ -1237,106 +1437,6 @@
 
 
   
-    <article id="post-windown10" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="2019/05/01/windown10/">Windown10</a>
-    </h1>
-  
-
-        
-        <a href="2019/05/01/windown10/" class="archive-article-date">
-  	<time datetime="2019-04-30T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-01</time>
-</a>
-        <!-- 需要添加的位置 -->
-        <!-- 开始添加字数统计-->
-        
-          <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text" style="color:teal">  字数统计: </span>
-        <span class="post-count">13字</span>
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text" style="color:teal">  阅读时长: </span>
-        <span class="post-count">1min</span>
-      </span>
-    </span>
-</div>
-          
-        <!-- 添加完成 -->
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
-<li><a href="/windown10/windown10HotKey.html">Windown10 官方快捷键总结</a></li>
-<li><a href="/windown10/windown10-split.html">Windown10 系统分盘</a></li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">HotKey</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="2019/05/01/windown10/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="page/2/">2</a><a class="page-number" href="page/3/">3</a><a class="extend next" rel="next" href="page/2/">Next &raquo;</a>
@@ -1446,18 +1546,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">bat面试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">sort</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Factory Pattern</a>
               </li>
              
@@ -1482,15 +1570,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">linux-bug</a>
+                <a href="javascript:void(0)" class="js-tag color1">bat面试</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">bug</a>
+                <a href="javascript:void(0)" class="js-tag color5">sort</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">github bug</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Excel 常用快捷键</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1518,6 +1610,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">国际ID</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
@@ -1530,15 +1626,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">post</a>
+                <a href="javascript:void(0)" class="js-tag color4">sql</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Excel 常用快捷键</a>
+                <a href="javascript:void(0)" class="js-tag color5">linux-bug</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">bug</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">github bug</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1554,11 +1658,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+                <a href="javascript:void(0)" class="js-tag color5">wm_concat</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">sql</a>
+                <a href="javascript:void(0)" class="js-tag color3">支付</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1578,15 +1682,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">支付</a>
+                <a href="javascript:void(0)" class="js-tag color1">maven</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
+                <a href="javascript:void(0)" class="js-tag color2">HotKey</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">wm_concat</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">post</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1602,14 +1710,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">国际ID</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">HotKey</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">springboot-jpa</a>
               </li>
              
@@ -1622,7 +1722,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">maven</a>
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
               </li>
             
             <div class="clearfix"></div>
