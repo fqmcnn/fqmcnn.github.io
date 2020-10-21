@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="知音空间">
 <meta property="og:description" content="Static、Final、This、Super 关键字 字符串拼接+和concat的区别 Java序列化你应该知道的一切">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-02T06:56:57.145Z">
+<meta property="og:updated_time" content="2020-10-21T01:55:15.410Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基础篇">
 <meta name="twitter:description" content="Static、Final、This、Super 关键字 字符串拼接+和concat的区别 Java序列化你应该知道的一切">
@@ -334,7 +334,7 @@
 <li>对null key和null value的支持：hashMap中，null可以作为键，这样的键只有一个，可以有一个或多个键所对应的值为null。但是在HashTable中put进的键值只要有一个null，直接抛出NullPointerException。</li>
 <li>初始容量大小和每次扩充量大小相同：①创建时如果不指定容量初始值，HashTable默认的初始大小为11，之后每次扩充，容量为原来的2n+1。hashMap默认初始化大小为16.之后每次扩充，容量为原来的2倍。②创建时如果给定了容量初始值，那么Hashtable会直接使用你给定的大小，而HashTable总是使用2的幂作为哈希表的大小。</li>
 </ol>
-<h4 id="ConcurrtHashMap-和-Hashtable的区别"><a href="#ConcurrtHashMap-和-Hashtable的区别" class="headerlink" title="ConcurrtHashMap 和 Hashtable的区别"></a>ConcurrtHashMap 和 Hashtable的区别</h4><blockquote>
+<h4 id="ConcurrentHashMap-和-Hashtable的区别"><a href="#ConcurrentHashMap-和-Hashtable的区别" class="headerlink" title="ConcurrentHashMap 和 Hashtable的区别"></a>ConcurrentHashMap 和 Hashtable的区别</h4><blockquote>
 <p>ConcurrentHashMap和Hashtable 的区别主要体现在实现线程安全的方式上不同。</p>
 <ul>
 <li>底层数据结构：JDK1.7的ConcurrentHashMap 底层采用分段的数组+链表实现。JDK1.8采用的数据结构跟HashMap1.8的结构一样，数组+链表/红黑二叉树。HashTable和JDK1.8之前的HashMap的底层数据结构类似都是采用数组+链表的形式，数组事HashMap的主体，链表则是主要为了解决哈希冲突而存在的；</li>
@@ -686,6 +686,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
@@ -702,7 +706,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">post</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -715,14 +723,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">html color</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">post</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -746,10 +746,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">wm_concat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
@@ -758,7 +754,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">支付</a>
+                <a href="javascript:void(0)" class="js-tag color5">wm_concat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -767,6 +763,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">去除不必要的人</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">支付</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="知音空间">
 <meta property="og:description" content="中文官网英文官网 Vue是什么？ Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。创作者：尤雨溪作用：动态构建用户界面。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-04-21T14:05:35.136Z">
+<meta property="og:updated_time" content="2020-06-10T07:34:25.386Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue">
 <meta name="twitter:description" content="中文官网英文官网 Vue是什么？ Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。创作者：尤雨溪作用：动态构建用户界面。">
@@ -178,7 +178,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="color:teal">  字数统计: </span>
-        <span class="post-count">4k字</span>
+        <span class="post-count">4.1k字</span>
       </span>
     </span>
 
@@ -335,6 +335,11 @@
 <p>发布使用动态的web服务器<br>修改配置webpack.prod.conf.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">output:&#123;</span><br><span class="line">    publicPath:&apos;/xxx/&apos;  //打包文件的名称</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>重新打包<br>npm run build<br>修改dist文件夹为项目名称:xxx<br>将xxx拷贝到运行的tomcat的webapps目录下<br>访问:<a href="http://localhost:8080/xxx" target="_blank" rel="noopener">http://localhost:8080/xxx</a></p>
 <p>config 文件中<br>    port :设置端口号<br>    autoOpenBrower: false\true   是否自动打开浏览器</p>
+<h4 id="组件间通信-slot"><a href="#组件间通信-slot" class="headerlink" title="组件间通信 slot"></a>组件间通信 slot</h4><ul>
+<li>此方式用于组件向子组件传递”标签数据”</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">使用localStorage存储数据的工具模块</span><br><span class="line">函数</span><br><span class="line">对象</span><br><span class="line">需要向外面暴露七个功能还是多个功能</span><br></pre></td></tr></table></figure>
+<p>Vue项目中常用的2个ajax库<br>vue-resource:vue插件，非官方库，vue1.x使用广泛<br><code>npm install vue-resource --save</code><br>axios:通用的ajax请求库，官方推荐，vue2.x使用广泛<br><code>npm install axios --save</code></p>
 
       
 
@@ -681,6 +686,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
@@ -697,7 +706,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">post</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -710,14 +723,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">html color</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">post</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -741,10 +746,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">wm_concat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
@@ -753,7 +754,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">支付</a>
+                <a href="javascript:void(0)" class="js-tag color5">wm_concat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -762,6 +763,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">去除不必要的人</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">支付</a>
               </li>
              
               <li class="article-tag-list-item">

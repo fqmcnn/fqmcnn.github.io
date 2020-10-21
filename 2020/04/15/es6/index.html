@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="知音空间">
 <meta property="og:description" content="ES简介 ES全程为ECMAScript(ES)，是由ECMAScrip国际化的脚本语言规范。应用程序使用它来启用客户端脚本。JavaScript、Jscript和ActionScript等语法受此规范的约束。  Javascript JavaScript 是由 Netscape 通信公司的开发人员 Brendan Eich 于1995年开发的, javascript 以 Mocha 的名字开始了">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-04-26T16:30:32.383Z">
+<meta property="og:updated_time" content="2020-05-28T06:56:11.037Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ES6语法">
 <meta name="twitter:description" content="ES简介 ES全程为ECMAScript(ES)，是由ECMAScrip国际化的脚本语言规范。应用程序使用它来启用客户端脚本。JavaScript、Jscript和ActionScript等语法受此规范的约束。  Javascript JavaScript 是由 Netscape 通信公司的开发人员 Brendan Eich 于1995年开发的, javascript 以 Mocha 的名字开始了">
@@ -178,7 +178,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="color:teal">  字数统计: </span>
-        <span class="post-count">14.1k字</span>
+        <span class="post-count">22.7k字</span>
       </span>
     </span>
 
@@ -187,7 +187,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text" style="color:teal">  阅读时长: </span>
-        <span class="post-count">57min</span>
+        <span class="post-count">93min</span>
       </span>
     </span>
 </div>
@@ -1044,6 +1044,663 @@
 <p>在ES6之前，对于整数的二进制或八进制表示，最好的选择是将它们传递给带基数的parseInt（）。在ES6中，您可以使用0b和0o前缀分别表示二进制和八进制整数文字。同样，要表示十六进制值，请使用0x前缀。<br>前缀可以用大写或小写写成。但是，建议坚持使用小写版本。</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">二进制表示</span><br><span class="line">console.log(0b001) </span><br><span class="line">console.log(0b010) </span><br><span class="line">console.log(0b011) </span><br><span class="line">console.log(0b100)</span><br><span class="line"></span><br><span class="line">输出结果</span><br><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line"></span><br><span class="line">八进制</span><br><span class="line">console.log(0x010) </span><br><span class="line">console.log(0x100)</span><br><span class="line"></span><br><span class="line">打印结果</span><br><span class="line">16</span><br><span class="line">256</span><br><span class="line"></span><br><span class="line">十六进制</span><br><span class="line">console.log(0x010) </span><br><span class="line">console.log(0x100)</span><br><span class="line">打印结果</span><br><span class="line">16</span><br><span class="line">256</span><br></pre></td></tr></table></figure>
+<h5 id="Number-EPSILON"><a href="#Number-EPSILON" class="headerlink" title="Number.EPSILON"></a>Number.EPSILON</h5><p>属性表示两个可表示数字之间的最小间隔。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var count = Number.EPSILON</span><br><span class="line">console.log(count)</span><br><span class="line"></span><br><span class="line">打印结果：</span><br><span class="line">2.220446049250313e-16</span><br></pre></td></tr></table></figure></p>
+<h5 id="ES-6-Number-MAX-SAFE-INTEGER"><a href="#ES-6-Number-MAX-SAFE-INTEGER" class="headerlink" title="ES 6 Number.MAX_SAFE_INTEGER"></a>ES 6 Number.MAX_SAFE_INTEGER</h5><p>属性表示JavaScript中的最大安全整数，即（2 ^ 53 - 1）。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var count = Number.MAX_SAFE_INTEGER </span><br><span class="line">console.log(count)</span><br><span class="line"></span><br><span class="line">打印结果：</span><br><span class="line">9007199254740991</span><br></pre></td></tr></table></figure></p>
+<h4 id="ES-6-Number-MAX-VALUE"><a href="#ES-6-Number-MAX-VALUE" class="headerlink" title="ES 6 Number.MAX_VALUE"></a>ES 6 Number.MAX_VALUE</h4><p>属性属于静态Number对象。它表示JavaScript可以使用的最大可能正数的常量。<br>该常数的实际值为1.7976931348623157 x 10308。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var val = Number.MAX_VALUE; </span><br><span class="line">console.log(&quot;Value of Number.MAX_VALUE : &quot; + val );</span><br><span class="line"></span><br><span class="line">打印结果：</span><br><span class="line">Value of Number.MAX_VALUE : 1.7976931348623157e+308</span><br></pre></td></tr></table></figure></p>
+<h4 id="ES-6-Number-MIN-SAFE-INTEGER"><a href="#ES-6-Number-MIN-SAFE-INTEGER" class="headerlink" title="ES 6 Number.MIN_SAFE_INTEGER"></a>ES 6 Number.MIN_SAFE_INTEGER</h4><p>常量表示JavaScript中最小的安全整数(-(2^ 53 - 1))。MIN_SAFE_INTEGER常量的值为9007199254740991。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var val = Number.MIN_SAFE_INTEGER; </span><br><span class="line">console.log(&quot;Number.MIN_SAFE_INTEGER的值为：&quot; + val );</span><br><span class="line"></span><br><span class="line">打印结果：</span><br><span class="line">Number.MIN_SAFE_INTEGER的值为：-9007199254740991</span><br></pre></td></tr></table></figure></p>
+<h4 id="ES-6-Number-MIN-VALUE"><a href="#ES-6-Number-MIN-VALUE" class="headerlink" title="ES 6 Number.MIN_VALUE"></a>ES 6 Number.MIN_VALUE</h4><p>属性属于静态Number对象。它表示JavaScript可以使用的最小可能正数的常量。<br>该常数的实际值为5 x 10-324<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var val = Number.MAX_VALUE; </span><br><span class="line">console.log(&quot;Number.MIN_VALUE的值为：&quot; + val );</span><br><span class="line"></span><br><span class="line">打印结果：</span><br><span class="line">Number.MIN_VALUE的值为：1.7976931348623157e+308</span><br></pre></td></tr></table></figure></p>
+<h4 id="ES-6-Number-NaN"><a href="#ES-6-Number-NaN" class="headerlink" title="ES 6 Number.NaN"></a>ES 6 Number.NaN</h4><p>无引号的文字常量NaN是表示非数字的特殊值。由于NaN总是与任何数字（包括NaN）比较不相等，因此它通常用于指示应返回有效数字的函数的错误条件。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var dayOfMonth = 50; </span><br><span class="line">if (dayOfMonth &lt; 1 || dayOfMonth &gt; 31) &#123; </span><br><span class="line">   dayOfMonth = Number.NaN </span><br><span class="line">   console.log(&quot;每月的天数必须在1到31之间。&quot;) </span><br><span class="line">&#125; else &#123; </span><br><span class="line">   console.log(&quot;天月：&quot;+dayOfMonth) </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">打印结果：</span><br><span class="line">每月的天数必须在1到31之间。</span><br></pre></td></tr></table></figure></p>
+<h4 id="ES-6-Number-NEGATIVE-INFINITY"><a href="#ES-6-Number-NEGATIVE-INFINITY" class="headerlink" title="ES 6 Number.NEGATIVE_INFINITY"></a>ES 6 Number.NEGATIVE_INFINITY</h4><p>这是一个特殊的数值，表示一个小于Number.MIN_VALUE的值。这个值表示为“负无穷大”。它的数学行为类似于无穷大。例如，任何乘以负无穷大的数等于负无穷大，任何除以负无穷大的数等于零。因为负数无穷大是一个常数，所以它是数字的只读属性。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var val = Number.NEGATIVE_INFINITY; </span><br><span class="line">console.log(&quot;Number.NEGATIVE_INFINITY的值为： &quot; + val );</span><br><span class="line"></span><br><span class="line">打印结果：</span><br><span class="line">Number.NEGATIVE_INFINITY的值为： -Infinity</span><br></pre></td></tr></table></figure></p>
+<h4 id="ES-6-Number-POSITIVE-INFINITY"><a href="#ES-6-Number-POSITIVE-INFINITY" class="headerlink" title="ES 6 Number.POSITIVE_INFINITY"></a>ES 6 Number.POSITIVE_INFINITY</h4><p>这是一个特殊的数值，表示任何大于Number.MAX_VALUE的值。这个值表示为“无穷大”。它的数学行为类似于无穷大。例如，任何乘以正无穷大的数都是正无穷大，任何除以正无穷大的数都是零。正无穷大是一个常数，所以它是数字的只读属性。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var val = Number.POSITIVE_INFINITY; </span><br><span class="line">console.log(&quot;Number.POSITIVE_INFINITY的值为： &quot; + val );</span><br><span class="line"></span><br><span class="line">打印结果：</span><br><span class="line">Number.POSITIVE_INFINITY的值为： Infinity</span><br></pre></td></tr></table></figure></p>
+<h4 id="ES-6-Number-isNaN"><a href="#ES-6-Number-isNaN" class="headerlink" title="ES 6 Number.isNaN()"></a>ES 6 Number.isNaN()</h4><p>方法确定传递的值是否为NaN。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">参数的细节</span><br><span class="line">值确定是否为NaN</span><br><span class="line">返回值</span><br><span class="line">如果值不是数字，则返回一个布尔值true。</span><br><span class="line"></span><br><span class="line">var res = Number.isNaN(10); </span><br><span class="line">console.log(res);</span><br><span class="line"></span><br><span class="line">打印结果：</span><br><span class="line">false</span><br></pre></td></tr></table></figure></p>
+<h4 id="ES-6-Number-isFinite"><a href="#ES-6-Number-isFinite" class="headerlink" title="ES 6 Number.isFinite()"></a>ES 6 Number.isFinite()</h4><p>方法确定传递的值是否为有限数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">参数细节</span><br><span class="line">要测试有限性的值。</span><br><span class="line">返回值</span><br><span class="line">返回布尔值，true或false。</span><br><span class="line"></span><br><span class="line">var res = Number.isFinite(10); </span><br><span class="line">console.log(res);</span><br><span class="line"></span><br><span class="line">打印结果：</span><br><span class="line">true</span><br></pre></td></tr></table></figure></p>
+<h4 id="ES-6-Number-isInteger"><a href="#ES-6-Number-isInteger" class="headerlink" title="ES 6 Number.isInteger()"></a>ES 6 Number.isInteger()</h4><p>方法确定传递的值是否为整数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">参数细节</span><br><span class="line">要作为整数进行测试的值。</span><br><span class="line">返回值</span><br><span class="line">返回布尔值，true或false。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">console.log(Number.isInteger(0));         // true </span><br><span class="line">console.log(Number.isInteger(1));         // true </span><br><span class="line">console.log(Number.isInteger(-100000));   // true </span><br><span class="line">console.log(Number.isInteger(0.1));       // false </span><br><span class="line">console.log(Number.isInteger(Infinity));   // false </span><br><span class="line">console.log(Number.isInteger(&quot;10&quot;));      // false </span><br><span class="line">console.log(Number.isInteger(true));      // false </span><br><span class="line">console.log(Number.isInteger(false));     // false</span><br><span class="line"></span><br><span class="line">打印结果：</span><br><span class="line">true</span><br><span class="line">true</span><br><span class="line">true</span><br><span class="line">false</span><br><span class="line">false</span><br><span class="line">false</span><br><span class="line">false</span><br><span class="line">false</span><br></pre></td></tr></table></figure></p>
+<h4 id="ES-6-Number-isSafeInteger"><a href="#ES-6-Number-isSafeInteger" class="headerlink" title="ES 6 Number.isSafeInteger()"></a>ES 6 Number.isSafeInteger()</h4><p>方法确定传递的值是否为安全整数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">参数细节</span><br><span class="line">要作为安全整数进行测试的值。</span><br><span class="line">返回值</span><br><span class="line">返回布尔值，true或false。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">var res = Number.isSafeInteger(10); </span><br><span class="line">console.log(res);</span><br><span class="line">打印结果：</span><br><span class="line">true</span><br></pre></td></tr></table></figure></p>
+<h4 id="ES-6-Number-parseFloat"><a href="#ES-6-Number-parseFloat" class="headerlink" title="ES 6 Number.parseFloat()"></a>ES 6 Number.parseFloat()</h4><p>方法解析字符串参数并返回所传递的字符串的浮点表示形式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">参数</span><br><span class="line">string：要解析的值</span><br><span class="line">返回值</span><br><span class="line">字符串的浮点表示。</span><br><span class="line"></span><br><span class="line">console.log(Number.parseFloat(&quot;10&quot;)); </span><br><span class="line">console.log(Number.parseFloat(&quot;10.23&quot;));</span><br><span class="line">打印结果：</span><br><span class="line"></span><br><span class="line">10 </span><br><span class="line">10.23</span><br></pre></td></tr></table></figure></p>
+<h4 id="ES-6-Number-parseInt"><a href="#ES-6-Number-parseInt" class="headerlink" title="ES 6 Number.parseInt()"></a>ES 6 Number.parseInt()</h4><p>方法解析字符串参数并返回指定基数的整数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">参数</span><br><span class="line">string：要解析的值</span><br><span class="line">radix：表示基数的 2到36之间的整数。</span><br><span class="line">返回值</span><br><span class="line">字符串的整数表示。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">console.log(Number.parseInt(&quot;10&quot;)); </span><br><span class="line">console.log(Number.parseInt(&quot;10.23&quot;));</span><br><span class="line">打印结果：</span><br><span class="line"></span><br><span class="line">10 </span><br><span class="line">10</span><br></pre></td></tr></table></figure></p>
+<h4 id="ES-6-toExponential"><a href="#ES-6-toExponential" class="headerlink" title="ES 6 toExponential()"></a>ES 6 toExponential()</h4><p>方法返回一个字符串，该字符串以指数形式表示数字对象。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">参数</span><br><span class="line">fractionDigits：一个整数，指定小数点后的位数。默认为指定数字所需的位数</span><br><span class="line">返回值</span><br><span class="line">一个字符串，以指数表示法表示Number对象，小数点前有一位数，四舍五入到小数点后的fractionDigits数字。如果省略fractionDigits参数，则小数点后的位数默认为唯一表示该值所需的位数。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//toExponential() </span><br><span class="line">var num1 = 1225.30 </span><br><span class="line">var val = num1.toExponential(); </span><br><span class="line">console.log(val)</span><br><span class="line">打印结果：</span><br><span class="line"></span><br><span class="line">1.2253e+</span><br></pre></td></tr></table></figure></p>
+<h4 id="ES-6-toFixed"><a href="#ES-6-toFixed" class="headerlink" title="ES 6 toFixed()"></a>ES 6 toFixed()</h4><p>方法将数字格式化为小数点右侧的特定数字<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">参数</span><br><span class="line">digits：小数点后显示的位数。</span><br><span class="line">返回值</span><br><span class="line">数字的字符串表示形式，不使用指数表示法，并且具有小数位后的确切位数。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">var num3 = 177.234 </span><br><span class="line">console.log(&quot;num3.toFixed()是： &quot;+num3.toFixed()) </span><br><span class="line">console.log(&quot;num3.toFixed(2)是： &quot;+num3.toFixed(2)) </span><br><span class="line">console.log(&quot;num3.toFixed(6) 是： &quot;+num3.toFixed(6))</span><br><span class="line">打印结果：</span><br><span class="line"></span><br><span class="line">num3.toFixed()是： 177</span><br><span class="line">num3.toFixed(2)是： 177.23</span><br><span class="line">num3.toFixed(6) 是： 177.234000</span><br></pre></td></tr></table></figure></p>
+<h4 id="ES-6-toLocaleString"><a href="#ES-6-toLocaleString" class="headerlink" title="ES 6 toLocaleString()"></a>ES 6 toLocaleString()</h4><p>方法将number对象转换为人类可读的字符串，该字符串使用环境的区域设置表示数字。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">返回值：</span><br><span class="line">使用环境的语言环境返回表示数字的可读字符串。</span><br><span class="line"></span><br><span class="line">var num = new Number(177.1234); </span><br><span class="line">console.log( num.toLocaleString());</span><br><span class="line">打印结果：</span><br><span class="line"></span><br><span class="line">177.1234</span><br></pre></td></tr></table></figure></p>
+<h4 id="ES-6-toPrecision"><a href="#ES-6-toPrecision" class="headerlink" title="ES 6 toPrecision()"></a>ES 6 toPrecision()</h4><p>方法返回一个字符串，该字符串表示指定精度的number对象。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">参数：</span><br><span class="line">precision：指定有效位数的整数。</span><br><span class="line">返回值：</span><br><span class="line">返回表示固定点或指数表示法舍入的toprecision有效数字的Number对象的字符串。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">var num = new Number(7.123456); </span><br><span class="line">console.log(num.toPrecision()); </span><br><span class="line">console.log(num.toPrecision(1)); </span><br><span class="line">console.log(num.toPrecision(2));</span><br><span class="line">打印结果：</span><br><span class="line"></span><br><span class="line">7.123456 </span><br><span class="line">7 </span><br><span class="line">7.1</span><br></pre></td></tr></table></figure></p>
+<h4 id="ES-6-toString"><a href="#ES-6-toString" class="headerlink" title="ES 6 toString()"></a>ES 6 toString()</h4><p>方法返回表示指定对象的字符串。toString()方法解析其第一个参数，并尝试返回指定radix（基数）中的字符串表示形式。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">参数：</span><br><span class="line">radix：介于2和36之间的整数，指定用于表示数值的基数。</span><br><span class="line">返回值：</span><br><span class="line">返回表示指定Number对象的字符串。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">var num = new Number(10); </span><br><span class="line">console.log(num.toString()); </span><br><span class="line">console.log(num.toString(2)); </span><br><span class="line">console.log(num.toString(8));</span><br><span class="line">打印结果：</span><br><span class="line"></span><br><span class="line">10 </span><br><span class="line">1010 </span><br><span class="line">12</span><br></pre></td></tr></table></figure></p>
+<h4 id="ES-6-valueOf"><a href="#ES-6-valueOf" class="headerlink" title="ES 6 valueOf()"></a>ES 6 valueOf()</h4><p>方法返回指定的number对象的原始值。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">返回值</span><br><span class="line">返回指定Number对象的原始值。</span><br><span class="line"></span><br><span class="line">var num = new Number(10); </span><br><span class="line">console.log(num.valueOf());</span><br><span class="line">打印结果：</span><br><span class="line"></span><br><span class="line">10</span><br></pre></td></tr></table></figure></p>
+<h1 id="ES-6-Boolean"><a href="#ES-6-Boolean" class="headerlink" title="ES 6 Boolean"></a>ES 6 Boolean</h1><blockquote>
+<p>Boolean（布尔）对象表示两个值，“true”或“false”。如果value参数被省略或为0、-0、null、false、nan、undefined或空字符串（””），则对象的初始值为false。</p>
+</blockquote>
+<p>创建Boolean对象语法</p>
+<blockquote>
+<p>var bo = new Boolean(value);</p>
+</blockquote>
+<p>Boolean属性</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">属性</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">constructor</td>
+<td style="text-align:center">返回对创建对象的boolean函数的引用</td>
+</tr>
+<tr>
+<td style="text-align:center">prototype</td>
+<td style="text-align:center">Prototype属性允许您向对象添加属性和方法</td>
+</tr>
+</tbody>
+</table>
+<p>Boolean方法</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">toSource()</td>
+<td style="text-align:center">返回包含Boolean对象源的字符串；您可以使用此字符串来创建等效对象</td>
+</tr>
+<tr>
+<td style="text-align:center">toString()</td>
+<td style="text-align:center">返回“true”或“false”的字符串，具体取决于对象的值。</td>
+</tr>
+<tr>
+<td style="text-align:center">valueOf()</td>
+<td style="text-align:center">返回Boolean对象的原始值。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="ES-6-Boolean-constructor"><a href="#ES-6-Boolean-constructor" class="headerlink" title="ES 6 Boolean constructor"></a>ES 6 Boolean constructor</h4><p>Javascript Boolean constructor返回对创建实例原型的Boolean函数的引用。<br>使用以下语法创建Boolean constructor。它返回创建此对象实例的函数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt; </span><br><span class="line">   &lt;head&gt; </span><br><span class="line">   	  &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">      &lt;title&gt;JavaScript constructor属性&lt;/title&gt; </span><br><span class="line">   &lt;/head&gt; </span><br><span class="line"></span><br><span class="line">   &lt;body&gt; </span><br><span class="line">      &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">      	 var bool = new Boolean( ); </span><br><span class="line">         document.write(&quot;bool.constructor 是： &quot; + bool.constructor); </span><br><span class="line">      &lt;/script&gt;</span><br><span class="line">   &lt;/body&gt; </span><br><span class="line">   </span><br><span class="line">&lt;/html&gt;</span><br><span class="line">打印结果：</span><br><span class="line"></span><br><span class="line">bool.constructor是：function Boolean() &#123; [native code] &#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="ES-6-prototypes"><a href="#ES-6-prototypes" class="headerlink" title="ES 6 prototypes"></a>ES 6 prototypes</h4><p>prototypes属性允许你向任何对象(数字、布尔值、字符串和日期等)添加属性和方法。<br>注：Prototype是一个全局属性，几乎可用于所有对象。<br>语法：<br>使用以下语法创建Boolean prototype。<br>object.prototype.name = value</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">以下示例显示如何使用prototype属性向对象添加属性。</span><br><span class="line"></span><br><span class="line">&lt;html&gt; </span><br><span class="line">   &lt;head&gt; </span><br><span class="line">      &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">      &lt;title&gt;用户定义的对象&lt;/title&gt; </span><br><span class="line">      &lt;script type = &quot;text/javascript&quot;&gt; </span><br><span class="line">         function book(title, author)&#123;  </span><br><span class="line">            this.title = title;  </span><br><span class="line">            this.author = author;  </span><br><span class="line">         &#125;  </span><br><span class="line">      &lt;/script&gt; </span><br><span class="line">   &lt;/head&gt; </span><br><span class="line">   </span><br><span class="line">   &lt;body&gt; </span><br><span class="line">      &lt;script type = &quot;text/javascript&quot;&gt; </span><br><span class="line">         var myBook = new book(&quot;Perl&quot;, &quot;Tom&quot;);  </span><br><span class="line">         book.prototype.price = null;  </span><br><span class="line">         myBook.price = 100;  </span><br><span class="line">         document.write(&quot;书名是：&quot; + myBook.title + &quot;&lt;br&gt;&quot;);  </span><br><span class="line">         document.write(&quot;书的作者是： &quot; + myBook.author + &quot;&lt;br&gt;&quot;);  </span><br><span class="line">         document.write(&quot;书的价格为：&quot; + myBook.price + &quot;&lt;br&gt;&quot;);  </span><br><span class="line">      &lt;/script&gt; </span><br><span class="line">   &lt;/body&gt;</span><br><span class="line">   </span><br><span class="line">&lt;/html&gt;</span><br><span class="line">打印结果：</span><br><span class="line"></span><br><span class="line">书名是：Perl</span><br><span class="line">书的作者是： Tom</span><br><span class="line">书的价格为：100</span><br></pre></td></tr></table></figure>
+<h4 id="ES-6-Boolean-toSource"><a href="#ES-6-Boolean-toSource" class="headerlink" title="ES 6 Boolean toSource()"></a>ES 6 Boolean toSource()</h4><p>Javascript boolean toSource() 方法返回一个表示对象源代码的字符串。<br>注意：boolean toSource()方法与所有浏览器不兼容。<br>语法：<br>boolean.toSource()<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt; </span><br><span class="line">   &lt;head&gt; </span><br><span class="line">      &lt;title&gt;JavaScript toSource() Method&lt;/title&gt; </span><br><span class="line">   &lt;/head&gt; </span><br><span class="line">   &lt;body&gt; </span><br><span class="line">      &lt;script type = &quot;text/javascript&quot;&gt;</span><br><span class="line">         function book(title, publisher, price) &#123;</span><br><span class="line">            this.title = title;</span><br><span class="line">            this.publisher = publisher;</span><br><span class="line">            this.price = price;</span><br><span class="line">         &#125; </span><br><span class="line">         var newBook = new book(&quot;Perl&quot;,&quot;Leo Inc&quot;,200);</span><br><span class="line">         document.write(&quot;newBook.toSource() is : &quot;+ newBook.toSource());</span><br><span class="line">      &lt;/script&gt;</span><br><span class="line">   &lt;/body&gt;</span><br><span class="line">   </span><br><span class="line">&lt;/html&gt;</span><br><span class="line">打印结果：</span><br><span class="line"></span><br><span class="line">(&#123;title:&quot;Perl&quot;, publisher:&quot;Leo Inc&quot;, price:200&#125;)</span><br></pre></td></tr></table></figure></p>
+<h4 id="ES-6-Boolean-toString"><a href="#ES-6-Boolean-toString" class="headerlink" title="ES 6 Boolean toString()"></a>ES 6 Boolean toString()</h4><p>toString()方法根据对象的值返回“true”或“false”字符串。<br>语法：<br>boolean.toString()<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;html&gt; </span><br><span class="line">   &lt;head&gt; </span><br><span class="line">      &lt;title&gt;JavaScript toString()方法&lt;/title&gt; </span><br><span class="line">   &lt;/head&gt; </span><br><span class="line">   &lt;body&gt; </span><br><span class="line">      &lt;script type = &quot;text/javascript&quot;&gt; </span><br><span class="line">         var flag = new Boolean(false);  </span><br><span class="line">         document.write( &quot;flag.toString is : &quot; + flag.toString() ); </span><br><span class="line">      &lt;/script&gt; </span><br><span class="line">   &lt;/body&gt;</span><br><span class="line">   </span><br><span class="line">&lt;/html&gt;</span><br><span class="line">打印结果：</span><br><span class="line"></span><br><span class="line">flag.toString is : false</span><br></pre></td></tr></table></figure></p>
+<h4 id="ES-6-Boolean-valueOf"><a href="#ES-6-Boolean-valueOf" class="headerlink" title="ES 6 Boolean valueOf()"></a>ES 6 Boolean valueOf()</h4><p>JavaScript Boolean valueOf()方法返回指定布尔对象的原始值。<br>语法：<br>boolean.valueOf()<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;html&gt; </span><br><span class="line">   &lt;head&gt; </span><br><span class="line">      &lt;title&gt;JavaScript toString() Method&lt;/title&gt; </span><br><span class="line">   &lt;/head&gt; </span><br><span class="line">   </span><br><span class="line">   &lt;body&gt; </span><br><span class="line">      &lt;script type = &quot;text/javascript&quot;&gt; </span><br><span class="line">         var flag = new Boolean(false);  </span><br><span class="line">         document.write( &quot;flag.valueOf is : &quot; + flag.valueOf() );  </span><br><span class="line">      &lt;/script&gt; </span><br><span class="line">   &lt;/body&gt;</span><br><span class="line">   </span><br><span class="line">&lt;/html&gt;</span><br><span class="line">打印结果：</span><br><span class="line"></span><br><span class="line">flag.valueOf is : false</span><br></pre></td></tr></table></figure></p>
+<h1 id="ES-6-String"><a href="#ES-6-String" class="headerlink" title="ES 6 String"></a>ES 6 String</h1><blockquote>
+<p>String对象允许您使用一系列字符；它使用许多辅助（helper）方法包装JavaScript的string原始数据类型。<br>由于JavaScript在String原语和String对象之间自动转换，因此所以可以在string原语上调用string对象的任何helper方法。</p>
+</blockquote>
+<p>语法<br>使用以下语法创建String对象。<br>var val = new String(string);<br>string参数：表示一系列经过正确编码的字符、字符串。</p>
+<h4 id="String-属性"><a href="#String-属性" class="headerlink" title="String 属性"></a>String 属性</h4><table>
+<thead>
+<tr>
+<th style="text-align:center">属性</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">constructor</td>
+<td style="text-align:center">返回对创建对象的String函数的引用</td>
+</tr>
+<tr>
+<td style="text-align:center">length</td>
+<td style="text-align:center">返回字符串的长度</td>
+</tr>
+<tr>
+<td style="text-align:center">Prototype</td>
+<td style="text-align:center">prototype属性允许您向对象添加属性和方法</td>
+</tr>
+</tbody>
+</table>
+<h4 id="String方法"><a href="#String方法" class="headerlink" title="String方法"></a>String方法</h4><table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">charAt()</td>
+<td style="text-align:center">返回指定索引处的字符。</td>
+</tr>
+<tr>
+<td style="text-align:center">charCodeAt()</td>
+<td style="text-align:center">返回一个数字，指示给定索引处字符的Unicode值</td>
+</tr>
+<tr>
+<td style="text-align:center">concat()</td>
+<td style="text-align:center">合并两个字符串的文本并返回一个新字符串。</td>
+</tr>
+<tr>
+<td style="text-align:center">indexOf()</td>
+<td style="text-align:center">返回调用String对象中指定值第一次出现时的索引，如果没有找到，则返回-1。</td>
+</tr>
+<tr>
+<td style="text-align:center">lastIndexOf()</td>
+<td style="text-align:center">返回调用String对象中指定值最后一次出现时的索引，如果没有找到，则返回-1。</td>
+</tr>
+<tr>
+<td style="text-align:center">localeCompare()</td>
+<td style="text-align:center">返回一个数字，该数字指示引用字符串是位于给定字符串之前还是之后，还是与给定字符串的排序顺序相同。</td>
+</tr>
+<tr>
+<td style="text-align:center">match()</td>
+<td style="text-align:center">用于将正则表达式与字符串匹配。</td>
+</tr>
+<tr>
+<td style="text-align:center">replace()</td>
+<td style="text-align:center">用于查找正则表达式和字符串之间的匹配，并用新的子字符串替换匹配的子字符串</td>
+</tr>
+<tr>
+<td style="text-align:center">search()</td>
+<td style="text-align:center">执行正则表达式与指定字符串之间匹配的搜索</td>
+</tr>
+<tr>
+<td style="text-align:center">slice()</td>
+<td style="text-align:center">提取字符串的一部分并返回一个新字符串。</td>
+</tr>
+<tr>
+<td style="text-align:center">split()</td>
+<td style="text-align:center">通过将字符串分隔为子字符串将String对象拆分为字符串数组。</td>
+</tr>
+<tr>
+<td style="text-align:center">substr()</td>
+<td style="text-align:center">通过指定的字符数返回从指定位置开始的字符串中的字符。</td>
+</tr>
+<tr>
+<td style="text-align:center">substring()</td>
+<td style="text-align:center">将字符串中两个索引之间的字符返回到字符串中。</td>
+</tr>
+<tr>
+<td style="text-align:center">toLocaleLowerCase()</td>
+<td style="text-align:center">字符串中的字符在考虑当前区域设置的同时转换为小写。</td>
+</tr>
+<tr>
+<td style="text-align:center">toLocaleupperCase()</td>
+<td style="text-align:center">字符串中的字符在考虑当前区域设置的同时转换为大写。</td>
+</tr>
+<tr>
+<td style="text-align:center">toLowerCase()</td>
+<td style="text-align:center">返回转换为小写的调用字符串值。</td>
+</tr>
+<tr>
+<td style="text-align:center">toString()</td>
+<td style="text-align:center">返回表示指定对象的字符串。</td>
+</tr>
+<tr>
+<td style="text-align:center">toUpperCase()</td>
+<td style="text-align:center">返回转换为大写的调用字符串值。</td>
+</tr>
+<tr>
+<td style="text-align:center">valueOf()</td>
+<td style="text-align:center">返回指定对象的原始值。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="ES6-String-Constructor"><a href="#ES6-String-Constructor" class="headerlink" title="ES6 String Constructor"></a>ES6 String Constructor</h4><blockquote>
+<p>Constructor返回对创建实例原型的字符串函数的引用。<br>语法：string.constructor<br>返回值：返回创建此对象实例的函数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var str = new String(&quot;This is String&quot;);</span><br><span class="line">consloe.log(&quot;str.constructor is&quot; + str.constructor</span><br><span class="line"></span><br><span class="line">打印结果：</span><br><span class="line">str.constructor is:function String() &#123; [native code] &#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="ES-6-String-Length"><a href="#ES-6-String-Length" class="headerlink" title="ES 6 String Length"></a>ES 6 String Length</h4><blockquote>
+<p>Length属性返回字符串的长度（字符串中的字符数）。​Length属性返回字符串的长度（字符串中的字符数）。<br>语法：String.length<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var uname = new String(&quot;Hello World&quot;)</span><br><span class="line">console.log(uname)</span><br><span class="line">console.log(&quot;长度为： &quot;+uname.length)</span><br><span class="line">// 返回包括空格的字符总数</span><br><span class="line">打印结果：</span><br><span class="line">Hello World</span><br><span class="line">长度为：11</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="ES-6-String-Prototype"><a href="#ES-6-String-Prototype" class="headerlink" title="ES 6 String Prototype"></a>ES 6 String Prototype</h4><blockquote>
+<p>prototype属性允许您向任何对象(对象、布尔值、字符串、日期等)添加属性和方法。<br>注：Prototype是一个全局属性，几乎可用于所有对象。<br>语法：string.prototype<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">function employee(id, name) &#123; </span><br><span class="line">   this.id = id; </span><br><span class="line">   this.name = name; </span><br><span class="line">&#125; </span><br><span class="line">var emp = new employee(123, &quot;Smith&quot;); </span><br><span class="line">employee.prototype.email = &quot;smith@qq.com&quot;; </span><br><span class="line">console.log(&quot;Employee &apos;s Id: &quot; + emp.id); </span><br><span class="line">console.log(&quot;Employee&apos;s name: &quot; + emp.name);</span><br><span class="line">console.log(&quot;Employee&apos;s Email ID: &quot; + emp.email);</span><br><span class="line"></span><br><span class="line">打印：</span><br><span class="line">Employee’s Id: 123 </span><br><span class="line">Employee’s name: Smith </span><br><span class="line">Employee’s Email ID: smith@qq.com</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="ES-6-String-charAt"><a href="#ES-6-String-charAt" class="headerlink" title="ES 6 String charAt()"></a>ES 6 String charAt()</h4><blockquote>
+<p>charAt()是一个从指定索引返回字符的方法。字符串中的字符从左到右进行索引。第一个字符的索引为0，字符串中最后一个字符的索引（称为stringname）为stringname.length–1。</p>
+</blockquote>
+<p>语法：string.charAt(index)</p>
+<p>参数：index：小于字符串长度的0到1之间的整数。<br>返回值：返回指定索引中的字符。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var str = new String(&quot;This is string&quot;); </span><br><span class="line">console.log(&quot;str.charAt(0)为：&quot; + str.charAt(0)); </span><br><span class="line">console.log(&quot;str.charAt(1)为：&quot; + str.charAt(1)); </span><br><span class="line">console.log(&quot;str.charAt(2)为：&quot; + str.charAt(2)); </span><br><span class="line">console.log(&quot;str.charAt(3)为：&quot; + str.charAt(3)); </span><br><span class="line">console.log(&quot;str.charAt(4)为：&quot; + str.charAt(4)); </span><br><span class="line">console.log(&quot;str.charAt(5)为：&quot; + str.charAt(5));</span><br><span class="line"></span><br><span class="line">打印结果：</span><br><span class="line">str.charAt(0)为：T </span><br><span class="line">str.charAt(1)为：h </span><br><span class="line">str.charAt(2)为：i </span><br><span class="line">str.charAt(3)为：s </span><br><span class="line">str.charAt(4)为：  </span><br><span class="line">str.charAt(5)为：i</span><br></pre></td></tr></table></figure></p>
+<h4 id="ES-6-String-charCodeAt"><a href="#ES-6-String-charCodeAt" class="headerlink" title="ES 6 String charCodeAt()"></a>ES 6 String charCodeAt()</h4><blockquote>
+<p>charCodeAt()方法返回一个数字，指示给定索引处字符的Unicode值。 Unicode码位范围为从0到1,114,111。 前128个Unicode代码点是ASCII字符编码的直接匹配。 该方法始终返回小于65,536的值。</p>
+</blockquote>
+<p>语法：string.charCodeAt(index);</p>
+<p>参数：</p>
+<ul>
+<li>index：小于字符串长度的0到1之间的整数; 如果未指定，则默认为0。</li>
+</ul>
+<p>返回值：</p>
+<ul>
+<li>返回一个数字，指示给定索引处字符的Unicode值。如果给定索引的值不在字符串长度的0到1之间，则返回NaN。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var str = new String(&quot;This is string&quot;); </span><br><span class="line">console.log(&quot;str.charAt(0)为：&quot; + str.charCodeAt(0)); </span><br><span class="line">console.log(&quot;str.charAt(1)为：&quot; + str.charCodeAt(1)); </span><br><span class="line">console.log(&quot;str.charAt(2)为：&quot; + str.charCodeAt(2));</span><br><span class="line">console.log(&quot;str.charAt(3)为：&quot; + str.charCodeAt(3)); </span><br><span class="line">console.log(&quot;str.charAt(4)为：&quot; + str.charCodeAt(4)); </span><br><span class="line">console.log(&quot;str.charAt(5)为：&quot; + str.charCodeAt(5));</span><br><span class="line"></span><br><span class="line">打印结果：</span><br><span class="line">str.charAt(0)为：84 </span><br><span class="line">str.charAt(1)为：104 </span><br><span class="line">str.charAt(2)为：105 </span><br><span class="line">str.charAt(3)为：115 </span><br><span class="line">str.charAt(4)为：32 </span><br><span class="line">str.charAt(5)为：105</span><br></pre></td></tr></table></figure>
+<h4 id="ES-6-String-concat"><a href="#ES-6-String-concat" class="headerlink" title="ES 6 String concat()"></a>ES 6 String concat()</h4><blockquote>
+<p>concat()方法合并两个或多个字符串并返回一个新的字符串。<br>语法：</p>
+<ul>
+<li>string.concat(string2, string3[, …, stringN]);<br>参数：</li>
+<li>string2 … stringN - 这些是要连接的字符串。</li>
+</ul>
+</blockquote>
+<p>返回值：</p>
+<ul>
+<li>返回单个连接字符串。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var str1 = new String( &quot;This is string one&quot; ); </span><br><span class="line">var str2 = new String( &quot;This is string two&quot; ); </span><br><span class="line">var str3 = str1.concat( str2 ); </span><br><span class="line">console.log(&quot;str1 + str2 : &quot;+str3)</span><br><span class="line"></span><br><span class="line">打印结果：</span><br><span class="line">str1 + str2 : This is string oneThis is string two</span><br></pre></td></tr></table></figure>
+<h4 id="ES-6-String-indexOf"><a href="#ES-6-String-indexOf" class="headerlink" title="ES 6 String indexOf()"></a>ES 6 String indexOf()</h4><blockquote>
+<p>indexOf()方法返回调用String对象中第一次出现的指定值的的索引，如果没有找到该值，则从fromIndex或-1开始搜索。</p>
+</blockquote>
+<p>语法：<br>string.indexOf(searchValue[, fromIndex])<br>参数：</p>
+<ul>
+<li>searchValue - 表示要搜索的值的字符串。</li>
+<li>fromIndex - 调用字符串中用于开始搜索的位置。它可以是0到字符串长度之间的任何整数。默认值为0。</li>
+</ul>
+<p>返回值：</p>
+<ul>
+<li>返回找到的匹配项的索引，否则返回-1。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var str1 = new String( &quot;This is string one&quot; );  </span><br><span class="line">var index = str1.indexOf( &quot;string&quot; ); </span><br><span class="line">console.log(&quot;indexOf found String :&quot; + index );   </span><br><span class="line">var index = str1.indexOf( &quot;one&quot; ); </span><br><span class="line">console.log(&quot;indexOf found String :&quot; + index );</span><br><span class="line"></span><br><span class="line">打印结果：</span><br><span class="line">indexOf found String :8 </span><br><span class="line">indexOf found String :15</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="ES-6-String-lastIndexOf"><a href="#ES-6-String-lastIndexOf" class="headerlink" title="ES 6 String lastIndexOf()"></a>ES 6 String lastIndexOf()</h4><blockquote>
+<p>lastIndexOf()方法返回调用String对象中最后一次出现的指定值的索引，如果没有找到该值，则从fromIndex或-1开始搜索。</p>
+</blockquote>
+<p>语法：</p>
+<ul>
+<li>string.lastIndexOf(searchValue[, fromIndex])<br>参数：</li>
+<li>searchValue：表示要搜索值的字符串。</li>
+<li>fromIndex：调用字符串中用于开始搜索的位置。 它可以是0到字符串长度之间的任何整数。 默认值为0。</li>
+</ul>
+<p>返回值：</p>
+<ul>
+<li>返回最后找到的事件的索引，否则返回-1（如果未找到）。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var str1 = new String( &quot;This is string one and again string&quot; ); </span><br><span class="line">var index = str1.lastIndexOf( &quot;string&quot; ); </span><br><span class="line">console.log(&quot;lastIndexOf found String :&quot; + index );   </span><br><span class="line">index = str1.lastIndexOf( &quot;one&quot; ); </span><br><span class="line">console.log(&quot;lastIndexOf found String :&quot; + index );</span><br><span class="line"></span><br><span class="line">打印结果：</span><br><span class="line">lastIndexOf found String :29 </span><br><span class="line">lastIndexOf found String :15</span><br></pre></td></tr></table></figure>
+<h4 id="ES-6-String-localeCompare"><a href="#ES-6-String-localeCompare" class="headerlink" title="ES 6 String localeCompare()"></a>ES 6 String localeCompare()</h4><blockquote>
+<p>localeCompare()方法返回一个数字，该数字指示引用字符串是位于给定字符串之前还是之后，还是与给定字符串的排序顺序相同。<br>语法：</p>
+<ul>
+<li>string.localeCompare( param )<br>参数：</li>
+<li>param：要与字符串对象进行比较的字符串。</li>
+</ul>
+</blockquote>
+<p>返回值</p>
+<ul>
+<li>0：如果字符串匹配100％。</li>
+<li>1：不匹配，参数值位于区域设置排序顺序中字符串对象的值之前。</li>
+<li>负值：不匹配，参数值位于本地排序顺序中字符串对象的值之后。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var str1 = new String( &quot;This is beautiful string&quot; );  </span><br><span class="line">var index = str1.localeCompare( &quot;This is beautiful string&quot;);  </span><br><span class="line">console.log(&quot;localeCompare first :&quot; + index );</span><br><span class="line"></span><br><span class="line">打印结果：</span><br><span class="line">localeCompare first :0</span><br></pre></td></tr></table></figure>
+<h4 id="ES-6-String-replace"><a href="#ES-6-String-replace" class="headerlink" title="ES 6 String replace()"></a>ES 6 String replace()</h4><blockquote>
+<p>replace()方法查找正则表达式和字符串之间的匹配项，并使用新的子字符串替换匹配的子字符串。</p>
+</blockquote>
+<p>替换字符串可包括以下特殊替换模式：<br>|No|模式和插入|<br>|:-:|:-:|<br>|1|$$<br>插入”$”|<br>|2|$&amp;<br>插入匹配的子字符串|<br>|3|$`<br>插入匹配子字符串之间的字符串部分|<br>|4|$’<br>插入匹配子字符串后面的字符串部分|<br>|5|$n or $nn<br>如果n或nn是十进制数字，则插入第n个带括号的子匹配字符串，前提是第一个参数是RegExp对象。|</p>
+<p>语法：</p>
+<ul>
+<li>string.replace(regexp/substr, newSubStr/function[, flags]);</li>
+</ul>
+<p>参数：</p>
+<ul>
+<li>regexp - 一个RegExp对象。匹配由参数＃2的返回值替换。</li>
+<li>substr - 要由newSubStr替换的String。</li>
+<li>newSubStr - 替换从参数＃1接收的子字符串的String。</li>
+<li>　function - 要调用以创建新子字符串的函数。</li>
+<li>flags - 包含RegExp标志的任意组合的String：g。</li>
+</ul>
+<p>返回值：</p>
+<ul>
+<li>它只返回一个新的更改字符串。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var re = /apples/gi; </span><br><span class="line">var str = &quot;Apples are round, and apples are juicy.&quot;; </span><br><span class="line">var newstr = str.replace(re, &quot;oranges&quot;); </span><br><span class="line">console.log(newstr)</span><br><span class="line">打印结果：</span><br><span class="line">oranges are round, and oranges are juicy.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">var re = /(\w+)\s(\w+)/; </span><br><span class="line">var str = &quot;zara ali&quot;; </span><br><span class="line">var newstr = str.replace(re, &quot;$2, $1&quot;); </span><br><span class="line">console.log(newstr);</span><br><span class="line"></span><br><span class="line">打印结果：</span><br><span class="line">ali, zara</span><br></pre></td></tr></table></figure>
+<h4 id="ES-6-String-search"><a href="#ES-6-String-search" class="headerlink" title="ES 6 String search()"></a>ES 6 String search()</h4><blockquote>
+<p>search()方法执行搜索正则表达式和此String对象之间的匹配项。</p>
+</blockquote>
+<p>语法：</p>
+<ul>
+<li>string.search(regexp);<br>参数：</li>
+<li>regexp：正则表达式对象。如果传递非RegExp对象obj，则使用新的RegExp（obj）将其隐式转换为RegExp。</li>
+</ul>
+<p>返回值：</p>
+<ul>
+<li>如果成功，搜索将返回字符串中正则表达式的索引。否则，它返回-1。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var re = /apples/gi;</span><br><span class="line">var str = &quot;Apples are round, and apples are juicy.&quot;; </span><br><span class="line">if ( str.search(re) == -1 ) &#123; </span><br><span class="line">   console.log(&quot;Does not contain Apples&quot; ); </span><br><span class="line">&#125; else &#123; </span><br><span class="line">   console.log(&quot;Contains Apples&quot; ); </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">打印结果：</span><br><span class="line">Contains Apples.</span><br></pre></td></tr></table></figure>
+<h4 id="ES-6-String-slice"><a href="#ES-6-String-slice" class="headerlink" title="ES 6 String slice()"></a>ES 6 String slice()</h4><ul>
+<li>slice()方法提取字符串的一部分并返回一个新字符串。</li>
+</ul>
+<p>语法：<br>string.slice( beginslice [, endSlice] );<br>参数：</p>
+<ul>
+<li>beginSlice：开始提取的从零开始的索引。</li>
+<li>endSlice：结束提取的从零开始的索引。如果省略，则将切片提取到字符串的末尾。</li>
+</ul>
+<p>返回值：</p>
+<ul>
+<li>如果成功，slice将返回字符串中正则表达式的索引。否则，它返回-1。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot;Apples are round, and apples are juicy.&quot;; </span><br><span class="line">var sliced = str.slice(3, -2); </span><br><span class="line">console.log(sliced);</span><br><span class="line"></span><br><span class="line">打印结果：</span><br><span class="line">les are round, and apples are juic</span><br></pre></td></tr></table></figure>
+<h4 id="ES-6-String-split"><a href="#ES-6-String-split" class="headerlink" title="ES 6 String split()"></a>ES 6 String split()</h4><ul>
+<li>split()方法通过将字符串分隔为子字符串将String对象拆分为字符串数组。</li>
+</ul>
+<p>语法：</p>
+<ul>
+<li>string.split([separator][, limit]);<br>参数：</li>
+<li>separator：指定用于分隔字符串的字符。如果省略ifseparator，则返回的数组包含一个由整个字符串组成的元素。</li>
+<li>limit：整数，指定要查找的拆分数限制。</li>
+</ul>
+<p>返回值：</p>
+<ul>
+<li>split方法返回新数组。此外，当字符串为空时，split返回一个包含一个空字符串的数组，而不是一个空数组。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot;Apples are round, and apples are juicy.&quot;; </span><br><span class="line">var splitted = str.split(&quot; &quot;, 3); </span><br><span class="line">console.log(splitted)</span><br><span class="line"></span><br><span class="line">打印结果：</span><br><span class="line">[ &apos;Apples&apos;, &apos;are&apos;, &apos;round,&apos; ]</span><br></pre></td></tr></table></figure>
+<h4 id="ES-6-String-substr"><a href="#ES-6-String-substr" class="headerlink" title="ES 6 String substr()"></a>ES 6 String substr()</h4><blockquote>
+<p>substr()方法通过指定的字符数返回从指定位置开始的字符串中的字符。</p>
+</blockquote>
+<p>语法：</p>
+<ul>
+<li>string.substr(start[, length]);<br>参数：</li>
+<li>start：开始提取字符的位置（0到1之间的整数，小于字符串的长度）。</li>
+<li>length：要提取的字符数</li>
+</ul>
+<p>返回值：</p>
+<ul>
+<li>substr()方法根据给定的参数返回新的子字符串。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot;Apples are round, and apples are juicy.&quot;; </span><br><span class="line">console.log(&quot;(1,2)： &quot;    + str.substr(1,2)); </span><br><span class="line">console.log(&quot;(-2,2)： &quot;   + str.substr(-2,2)); </span><br><span class="line">console.log(&quot;(1)： &quot;      + str.substr(1)); </span><br><span class="line">console.log(&quot;(-20, 2)： &quot; + str.substr(-20,2)); </span><br><span class="line">console.log(&quot;(20, 2)： &quot;  + str.substr(20,2));</span><br><span class="line"></span><br><span class="line">打印结果:</span><br><span class="line">(1,2)： pp </span><br><span class="line">(-2,2)： y. </span><br><span class="line">(1)： pples are round, and apples are juicy. </span><br><span class="line">(-20, 2)： nd </span><br><span class="line">(20, 2)： d</span><br></pre></td></tr></table></figure>
+<h4 id="ES-6-String-substring"><a href="#ES-6-String-substring" class="headerlink" title="ES 6 String substring()"></a>ES 6 String substring()</h4><blockquote>
+<p>substring()方法返回String对象的子集。</p>
+</blockquote>
+<p>语法：</p>
+<ul>
+<li>string.substring(indexA, [indexB])<br>参数：</li>
+<li>indexA：0到1之间的整数，小于字符串的长度。</li>
+<li>indexB：（可选）0到字符串长度之间的整数。</li>
+</ul>
+<p>返回值：</p>
+<ul>
+<li>该子方法返回根据给定参数的新子。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot;Apples are round, and apples are juicy.&quot;; </span><br><span class="line">console.log(&quot;(1,2): &quot;    + str.substring(1,2)); </span><br><span class="line">console.log(&quot;(0,10): &quot;   + str.substring(0, 10)); </span><br><span class="line">console.log(&quot;(5): &quot;      + str.substring(5));</span><br><span class="line"></span><br><span class="line">打印结果:</span><br><span class="line">(1,2): p </span><br><span class="line">(0,10): Apples are </span><br><span class="line">(5): s are round, and apples are juicy</span><br></pre></td></tr></table></figure>
+<h4 id="ES-6-String-toLocaleLowerCase"><a href="#ES-6-String-toLocaleLowerCase" class="headerlink" title="ES 6 String toLocaleLowerCase()"></a>ES 6 String toLocaleLowerCase()</h4><blockquote>
+<p>toLocaleLowerCase()方法用于在考虑当前区域设置的同时将字符串中的字符转换为小写。 对于大多数语言，它返回与toLowerCase相同的输出。</p>
+</blockquote>
+<p>语法：</p>
+<ul>
+<li>string.toLocaleLowerCase( )<br>返回值：</li>
+<li>使用当前语言环境返回小写的字符串。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot;Apples are round, and Apples are Juicy.&quot;; </span><br><span class="line">console.log(str.toLocaleLowerCase( ));</span><br><span class="line"></span><br><span class="line">打印结果：</span><br><span class="line">apples are round, and apples are juicy.</span><br></pre></td></tr></table></figure>
+<h4 id="ES-6-String-toLowerCase"><a href="#ES-6-String-toLowerCase" class="headerlink" title="ES 6 String toLowerCase()"></a>ES 6 String toLowerCase()</h4><ul>
+<li>toLowerCase()方法返回转换为小写的调用字符串值。</li>
+</ul>
+<p>语法：</p>
+<ul>
+<li>string.toLowerCase( )<br>返回值：</li>
+<li>返回转换为小写的调用字符串值。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot;Apples are round, and Apples are Juicy.&quot;; </span><br><span class="line">console.log(str.toLowerCase( ))</span><br><span class="line"></span><br><span class="line">打印结果：</span><br><span class="line">apples are round, and apples are juicy.</span><br></pre></td></tr></table></figure>
+<h4 id="ES-6-String-toString"><a href="#ES-6-String-toString" class="headerlink" title="ES 6 String toString()"></a>ES 6 String toString()</h4><blockquote>
+<p>toString()方法返回表示指定对象的字符串。</p>
+</blockquote>
+<p>语法：</p>
+<ul>
+<li>string.toString()<br>返回值：</li>
+<li>返回表示指定对象的字符串。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot;Apples are round, and Apples are Juicy.&quot;; </span><br><span class="line">console.log(str.toString( ));</span><br><span class="line"></span><br><span class="line">打印结果：</span><br><span class="line">Apples are round, and Apples are Juicy.</span><br></pre></td></tr></table></figure>
+<h4 id="ES-6-String-toUpperCase"><a href="#ES-6-String-toUpperCase" class="headerlink" title="ES 6 String toUpperCase()"></a>ES 6 String toUpperCase()</h4><blockquote>
+<p>toUpperCase()方法返回转换为大写的调用字符串值。</p>
+</blockquote>
+<p>语法：</p>
+<ul>
+<li>string.toUpperCase()<br>返回值：</li>
+<li>返回表示指定对象的字符串。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot;Apples are round, and Apples are Juicy.&quot;; </span><br><span class="line">console.log(str.toUpperCase( ));</span><br><span class="line"></span><br><span class="line">打印结果：</span><br><span class="line">APPLES ARE ROUND, AND APPLES ARE JUICY.</span><br></pre></td></tr></table></figure>
+<h4 id="ES-6-String-valueOf"><a href="#ES-6-String-valueOf" class="headerlink" title="ES 6 String valueOf()"></a>ES 6 String valueOf()</h4><ul>
+<li>valueOf()方法返回String对象的原始值。</li>
+</ul>
+<p>语法：</p>
+<ul>
+<li>string.valueOf()<br>返回值：</li>
+<li>返回String对象的原始值。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var str = new String(&quot;Hello world&quot;); </span><br><span class="line">console.log(str.valueOf( ));</span><br><span class="line">打印结果：</span><br><span class="line"></span><br><span class="line">Hello world</span><br></pre></td></tr></table></figure>
+<h4 id="ES-6-新的字符串方法"><a href="#ES-6-新的字符串方法" class="headerlink" title="ES 6 新的字符串方法"></a>ES 6 新的字符串方法</h4><table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">String.prototype.startsWith(searchString, position = 0)</td>
+<td style="text-align:center">如果接收器以searchString开头，则返回true；参数position允许您指定要检查的字符串的起始位置。</td>
+</tr>
+<tr>
+<td style="text-align:center">String.prototype.endsWith(searchString, endPosition = searchString.length)</td>
+<td style="text-align:center">如果接收器以searchString结尾，则返回true；参数endposition允许您指定要检查的字符串的位置</td>
+</tr>
+<tr>
+<td style="text-align:center">String.prototype.includes(searchString, position = 0)</td>
+<td style="text-align:center">如果接收器包含searchString，则返回true；参数position允许您指定要搜索的字符串的起始位置</td>
+</tr>
+<tr>
+<td style="text-align:center">String.prototype.repeat(count)</td>
+<td style="text-align:center">返回接收器，count参数指定字符串应重复的次数。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="模板文字"><a href="#模板文字" class="headerlink" title="模板文字"></a>模板文字</h4><blockquote>
+<p>模板文字是允许嵌入表达式的字符串文字。模板字符串使用反向标记（<code></code>）而不是单引号或双引号。因此，模板字符串可以写成：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var greeting = `Hello World!`;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="字符串插值和模板文字"><a href="#字符串插值和模板文字" class="headerlink" title="字符串插值和模板文字"></a>字符串插值和模板文字</h4><blockquote>
+<p>模板字符串可以使用占位符使用$ {}语法进行字符串替换。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">var name = &quot;Brendan&quot;; </span><br><span class="line">console.log(&apos;Hello, $&#123;name&#125;!&apos;);</span><br><span class="line">打印结果:</span><br><span class="line">Hello, Brendan!</span><br><span class="line"></span><br><span class="line">模板文字和表达式</span><br><span class="line"></span><br><span class="line">var a = 10; </span><br><span class="line">var b = 10; </span><br><span class="line">console.log(`The sum of $&#123;a&#125; and $&#123;b&#125; is  $&#123;a+b&#125; `);</span><br><span class="line">打印结果：</span><br><span class="line">The sum of 10 and 10 is 20</span><br><span class="line"></span><br><span class="line">模板文字和函数表达式</span><br><span class="line"></span><br><span class="line">function fn() &#123; return &quot;Hello World&quot;; &#125; </span><br><span class="line">console.log(`Message: $&#123;fn()&#125; !!`);</span><br><span class="line">打印结果：</span><br><span class="line">Message: Hello World !!</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="多行字符串和模板文字"><a href="#多行字符串和模板文字" class="headerlink" title="多行字符串和模板文字"></a>多行字符串和模板文字</h4><blockquote>
+<p>模板字符串可以包含多行。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var multiLine = `</span><br><span class="line">   This is </span><br><span class="line">   a string </span><br><span class="line">   with multiple </span><br><span class="line">   lines`; </span><br><span class="line">console.log(multiLine)</span><br><span class="line">打印结果：</span><br><span class="line">This is </span><br><span class="line">a string </span><br><span class="line">with multiple </span><br><span class="line">line</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="String-raw"><a href="#String-raw" class="headerlink" title="String.raw()"></a>String.raw()</h4><blockquote>
+<p>ES6包含原始字符串的标记函数String.raw，其中反斜杠没有特殊含义。String.raw使我们能够像在正则表达式文字中一样编写反斜杠。请考虑以下示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var text =`Hello \n World` </span><br><span class="line">console.log(text)  </span><br><span class="line">var raw_text = String.raw`Hello \n World ` </span><br><span class="line">console.log(raw_text)</span><br><span class="line">打印结果：</span><br><span class="line">Hello </span><br><span class="line">World </span><br><span class="line">Hello \n World</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="String-fromCodePoint"><a href="#String-fromCodePoint" class="headerlink" title="String.fromCodePoint()"></a>String.fromCodePoint()</h4><blockquote>
+<p>静态字符串，fromCodePoint()方法返回使用指定的unicode代码点序列创建的字符串。如果传递了无效的代码点，该函数将抛出RangeError。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">console.log(String.fromCodePoint(42))        </span><br><span class="line">console.log(String.fromCodePoint(65, 90))</span><br><span class="line">打印结果：</span><br><span class="line">* </span><br><span class="line">AZ</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="ES-6-String-startsWith"><a href="#ES-6-String-startsWith" class="headerlink" title="ES 6 String startsWith()"></a>ES 6 String startsWith()</h4><blockquote>
+<p>startsWith()方法确定字符串是否以指定字符开头。</p>
+</blockquote>
+<p>语法：</p>
+<ul>
+<li>str.startsWith(searchString[, position])<br>参数：</li>
+<li>searchString：要在此字符串开头搜索的字符。</li>
+<li>Position：此字符串中开始搜索searchString的位置; 默认为0。</li>
+</ul>
+<p>返回值：</p>
+<ul>
+<li>如果字符串以搜索字符串的字符开头，则为true;否则为false。否则，错误。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var str = &apos;hello world!!!&apos;; </span><br><span class="line">console.log(str.startsWith(&apos;hello&apos;));</span><br><span class="line">输出：</span><br><span class="line"></span><br><span class="line">true</span><br></pre></td></tr></table></figure>
+<h4 id="ES-6-String-endsWith"><a href="#ES-6-String-endsWith" class="headerlink" title="ES 6 String endsWith()"></a>ES 6 String endsWith()</h4><blockquote>
+<p>endsWith()方法确定字符串是否以另一个字符串的字符结尾。</p>
+</blockquote>
+<p>语法：</p>
+<ul>
+<li>str.endsWith(matchstring[, position])<br>参数：</li>
+<li>matchstring - 字符串必须以字符结尾的字符。它区分大小写。</li>
+<li>Position - 检查匹配字符串的位置。此参数是可选的。</li>
+</ul>
+<p>返回值：</p>
+<ul>
+<li>如果字符串以匹配字符串的字符结尾，则为true；否则为false。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var str = &apos;Hello World !!! &apos;; </span><br><span class="line">console.log(str.endsWith(&apos;Hello&apos;)); </span><br><span class="line">console.log(str.endsWith(&apos;Hello&apos;,5));</span><br><span class="line">输出：</span><br><span class="line"></span><br><span class="line">false </span><br><span class="line">true</span><br></pre></td></tr></table></figure>
+<h4 id="ES-6-String-includes"><a href="#ES-6-String-includes" class="headerlink" title="ES 6 String includes()"></a>ES 6 String includes()</h4><blockquote>
+<p>includes()方法确定字符串是否是给定字符串的子字符串。</p>
+</blockquote>
+<p>语法：</p>
+<ul>
+<li>str.includes(searchString[, position])<br>参数：</li>
+<li>searchString - 要搜索的子字符串。</li>
+<li>Position - 此字符串中开始搜索searchString的位置; 默认为0。</li>
+</ul>
+<p>返回值：</p>
+<ul>
+<li>如果字符串包含子字符串，则为true ; 否则，错误。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var str = &apos;Hello World&apos;;  </span><br><span class="line">console.log(str.includes(&apos;hell&apos;))     </span><br><span class="line">console.log(str.includes(&apos;Hell&apos;));  </span><br><span class="line">console.log(str.includes(&apos;or&apos;));   </span><br><span class="line">console.log(str.includes(&apos;or&apos;,1))</span><br><span class="line">输出：</span><br><span class="line"></span><br><span class="line">false </span><br><span class="line">true </span><br><span class="line">true </span><br><span class="line">true</span><br></pre></td></tr></table></figure>
+<h4 id="ES-6-String-repeat"><a href="#ES-6-String-repeat" class="headerlink" title="ES 6 String repeat()"></a>ES 6 String repeat()</h4><ul>
+<li>repeat()方法用于指定重复指定字符串的次数。</li>
+</ul>
+<p>语法：</p>
+<ul>
+<li>str.repeat(count)<br>参数：</li>
+<li>count - 字符串应重复的次数。</li>
+</ul>
+<p>返回值：</p>
+<ul>
+<li>返回一个新字符串。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var myBook = new String(&quot;Perl&quot;); </span><br><span class="line">console.log(myBook.repeat(2));</span><br><span class="line">输出：</span><br><span class="line"></span><br><span class="line">PerlPerl</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="ES-6-Array"><a href="#ES-6-Array" class="headerlink" title="ES 6 Array"></a>ES 6 Array</h1><blockquote>
+<p>数组是值的同质集合。为了简化，数组是相同数据类型的值的集合。它是用户定义的类型。</p>
+</blockquote>
+<h5 id="ES-6-Array-1"><a href="#ES-6-Array-1" class="headerlink" title="ES 6 Array"></a>ES 6 Array</h5><p>使用变量存储值存在以下限制：</p>
+<ul>
+<li>变量本质上是标量。 换句话说，变量声明一次只能包含一个。 这意味着要在程序中存储n个值，将需要n个变量声明。 因此，当需要存储更大的值集合时，使用变量是不可行的。</li>
+<li>程序中的变量是按随机顺序分配内存的，因此很难按其声明的顺序检索/读取值。</li>
+<li>JavaScript引入了数组的概念来解决这个问题。</li>
+<li>数组是值的同质集合。为了简化，数组是相同数据类型的值的集合。它是用户定义的类型。</li>
+</ul>
+<h5 id="数组的特征"><a href="#数组的特征" class="headerlink" title="数组的特征"></a>数组的特征</h5><ul>
+<li>数组声明分配顺序内存块。</li>
+<li>数组是静态的。这意味着一旦初始化的数组无法调整大小。</li>
+<li>每个存储块表示一个数组元素。</li>
+<li>数组元素由称为元素的下标/索引的唯一整数标识。</li>
+<li>像变量一样的数组也应该在使用之前声明。</li>
+<li>数组初始化是指填充数组元素。</li>
+<li>可以更新或修改数组元素值，但不能删除它们。</li>
+</ul>
+<h5 id="声明和初始化数组"><a href="#声明和初始化数组" class="headerlink" title="声明和初始化数组"></a>声明和初始化数组</h5><p>要在JavaScript中声明和初始化数组，请使用以下语法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var array_name; //declaration </span><br><span class="line">array_name = [val1,val2,valn..]   //initialization </span><br><span class="line">OR </span><br><span class="line">var array_name = [val1,val2…valn]</span><br></pre></td></tr></table></figure></p>
+<p>注 - []对被称为数组的维度。<br><code>例如，像var numlist = [2,4,6,8]这样的声明将创建一个数组</code></p>
+<h5 id="访问数组元素"><a href="#访问数组元素" class="headerlink" title="访问数组元素"></a>访问数组元素</h5><p>后跟下标的数组名称用于引用数组元素。<br>以下是语法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">array_name[subscript]</span><br></pre></td></tr></table></figure></p>
+<h5 id="简单数组"><a href="#简单数组" class="headerlink" title="简单数组"></a>简单数组</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">var alphas; </span><br><span class="line">alphas = [&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;] </span><br><span class="line">console.log(alphas[0]); </span><br><span class="line">console.log(alphas[1]);</span><br><span class="line">打印结果：</span><br><span class="line">1</span><br><span class="line">2</span><br><span class="line"></span><br><span class="line">单个语句声明和初始化</span><br><span class="line">var nums = [1,2,3,3]</span><br><span class="line">console.log(nums[0]);</span><br><span class="line">console.log(nums[1]);</span><br><span class="line">console.log(nums[2]);</span><br><span class="line">console.log(nums[3]);</span><br><span class="line"></span><br><span class="line">打印结果：</span><br><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">3</span><br></pre></td></tr></table></figure>
+<h5 id="数组对象"><a href="#数组对象" class="headerlink" title="数组对象"></a>数组对象</h5><p>也可以使用Array对象创建数组。Array构造函数可以传递为：</p>
+<ul>
+<li>表示数组或大小的数值。</li>
+<li>逗号分隔的值列表。<br>以下示例使用此方法创建数组。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">var arr_names = new Array(4)</span><br><span class="line">for(var i = 0;i&lt;arr_names.length;i++) &#123;</span><br><span class="line">   arr_names[i] = i * 2</span><br><span class="line">   console.log(arr_names[i])</span><br><span class="line">&#125;</span><br><span class="line">打印结果：</span><br><span class="line">0</span><br><span class="line">2</span><br><span class="line">4</span><br><span class="line">6</span><br><span class="line"></span><br><span class="line">数组构造函数接受以逗号分隔的值</span><br><span class="line"></span><br><span class="line">var names = new Array(&quot;Mary&quot;,&quot;Tom&quot;,&quot;Jack&quot;,&quot;Jill&quot;)</span><br><span class="line">for(var i = 0;i&lt;names.length;i++) &#123;</span><br><span class="line">   console.log(names[i])</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">打印结果：</span><br><span class="line">Mary </span><br><span class="line">Tom </span><br><span class="line">Jack </span><br><span class="line">Jill</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="数组方法"><a href="#数组方法" class="headerlink" title="数组方法"></a>数组方法</h5><table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">concat()</td>
+<td style="text-align:center">返回一个新数组，该数组由该数组与其他（一个或多个）数组或值连接而成</td>
+</tr>
+<tr>
+<td style="text-align:center">every()</td>
+<td style="text-align:center">如果数组中的每个元素都满足所提供的测试函数，则返回true。</td>
+</tr>
+<tr>
+<td style="text-align:center">filter()</td>
+<td style="text-align:center">创建一个新数组，其中包含此数组的所有元素，其中提供的过滤函数返回true。</td>
+</tr>
+<tr>
+<td style="text-align:center">forEach()</td>
+<td style="text-align:center">为数组中的每个元素调用一个函数。</td>
+</tr>
+<tr>
+<td style="text-align:center">indexOf()</td>
+<td style="text-align:center">回数组中与指定值相等的元素的第一个(最小)索引，如果没有找到，则返回-1</td>
+</tr>
+<tr>
+<td style="text-align:center">join()</td>
+<td style="text-align:center">将数组的所有元素连接到字符串中。</td>
+</tr>
+<tr>
+<td style="text-align:center">lastIndexOf()</td>
+<td style="text-align:center">返回数组中与指定值相等的元素的最后一个(最大)索引，如果没有找到，则返回-1。</td>
+</tr>
+<tr>
+<td style="text-align:center">map()</td>
+<td style="text-align:center">使用对该数组中的每个元素调用提供的函数的结果创建一个新数组。</td>
+</tr>
+<tr>
+<td style="text-align:center">pop()</td>
+<td style="text-align:center">从数组中删除最后一个元素并返回该元素。</td>
+</tr>
+<tr>
+<td style="text-align:center">push()</td>
+<td style="text-align:center">将一个或多个元素添加到数组末尾并返回数组的新长度。</td>
+</tr>
+<tr>
+<td style="text-align:center">reduce()</td>
+<td style="text-align:center">同时对数组的两个值（从左到右）应用函数，以将其减少为单个值。</td>
+</tr>
+<tr>
+<td style="text-align:center">reduceRight()</td>
+<td style="text-align:center">同时对数组的两个值（从右到左）应用函数，以将其减少为单个值。</td>
+</tr>
+<tr>
+<td style="text-align:center">reverse()</td>
+<td style="text-align:center">反转数组元素的顺序，第一个元素变成最后一个元素，最后一个元素变成第一个元素。</td>
+</tr>
+<tr>
+<td style="text-align:center">shift()</td>
+<td style="text-align:center">从数组中删除第一个元素并返回该元素。</td>
+</tr>
+<tr>
+<td style="text-align:center">slice()</td>
+<td style="text-align:center">取数组的一部分并返回一个新数组。</td>
+</tr>
+<tr>
+<td style="text-align:center">some()</td>
+<td style="text-align:center">如果数组中至少有一个元素满足所提供的测试函数，则返回true。</td>
+</tr>
+<tr>
+<td style="text-align:center">toSource()</td>
+<td style="text-align:center">表示对象的源代码</td>
+</tr>
+<tr>
+<td style="text-align:center">sort()</td>
+<td style="text-align:center">对数组的元素进行排序</td>
+</tr>
+<tr>
+<td style="text-align:center">splice()</td>
+<td style="text-align:center">从数组中添加或删除元素</td>
+</tr>
+<tr>
+<td style="text-align:center">toString()</td>
+<td style="text-align:center">返回表示数组及其元素的字符串。</td>
+</tr>
+<tr>
+<td style="text-align:center">unshift()</td>
+<td style="text-align:center">将一个或多个元素添加到数组的前面，并返回数组的新长度。</td>
+</tr>
+</tbody>
+</table>
+<h5 id="ES6-数组方法"><a href="#ES6-数组方法" class="headerlink" title="ES6 - 数组方法"></a>ES6 - 数组方法</h5><p>以下是ES6中引入的一些新阵列方法。<br>Array.prototype.find<br>find允许您遍历数组并获取返回的第一个元素，使得给定的回调函数返回true。找到元素后，函数会立即返回。这是获得匹配给定条件的第一个项目的有效方法。<br>例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var numbers = [1, 2, 3]; </span><br><span class="line">var oddNumber = numbers.find((x) =&gt; x % 2 == 1); </span><br><span class="line">console.log(oddNumber); // 1</span><br><span class="line"></span><br><span class="line">打印结果：</span><br><span class="line">1</span><br></pre></td></tr></table></figure></p>
+<p>注：ES5 filter()和ES6 find()不是同义词。filter始终返回匹配的数组（并将返回多个匹配项），find始终返回实际元素。</p>
+<h4 id="Array-prototype-findIndex"><a href="#Array-prototype-findIndex" class="headerlink" title="Array.prototype.findIndex"></a>Array.prototype.findIndex</h4><p>findIndex的行为类似于find，但它不返回匹配的元素，而是返回该元素的索引。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var numbers = [1, 2, 3]; </span><br><span class="line">var oddNumber = numbers.findIndex((x) =&gt; x % 2 == 1); </span><br><span class="line">console.log(oddNumber); // 0</span><br></pre></td></tr></table></figure></p>
+<p>上面的示例将值1的索引0作为输出来返回。</p>
+<h5 id="Array-prototype-entries"><a href="#Array-prototype-entries" class="headerlink" title="Array.prototype.entries"></a>Array.prototype.entries</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">entries是一个函数，它返回一个Array Iterator（数组迭代器），可用于遍历数组的键和值。条目将返回一个遍历器对象，其中包含[index，value]格式的数组。</span><br><span class="line"></span><br><span class="line">var numbers = [1, 2, 3]; </span><br><span class="line">var val = numbers.entries(); </span><br><span class="line">console.log(val.next().value);  </span><br><span class="line">console.log(val.next().value);  </span><br><span class="line">console.log(val.next().value);</span><br><span class="line"></span><br><span class="line">打印结果：</span><br><span class="line">[0,1]</span><br><span class="line">[1.2]</span><br><span class="line">[2,3]</span><br></pre></td></tr></table></figure>
+<p>或者，我们也可以使用spread运算符一次性取回一系列条目：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var numbers = [1, 2, 3]; </span><br><span class="line">var val= numbers.entries(); </span><br><span class="line">console.log([...val]);</span><br><span class="line"></span><br><span class="line">打印结果：</span><br><span class="line">[[0,1],[1,2],[2,3]]</span><br></pre></td></tr></table></figure></p>
+<h5 id="Array-from"><a href="#Array-from" class="headerlink" title="Array.from"></a>Array.from</h5><p>Array.from()支持从类似数组的对象创建新数组。from()的基本功能是将两种值转换为数组：</p>
+<ul>
+<li>类似数组的值。</li>
+<li>可设置的值，如Set和Map。<br>例<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&quot;use strict&quot; </span><br><span class="line">for (let i of Array.from(&apos;hello&apos;)) &#123; </span><br><span class="line">   console.log(i) </span><br><span class="line">&#125;</span><br><span class="line">打印结果：</span><br><span class="line"></span><br><span class="line">h</span><br><span class="line">e</span><br><span class="line">l</span><br><span class="line">l</span><br><span class="line">o</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="Array-prototype-keys"><a href="#Array-prototype-keys" class="headerlink" title="Array.prototype.keys()"></a>Array.prototype.keys()</h5><p>keys()函数返回数组索引。<br>例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">console.log(Array.from([&apos;a&apos;, &apos;b&apos;].keys()))</span><br><span class="line">打印结果：</span><br><span class="line"></span><br><span class="line">[ 0, 1 ]</span><br></pre></td></tr></table></figure></p>
+<h5 id="使用for-…-in循环的数组遍历"><a href="#使用for-…-in循环的数组遍历" class="headerlink" title="使用for … in循环的数组遍历"></a>使用for … in循环的数组遍历</h5><p>可以使用for … in循环来遍历数组。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&quot;use strict&quot; </span><br><span class="line">var nums = [1001,1002,1003,1004] </span><br><span class="line">for(let j in nums) &#123; </span><br><span class="line">   console.log(nums[j]) </span><br><span class="line">&#125;</span><br><span class="line">打印结果：</span><br><span class="line"></span><br><span class="line">1001 </span><br><span class="line">1002 </span><br><span class="line">1003 </span><br><span class="line">1004</span><br></pre></td></tr></table></figure></p>
+<h5 id="JavaScript中的数组"><a href="#JavaScript中的数组" class="headerlink" title="JavaScript中的数组"></a>JavaScript中的数组</h5><table>
+<thead>
+<tr>
+<th style="text-align:center">概念</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">多维数组</td>
+<td style="text-align:center">javascript支持多维数组。多维数组的最简单形式是二维数组</td>
+</tr>
+<tr>
+<td style="text-align:center">将数组传递给函数</td>
+<td style="text-align:center">通过指定数组的名称（不带索引），可以将指向数组的指针传递给函数。</td>
+</tr>
+<tr>
+<td style="text-align:center">从函数返回数组</td>
+<td style="text-align:center">允许函数返回数组</td>
+</tr>
+</tbody>
+</table>
+<h5 id="数组解构"><a href="#数组解构" class="headerlink" title="数组解构"></a>数组解构</h5><p>JavaScript支持在数组上下文中进行解构。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var arr = [12,13] </span><br><span class="line">var[x,y] = arr </span><br><span class="line">console.log(x) </span><br><span class="line">console.log(y)</span><br><span class="line">打印结果：</span><br><span class="line"></span><br><span class="line">12 </span><br><span class="line">13</span><br></pre></td></tr></table></figure></p>
 
       
 
@@ -1142,6 +1799,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="../../../06/10/rule/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Drools代替复杂业务
+        
+      </div>
+    </a>
   
   
     <a href="../../08/vue/" id="article-nav-older" class="article-nav-link-wrap">
@@ -1381,6 +2047,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
@@ -1397,7 +2067,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">post</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1410,14 +2084,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">html color</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">post</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1441,10 +2107,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">wm_concat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
@@ -1453,7 +2115,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">支付</a>
+                <a href="javascript:void(0)" class="js-tag color5">wm_concat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1462,6 +2124,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">去除不必要的人</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">支付</a>
               </li>
              
               <li class="article-tag-list-item">
